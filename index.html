@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AGI Villa — Where China Tech Meets the World</title>
+<meta name="description" content="AGI Villa is the global bridge for China's next generation of AI and technology companies — a living community of 3,000+ founders connecting to global capital, customers and markets." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* brand colors from logo */
+    --red:#EA4335;
+    --blue:#4285F4;
+    --green:#34A853;
+    --yellow:#FBBC05;
+
+    --bg:#000000;
+    --bg-2:#0a0a0a;
+    --bg-3:#111111;
+    --fg:#f5f5f7;
+    --fg-dim:#a1a1a6;
+    --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08);
+    --line-2:rgba(255,255,255,0.14);
+    --accent:#ffffff;
+    --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+    letter-spacing:-0.01em;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:#ffffff;color:#000}
+
+  /* ============ BRAND WORDMARK ============ */
+  .wordmark{
+    font-weight:800;letter-spacing:-0.04em;font-size:20px;
+    display:inline-flex;align-items:baseline;line-height:1;
+  }
+  .wordmark .l-a{color:var(--red)}
+  .wordmark .l-g{color:var(--blue)}
+  .wordmark .l-i{color:var(--green);display:inline-block;transform:translateY(0)}
+  .wordmark .l-v,
+  .wordmark .l-illa{color:var(--yellow)}
+  .wordmark .l-space{display:inline-block;width:.22em}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    backdrop-filter:blur(18px) saturate(180%);
+    -webkit-backdrop-filter:blur(18px) saturate(180%);
+    background:rgba(0,0,0,0.6);
+    border-bottom:1px solid var(--line);
+    transition:background .3s ease;
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+    font-size:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;letter-spacing:-.02em}
+  .brand-mark{
+    width:26px;height:26px;border-radius:7px;position:relative;
+    background:conic-gradient(from 0deg at 50% 50%, var(--red) 0deg 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);
+    box-shadow:0 0 22px rgba(66,133,244,0.35);
+  }
+  .brand-mark::after{
+    content:"";position:absolute;inset:4px;border-radius:4px;background:#000;
+  }
+  .nav-links{display:flex;gap:28px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+  .nav-cta{
+    padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(255,255,255,.22)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;overflow:hidden;padding:140px 24px 120px;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-bg::before{
+    content:"";position:absolute;inset:-20% -10% -10% -10%;
+    background:
+      radial-gradient(55% 50% at 30% 35%, rgba(66,133,244,0.22), transparent 60%),
+      radial-gradient(45% 45% at 72% 30%, rgba(234,67,53,0.15), transparent 60%),
+      radial-gradient(50% 45% at 70% 75%, rgba(251,188,5,0.13), transparent 60%),
+      radial-gradient(45% 45% at 28% 78%, rgba(52,168,83,0.14), transparent 60%);
+    filter:blur(40px);
+    animation:drift 20s ease-in-out infinite alternate;
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 65% 55% at 50% 45%, #000 40%, transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 65% 55% at 50% 45%, #000 40%, transparent 75%);
+    opacity:.6;
+  }
+  @keyframes drift{
+    0%{transform:translate3d(-2%,-1%,0) scale(1)}
+    100%{transform:translate3d(3%,2%,0) scale(1.08)}
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--fg-dim);background:rgba(255,255,255,0.03);
+    margin-bottom:28px;
+  }
+  .eyebrow-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 12px var(--green);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+  .hero h1{
+    font-size:clamp(44px, 8.5vw, 112px);
+    line-height:.98;font-weight:700;letter-spacing:-0.045em;
+    background:linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #a8a8ad 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:26px;
+  }
+  .hero h1 .c-red{color:var(--red);-webkit-text-fill-color:var(--red)}
+  .hero h1 .c-blue{color:var(--blue);-webkit-text-fill-color:var(--blue)}
+  .hero h1 .c-green{color:var(--green);-webkit-text-fill-color:var(--green)}
+  .hero h1 .c-yellow{color:var(--yellow);-webkit-text-fill-color:var(--yellow)}
+  .hero p.sub{
+    font-size:clamp(17px, 1.6vw, 22px);
+    color:var(--fg-dim);max-width:760px;margin:0 auto 44px;
+    line-height:1.55;font-weight:400;
+  }
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:999px;font-size:15px;font-weight:500;
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+    will-change:transform;
+  }
+  .btn-primary{background:#fff;color:#000}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,255,255,.2)}
+  .btn-ghost{background:rgba(255,255,255,0.06);color:#fff;border:1px solid var(--line-2)}
+  .btn-ghost:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px)}
+  .btn svg{width:16px;height:16px}
+
+  .scroll-ind{
+    position:absolute;left:50%;bottom:34px;transform:translateX(-50%);
+    color:var(--fg-dimmer);font-size:11px;letter-spacing:.3em;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .scroll-ind::after{
+    content:"";width:1px;height:34px;background:linear-gradient(#fff, transparent);
+    animation:scrollDown 2.2s ease-in-out infinite;
+  }
+  @keyframes scrollDown{0%{transform:translateY(-10px);opacity:0}50%{opacity:1}100%{transform:translateY(10px);opacity:0}}
+
+  /* ============ MARQUEE ============ */
+  .marquee-wrap{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:22px 0;overflow:hidden;position:relative;
+    background:linear-gradient(180deg,#0a0a0a,#000);
+  }
+  .marquee-wrap::before,.marquee-wrap::after{
+    content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none;
+  }
+  .marquee-wrap::before{left:0;background:linear-gradient(90deg,#000,transparent)}
+  .marquee-wrap::after{right:0;background:linear-gradient(-90deg,#000,transparent)}
+  .marquee{display:flex;gap:52px;animation:scroll 42s linear infinite;width:max-content}
+  .marquee span{color:var(--fg-dim);font-size:14px;letter-spacing:.12em;white-space:nowrap;text-transform:uppercase}
+  .dot{width:5px;height:5px;border-radius:50%;align-self:center}
+  .dot.d-r{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .dot.d-b{background:var(--blue);box-shadow:0 0 8px var(--blue)}
+  .dot.d-g{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .dot.d-y{background:var(--yellow);box-shadow:0 0 8px var(--yellow)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ SECTIONS ============ */
+  section{position:relative;padding:140px 24px}
+  .wrap{max-width:var(--max);margin:0 auto}
+  .label{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--fg-dimmer);margin-bottom:18px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .label::before{content:"";width:24px;height:1px;background:var(--fg-dimmer)}
+  .title{
+    font-size:clamp(32px,4.8vw,62px);line-height:1.05;letter-spacing:-0.035em;
+    font-weight:600;max-width:900px;
+    background:linear-gradient(180deg,#fff,#b5b5ba);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .title .c-red{color:var(--red);-webkit-text-fill-color:var(--red)}
+  .title .c-blue{color:var(--blue);-webkit-text-fill-color:var(--blue)}
+  .title .c-green{color:var(--green);-webkit-text-fill-color:var(--green)}
+  .title .c-yellow{color:var(--yellow);-webkit-text-fill-color:var(--yellow)}
+  .lede{
+    color:var(--fg-dim);font-size:clamp(16px,1.3vw,19px);
+    line-height:1.65;max-width:720px;margin-top:24px;
+  }
+
+  /* ============ STATS ============ */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    border-radius:22px;overflow:hidden;margin-top:76px;
+  }
+  .stat{background:#050505;padding:42px 32px;transition:background .4s ease;position:relative;overflow:hidden}
+  .stat::before{
+    content:"";position:absolute;top:0;left:0;width:40px;height:3px;border-radius:0 0 4px 0;
+  }
+  .stat.s-red::before{background:var(--red)}
+  .stat.s-blue::before{background:var(--blue)}
+  .stat.s-green::before{background:var(--green)}
+  .stat.s-yellow::before{background:var(--yellow)}
+  .stat:hover{background:#0c0c0c}
+  .stat-num{
+    font-size:clamp(36px,4.6vw,56px);font-weight:600;letter-spacing:-.03em;
+    line-height:1;
+  }
+  .stat.s-red .stat-num{color:#fff}
+  .stat .stat-num sup{font-size:.45em;vertical-align:super;margin-left:2px;color:var(--fg-dim);font-weight:500}
+  .stat.s-red .stat-num sup{color:var(--red)}
+  .stat.s-blue .stat-num sup{color:var(--blue)}
+  .stat.s-green .stat-num sup{color:var(--green)}
+  .stat.s-yellow .stat-num sup{color:var(--yellow)}
+  .stat-lbl{color:var(--fg);font-size:14px;margin-top:12px;font-weight:500}
+  .stat-desc{color:var(--fg-dimmer);font-size:12.5px;margin-top:4px;line-height:1.4}
+  @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.stats{grid-template-columns:1fr}}
+
+  /* ============ PILLARS ============ */
+  .pillars{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px;
+  }
+  .pillar{
+    position:relative;background:linear-gradient(180deg,#0b0b0b,#050505);
+    border:1px solid var(--line);border-radius:22px;
+    padding:36px 30px 40px;min-height:340px;overflow:hidden;
+    transition:transform .35s ease, border-color .35s ease;
+  }
+  .pillar:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .pillar-icon{
+    width:46px;height:46px;border-radius:12px;
+    display:grid;place-items:center;
+    background:rgba(255,255,255,0.04);border:1px solid var(--line-2);
+    margin-bottom:22px;position:relative;z-index:1;
+  }
+  .pillar-icon svg{width:22px;height:22px;stroke-width:1.8}
+  .pillar.p-red .pillar-icon{border-color:rgba(234,67,53,.35);background:rgba(234,67,53,.08)}
+  .pillar.p-red .pillar-icon svg{stroke:var(--red)}
+  .pillar.p-blue .pillar-icon{border-color:rgba(66,133,244,.35);background:rgba(66,133,244,.08)}
+  .pillar.p-blue .pillar-icon svg{stroke:var(--blue)}
+  .pillar.p-green .pillar-icon{border-color:rgba(52,168,83,.35);background:rgba(52,168,83,.08)}
+  .pillar.p-green .pillar-icon svg{stroke:var(--green)}
+  .pillar.p-yellow .pillar-icon{border-color:rgba(251,188,5,.35);background:rgba(251,188,5,.08)}
+  .pillar.p-yellow .pillar-icon svg{stroke:var(--yellow)}
+  .pillar h3{
+    font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px;
+    position:relative;z-index:1;
+  }
+  .pillar p{color:var(--fg-dim);font-size:14.5px;line-height:1.65;position:relative;z-index:1}
+  .pillar .tags{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:22px;position:relative;z-index:1;
+  }
+  .pillar .tags span{
+    font-size:11px;color:var(--fg-dim);padding:4px 10px;border-radius:999px;
+    background:rgba(255,255,255,0.04);border:1px solid var(--line);
+  }
+  @media(max-width:900px){.pillars{grid-template-columns:1fr}}
+
+  /* ============ ECOSYSTEM (split) ============ */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:72px}
+  .split .visual{
+    position:relative;aspect-ratio:1/1;border-radius:28px;overflow:hidden;
+    background:radial-gradient(circle at 50% 50%, #0c0f1f 0%, #040406 70%);
+    border:1px solid var(--line);
+  }
+  .orbit{position:absolute;inset:0;display:grid;place-items:center}
+  .orbit .core{
+    width:120px;height:120px;border-radius:50%;
+    background:
+      conic-gradient(from 0deg, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);
+    box-shadow:0 0 80px rgba(66,133,244,.45), 0 0 120px rgba(234,67,53,.25);
+    z-index:3;position:relative;
+  }
+  .orbit .core::before{
+    content:"";position:absolute;inset:6px;border-radius:50%;background:#050505;
+  }
+  .orbit .core::after{
+    content:"AGI";position:absolute;inset:0;display:grid;place-items:center;
+    font-weight:800;font-size:26px;color:#fff;letter-spacing:-.03em;z-index:2;
+  }
+  .ring{
+    position:absolute;border:1px dashed rgba(255,255,255,.14);border-radius:50%;
+    animation:spin 30s linear infinite;
+  }
+  .ring.r1{width:52%;height:52%;animation-duration:24s}
+  .ring.r2{width:72%;height:72%;animation-duration:38s;animation-direction:reverse}
+  .ring.r3{width:92%;height:92%;animation-duration:60s}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .chip{
+    position:absolute;font-size:11px;color:var(--fg);
+    padding:5px 11px;background:rgba(255,255,255,.05);
+    border:1px solid var(--line-2);border-radius:999px;backdrop-filter:blur(6px);
+    white-space:nowrap;display:inline-flex;align-items:center;gap:6px;font-weight:500;
+  }
+  .chip::before{content:"";width:5px;height:5px;border-radius:50%}
+  .chip.c-r::before{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .chip.c-b::before{background:var(--blue);box-shadow:0 0 8px var(--blue)}
+  .chip.c-g::before{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .chip.c-y::before{background:var(--yellow);box-shadow:0 0 8px var(--yellow)}
+  .chip.p1{top:14%;left:10%}
+  .chip.p2{top:22%;right:8%}
+  .chip.p3{bottom:22%;left:8%}
+  .chip.p4{bottom:14%;right:12%}
+  .chip.p5{top:50%;left:-2%}
+  .chip.p6{top:48%;right:-1%}
+
+  .split .copy h2{font-size:clamp(28px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
+  .split .copy p{color:var(--fg-dim);font-size:16px;line-height:1.7}
+  .bullets{margin-top:28px;display:flex;flex-direction:column;gap:16px}
+  .bullets li{
+    list-style:none;display:flex;gap:14px;align-items:flex-start;
+    color:var(--fg-dim);font-size:15px;line-height:1.55;
+  }
+  .bullets li .bullet-dot{
+    flex-shrink:0;width:18px;height:18px;border-radius:50%;margin-top:2px;
+  }
+  .bullets li:nth-child(1) .bullet-dot{background:var(--red);box-shadow:0 0 12px rgba(234,67,53,.5)}
+  .bullets li:nth-child(2) .bullet-dot{background:var(--blue);box-shadow:0 0 12px rgba(66,133,244,.5)}
+  .bullets li:nth-child(3) .bullet-dot{background:var(--green);box-shadow:0 0 12px rgba(52,168,83,.5)}
+  .bullets li:nth-child(4) .bullet-dot{background:var(--yellow);box-shadow:0 0 12px rgba(251,188,5,.5)}
+  .bullets li strong{color:var(--fg);font-weight:500;margin-right:6px}
+  @media(max-width:900px){.split{grid-template-columns:1fr;gap:40px}}
+
+  /* ============ FOUNDER ============ */
+  .founder{
+    margin-top:80px;display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center;
+    padding:48px;border:1px solid var(--line);border-radius:28px;
+    background:linear-gradient(180deg,#090909,#000);
+    position:relative;overflow:hidden;
+  }
+  .founder::before{
+    content:"";position:absolute;top:-40%;right:-20%;width:600px;height:600px;
+    background:
+      radial-gradient(circle, rgba(66,133,244,.18), transparent 55%),
+      radial-gradient(circle at 70% 30%, rgba(234,67,53,.1), transparent 55%);
+    pointer-events:none;
+  }
+  .avatar{
+    position:relative;aspect-ratio:1/1;border-radius:50%;
+    background:conic-gradient(from 0deg, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);
+    padding:3px;
+  }
+  .avatar-inner{
+    width:100%;height:100%;border-radius:50%;
+    display:grid;place-items:center;
+    font-size:84px;font-weight:800;
+    background:linear-gradient(180deg,#1a1a1a,#000);
+    letter-spacing:-.04em;
+    color:#fff;
+  }
+  .founder-body .label{margin-bottom:16px}
+  .founder-body h3{font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+  .founder-body .role{color:var(--fg-dim);font-size:14.5px;margin-bottom:20px;line-height:1.6}
+  .founder-body p{color:var(--fg-dim);font-size:15px;line-height:1.7;max-width:640px}
+  .founder-links{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .founder-links a{
+    font-size:13px;padding:8px 14px;border-radius:999px;
+    border:1px solid var(--line-2);color:var(--fg-dim);
+    transition:all .2s;display:inline-flex;align-items:center;gap:6px;
+  }
+  .founder-links a:hover{color:#fff;border-color:#fff}
+  @media(max-width:720px){
+    .founder{grid-template-columns:1fr;text-align:center;padding:36px 26px}
+    .avatar{max-width:200px;margin:0 auto}
+    .founder-body .label{justify-content:center}
+    .founder-body .label::before{display:none}
+    .founder-links{justify-content:center}
+    .founder-body p{margin:0 auto}
+  }
+
+  /* ============ PROGRAMS ============ */
+  .programs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:64px}
+  .program{
+    border:1px solid var(--line);border-radius:22px;padding:36px;
+    background:linear-gradient(135deg, #0a0a0a, #050505);
+    transition:all .3s ease;position:relative;overflow:hidden;
+  }
+  .program:hover{border-color:var(--line-2);transform:translateY(-3px)}
+  .program .num{
+    position:absolute;top:20px;right:28px;font-size:56px;font-weight:800;
+    letter-spacing:-.06em;line-height:1;opacity:.22;
+  }
+  .program.g-red .num{color:var(--red)}
+  .program.g-blue .num{color:var(--blue)}
+  .program.g-green .num{color:var(--green)}
+  .program.g-yellow .num{color:var(--yellow)}
+  .program h4{font-size:20px;font-weight:600;margin-bottom:14px;letter-spacing:-.01em}
+  .program p{color:var(--fg-dim);font-size:14.5px;line-height:1.65}
+  @media(max-width:720px){.programs{grid-template-columns:1fr}}
+
+  /* ============ TESTIMONIAL / QUOTE ============ */
+  .quote-section{
+    padding:160px 24px;text-align:center;
+    background:radial-gradient(ellipse 80% 60% at 50% 50%, #0a0c14 0%, #000 70%);
+    position:relative;
+  }
+  blockquote{
+    max-width:900px;margin:0 auto;
+    font-size:clamp(24px,2.8vw,38px);line-height:1.35;font-weight:500;
+    letter-spacing:-.02em;
+    background:linear-gradient(180deg,#fff,#9a9aa0);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  blockquote::before{content:"“";display:block;font-size:80px;color:var(--blue);opacity:.7;margin-bottom:-10px;font-family:Georgia,serif}
+  .quote-attr{margin-top:34px;color:var(--fg-dim);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* ============ CTA ============ */
+  .cta-section{
+    padding:140px 24px 160px;text-align:center;position:relative;overflow:hidden;
+  }
+  .cta-section::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(45% 40% at 30% 50%, rgba(66,133,244,.22), transparent 70%),
+      radial-gradient(35% 35% at 72% 50%, rgba(234,67,53,.16), transparent 70%),
+      radial-gradient(30% 30% at 50% 85%, rgba(251,188,5,.12), transparent 70%);
+    z-index:0;
+  }
+  .cta-card{
+    position:relative;z-index:1;max-width:820px;margin:0 auto;
+    border:1px solid var(--line-2);border-radius:30px;padding:70px 40px;
+    background:linear-gradient(180deg,rgba(10,10,10,.72),rgba(0,0,0,.92));
+    backdrop-filter:blur(16px);
+  }
+  .cta-section h2{
+    font-size:clamp(34px,5vw,64px);font-weight:600;letter-spacing:-.035em;line-height:1.05;
+    background:linear-gradient(180deg,#fff,#a8a8ad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:22px;
+  }
+  .cta-section h2 .c-red{color:var(--red);-webkit-text-fill-color:var(--red)}
+  .cta-section h2 .c-blue{color:var(--blue);-webkit-text-fill-color:var(--blue)}
+  .cta-section h2 .c-green{color:var(--green);-webkit-text-fill-color:var(--green)}
+  .cta-section h2 .c-yellow{color:var(--yellow);-webkit-text-fill-color:var(--yellow)}
+  .cta-section p{color:var(--fg-dim);font-size:17px;line-height:1.6;max-width:560px;margin:0 auto 36px}
+
+  /* ============ FOOTER ============ */
+  footer{
+    border-top:1px solid var(--line);padding:60px 24px 40px;
+    background:#000;
+  }
+  .foot-wrap{
+    max-width:var(--max);margin:0 auto;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
+  }
+  .foot-brand p{color:var(--fg-dim);font-size:13.5px;line-height:1.6;margin-top:16px;max-width:320px}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px;transition:color .2s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{
+    max-width:var(--max);margin:50px auto 0;padding-top:30px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    color:var(--fg-dimmer);font-size:13px;
+  }
+  .foot-bar{display:flex;gap:4px;align-items:center}
+  .foot-bar span{width:22px;height:3px;border-radius:2px;display:inline-block}
+  .foot-bar .b-r{background:var(--red)}
+  .foot-bar .b-b{background:var(--blue)}
+  .foot-bar .b-g{background:var(--green)}
+  .foot-bar .b-y{background:var(--yellow)}
+  @media(max-width:720px){.foot-wrap{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.foot-wrap{grid-template-columns:1fr}}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}
+  .reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}
+  .reveal.d4{transition-delay:.32s}
+
+  @media(max-width:720px){
+    section{padding:90px 22px}
+    .founder{padding:30px 24px}
+    .cta-card{padding:50px 26px}
+    .quote-section{padding:110px 22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#mission">Mission</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#programs">Programs</a>
+      <a href="#founder">Founder</a>
+    </div>
+    <a href="#join" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="eyebrow reveal"><span class="eyebrow-dot"></span>3,000+ Chinese Tech & AI Founders · Since Day One</div>
+    <h1 class="reveal d1">
+      Where <span class="c-blue">China</span> <span class="c-red">Tech</span><br/>
+      Meets the <span class="c-yellow">World</span>.
+    </h1>
+    <p class="sub reveal d2">
+      AGI Villa is the global bridge for China's next generation of AI and technology companies —
+      a living community where founders, capital, and markets converge across borders.
+    </p>
+    <div class="cta-row reveal d3">
+      <a href="#join" class="btn btn-primary">
+        Apply to Join
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#mission" class="btn btn-ghost">Explore the Vision</a>
+    </div>
+  </div>
+  <div class="scroll-ind">SCROLL</div>
+</header>
+
+<!-- MARQUEE STRIP -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <span>Artificial Intelligence</span><div class="dot d-r"></div>
+    <span>Embodied Robotics</span><div class="dot d-b"></div>
+    <span>Web3 & Blockchain</span><div class="dot d-g"></div>
+    <span>Enterprise SaaS</span><div class="dot d-y"></div>
+    <span>Consumer AI</span><div class="dot d-r"></div>
+    <span>Biotech</span><div class="dot d-b"></div>
+    <span>Smart Hardware</span><div class="dot d-g"></div>
+    <span>Fintech</span><div class="dot d-y"></div>
+    <!-- duplicate for loop -->
+    <span>Artificial Intelligence</span><div class="dot d-r"></div>
+    <span>Embodied Robotics</span><div class="dot d-b"></div>
+    <span>Web3 & Blockchain</span><div class="dot d-g"></div>
+    <span>Enterprise SaaS</span><div class="dot d-y"></div>
+    <span>Consumer AI</span><div class="dot d-r"></div>
+    <span>Biotech</span><div class="dot d-b"></div>
+    <span>Smart Hardware</span><div class="dot d-g"></div>
+    <span>Fintech</span><div class="dot d-y"></div>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="wrap">
+    <div class="label reveal">Our Mission</div>
+    <h2 class="title reveal d1">Breaking the barriers between<br/>Chinese <span class="c-blue">innovation</span> and global <span class="c-yellow">markets</span>.</h2>
+    <p class="lede reveal d2">
+      For too long, the stories and products of Chinese founders have been filtered through secondhand narratives.
+      AGI Villa exists to change that — giving the most ambitious AI and tech companies a direct path to global
+      capital, customers, and community.
+    </p>
+
+    <div class="stats">
+      <div class="stat s-red reveal">
+        <div class="stat-num" data-count="3000">0<sup>+</sup></div>
+        <div class="stat-lbl">Tech & AI Startups</div>
+        <div class="stat-desc">Active founders inside the Villa community</div>
+      </div>
+      <div class="stat s-blue reveal d1">
+        <div class="stat-num" data-count="50">0<sup>+</sup></div>
+        <div class="stat-lbl">Countries Covered</div>
+        <div class="stat-desc">Markets Monica has operated in firsthand</div>
+      </div>
+      <div class="stat s-green reveal d2">
+        <div class="stat-num">¥1.5<sup>B+</sup></div>
+        <div class="stat-lbl">Portfolio Fundraised</div>
+        <div class="stat-desc">Capital raised across Villa-connected ventures</div>
+      </div>
+      <div class="stat s-yellow reveal d3">
+        <div class="stat-num">24<sup>/7</sup></div>
+        <div class="stat-lbl">Global Community</div>
+        <div class="stat-desc">Always-on network across time zones</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars" style="padding-top:20px">
+  <div class="wrap">
+    <div class="label reveal">What We Do</div>
+    <h2 class="title reveal d1">Four <span class="c-red">pillars</span> for companies<br/>built to cross borders.</h2>
+
+    <div class="pillars">
+      <div class="pillar p-red reveal">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <h3>Global Go-to-Market</h3>
+        <p>Hands-on playbooks for 0→1 overseas expansion — from localization and channel strategy to precision customer acquisition across the Middle East, Southeast Asia, LATAM and North America.</p>
+        <div class="tags"><span>GTM</span><span>Localization</span><span>Channels</span></div>
+      </div>
+
+      <div class="pillar p-blue reveal d1">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Founder Community</h3>
+        <p>A private, curated network of 3,000+ founders and operators from China's most ambitious AI and tech companies — sharing deals, hires, playbooks and cross-border intros every day.</p>
+        <div class="tags"><span>Peer Network</span><span>Intros</span><span>Deal Flow</span></div>
+      </div>
+
+      <div class="pillar p-green reveal d2">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+        </div>
+        <h3>Capital & Partnerships</h3>
+        <p>Warm bridges into global capital, sovereign funds and strategic partners — backed by the same networks that funded Sequoia, Legend, GGV and Sinovation portfolios.</p>
+        <div class="tags"><span>Capital</span><span>Sovereign</span><span>Strategic</span></div>
+      </div>
+
+      <div class="pillar p-yellow reveal">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h3>Insights & Research</h3>
+        <p>Original research on geopolitics, AI verticals, and market windows — distilled into actionable briefings you actually read before getting on the plane.</p>
+        <div class="tags"><span>Geopolitics</span><span>AI Verticals</span><span>Markets</span></div>
+      </div>
+
+      <div class="pillar p-red reveal d1">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>GO SUMMIT & Events</h3>
+        <p>Flagship summits, closed-door dinners, and curated city tours connecting Chinese founders with the ecosystems, buyers and regulators that actually matter.</p>
+        <div class="tags"><span>Summits</span><span>Dinners</span><span>City Tours</span></div>
+      </div>
+
+      <div class="pillar p-blue reveal d2">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Founder IP & Media</h3>
+        <p>Build durable personal IP across WeChat, LinkedIn, X and YouTube — with media, positioning and storytelling support tuned for cross-cultural audiences.</p>
+        <div class="tags"><span>Personal IP</span><span>Media</span><span>Storytelling</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem">
+  <div class="wrap">
+    <div class="label reveal">The Ecosystem</div>
+    <h2 class="title reveal d1">One <span class="c-green">Villa</span>.<br/>Infinite <span class="c-blue">connections</span>.</h2>
+
+    <div class="split">
+      <div class="visual reveal d2" aria-hidden="true">
+        <div class="orbit">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <div class="core"></div>
+        </div>
+        <div class="chip c-r p1">Silicon Valley</div>
+        <div class="chip c-b p2">Singapore</div>
+        <div class="chip c-g p3">Dubai</div>
+        <div class="chip c-y p4">São Paulo</div>
+        <div class="chip c-b p5">Tokyo</div>
+        <div class="chip c-r p6">London</div>
+      </div>
+      <div class="copy reveal d3">
+        <h2>A living network,<br/>not a directory.</h2>
+        <p>AGI Villa is built as a real community. Every founder is a node, every intro compounds,
+        every market is a doorway. From Hangzhou to Abu Dhabi, from Shenzhen to São Paulo — the
+        distance between a prototype and product-market fit gets shorter every day.</p>
+        <ul class="bullets">
+          <li><span class="bullet-dot"></span><span><strong>Warm Intros.</strong> Hand-matched to the exact investor, buyer or operator you need.</span></li>
+          <li><span class="bullet-dot"></span><span><strong>Market Landing.</strong> On-the-ground partners across 6 key regions.</span></li>
+          <li><span class="bullet-dot"></span><span><strong>Peer Depth.</strong> Unicorn founders and first-time founders, in the same room.</span></li>
+          <li><span class="bullet-dot"></span><span><strong>Always Moving.</strong> Weekly livestreams, monthly summits, year-round momentum.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="wrap">
+    <div class="label reveal">Programs</div>
+    <h2 class="title reveal d1">From idea to <span class="c-yellow">global traction</span>.</h2>
+    <p class="lede reveal d2">Four curated tracks for every stage of going global — whether you're pre-launch, scaling channels, raising capital, or building founder brand.</p>
+
+    <div class="programs">
+      <div class="program g-red reveal">
+        <div class="num">01</div>
+        <h4>Villa Cohort</h4>
+        <p>A 12-week intensive: market selection, GTM, hiring, and fundraising — built with operators who have done it at unicorn scale.</p>
+      </div>
+      <div class="program g-blue reveal d1">
+        <div class="num">02</div>
+        <h4>Capital Bridge</h4>
+        <p>Curated intros to global funds, sovereigns, and strategic partners aligned with your stage, sector and target market.</p>
+      </div>
+      <div class="program g-green reveal d2">
+        <div class="num">03</div>
+        <h4>City Residencies</h4>
+        <p>Soft-landing residencies in Singapore, Dubai, Tokyo, New York and São Paulo — workspace, hires, regulators and customers.</p>
+      </div>
+      <div class="program g-yellow reveal d3">
+        <div class="num">04</div>
+        <h4>Founder Studio</h4>
+        <p>Media, storytelling and cross-cultural positioning to turn a founder into a global brand — at the speed the AI era demands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <blockquote class="reveal">
+    The next decade of AI will not be written in one language or one market.
+    We are building the shortest path between Chinese founders and the rest of the world.
+  </blockquote>
+  <div class="quote-attr reveal d1">— Monica Wang · Initiator of AGI Villa</div>
+</section>
+
+<!-- FOUNDER -->
+<section id="founder" style="padding-top:40px">
+  <div class="wrap">
+    <div class="founder reveal">
+      <div class="avatar">
+        <div class="avatar-inner">M</div>
+      </div>
+      <div class="founder-body">
+        <div class="label">Founder</div>
+        <h3>Monica Wang</h3>
+        <div class="role">Initiator of AGI Villa · Founder of GO SUMMIT · Serial Entrepreneur · Former Xinhua Journalist</div>
+        <p>
+          15 years, 50+ countries. Monica has served as CEO, CMO or Partner across AI programming, youth education, B2B e-commerce, Web3,
+          and consumer internet — with ventures backed by Sequoia Capital, Legend Capital, Sinovation Ventures, GGV, Linear Venture
+          and more, raising over ¥1.5B combined. In 2025, she was invited to speak at Harvard on innovation and education in the AI era.
+        </p>
+        <div class="founder-links">
+          <a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com →</a>
+          <a href="#join">Official Channel</a>
+          <a href="#join">Monica on Going Global</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="join">
+  <div class="cta-card reveal">
+    <h2>Build what's <span class="c-red">next</span>.<br/>With the <span class="c-blue">world</span> watching.</h2>
+    <p>Apply to join AGI Villa — a private community of 3,000+ Chinese AI and tech founders building for global markets.</p>
+    <div class="cta-row">
+      <a href="mailto:hello@agivilla.com" class="btn btn-primary">
+        Apply Now
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://chinabymonica.com" target="_blank" rel="noopener" class="btn btn-ghost">Read Insights</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="#top" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The global bridge for China's next generation of AI and tech companies. Where founders, capital, and markets meet.</p>
+      <div class="foot-bar" style="margin-top:18px">
+        <span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#pillars">What We Do</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#founder">Founder</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Community</h5>
+      <ul>
+        <li><a href="#join">Apply to Join</a></li>
+        <li><a href="#">Official Channel</a></li>
+        <li><a href="#">GO SUMMIT</a></li>
+        <li><a href="#">Weekly Livestream</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">X / Twitter</a></li>
+        <li><a href="mailto:hello@agivilla.com">hello@agivilla.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa. All rights reserved.</div>
+    <div>Built for founders building for the world.</div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('[data-count]');
+  const ioCount = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.count,10);
+        const sup = el.querySelector('sup');
+        const supHTML = sup ? sup.outerHTML : '';
+        const dur = 1600;
+        const start = performance.now();
+        function tick(now){
+          const p = Math.min(1,(now-start)/dur);
+          const eased = 1 - Math.pow(1-p,3);
+          const val = Math.floor(eased * target);
+          el.innerHTML = val.toLocaleString() + supHTML;
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        ioCount.unobserve(el);
+      }
+    });
+  },{threshold:.4});
+  counters.forEach(c=>ioCount.observe(c));
+
+  // Nav background intensify on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>20) nav.style.background='rgba(0,0,0,0.82)';
+    else nav.style.background='rgba(0,0,0,0.6)';
+  },{passive:true});
+</script>
+</body>
+</html>
