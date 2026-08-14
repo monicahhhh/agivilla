@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Community — AGI Villa</title>
+<meta name="description" content="A categorized directory of companies and organizations in the AGI Villa community — where innovators meet the world." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:#fff;color:#000}
+
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)}
+  .wordmark .l-g{color:var(--blue)}
+  .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)}
+  .wordmark .l-space{display:inline-block;width:.22em}
+
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    backdrop-filter:blur(18px) saturate(180%);
+    -webkit-backdrop-filter:blur(18px) saturate(180%);
+    background:rgba(0,0,0,0.6);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;font-size:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand-mark{
+    width:26px;height:26px;border-radius:7px;position:relative;
+    background:conic-gradient(from 0deg at 50% 50%, var(--red) 0deg 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);
+    box-shadow:0 0 22px rgba(66,133,244,0.35);
+  }
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:28px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--fg)}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  .hero{
+    position:relative;padding:150px 24px 72px;text-align:center;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:-20% -10% 0;
+    background:
+      radial-gradient(50% 50% at 30% 40%, rgba(66,133,244,0.18), transparent 60%),
+      radial-gradient(40% 40% at 72% 30%, rgba(234,67,53,0.12), transparent 60%),
+      radial-gradient(40% 40% at 60% 80%, rgba(251,188,5,0.10), transparent 60%);
+    filter:blur(40px);pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--fg-dim);background:rgba(255,255,255,0.03);margin-bottom:22px;
+  }
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+  .hero h1{
+    position:relative;font-size:clamp(36px,6vw,72px);line-height:1.02;font-weight:700;letter-spacing:-0.04em;
+    background:linear-gradient(180deg,#fff 0%,#fff 40%,#a8a8ad 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px;
+  }
+  .hero h1 .c-blue{color:var(--blue);-webkit-text-fill-color:var(--blue)}
+  .hero h1 .c-yellow{color:var(--yellow);-webkit-text-fill-color:var(--yellow)}
+  .hero p{position:relative;color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:640px;margin:0 auto}
+
+  .toc-wrap{
+    position:sticky;top:57px;z-index:40;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:rgba(0,0,0,0.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  }
+  .toc{
+    max-width:var(--max);margin:0 auto;padding:12px 24px;
+    display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
+  }
+  .toc::-webkit-scrollbar{display:none}
+  .toc a{
+    flex:none;padding:7px 14px;border-radius:999px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--fg-dim);border:1px solid var(--line);background:rgba(255,255,255,.03);
+    transition:color .2s,border-color .2s,background .2s;
+  }
+  .toc a:hover{color:#fff;border-color:var(--line-2)}
+
+  section.cat{padding:88px 24px 24px}
+  .wrap{max-width:var(--max);margin:0 auto}
+  .label{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:14px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .label::before{content:"";width:24px;height:1px;background:var(--fg-dimmer)}
+  .title{
+    font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-0.03em;font-weight:600;margin-bottom:28px;
+    background:linear-gradient(180deg,#fff,#b5b5ba);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    font-size:13.5px;line-height:1.3;color:var(--fg);
+    padding:10px 14px;border-radius:999px;
+    background:rgba(255,255,255,0.04);border:1px solid var(--line);
+  }
+  .chips.featured .chip{
+    font-size:14.5px;font-weight:500;padding:12px 16px;
+    background:rgba(255,255,255,0.06);border-color:var(--line-2);
+  }
+  .cat-red .chips.featured .chip{border-color:rgba(234,67,53,.35);background:rgba(234,67,53,.08)}
+  .cat-blue .chips.featured .chip{border-color:rgba(66,133,244,.35);background:rgba(66,133,244,.08)}
+  .cat-green .chips.featured .chip{border-color:rgba(52,168,83,.35);background:rgba(52,168,83,.08)}
+  .cat-yellow .chips.featured .chip{border-color:rgba(251,188,5,.35);background:rgba(251,188,5,.08)}
+  .chips.rest{margin-top:14px}
+  .chips.rest .chip{color:var(--fg-dim)}
+
+  .more-panel{margin-top:22px}
+  .more-btn{
+    appearance:none;border:1px solid var(--line-2);background:rgba(255,255,255,.04);
+    color:#fff;font:inherit;font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+    padding:10px 20px;border-radius:999px;cursor:pointer;
+    transition:transform .2s,background .2s,border-color .2s;
+  }
+  .more-btn:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
+  .more-btn[aria-expanded="true"]{background:#fff;color:#000;border-color:#fff}
+
+  footer{border-top:1px solid var(--line);padding:60px 24px 40px;margin-top:80px}
+  .foot-wrap{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:13.5px;line-height:1.6;margin-top:16px;max-width:320px}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{
+    max-width:var(--max);margin:50px auto 0;padding-top:30px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--fg-dimmer);font-size:13px;
+  }
+  .foot-bar{display:flex;gap:4px;align-items:center;margin-top:18px}
+  .foot-bar span{width:22px;height:3px;border-radius:2px;display:inline-block}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  @media(max-width:720px){.foot-wrap{grid-template-columns:1fr 1fr} section.cat{padding:64px 22px 12px}}
+  @media(max-width:480px){.foot-wrap{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}
+  .reveal.d2{transition-delay:.16s}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/" class="active">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><span class="eyebrow-dot"></span>Invitation-only network</div>
+  <h1>Where <span class="c-blue">innovators</span><br/>meet the <span class="c-yellow">world</span>.</h1>
+  <p>A categorized directory of companies and organizations from the AGI Villa community — the two-way bridge between China’s tech ecosystem and the world.</p>
+</header>
+
+<div class="toc-wrap">
+  <nav class="toc" aria-label="Categories">
+      <a href="#ai">AI</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#capital">Capital</a>
+      <a href="#global">Global</a>
+      <a href="#media">Media</a>
+      <a href="#talent">Talent</a>
+      <a href="#health">Health</a>
+      <a href="#industry">Industry</a>
+      <a href="#consumer">Consumer</a>
+      <a href="#public">Public</a>
+      <a href="#other">Other</a>
+  </nav>
+</div>
+
+<section class="cat cat-red" id="ai">
+  <div class="wrap">
+    <div class="label reveal">AI</div>
+    <h2 class="title reveal d1">AI, Software &amp; Cloud Services</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Alibaba Cloud</li>
+        <li class="chip">AWS</li>
+        <li class="chip">Baidu AI Cloud</li>
+        <li class="chip">Huawei Cloud</li>
+        <li class="chip">Microsoft</li>
+        <li class="chip">Tencent Cloud</li>
+        <li class="chip">minimax</li>
+        <li class="chip">Unitree Robotics</li>
+        <li class="chip">Foxconn Technology Group</li>
+        <li class="chip">Zilliz</li>
+        <li class="chip">Temporal.io</li>
+        <li class="chip">Airwallex</li>
+        <li class="chip">Lovable</li>
+        <li class="chip">Kujiale</li>
+        <li class="chip">Datawhale</li>
+        <li class="chip">Harman</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">Adec</li>
+        <li class="chip">AgenticHire</li>
+        <li class="chip">AI Is Not Mysterious</li>
+        <li class="chip">Aillyn</li>
+        <li class="chip">Aivatars Pte Ltd</li>
+        <li class="chip">AMYGO AI</li>
+        <li class="chip">Anthology AI</li>
+        <li class="chip">Ao Ying AI</li>
+        <li class="chip">APEVON TECHNOLOGIES PTE. LTD.</li>
+        <li class="chip">ArcBoxLabs</li>
+        <li class="chip">Bai Yang Technology</li>
+        <li class="chip">Bai Ying Cloud Chuang Shenzhen Technology Co., Ltd.</li>
+        <li class="chip">Beijing Ao Shen Hu Dong Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Beijing Cai Duo Dui Xin Xi Technology</li>
+        <li class="chip">Beijing Jiu Zhang Cloud Ji Technology Co., Ltd.</li>
+        <li class="chip">Beijing Kong Lu Shi Jue Technology Co., Ltd.</li>
+        <li class="chip">Beijing Ku Ya Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Beijing Ming Zhou Network Technology Co., Ltd.</li>
+        <li class="chip">Beijing Sheng Zhi Technology</li>
+        <li class="chip">Beijing Wei Jin Technology</li>
+        <li class="chip">Beijing Ying Nuo Wei Technology</li>
+        <li class="chip">Beijing Yuan Kong Intelligent Technology Co., Ltd.</li>
+        <li class="chip">BeyondrealityAI</li>
+        <li class="chip">Bi Te Zhi Suan AI Technology (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Bian Yuan Xing Zhe (Guangzhou)Ji Zhu Co., Ltd.</li>
+        <li class="chip">Botlib.ai</li>
+        <li class="chip">Brilliancy Deep Tech</li>
+        <li class="chip">C&amp;QTechnology(Guangzhou)Com., Ltd.</li>
+        <li class="chip">Canlah.ai</li>
+        <li class="chip">Capmind</li>
+        <li class="chip">Chengdu Hou Zi Software</li>
+        <li class="chip">Chi Chuang Technology</li>
+        <li class="chip">Cloud Chuang Shu Ke</li>
+        <li class="chip">Cloud Cong Technology</li>
+        <li class="chip">Cloud Fan</li>
+        <li class="chip">Cloud Jian Ye Cai</li>
+        <li class="chip">Cloud Lu Zhi Chuang</li>
+        <li class="chip">Clude Labs</li>
+        <li class="chip">CodingFlow</li>
+        <li class="chip">Da Ming Technology</li>
+        <li class="chip">Da Tang Dong Fang Shenzhen Information Technology Co., Ltd.</li>
+        <li class="chip">Da Tu (Shenzhen) Technology Co., Ltd.</li>
+        <li class="chip">Daboss AI</li>
+        <li class="chip">Daqstra (YC S26)</li>
+        <li class="chip">Data Yuan</li>
+        <li class="chip">datablau</li>
+        <li class="chip">Datascaler.ai</li>
+        <li class="chip">Deck Software</li>
+        <li class="chip">Dian Hui Technology</li>
+        <li class="chip">Edmund Cloud Solutions</li>
+        <li class="chip">En Jun Te Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Fan Chuang Technology Co., Ltd.</li>
+        <li class="chip">FAR Labs (Dizzaract)</li>
+        <li class="chip">Fei Ao Technology</li>
+        <li class="chip">Fei Cheng Technology (Hangzhou) Co., Ltd.</li>
+        <li class="chip">Fei Di Technology</li>
+        <li class="chip">Foshan Lun Xin Technology Co., Ltd.</li>
+        <li class="chip">Fu Mei Network Technology Co., Ltd.</li>
+        <li class="chip">GenesiX AI</li>
+        <li class="chip">gtech</li>
+        <li class="chip">Guang He Holdings</li>
+        <li class="chip">Guang Zhui Mao (Beijing) Technology Gong Si</li>
+        <li class="chip">Guangdong International Xiang Fen Technology Group Co., Ltd.</li>
+        <li class="chip">Guangdong Zhi Hui Xin Ping Technology Co., Ltd.</li>
+        <li class="chip">Guangzhou Qu Mi Network Technology Co., Ltd.</li>
+        <li class="chip">Guangzhou Tian Hao Zhi Cheng Technology Co., Ltd.</li>
+        <li class="chip">GYGES LABS /Vocci</li>
+        <li class="chip">HackQuest</li>
+        <li class="chip">Hangzhou Cloud Zhi Zhong Qi Technology Co., Ltd.</li>
+        <li class="chip">Hangzhou Fei Zhi Cloud Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Hangzhou Jue Ji Technology Co., Ltd.</li>
+        <li class="chip">Hangzhou Shu Cloud</li>
+        <li class="chip">Hangzhou Wei Zhou Yuan Du Digital Technology Co., Ltd.</li>
+        <li class="chip">Hao Jing Technology</li>
+        <li class="chip">Hefei Wo Ruo Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Heng Bang Business Technology</li>
+        <li class="chip">HeyPico.ai</li>
+        <li class="chip">hitech</li>
+        <li class="chip">HongKong Pita Network</li>
+        <li class="chip">Hua Ge Technology Co., Ltd.</li>
+        <li class="chip">Hua Huan Technology</li>
+        <li class="chip">Hui Cloud Technology</li>
+        <li class="chip">Huo Shi Network Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Hybrid Intelligence Data Guangzhou</li>
+        <li class="chip">Inner Mongolia Qing Shan Technology Co., Ltd.</li>
+        <li class="chip">Intelligent Computing</li>
+        <li class="chip">iSpiralAIInc</li>
+        <li class="chip">iTrois Tech</li>
+        <li class="chip">J&amp;T Express</li>
+        <li class="chip">Ji Ke Tuo Technology Co., Ltd.</li>
+        <li class="chip">Jia Du Technology</li>
+        <li class="chip">Jia Sheng</li>
+        <li class="chip">Jie Ke Technology</li>
+        <li class="chip">Jiu Wei Technology</li>
+        <li class="chip">Ju Chao Intelligent Technology (Hangzhou) Co., Ltd.</li>
+        <li class="chip">Ju Chao Technology Co., Ltd.</li>
+        <li class="chip">Kuse</li>
+        <li class="chip">Labaik.ai</li>
+        <li class="chip">Lan He Technology Co., Ltd.</li>
+        <li class="chip">Lan Qiao Technology</li>
+        <li class="chip">Lan Si Pu Technology (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Landray</li>
+        <li class="chip">LeWay Labs</li>
+        <li class="chip">Lian Sheng Technology</li>
+        <li class="chip">Lilyai</li>
+        <li class="chip">Ling Yi Technology</li>
+        <li class="chip">Ling Yu International</li>
+        <li class="chip">LKA TECH</li>
+        <li class="chip">Ma Yi Shu Ke</li>
+        <li class="chip">Macgence AI</li>
+        <li class="chip">Mai Zi Zhi Cloud</li>
+        <li class="chip">Master Concept</li>
+        <li class="chip">Matadar.ai</li>
+        <li class="chip">Mei Wan Network Technology Co., Ltd.</li>
+        <li class="chip">Meng Long</li>
+        <li class="chip">Meng Wang Technology</li>
+        <li class="chip">Mo Hui AI Technology Co., Ltd.</li>
+        <li class="chip">Mobi+</li>
+        <li class="chip">Mou Ke Technology</li>
+        <li class="chip">MustafarAI</li>
+        <li class="chip">navatech</li>
+        <li class="chip">NCS Singapore</li>
+        <li class="chip">nike</li>
+        <li class="chip">Nobreak Solutions</li>
+        <li class="chip">Noether Data Labs</li>
+        <li class="chip">Novartis</li>
+        <li class="chip">NumenAI</li>
+        <li class="chip">nzilliz</li>
+        <li class="chip">OG TECH</li>
+        <li class="chip">OG Tech Devs</li>
+        <li class="chip">OKAI</li>
+        <li class="chip">OLA</li>
+        <li class="chip">One IA</li>
+        <li class="chip">OpenHuman</li>
+        <li class="chip">Pai Ou Cloud</li>
+        <li class="chip">Pai Ou Cloud Computing Shanghai Co., Ltd.</li>
+        <li class="chip">Pai Rui Technology</li>
+        <li class="chip">Palm cloud</li>
+        <li class="chip">Patagon AI</li>
+        <li class="chip">Peng Ke Wei Lai Shenzhen Technology Co., Ltd.</li>
+        <li class="chip">Polis IA</li>
+        <li class="chip">Pratico Digital</li>
+        <li class="chip">Prudential plc</li>
+        <li class="chip">QAILU</li>
+        <li class="chip">Qin Wei Technology Co., Ltd.</li>
+        <li class="chip">Quanta Labs</li>
+        <li class="chip">Rapid Chargeback</li>
+        <li class="chip">Rayze AI</li>
+        <li class="chip">Recapi AI</li>
+        <li class="chip">Rui Bo Technology Co., Ltd.</li>
+        <li class="chip">San Die Ji Guangdong Technology Co., Ltd.</li>
+        <li class="chip">SapucaIA</li>
+        <li class="chip">SeendaTechnology</li>
+        <li class="chip">Shang Xing Ling Hang Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Bai Ao Sheng Intelligence</li>
+        <li class="chip">Shanghai Fei Ao Information Technology Fu Wu Co., Ltd.</li>
+        <li class="chip">Shanghai Fen Tian Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Feng Duo Xin Xi</li>
+        <li class="chip">Shanghai Guang Chen Tong Xing Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Shanghai He Kuo Information Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Heng Yi Yin Qing Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Hui Ma Information Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Jin Mu Information Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Kui Bu Tu Ling Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Mo Li Hui Yan Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Mo Wei Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai San Huo Network Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Shang Yu Technology</li>
+        <li class="chip">Shanghai Xin Zhi Shou Technology</li>
+        <li class="chip">Shanghai Xu Jing Zao Wu Network Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Yi Bei Network Technology Co., Ltd.</li>
+        <li class="chip">Shen Du Shang Zhi Technology (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Shen Xin Fu Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen An Bo Si Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen An Yi Zhi Hu Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Bei You Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Bi Ke Shang Lian Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Bi Te Shi Ji Technology Kai Fa Co., Ltd.</li>
+        <li class="chip">Shenzhen Bo An Te Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Chi Wu Wan Chuang Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Chi Zi Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Chong Ke Technology</li>
+        <li class="chip">Shenzhen Chuang Rong Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Cloud Dian Huo Technology Kai Fa Co., Ltd.</li>
+        <li class="chip">Shenzhen Cloud Li Wu Li Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Da Heng Tian Xia Network Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Ding Wei Er Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Fan Dou Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Gan Jin Ke Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Hai Man Xing Chen Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Hao Tian Yu Zhou Digital Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Ji Yang Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Jia Ji Wu Xing Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Jie He Technology Fa Zhan Co., Ltd.</li>
+        <li class="chip">Shenzhen Jing Hui Tong Technology</li>
+        <li class="chip">Shenzhen Jing Shan Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Jiu Yu Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Le Shi Jia Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Lian Ruan Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Mai Tian Shou Hu Technology</li>
+        <li class="chip">Shenzhen Min Jie Cloud</li>
+        <li class="chip">Shenzhen Mo Zhou Technology</li>
+        <li class="chip">Shenzhen Mu Cheng Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Mu Yin Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Pa Ta Ya Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Pai Ying Sai Technology</li>
+        <li class="chip">Shenzhen Qian Shu Mo Shu Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Qing Xu Wei Lai Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Rui Bo Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Rui Hua Gao Ke Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen San Er Yi Shui Mian Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Shen Zhou Zhong Yuan Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Shuo Teng Technology</li>
+        <li class="chip">Shenzhen Tai Sheng Yi Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Tong Ren Technology Shi Ye Co., Ltd.</li>
+        <li class="chip">Shenzhen Wang Shuo Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Wei Lai Chuang Da Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Wei Lai Wei Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Wei Wu Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Xin Ming Sheng Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Xin Ze</li>
+        <li class="chip">Shenzhen Xin Zhi Yu Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Xing Yuan Cloud Chuang Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Xing Yuan Cloud Zhi Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Xiong Di Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Xue Qiu Yi Chuang Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Yi Dou Dou Network Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Yi Du Technology</li>
+        <li class="chip">Shenzhen Yi Pu Rui Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Yi Si Zhi Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Yi Zhu Lang Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Ying Ke Hua Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Yong Zhi Hui Network Technology</li>
+        <li class="chip">Shenzhen You Dian Cheng Guo Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen You Xuan Da Ren Network Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhi An An Quan Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhi Jing AI Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhi Wan Dian Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhi Xue Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhu Cloud</li>
+        <li class="chip">Shi Du Technology</li>
+        <li class="chip">Si Bi Chi Gu Fen Technology Co., Ltd.</li>
+        <li class="chip">Si Chuan Cloud Tu Zhong He Technology Co., Ltd.</li>
+        <li class="chip">skymobi</li>
+        <li class="chip">Spryx.ai</li>
+        <li class="chip">StateLabs</li>
+        <li class="chip">Su Qin Technology</li>
+        <li class="chip">subotiz</li>
+        <li class="chip">Suzhou Lan He Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Suzhou Pan Gu Intelligent Technology Co., Ltd.</li>
+        <li class="chip">SymbolScience</li>
+        <li class="chip">Tango AI</li>
+        <li class="chip">Tashi Network</li>
+        <li class="chip">Teamone</li>
+        <li class="chip">Technology Wei Lei</li>
+        <li class="chip">Techt Labs</li>
+        <li class="chip">Tenfo AI</li>
+        <li class="chip">Ting Mo Technology</li>
+        <li class="chip">ucloud</li>
+        <li class="chip">UltrafilterAI</li>
+        <li class="chip">UP4AI</li>
+        <li class="chip">Ventura AI</li>
+        <li class="chip">VestiAi</li>
+        <li class="chip">Vika</li>
+        <li class="chip">Vox technology</li>
+        <li class="chip">Wang Ju Cloud Lian</li>
+        <li class="chip">Wang Xin AI Technology (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Way2AGI</li>
+        <li class="chip">Wei Peng Technology</li>
+        <li class="chip">Workstream</li>
+        <li class="chip">Wu Di Yan She Technology Co., Ltd.</li>
+        <li class="chip">Wu Yin Intelligent Technology</li>
+        <li class="chip">Wuxi Wei Lai Network Xin Xi Co., Ltd.</li>
+        <li class="chip">www.venda.ai</li>
+        <li class="chip">Xi An Hui Tian Li Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Xiamen Kuai Kuai Network Technology</li>
+        <li class="chip">Xiamen Qiang Long Technology Co., Ltd.</li>
+        <li class="chip">Xiang Gang Lin Cheng Technology Co., Ltd.</li>
+        <li class="chip">Xiao Gou Nu Nu (Shanghai)Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Xin Chong Technology</li>
+        <li class="chip">Xin Yun Technology</li>
+        <li class="chip">Xu Mi Dao Technology</li>
+        <li class="chip">Xuan Ke Technology (Hangzhou) Co., Ltd.</li>
+        <li class="chip">Yeahmobi Network Technology Co., Ltd.</li>
+        <li class="chip">Yi Chuan Technology</li>
+        <li class="chip">Yi Si Zhi</li>
+        <li class="chip">Yi Yan Da</li>
+        <li class="chip">Ying Jiao</li>
+        <li class="chip">Ying Nuo Technology</li>
+        <li class="chip">Ying Zhou (Hangzhou) Intelligent Technology Co., Ltd.</li>
+        <li class="chip">YLA Tech</li>
+        <li class="chip">You Luo Technology</li>
+        <li class="chip">You Shi Wu Xian (Hai Nan) Technology Co., Ltd.</li>
+        <li class="chip">You Shu Technology</li>
+        <li class="chip">Youzan Technology Co., Ltd.</li>
+        <li class="chip">Yu Ling Wu Xian Technology Co., Ltd.</li>
+        <li class="chip">Yu Shu Technology (Xian Chi Zhi Zhen Zheng Zuo Chan Pin De Xu Qiu Yan Zheng)</li>
+        <li class="chip">Yuan Shi Technology Co., Ltd.</li>
+        <li class="chip">Zenlayer Inc.</li>
+        <li class="chip">Zhao Yin Cloud Chuang</li>
+        <li class="chip">Zhi Dun Technology</li>
+        <li class="chip">Zhi Hui Ce Yuan (Shanghai) AI Technology Co., Ltd.</li>
+        <li class="chip">Zhi Mei ai</li>
+        <li class="chip">Zhi Yi Technology</li>
+        <li class="chip">Zhong Jian Technology (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Zhong Ke Chuang Xin Wei Shi (Beijing) Technology Fa Zhan Co., Ltd.</li>
+        <li class="chip">Zhou Zhou Chuang Zao (Shenzhen) Technology Co., Ltd.</li>
+        <li class="chip">Zhu Su Technology</li>
+        <li class="chip">Zhuhai Taichuan Cloud Technology Co., Ltd.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-blue" id="hardware">
+  <div class="wrap">
+    <div class="label reveal">HARDWARE</div>
+    <h2 class="title reveal d1">Hardware, Robotics &amp; Advanced Manufacturing</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Huawei</li>
+        <li class="chip">Hisense</li>
+        <li class="chip">Honor</li>
+        <li class="chip">vivo</li>
+        <li class="chip">TCL</li>
+        <li class="chip">ZTE</li>
+        <li class="chip">SKT</li>
+        <li class="chip">Plaud</li>
+        <li class="chip">Envision</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">AI Robotics Axistar(Xing Zhi Cloud Dong) Technology Gong Si</li>
+        <li class="chip">autolife robotics</li>
+        <li class="chip">Ciney.ai</li>
+        <li class="chip">Estant3d</li>
+        <li class="chip">Eve Count Quantum Systems</li>
+        <li class="chip">Flowstrider</li>
+        <li class="chip">future robotics</li>
+        <li class="chip">Hangzhou Guan Wu Electronics Business Co., Ltd.</li>
+        <li class="chip">inair</li>
+        <li class="chip">INDEVICE</li>
+        <li class="chip">Jing Xin Wei Lai Robotics</li>
+        <li class="chip">Sai Na Electronics Technology Co., Ltd.</li>
+        <li class="chip">SamVision</li>
+        <li class="chip">Sensorama Design</li>
+        <li class="chip">Shanghai De Xi Electronics Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Jia Yi Shang Chong Electronics Xin Xi Co., Ltd.</li>
+        <li class="chip">Shanghai Si Leng AI Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Tu Ling Yu Jie Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Zhui Zhou International Trade Fu Wu Co., Ltd.</li>
+        <li class="chip">Shenzhen Bao Tong Lai Trade Co., Ltd.</li>
+        <li class="chip">Shenzhen Chang Lian Semiconductor Ji Zhu Co., Ltd.</li>
+        <li class="chip">Shenzhen Di Ma Qie Electronics Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Hua Qiang Electronics Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Jing Hua Electronics Cai Liao Co., Ltd.</li>
+        <li class="chip">Shenzhen Ming Yuan Cloud Ke Electronics Business Co., Ltd.</li>
+        <li class="chip">Shenzhen Ou Ye Semiconductor Co., Ltd.</li>
+        <li class="chip">Shenzhen San Chong Shi Electronics Business Co., Ltd.</li>
+        <li class="chip">Shenzhen San Ying Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Shang Wei Optoelectronics Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Sheng Yuan Semiconductor Co., Ltd.</li>
+        <li class="chip">Shenzhen Shuai Hua Electronics Gong Si</li>
+        <li class="chip">Shenzhen Zhan Zhuo Xin Electronics Co., Ltd.</li>
+        <li class="chip">Sparsh Aerobotics</li>
+        <li class="chip">Suzhou Ying Di Ge</li>
+        <li class="chip">Swedish Telecom</li>
+        <li class="chip">Tai Hu Robotics</li>
+        <li class="chip">TGTX</li>
+        <li class="chip">Tu Wa Technology</li>
+        <li class="chip">Wei Ling Shen Du (Hangzhou) Technology Co., Ltd.</li>
+        <li class="chip">Wei Yi Semiconductor</li>
+        <li class="chip">Xi Chong Technology</li>
+        <li class="chip">Xiamen Lian Shi Electronics Co., Ltd.</li>
+        <li class="chip">Xin Zi You Technology</li>
+        <li class="chip">Xing Optoelectronics Nao Technology Co., Ltd.</li>
+        <li class="chip">Xun Lu Intelligent Technology &amp;Jiao Da She Ji</li>
+        <li class="chip">You Wei Electronics</li>
+        <li class="chip">Yuan Rong Technology</li>
+        <li class="chip">Zhi Qi Na Wei (Hangzhou) Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Zhong Pan Jian She</li>
+        <li class="chip">Zhong Yu Lian Cloud Computing Fu Wu (Shanghai) Co., Ltd.</li>
+        <li class="chip">Zi Xia Feng</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-green" id="platforms">
+  <div class="wrap">
+    <div class="label reveal">PLATFORMS</div>
+    <h2 class="title reveal d1">Internet Platforms &amp; Consumer Tech</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Alibaba</li>
+        <li class="chip">ByteDance</li>
+        <li class="chip">Tencent</li>
+        <li class="chip">Google</li>
+        <li class="chip">Baidu</li>
+        <li class="chip">Meituan</li>
+        <li class="chip">jd.com</li>
+        <li class="chip">NetEase</li>
+        <li class="chip">Uber</li>
+        <li class="chip">Unity</li>
+        <li class="chip">Lazada</li>
+        <li class="chip">Mercado Livre</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">Beijing Mi Shen Technology Co., Ltd.</li>
+        <li class="chip">Beijing Yu Lian Technology Co., Ltd.</li>
+        <li class="chip">Credito Social</li>
+        <li class="chip">Franquia Megamente</li>
+        <li class="chip">Fu Hao Ke Xue</li>
+        <li class="chip">genispace</li>
+        <li class="chip">Guangzhou Guang Nian Zhi Wai Dian Shang Co., Ltd.</li>
+        <li class="chip">Ingresso.com</li>
+        <li class="chip">Jun Hai Games</li>
+        <li class="chip">QuintoAndar</li>
+        <li class="chip">R2games</li>
+        <li class="chip">Shanghai Jie Shi Li Network Technology Co., Ltd.</li>
+        <li class="chip">Shanghai San Huo Network</li>
+        <li class="chip">Shanghai Tong Zai Xin Xi</li>
+        <li class="chip">Shanghai Xia Di Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Yu Wei Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">SocialFi</li>
+        <li class="chip">Wang Su Technology Co., Ltd.</li>
+        <li class="chip">Yong Heng Tou Kui Co., Ltd.</li>
+        <li class="chip">Zai Tu Shang Lu</li>
+        <li class="chip">ZenMux</li>
+        <li class="chip">Zhu Cloud Technology</li>
+        <li class="chip">Zhu Meng Entertainment Network Technology Co., Ltd.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-yellow" id="capital">
+  <div class="wrap">
+    <div class="label reveal">CAPITAL</div>
+    <h2 class="title reveal d1">Investment, Finance &amp; Web3</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Legend Capital</li>
+        <li class="chip">CITIC Securities</li>
+        <li class="chip">HSBC</li>
+        <li class="chip">Invesco</li>
+        <li class="chip">Northern Light Venture Capital</li>
+        <li class="chip">Prosus</li>
+        <li class="chip">Ping An Securities</li>
+        <li class="chip">Shenzhen Stock Exchange</li>
+        <li class="chip">Capital Today</li>
+        <li class="chip">GF Securities</li>
+        <li class="chip">Banco do Brasil</li>
+        <li class="chip">Shenzhen Capital Holdings</li>
+        <li class="chip">CPE</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">AAC</li>
+        <li class="chip">Accelerator Capital</li>
+        <li class="chip">Aegis Capital</li>
+        <li class="chip">Airwallex</li>
+        <li class="chip">AlphaPulse</li>
+        <li class="chip">amber premium</li>
+        <li class="chip">Bai Du Zhan Tou</li>
+        <li class="chip">BBX Ventures</li>
+        <li class="chip">Beijing Bao Jie Investment You Xian He Huo</li>
+        <li class="chip">Bi Bi Tong</li>
+        <li class="chip">Bin Technology</li>
+        <li class="chip">BIT(Matrixport)</li>
+        <li class="chip">Blink Studio</li>
+        <li class="chip">BOSI</li>
+        <li class="chip">cartbank</li>
+        <li class="chip">Chen Feng Capital</li>
+        <li class="chip">Cheng Rui Technology</li>
+        <li class="chip">Clink</li>
+        <li class="chip">Cloud Hui Technology</li>
+        <li class="chip">CLP Ventures</li>
+        <li class="chip">Da Chen Cai Zhi</li>
+        <li class="chip">Dao De Investment</li>
+        <li class="chip">Dao Tong Investment</li>
+        <li class="chip">Deca Capital</li>
+        <li class="chip">Du Li Investment Ren</li>
+        <li class="chip">DZB Invest</li>
+        <li class="chip">Fan Li Technology</li>
+        <li class="chip">Fang Chuang Capital</li>
+        <li class="chip">Fang Tang</li>
+        <li class="chip">Fei Fan Capital</li>
+        <li class="chip">FinteChile</li>
+        <li class="chip">Force Capital</li>
+        <li class="chip">Fu Kun Capital</li>
+        <li class="chip">future pay</li>
+        <li class="chip">GAP</li>
+        <li class="chip">Giglio Ventures</li>
+        <li class="chip">Glanza Ventures</li>
+        <li class="chip">Gong Ji Technology</li>
+        <li class="chip">Guangdong AI Jian Yi AI Technology Co., Ltd.</li>
+        <li class="chip">Guangzhou Jin Kong Fund Management Co., Ltd.</li>
+        <li class="chip">Guangzhou Xiao Yu Investment Consulting Co., Ltd.</li>
+        <li class="chip">Guo Tai Ventures</li>
+        <li class="chip">Guoke Capital</li>
+        <li class="chip">Hangzhou Dao Bang Technology Co., Ltd.</li>
+        <li class="chip">Hexcraft</li>
+        <li class="chip">Hou Ji Capital</li>
+        <li class="chip">HT Investment</li>
+        <li class="chip">HTSC</li>
+        <li class="chip">Hu Yang Capital</li>
+        <li class="chip">Hua Cai Investment</li>
+        <li class="chip">Hua Ji Investment</li>
+        <li class="chip">Hua Zhen</li>
+        <li class="chip">Huage Capital</li>
+        <li class="chip">Huo Feng Capital</li>
+        <li class="chip">impaventures</li>
+        <li class="chip">IMPEX Capital Group</li>
+        <li class="chip">investsmartxp - assessor de investimentos</li>
+        <li class="chip">IVPAY</li>
+        <li class="chip">Jia Dao Capital</li>
+        <li class="chip">Jiacheng Capital</li>
+        <li class="chip">Jian Zhi Data Technology (Shanghai) Co., Ltd.</li>
+        <li class="chip">Jie Li Tian Shi Fund</li>
+        <li class="chip">Jin Yuan Securities</li>
+        <li class="chip">Kai Tai Capital</li>
+        <li class="chip">Kai Ying Network</li>
+        <li class="chip">Lan Hai Zhong Li Capital</li>
+        <li class="chip">Lan Se Guang Biao</li>
+        <li class="chip">Leaguer Venture Capital</li>
+        <li class="chip">Leony de Oliveira - Graduando em Tecnologo de Blockchain e financas descentralizadas</li>
+        <li class="chip">Lian Cloud Gang Xing Guang Hu Wen Lu Investment Kai Fa Co., Ltd.</li>
+        <li class="chip">LianLian Global</li>
+        <li class="chip">Lighthouse Capital</li>
+        <li class="chip">Ling Ling Technology</li>
+        <li class="chip">LinkcubeVentures</li>
+        <li class="chip">MachinePulse</li>
+        <li class="chip">Mai Ge Li Capital</li>
+        <li class="chip">meto capital</li>
+        <li class="chip">Mo Shi Tong Jin Qia</li>
+        <li class="chip">Nanjing Jiang Bei Xin Qu Chan Ye Investment Group Co., Ltd.</li>
+        <li class="chip">Neng Ke Technology</li>
+        <li class="chip">Newborn Town</li>
+        <li class="chip">No Capital</li>
+        <li class="chip">oceanpayment</li>
+        <li class="chip">Owner Invest</li>
+        <li class="chip">payermax</li>
+        <li class="chip">pinpoint</li>
+        <li class="chip">Prof Bitcoin - Fundador</li>
+        <li class="chip">puppyone</li>
+        <li class="chip">Qian Hai Jin Tou Investment Management (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Qing Tian Yi He Capital</li>
+        <li class="chip">Ran Hang Capital</li>
+        <li class="chip">RFO</li>
+        <li class="chip">Rio Crypto Hub</li>
+        <li class="chip">Sai Fu Investment Fund</li>
+        <li class="chip">San Qi Entertainment</li>
+        <li class="chip">Sands Talk Capital</li>
+        <li class="chip">Shan Dong Lin Bo Tong Investment Co., Ltd.</li>
+        <li class="chip">Shan Xi Ke Da Gao Xin Education Technology Investment</li>
+        <li class="chip">Group</li>
+        <li class="chip">Shanghai Cheng Tou Huan Fu Si Mu Fund Management Co., Ltd.</li>
+        <li class="chip">Shanghai Dai Ma Yi Xing Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Lin Gang Xin Pian Qu International Investment Fa</li>
+        <li class="chip">Zhan Co., Ltd.</li>
+        <li class="chip">Shanghai Shu Quan Shi Chuang Digital Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Xiao Dun Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Ye He Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Yong Cheng Information Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Zhou En Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shao Yin Technology Zhan Tou</li>
+        <li class="chip">Shen Hu</li>
+        <li class="chip">Shen Kai Hong Chan Tou</li>
+        <li class="chip">Shenzhen Du Yue Capital Investment Co., Ltd.</li>
+        <li class="chip">Shenzhen Guo Hua San Xin Fund Management Co., Ltd.</li>
+        <li class="chip">Shenzhen Hong Sheng Investment</li>
+        <li class="chip">Shenzhen Hui Sheng Yuan Wang Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Ji Lian Ji Yong Gao Xin Tou Chuang Ye Investment Co., Ltd.</li>
+        <li class="chip">Shenzhen Kai Ling Investment Co., Ltd.</li>
+        <li class="chip">Shenzhen Man Shan Zhi Tou Technology Co., Ltd.</li>
+        <li class="chip">Shoplazza</li>
+        <li class="chip">Si AI Wei Lai Technology Co., Ltd.</li>
+        <li class="chip">Si Yue Capital /Creatour</li>
+        <li class="chip">Sompo Holdings</li>
+        <li class="chip">Spruce Capital</li>
+        <li class="chip">SuiXingPay</li>
+        <li class="chip">Tai Dong Technology</li>
+        <li class="chip">Tian Ji Capital</li>
+        <li class="chip">Tian Ji Technology Investment</li>
+        <li class="chip">Tian Yi Capital</li>
+        <li class="chip">Tokenise.farm ltd</li>
+        <li class="chip">Transfero</li>
+        <li class="chip">Unlimit</li>
+        <li class="chip">Vantage</li>
+        <li class="chip">Vipshop</li>
+        <li class="chip">Wei Na Investment (Shenzhen)</li>
+        <li class="chip">x transfer</li>
+        <li class="chip">XbotPark</li>
+        <li class="chip">Xi Rong Ventures</li>
+        <li class="chip">Xiang Gang Shi Zi Shan Investment</li>
+        <li class="chip">Xiang Gang Zhi Shi Chan Quan Jiao Yi Suo</li>
+        <li class="chip">Xin Fang Capital</li>
+        <li class="chip">Xin Tian Ventures</li>
+        <li class="chip">Xing Mang Shu Chuang</li>
+        <li class="chip">Xing Na He Capital</li>
+        <li class="chip">Yi Bao Payment Co., Ltd.</li>
+        <li class="chip">Ying Feng Investment</li>
+        <li class="chip">Yong Run Investment (Hai Nan Co., Ltd.)</li>
+        <li class="chip">You Bang Insurance</li>
+        <li class="chip">Yuan Xing Technology</li>
+        <li class="chip">Yunmu Capital</li>
+        <li class="chip">Zealgroup</li>
+        <li class="chip">Zhe Jiang Qiang Nao Technology Co., Ltd.</li>
+        <li class="chip">Zhe Jiang Yi Shen Healthcare Investment Co., Ltd.</li>
+        <li class="chip">Zhong Cai</li>
+        <li class="chip">Zhong Guo Ren Min University /Guo Tai Hai Tong Securities</li>
+        <li class="chip">Zhong Guo Zhong Jin Cai Fu Securities Co., Ltd.</li>
+        <li class="chip">Zhong Ke Chuang Da Software Co., Ltd.</li>
+        <li class="chip">Zhong Nan Ventures Fund</li>
+        <li class="chip">Zhong Zi Yue Qian Technology Co., Ltd.</li>
+        <li class="chip">Zhu Bo Mei Shan Bao Shui Gang Qu Qing Yi Investment</li>
+        <li class="chip">Management Co., Ltd.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-red" id="global">
+  <div class="wrap">
+    <div class="label reveal">GLOBAL</div>
+    <h2 class="title reveal d1">Going Global, Consulting &amp; Professional Services</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Adidas</li>
+        <li class="chip">Akamai</li>
+        <li class="chip">AnyMind Group</li>
+        <li class="chip">BlueFocus</li>
+        <li class="chip">FanRuan Software</li>
+        <li class="chip">PlugandPlayGBA</li>
+        <li class="chip">Superlinear</li>
+        <li class="chip">A Li Cloud Computing Co., Ltd.</li>
+        <li class="chip">CLA Global</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">AI Wei Pin Pai</li>
+        <li class="chip">AIPin Pai Zhi Ku</li>
+        <li class="chip">An Bo Fu Wu She Ji</li>
+        <li class="chip">An Ke Technology</li>
+        <li class="chip">An Si Hui Zhi</li>
+        <li class="chip">ArcGrowthLLC</li>
+        <li class="chip">Bang Bang De Zeng Chang</li>
+        <li class="chip">Beijing AI Xing Zhi Lian Technology Co., Ltd.</li>
+        <li class="chip">Beijing Shi Wan Hu Dong</li>
+        <li class="chip">Beijing Yi Che Hu Dong Yan Gao Co., Ltd.</li>
+        <li class="chip">Beijing Yi Sheng Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Chao Ji Ge Ti (Shenzhen Xin Si Yan Gao)</li>
+        <li class="chip">chatcut</li>
+        <li class="chip">Chi He Chu Hai</li>
+        <li class="chip">Chi He Zeng Chang</li>
+        <li class="chip">ClawTime</li>
+        <li class="chip">cocoai</li>
+        <li class="chip">Consultor proprio</li>
+        <li class="chip">Contadora Cripto</li>
+        <li class="chip">DFT</li>
+        <li class="chip">FluxusPR&amp;MarketingLtd</li>
+        <li class="chip">Founder - ConsultatechAi</li>
+        <li class="chip">global hitss</li>
+        <li class="chip">GoGrowth</li>
+        <li class="chip">Guangzhou Jing Mi You Sheng She Ji Gong Zuo Shi</li>
+        <li class="chip">Guangzhou Ming Yi Consulting Co., Ltd.</li>
+        <li class="chip">Guangzhou Tai Dong Technology Co., Ltd.</li>
+        <li class="chip">Guo Da Management Consulting (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Han Shui Bo Shi Shenzhen Technology Co., Ltd.</li>
+        <li class="chip">Hangzhou Qin Yi Technology Co., Ltd.</li>
+        <li class="chip">Hibee</li>
+        <li class="chip">Hohem</li>
+        <li class="chip">Hua Gang Cloud Dai</li>
+        <li class="chip">Hui Zhi</li>
+        <li class="chip">Innoconcept International Ltd</li>
+        <li class="chip">innomoment</li>
+        <li class="chip">Innopaas</li>
+        <li class="chip">JE Labs</li>
+        <li class="chip">Jie Yue Xing Chen</li>
+        <li class="chip">Jing Zhun Technology</li>
+        <li class="chip">Lessie</li>
+        <li class="chip">lessie ai</li>
+        <li class="chip">Ling Ling Technology</li>
+        <li class="chip">Ling Po Technology</li>
+        <li class="chip">Lu Jia Zui Hui Ji Zhong Xin</li>
+        <li class="chip">LucidEdge</li>
+        <li class="chip">Mi Kai Duo Dian Hu Lian Wang Technology Co., Ltd.</li>
+        <li class="chip">Mo Ge Zhi Yuan</li>
+        <li class="chip">Mo Wu Sheng Chang</li>
+        <li class="chip">MomentumOpsLLC</li>
+        <li class="chip">Nan De Ren Zheng Jian Ce Co., Ltd.</li>
+        <li class="chip">Noiz AI</li>
+        <li class="chip">OCI</li>
+        <li class="chip">OpenClaw Asia</li>
+        <li class="chip">Phoenix Exponent</li>
+        <li class="chip">portal international</li>
+        <li class="chip">Qian Jue Shen Zhi</li>
+        <li class="chip">Qing Xin Technology</li>
+        <li class="chip">rr global comercio ltda</li>
+        <li class="chip">Shang Yu Technology</li>
+        <li class="chip">Shanghai Bo Long Peng Ke Xin Xi Consulting Co., Ltd.</li>
+        <li class="chip">Shanghai Chao Shi Yi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Fu Rui You Technology</li>
+        <li class="chip">Shanghai Jia Rong Consulting Management Co., Ltd.</li>
+        <li class="chip">Shanghai Jun Zhi</li>
+        <li class="chip">Shanghai Ka Bo Deng International Trade Co., Ltd.</li>
+        <li class="chip">Shanghai Mai Rui Cheng Zhi Ying Xiao Co., Ltd.</li>
+        <li class="chip">Shanghai Mei Cui</li>
+        <li class="chip">Shanghai Qi Ju Chuang Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Ting Xi Tan Jiang Qi Ye Consulting Co., Ltd.</li>
+        <li class="chip">Shanghai Tuo Fu Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Wei Ge Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Xiao Jie</li>
+        <li class="chip">Shanghai Yao Jing Trade Co., Ltd.</li>
+        <li class="chip">Shanghai Yi Yi Sheng Chuan Management Consulting Co., Ltd.</li>
+        <li class="chip">Shanghai Zhi Yi Zhi Xin Xi Fu Wu Co., Ltd.</li>
+        <li class="chip">Sheng Tang Digital Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Guang Zi Yue Dong Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen He Xin Management Consulting Co., Ltd.</li>
+        <li class="chip">Shenzhen Jun Te Lai Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Li Ke Zeng Chang Technology</li>
+        <li class="chip">Shenzhen Mo Ke Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Qing Song Kua Jing Co., Ltd.</li>
+        <li class="chip">Shenzhen Ren Er She Ji Co., Ltd.</li>
+        <li class="chip">Shenzhen Rui Lai Ya Intelligent Technology</li>
+        <li class="chip">Shenzhen Tuo Bang Gu Fen</li>
+        <li class="chip">Shenzhen Yi Jiu Ge Ren Pin Pai Consulting Co., Ltd.</li>
+        <li class="chip">Shenzhen Zeng Chang Network Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhi Ku Zi Chuan Pin Pai Ying Xiao Co., Ltd.</li>
+        <li class="chip">silksailtech</li>
+        <li class="chip">SNZ</li>
+        <li class="chip">Sonora Consultoria</li>
+        <li class="chip">Sourcy Global</li>
+        <li class="chip">stockwin</li>
+        <li class="chip">Tian Yuan Lu Shi Shi Wu Suo</li>
+        <li class="chip">Varsity Tech Pte Ltd</li>
+        <li class="chip">Vela agency</li>
+        <li class="chip">vinyl</li>
+        <li class="chip">VTT</li>
+        <li class="chip">WAVE</li>
+        <li class="chip">Wu Hu Shan Sheng Trade Co., Ltd.</li>
+        <li class="chip">XbitTech</li>
+        <li class="chip">Xiao Wa ai</li>
+        <li class="chip">XNode</li>
+        <li class="chip">Ying Yang Chuan Qi</li>
+        <li class="chip">Zhen Mai (Shanghai)Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Zhi Bo Consulting</li>
+        <li class="chip">Zhi Xiang Chu Hai</li>
+        <li class="chip">Zhuo Yue Tong Da</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-blue" id="media">
+  <div class="wrap">
+    <div class="label reveal">MEDIA</div>
+    <h2 class="title reveal d1">Media, Content, Events &amp; Communities</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">TED</li>
+        <li class="chip">Toutiao</li>
+        <li class="chip">Ximalaya</li>
+        <li class="chip">csdn</li>
+        <li class="chip">LEAP</li>
+        <li class="chip">Hex Trust Limited</li>
+        <li class="chip">RISE</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">AGA</li>
+        <li class="chip">Aha Creator</li>
+        <li class="chip">AIFun</li>
+        <li class="chip">APL- Xlink</li>
+        <li class="chip">Beijing Jin Xiu Culture Yi Zhu Co., Ltd.</li>
+        <li class="chip">Beijing Sou Hu Xin Media Information Technology Co., Ltd.</li>
+        <li class="chip">Chengdu Peng Peng Peng Culture Chuang Yi Co., Ltd.</li>
+        <li class="chip">ChicMic Studios</li>
+        <li class="chip">Dong Xing Tian Xia Culture Technology Co., Ltd.</li>
+        <li class="chip">ECI Awards</li>
+        <li class="chip">EPIC Connector</li>
+        <li class="chip">Event</li>
+        <li class="chip">flinkbrandcoach</li>
+        <li class="chip">Fu Le Xin Media Shenzhen Co., Ltd.</li>
+        <li class="chip">Fu Zhi Zhi Cloud Technology Co., Ltd.</li>
+        <li class="chip">Guo Li Culture Media</li>
+        <li class="chip">Hai Chuan Xue Chang (Shanghai) Culture Co., Ltd.</li>
+        <li class="chip">Hang Jie Cloud</li>
+        <li class="chip">Hangzhou Ji Guang Xin Zhi Culture Technology Co., Ltd.</li>
+        <li class="chip">Hangzhou Qu Chong Culture Media Co., Ltd.</li>
+        <li class="chip">HONGKONGNovAILimited</li>
+        <li class="chip">InquillAgency</li>
+        <li class="chip">Jian Ze Culture</li>
+        <li class="chip">Jiang Su Wu Kong Shi Jie Culture Technology Co., Ltd.</li>
+        <li class="chip">JobWizard</li>
+        <li class="chip">LA FOTO ESTUDIO</li>
+        <li class="chip">Lovgevity</li>
+        <li class="chip">Man Shan Zhi Tou Technology Co., Ltd.</li>
+        <li class="chip">MarcosCGArt</li>
+        <li class="chip">Meet &amp; Greet Events</li>
+        <li class="chip">Mian Bi Intelligence</li>
+        <li class="chip">Niu Dan Si Films (Shanghai) Co., Ltd.</li>
+        <li class="chip">OpenMind Event</li>
+        <li class="chip">Ramaka Limited</li>
+        <li class="chip">Routed AI, Inc</li>
+        <li class="chip">Shanghai Hai Lao Peng You Culture Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Ling Er Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Sui Yue Intelligent Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Xin Lang Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Yan Chu Culture Chuan Bo Co., Ltd.</li>
+        <li class="chip">Shanghai Ye Can Culture Co., Ltd.</li>
+        <li class="chip">Shanghai Ying Tong Network Technology Co., Ltd.</li>
+        <li class="chip">Shanghai You Suo Jian Lu Technology Culture Gong Zuo Shi</li>
+        <li class="chip">ShanghaiR2infotechnology</li>
+        <li class="chip">Shenzhen Du Shi Chuang Xiang Culture Chuan Bo Co., Ltd.</li>
+        <li class="chip">Shenzhen Ling Jian Business Co., Ltd.</li>
+        <li class="chip">Shenzhen Sheng Cheng Shi Nei Rong Films Co., Ltd.</li>
+        <li class="chip">Shenzhen Sheng Di Film &amp; TV Culture Media Co., Ltd.</li>
+        <li class="chip">Shenzhen Shi Fang Du</li>
+        <li class="chip">Shenzhen Shui Guo Mao Media Co., Ltd.</li>
+        <li class="chip">Videoplus</li>
+        <li class="chip">Vilebrequin</li>
+        <li class="chip">Wavi Studio</li>
+        <li class="chip">Waytoagi</li>
+        <li class="chip">Xian Meng Qing Xuan</li>
+        <li class="chip">Xiang Yue Technology</li>
+        <li class="chip">Xin Mi Qing Media (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Xing Que</li>
+        <li class="chip">Xiong Mao Chu Hai</li>
+        <li class="chip">Yan Gao Yu Ying Xiao Xing Ye Zi You Zhi Ye Zhe</li>
+        <li class="chip">Ye Guo Media</li>
+        <li class="chip">Yi Neng Liang Technology</li>
+        <li class="chip">Yin Li Media</li>
+        <li class="chip">Yin Ling Gu Shi She Qun</li>
+        <li class="chip">YuArt</li>
+        <li class="chip">Yue Lai Yue Hao Culture Chuan Bo</li>
+        <li class="chip">Yue Xiu Film &amp; TV</li>
+        <li class="chip">YUNITECHLIMITED</li>
+        <li class="chip">Zhi Wai Culture</li>
+        <li class="chip">Zhong Xin Shu Dian</li>
+        <li class="chip">Zi Bo Yu Long Jing Mao Co., Ltd.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-green" id="talent">
+  <div class="wrap">
+    <div class="label reveal">TALENT</div>
+    <h2 class="title reveal d1">Education, Research &amp; Talent</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">A*STAR</li>
+        <li class="chip">Fudan University</li>
+        <li class="chip">HKU</li>
+        <li class="chip">Shanghai AI Lab</li>
+        <li class="chip">Sun Yat-sen University</li>
+        <li class="chip">SUSTech</li>
+        <li class="chip">Ke Da Xun Fei</li>
+        <li class="chip">Hua Zhong Technology University</li>
+        <li class="chip">Xiang Gang University</li>
+        <li class="chip">Xin Jia Po Guo Li University</li>
+        <li class="chip">Nanjing Li Gong University</li>
+        <li class="chip">Zhe Jiang University AI Ding Bao Lian He College</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">AI Ji Jie</li>
+        <li class="chip">AI OPTIMISATION LAB</li>
+        <li class="chip">AxisLab</li>
+        <li class="chip">Ban Ling Fei Du</li>
+        <li class="chip">Beijing Wei Lan Xin Yuan Technology Co., Ltd.</li>
+        <li class="chip">Cefet/RJ</li>
+        <li class="chip">CESAR</li>
+        <li class="chip">Chang Hai Yi Yuan</li>
+        <li class="chip">Diversifying.io</li>
+        <li class="chip">Fu Dan University Zhong Liu Yi Yuan</li>
+        <li class="chip">Ha Luo Guo Ji Xue Xiao</li>
+        <li class="chip">Hangzhou He Mu Yuan Yuan Technology Co., Ltd.</li>
+        <li class="chip">impact.com</li>
+        <li class="chip">Instituto Ecoa</li>
+        <li class="chip">Mei Guo AI Gong Cheng Xue Hui AI Forensic Engineering</li>
+        <li class="chip">Institute</li>
+        <li class="chip">MyDearLab</li>
+        <li class="chip">MYStudio</li>
+        <li class="chip">Nanjing Hou Sheng Culture</li>
+        <li class="chip">Niu Jin University Quan Qiu Qu Yu Research Institute</li>
+        <li class="chip">Nuo Ding Yi University</li>
+        <li class="chip">openschool</li>
+        <li class="chip">Puc Rio</li>
+        <li class="chip">Ren Rui Talent</li>
+        <li class="chip">Santec USA</li>
+        <li class="chip">Shan Dong Di Yi Yi Ke University</li>
+        <li class="chip">Shanghai Bo Shi You Cai Education Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Jing Ge Technology</li>
+        <li class="chip">Shanghai Kai Yuan Education Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Li Gong University</li>
+        <li class="chip">Shanghai Liang Yuan Yong Xian AI Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Mi Li Trade Co., Ltd.</li>
+        <li class="chip">Shanghai Pi Shi Culture</li>
+        <li class="chip">Shanghai Pu Pu Pu Education Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Tuo Ken Xiang Xian Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Wang Fu Xin Xi Technology Co., Ltd.</li>
+        <li class="chip">Shanghai Zhi Qing Information Technology Co., Ltd.</li>
+        <li class="chip">Shen Qiu She Qu (DeepSeek.club)</li>
+        <li class="chip">Shenzhen Si Ke Te Education Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Ying Duan Chu Hai Education Consulting Co., Ltd.</li>
+        <li class="chip">Si Chuang Hui Business Consulting Co., Ltd.</li>
+        <li class="chip">Te Zan atypica.ai</li>
+        <li class="chip">TensorsLab</li>
+        <li class="chip">TTC</li>
+        <li class="chip">Wei Ge Education Technology (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Xiao Mi Gu Cang College</li>
+        <li class="chip">Yang Cong College</li>
+        <li class="chip">Zhe Jiang Da E Su Yuan Technology Co., Ltd.</li>
+        <li class="chip">Zhu Bo Yi Lu Qi Hang Education Technology Co., Ltd.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-yellow" id="health">
+  <div class="wrap">
+    <div class="label reveal">HEALTH</div>
+    <h2 class="title reveal d1">Healthcare &amp; Life Sciences</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Hospital Albert Einstein</li>
+        <li class="chip">Oswaldo Cruz Foundation</li>
+        <li class="chip">Mei Nian Healthcare</li>
+        <li class="chip">Silimed</li>
+        <li class="chip">axbio Inc</li>
+        <li class="chip">PharmaCircle</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">ASA Robotics Limited</li>
+        <li class="chip">Chang Sha Yun Zhi Yan Biotech Technology Co., Ltd.</li>
+        <li class="chip">Cloud Zhou Biotech</li>
+        <li class="chip">FlowSight</li>
+        <li class="chip">Ling Po Intelligence</li>
+        <li class="chip">Sai Ling Wei Li</li>
+        <li class="chip">Shanghai Yin Zhou Intelligent Technology</li>
+        <li class="chip">Shenzhen Qian Hai Ao Mei Biotech Technology Gong Si</li>
+        <li class="chip">Tai Kang Yang Lao Medical web4Shi Ye Bu</li>
+        <li class="chip">Xi You Biotech</li>
+        <li class="chip">Yi Lin Qi</li>
+        <li class="chip">Yuan Xu Li Shenzhen Biotech Technology Co., Ltd.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-red" id="industry">
+  <div class="wrap">
+    <div class="label reveal">INDUSTRY</div>
+    <h2 class="title reveal d1">Industry, Energy, Mobility &amp; Supply Chain</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Bi Ya Di Co., Ltd.</li>
+        <li class="chip">Bi Ya Di Automotive Gong Ye</li>
+        <li class="chip">Mingyang Smart Energy</li>
+        <li class="chip">Zoomlion</li>
+        <li class="chip">Zhong Guo Jiao Tong Jian She Group</li>
+        <li class="chip">Zhong Guo Jian Cai</li>
+        <li class="chip">Xometry</li>
+        <li class="chip">CPFL Energia</li>
+        <li class="chip">Ma Yi Jin Fu</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">3forge</li>
+        <li class="chip">AHAKNOWLLC</li>
+        <li class="chip">arcbox.Inc</li>
+        <li class="chip">Beijing Mo Zhi Rui Lian Technology Co., Ltd.</li>
+        <li class="chip">Bin Jiang Intelligence</li>
+        <li class="chip">BRAM Offshore</li>
+        <li class="chip">Forca Total Distribuidora</li>
+        <li class="chip">Hangzhou Shi Jian Ji Yuan Technology Co., Ltd.</li>
+        <li class="chip">Hangzhou Xing Zhi Qi Ming Technology Co., Ltd.</li>
+        <li class="chip">Hu Nan Heng Ye Teng Fei Gong Cheng Consulting Co., Ltd.</li>
+        <li class="chip">Jie Fu AI Pi Xin Cai Liao Co., Ltd.</li>
+        <li class="chip">Lang Chao Cloud Zhou Gong Ye Hu Lian Wang Co., Ltd.</li>
+        <li class="chip">Lang Hua Logistics</li>
+        <li class="chip">mcn</li>
+        <li class="chip">MistAi</li>
+        <li class="chip">Mu Qian AIChuang Ye Zhong, Qian Ju Han</li>
+        <li class="chip">REI DISTRIBUIDORA</li>
+        <li class="chip">Ruan Tong</li>
+        <li class="chip">Sailglobal</li>
+        <li class="chip">Shanghai Sen You Technology Co., Ltd.</li>
+        <li class="chip">Shark Seguranca e Vigilancia</li>
+        <li class="chip">Shenzhen AI Mi Kua Jing Supply Chain Management Co., Ltd.</li>
+        <li class="chip">Shenzhen An Mei Xian Shi Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Bin Jiang Intelligence Zhuang Bei Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen btl Co., Ltd.</li>
+        <li class="chip">Shenzhen Huo Huo Tu Zhi Hui Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Mo Dun Huan Bao Xin Cai Liao Co., Ltd.</li>
+        <li class="chip">Shenzhen Yi Chi Xin Energy Technology Co., Ltd.</li>
+        <li class="chip">Shenzhen Yi Fei Yang</li>
+        <li class="chip">Shenzhen Zheng Long Wei Ye Technology Co., Ltd.</li>
+        <li class="chip">Shi Mao Xing Qiu</li>
+        <li class="chip">Wei Dao Technology</li>
+        <li class="chip">Xiang Gang Ling Yu Technology Co., Ltd.</li>
+        <li class="chip">Xin Chong Gong Han</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-blue" id="consumer">
+  <div class="wrap">
+    <div class="label reveal">CONSUMER</div>
+    <h2 class="title reveal d1">Consumer, Retail, Travel &amp; Lifestyle</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Zhou Ji Jiu Dian Group</li>
+        <li class="chip">Ou Pai Jia Ju Group Co., Ltd.</li>
+        <li class="chip">Qian Jin Co., Ltd.</li>
+        <li class="chip">Qian Jin Fu Shi Co., Ltd.</li>
+        <li class="chip">Tu Ling Travel</li>
+        <li class="chip">SkyNSeaVoyage</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">AixinPet</li>
+        <li class="chip">AIYun Dong</li>
+        <li class="chip">Bravokids</li>
+        <li class="chip">Chef Bob Alimentos Naturais</li>
+        <li class="chip">Fei Er Ding International Trade Gong Si</li>
+        <li class="chip">FIC SUPERFOODS</li>
+        <li class="chip">Hai Kou Ge Nuo De Trade Co., Ltd.</li>
+        <li class="chip">Hangzhou Yue Shang Jiu Dian Management Co., Ltd.</li>
+        <li class="chip">INOVASHOP</li>
+        <li class="chip">Inovashop Utilidades Domesticas</li>
+        <li class="chip">Jiang Su Sen Gong International Trade Co., Ltd.</li>
+        <li class="chip">Jin Li Du Zhu Bao Co., Ltd.</li>
+        <li class="chip">LB Trips</li>
+        <li class="chip">Nanjing Jian Sen Information Technology Co., Ltd.</li>
+        <li class="chip">Presto Drycleaners</li>
+        <li class="chip">Recreio</li>
+        <li class="chip">Retail Copilot</li>
+        <li class="chip">Shanghai Jian Lai Bao Trade Co., Ltd.</li>
+        <li class="chip">Shen Pu Jing Ji Xin Xi</li>
+        <li class="chip">Shenzhen A De Sai Trade Co., Ltd.</li>
+        <li class="chip">Shenzhen Jian Yu Ji Trade Co., Ltd.</li>
+        <li class="chip">Shenzhen Miao Pin Trade Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhou Yu Trade Co., Ltd.</li>
+        <li class="chip">Xiao Yao You</li>
+        <li class="chip">Yu Ru Trade</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-green" id="public">
+  <div class="wrap">
+    <div class="label reveal">PUBLIC</div>
+    <h2 class="title reveal d1">Government, Associations &amp; Public Institutions</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">AHK</li>
+        <li class="chip">Governo do Estado do Rio de Janeiro</li>
+        <li class="chip">Shenzhen Artificial Intelligence Industry Association</li>
+        <li class="chip">Xiang Gang Zhong Wen University</li>
+        <li class="chip">HKBA</li>
+        <li class="chip">Zhong Guo Jie Neng Association</li>
+        <li class="chip">Fintech Chile Association</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">Dong Xi Chu Hai</li>
+        <li class="chip">genaisummit</li>
+        <li class="chip">Gong Rong Ya Zhou Ke Chuang Fund</li>
+        <li class="chip">Huai Nan Shi Zheng Fu Zhu Shenzhen Lian Luo Chu</li>
+        <li class="chip">International He Nan Qing Nian Shang Association</li>
+        <li class="chip">Nan Zhu Zhi Ye Ji Zhu University Kua Jing Dian Shang Gong</li>
+        <li class="chip">Zuo Shi /Dian Shang Association</li>
+        <li class="chip">Nao Meng Intelligent Technology Xiang Gang Co., Ltd.</li>
+        <li class="chip">Xin Jia Po Chuang Ye Association Yu Fu Hua Qi</li>
+        <li class="chip">Xun Lu Intelligent Technology &amp;Jiao Da She Ji Management Research Institute</li>
+        <li class="chip">Yunxiu Capital</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cat cat-yellow" id="other">
+  <div class="wrap">
+    <div class="label reveal">OTHER</div>
+    <h2 class="title reveal d1">Other / General</h2>
+    <ul class="chips featured reveal d2">
+        <li class="chip">Ping An</li>
+        <li class="chip">Sohu</li>
+        <li class="chip">Vanke</li>
+        <li class="chip">Kingdee</li>
+        <li class="chip">thundersoft</li>
+        <li class="chip">Antom</li>
+        <li class="chip">Chang Hong Group</li>
+        <li class="chip">Mobvoi</li>
+        <li class="chip">aecom</li>
+        <li class="chip">Gao Ling Jing Wei</li>
+    </ul>
+    <div class="more-panel">
+      <button class="more-btn" type="button" aria-expanded="false">More</button>
+      <ul class="chips rest" hidden>
+        <li class="chip">8 Circle</li>
+        <li class="chip">ABES</li>
+        <li class="chip">ABRT</li>
+        <li class="chip">Acerblend</li>
+        <li class="chip">AlphaLadderGroup</li>
+        <li class="chip">Amalfi</li>
+        <li class="chip">Amaris</li>
+        <li class="chip">ARLII</li>
+        <li class="chip">Atlas</li>
+        <li class="chip">Bai Li</li>
+        <li class="chip">Bao Dun Jia</li>
+        <li class="chip">Bei Da Shen Yan Yuan</li>
+        <li class="chip">Bei Fu</li>
+        <li class="chip">Beijing Zhen Xuan Network</li>
+        <li class="chip">Bian Wu Ji</li>
+        <li class="chip">Bizlysis</li>
+        <li class="chip">Bliink</li>
+        <li class="chip">BlockTec</li>
+        <li class="chip">Bonanato</li>
+        <li class="chip">Bontop</li>
+        <li class="chip">CDP</li>
+        <li class="chip">Chang Nian Chang Fu</li>
+        <li class="chip">Chao Ji Ge Ti</li>
+        <li class="chip">Chao Liu Ge Ge</li>
+        <li class="chip">Cheng Tai</li>
+        <li class="chip">Chengdu Dong Bu Xin Qu Tou Cu Ju Zhu Shen Ban</li>
+        <li class="chip">Clustter</li>
+        <li class="chip">cms</li>
+        <li class="chip">CogneraInc.</li>
+        <li class="chip">Conect print</li>
+        <li class="chip">Da Lian Da Holdings</li>
+        <li class="chip">dabanzi</li>
+        <li class="chip">DayWise</li>
+        <li class="chip">Deeplumen</li>
+        <li class="chip">Deng Feng Fu Jing</li>
+        <li class="chip">Dharma Arquitetura</li>
+        <li class="chip">Di Shang Tie Che Fu Network</li>
+        <li class="chip">Digitaste PTE. LTD.</li>
+        <li class="chip">Distrito</li>
+        <li class="chip">Dizdoc</li>
+        <li class="chip">DN.com</li>
+        <li class="chip">Dong Liang</li>
+        <li class="chip">Doodle</li>
+        <li class="chip">DREAM</li>
+        <li class="chip">Du Li Ge Ti</li>
+        <li class="chip">entrepreneur</li>
+        <li class="chip">EPS</li>
+        <li class="chip">Evecount</li>
+        <li class="chip">Failfast</li>
+        <li class="chip">Falouchat</li>
+        <li class="chip">Fei Fan</li>
+        <li class="chip">Fei Fan Chan Yan</li>
+        <li class="chip">Fei Shu Shen Nuo</li>
+        <li class="chip">Fei Ying</li>
+        <li class="chip">Fen Zi Fen Mu</li>
+        <li class="chip">festage</li>
+        <li class="chip">Firdoir</li>
+        <li class="chip">FNSH</li>
+        <li class="chip">FORME</li>
+        <li class="chip">Foshan Hai Ke Guang Xue Co., Ltd.</li>
+        <li class="chip">FOSHO</li>
+        <li class="chip">fossa</li>
+        <li class="chip">Gai Ge Wang Shenzhen Pin Dao</li>
+        <li class="chip">Gang Ke Da Chuang Xin Zhuan Hua Co., Ltd.</li>
+        <li class="chip">gap</li>
+        <li class="chip">Genesis</li>
+        <li class="chip">GENESIS-VTS</li>
+        <li class="chip">Glozic</li>
+        <li class="chip">Gong Sheng Cai Dao</li>
+        <li class="chip">Gu Dong Intelligence</li>
+        <li class="chip">Guan Tong Ze Ren Co., Ltd.</li>
+        <li class="chip">Guangdong Zhi An Xin</li>
+        <li class="chip">Guangzhou Qian Suo Hui</li>
+        <li class="chip">Guangzhou Shui Xiong Entertainment</li>
+        <li class="chip">ha7ch</li>
+        <li class="chip">Hai Rou Chuang Xin</li>
+        <li class="chip">Hai Tu Intelligence</li>
+        <li class="chip">Han Wen Intelligence</li>
+        <li class="chip">Hangzhou Yu Guang</li>
+        <li class="chip">Hearth</li>
+        <li class="chip">Hei Tu Di</li>
+        <li class="chip">Hua Ge Holdings (Shenzhen) Co., Ltd.</li>
+        <li class="chip">Hua Shang Lu Shi Shi Wu Suo</li>
+        <li class="chip">Hua Shuo</li>
+        <li class="chip">huadian</li>
+        <li class="chip">Huan Yu</li>
+        <li class="chip">huayeee</li>
+        <li class="chip">Hui Tong</li>
+        <li class="chip">Huo Shan</li>
+        <li class="chip">Huo Shan Yin Qing</li>
+        <li class="chip">hyperforge</li>
+        <li class="chip">Ibrawork</li>
+        <li class="chip">ICSpace</li>
+        <li class="chip">IEST Group | Lark</li>
+        <li class="chip">Imaxksy</li>
+        <li class="chip">Influki</li>
+        <li class="chip">Infotec</li>
+        <li class="chip">Instavar</li>
+        <li class="chip">interlance</li>
+        <li class="chip">iRun</li>
+        <li class="chip">iRun Clube +</li>
+        <li class="chip">Ji Fan Liu Xing</li>
+        <li class="chip">Jiang Men Zheng Hao Mo Tuo Che Co., Ltd.</li>
+        <li class="chip">Jiang Su Hai Zhou Wen Lu Group Co., Ltd.</li>
+        <li class="chip">Ju Cai Cai</li>
+        <li class="chip">Ju Huo Chan Lian</li>
+        <li class="chip">KAPL</li>
+        <li class="chip">Kinliu</li>
+        <li class="chip">KLARyATA</li>
+        <li class="chip">knowhere</li>
+        <li class="chip">Knowlee</li>
+        <li class="chip">Kuai Jue Ce</li>
+        <li class="chip">Kun Lun Mo Wei</li>
+        <li class="chip">Kun Teng Neng Ke (Shanghai)Ji Zhu Co., Ltd.</li>
+        <li class="chip">LAFA</li>
+        <li class="chip">Lan Di Zhong Ya Qu Yu Lu Shi Shi Wu Suo</li>
+        <li class="chip">Lang Hua Group</li>
+        <li class="chip">Le Ka</li>
+        <li class="chip">Li He Hua Rui</li>
+        <li class="chip">Lian Shu</li>
+        <li class="chip">Ling Si Xian Jian</li>
+        <li class="chip">Liu &amp; Cia</li>
+        <li class="chip">Lovipal</li>
+        <li class="chip">Lu Shi Shi Wu Suo</li>
+        <li class="chip">LucidEdgeLucius</li>
+        <li class="chip">lulu</li>
+        <li class="chip">LUNAMENTAL</li>
+        <li class="chip">Lykno</li>
+        <li class="chip">Ma Yi International</li>
+        <li class="chip">Mare process</li>
+        <li class="chip">Maxprocess</li>
+        <li class="chip">MbMax</li>
+        <li class="chip">Medcon</li>
+        <li class="chip">Mei Li Yi Sheng</li>
+        <li class="chip">Meng Li</li>
+        <li class="chip">Meng Tuo</li>
+        <li class="chip">Ming Shi</li>
+        <li class="chip">Minve</li>
+        <li class="chip">Mo He</li>
+        <li class="chip">Mo Jing Zhi Chuang</li>
+        <li class="chip">Mo Wei Si Ling</li>
+        <li class="chip">Mo You Yin Li</li>
+        <li class="chip">Monglo</li>
+        <li class="chip">Nan Hua Xin Cai</li>
+        <li class="chip">NewX</li>
+        <li class="chip">Nextfuture</li>
+        <li class="chip">NIDO</li>
+        <li class="chip">Niu Ma Jun Shi</li>
+        <li class="chip">novastar</li>
+        <li class="chip">Noverse Inc.</li>
+        <li class="chip">Oitchau</li>
+        <li class="chip">Ora</li>
+        <li class="chip">Ouraca</li>
+        <li class="chip">Pallante</li>
+        <li class="chip">PBOS</li>
+        <li class="chip">piglet light</li>
+        <li class="chip">Prelaunch Group Inc.</li>
+        <li class="chip">Qi Fen Xiang</li>
+        <li class="chip">Qi Mao</li>
+        <li class="chip">Qi Yu Bi Ji</li>
+        <li class="chip">Qian Hai Dong Jiang Shenzhen</li>
+        <li class="chip">Qian Hai Fang Zhou Zi Chan Management Co., Ltd.</li>
+        <li class="chip">Qing Dao Ren Da Gao Yan Yuan</li>
+        <li class="chip">Qing Mao Intelligence</li>
+        <li class="chip">Qing Meng Qi Ye Management Co., Ltd.</li>
+        <li class="chip">Qing Shan Xin Xi</li>
+        <li class="chip">Quan Qiu Ding Zhi Wang</li>
+        <li class="chip">Quantus</li>
+        <li class="chip">QuickCEP</li>
+        <li class="chip">Rede Parcerias</li>
+        <li class="chip">Rui Lang</li>
+        <li class="chip">Rui Zhen, Zi Wu Xian, Beecoming</li>
+        <li class="chip">Salba Singapore</li>
+        <li class="chip">Sesc Rio</li>
+        <li class="chip">Shanghai Lang Dao</li>
+        <li class="chip">Shen Tai Ji</li>
+        <li class="chip">SheNicest</li>
+        <li class="chip">Shenzhen Bai Shi Wen Tong Xun Co., Ltd.</li>
+        <li class="chip">Shenzhen Bao Ye Group</li>
+        <li class="chip">Shenzhen Chuan Qi Zhi Zao</li>
+        <li class="chip">Shenzhen Fu Tu</li>
+        <li class="chip">Shenzhen Huan Ce Wei Jian Ce Co., Ltd.</li>
+        <li class="chip">Shenzhen Hui Yo iGong Si</li>
+        <li class="chip">Shenzhen Ju Xing Wei Lai Xin Xi Fu Wu Co., Ltd.</li>
+        <li class="chip">Shenzhen Ke Chuang Yuan</li>
+        <li class="chip">Shenzhen Ke Shi Bao</li>
+        <li class="chip">Shenzhen Liu Sheng Intelligence Chuang Xin Co., Ltd.</li>
+        <li class="chip">Shenzhen Mo Sheng Yin Le Group</li>
+        <li class="chip">Shenzhen Peng Bo Zhi Shi</li>
+        <li class="chip">Shenzhen Peng Hu Shang She</li>
+        <li class="chip">Shenzhen Qian Hai Dong Jiang</li>
+        <li class="chip">Shenzhen Rui Ming Da Shi Ye Co., Ltd.</li>
+        <li class="chip">Shenzhen San He Shi Ye Co., Ltd.</li>
+        <li class="chip">Shenzhen Si Xiang Zong Heng</li>
+        <li class="chip">Shenzhen Teng Chuang Network Ji Zhu Co., Ltd.</li>
+        <li class="chip">Shenzhen Xiang Su</li>
+        <li class="chip">Shenzhen Xiao Bu Network</li>
+        <li class="chip">Shenzhen Yi He Chuang Xin</li>
+        <li class="chip">Shenzhen Yin Ke Intelligence Co., Ltd.</li>
+        <li class="chip">Shenzhen Yu Hao Shi Ye Fa Zhan Co., Ltd.</li>
+        <li class="chip">Shenzhen Yuan Bo Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhong Ke Chang Cheng Ji Zhu Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhong Ke Jian Ji Zhu Co., Ltd.</li>
+        <li class="chip">Shenzhen Zhong Zhao Neng Ji Zhu Co., Ltd.</li>
+        <li class="chip">Sherwintradingcompany</li>
+        <li class="chip">Shi Yue Kong Jian</li>
+        <li class="chip">Singul</li>
+        <li class="chip">SparkRing</li>
+        <li class="chip">Spryx</li>
+        <li class="chip">Stellar Brazil - Ambassador</li>
+        <li class="chip">StrutInc</li>
+        <li class="chip">Su Gou Business</li>
+        <li class="chip">sumplus</li>
+        <li class="chip">Tai Lei Zi Group</li>
+        <li class="chip">TasqClass</li>
+        <li class="chip">Tec-Do 2.0</li>
+        <li class="chip">The Cavan Group</li>
+        <li class="chip">Top One</li>
+        <li class="chip">TopsGroup</li>
+        <li class="chip">Trust Link Vietnam</li>
+        <li class="chip">TunanIndustry</li>
+        <li class="chip">Turix</li>
+        <li class="chip">Umanizer</li>
+        <li class="chip">Varejo + Industria + Tecnologia - CIO e Conselheira</li>
+        <li class="chip">Vayatu</li>
+        <li class="chip">VidAU</li>
+        <li class="chip">Video editor</li>
+        <li class="chip">Vortex Check</li>
+        <li class="chip">Wa Te Shu Ke</li>
+        <li class="chip">Wai Yu Yun Ying Gong Si</li>
+        <li class="chip">Wang Shuo Xin Xi</li>
+        <li class="chip">WebX</li>
+        <li class="chip">WeMeet</li>
+        <li class="chip">WENBEILi.com</li>
+        <li class="chip">wezo</li>
+        <li class="chip">Wo Sou Network</li>
+        <li class="chip">WPG</li>
+        <li class="chip">Wu Ji Network</li>
+        <li class="chip">Xiang Gang Xin Da Tong</li>
+        <li class="chip">Xiang Teng Qi Ye Management</li>
+        <li class="chip">Xiao Pi</li>
+        <li class="chip">Xin Chong</li>
+        <li class="chip">Xin Yuan</li>
+        <li class="chip">Xing Qiu Bu Shou</li>
+        <li class="chip">Xing Yu Hu Lian</li>
+        <li class="chip">Xu Ri Chang Zhao Management Co., Ltd.</li>
+        <li class="chip">Xun Yuan Group Co., Ltd.</li>
+        <li class="chip">Yan Qing Zhi Yuan</li>
+        <li class="chip">Yi Cheng</li>
+        <li class="chip">Yi Jie Wu Xian</li>
+        <li class="chip">Yi Pai</li>
+        <li class="chip">Yin Te Di</li>
+        <li class="chip">Ying Ke Group</li>
+        <li class="chip">Yong Bao Zhi Xu</li>
+        <li class="chip">You Yuan Liang Meng</li>
+        <li class="chip">Yuan He Yuan Shu Ke</li>
+        <li class="chip">Yue Zhi An Mian</li>
+        <li class="chip">Zhi Hua Di Yuan</li>
+        <li class="chip">Zhi Tuo</li>
+        <li class="chip">Zhong Chuang Neng (Shenzhen)Ji Zhu Co., Ltd.</li>
+        <li class="chip">Zhong Pu Jing Mao Zhong Xin</li>
+        <li class="chip">Zhong Sheng</li>
+        <li class="chip">Zhou Zhou Hei Ke Song Zi Shan Jin Chu Kou Zocus</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/#pillars">What We Do</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Community</h5>
+      <ul>
+        <li><a href="mailto:monica@agivilla.com">Apply to Join</a></li>
+        <li><a href="/#summit">GO SUMMIT 2026</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="/#team">Team</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/chinabymonica/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa. All rights reserved.</div>
+    <div>agivilla.com/community</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const list = btn.parentElement.querySelector('.rest');
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.textContent = open ? 'More' : 'Less';
+      if (open) list.setAttribute('hidden', '');
+      else list.removeAttribute('hidden');
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 20 ? 'rgba(0,0,0,0.82)' : 'rgba(0,0,0,0.6)';
+  }, {passive:true});
+</script>
+</body>
+</html>
