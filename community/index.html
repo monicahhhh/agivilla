@@ -125,7 +125,8 @@
   .cat-blue .chips.featured .chip{border-color:rgba(66,133,244,.35);background:rgba(66,133,244,.08)}
   .cat-green .chips.featured .chip{border-color:rgba(52,168,83,.35);background:rgba(52,168,83,.08)}
   .cat-yellow .chips.featured .chip{border-color:rgba(251,188,5,.35);background:rgba(251,188,5,.08)}
-  .chips.rest{margin-top:14px}
+  .chips.rest{display:none;margin-top:14px}
+  .chips.rest.is-open{display:flex}
   .chips.rest .chip{color:var(--fg-dim)}
 
   .more-panel{margin-top:22px}
@@ -1656,8 +1657,7 @@
       const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
       btn.textContent = open ? 'More' : 'Less';
-      if (open) list.setAttribute('hidden', '');
-      else list.removeAttribute('hidden');
+      list.classList.toggle('is-open', !open);
     });
   });
 
