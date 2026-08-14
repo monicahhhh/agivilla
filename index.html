@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>AGI Villa — Where China Tech Meets the World</title>
-<meta name="description" content="AGI Villa is the global bridge for China's next generation of AI and technology companies — a living community of 3,000+ founders connecting to global capital, customers and markets." />
+<title>AGI Villa — Where Innovators Meet the World</title>
+<meta name="description" content="AGI Villa is the two-way bridge between China's tech ecosystem and the world — a curated community of 3,000+ founders exchanging capital, products, markets, talent, and playbooks." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* brand colors from logo */
     --red:#EA4335;
     --blue:#4285F4;
     --green:#34A853;
@@ -86,7 +85,7 @@
     transition:transform .2s ease, box-shadow .2s ease;
   }
   .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(255,255,255,.22)}
-  @media(max-width:720px){.nav-links{display:none}}
+  @media(max-width:860px){.nav-links{display:none}}
 
   /* ============ HERO ============ */
   .hero{
@@ -246,6 +245,64 @@
   @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:480px){.stats{grid-template-columns:1fr}}
 
+  /* ============ BRIDGE (two-way) ============ */
+  .bridge{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;
+    margin-top:64px;
+  }
+  .bridge-card{
+    border:1px solid var(--line);border-radius:22px;padding:36px 32px;
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+    position:relative;overflow:hidden;
+  }
+  .bridge-card::before{
+    content:"";position:absolute;inset:0 auto 0 0;width:3px;
+  }
+  .bridge-card.china::before{background:var(--red)}
+  .bridge-card.world::before{background:var(--blue)}
+  .bridge-dir{
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:10px;
+  }
+  .bridge-card.china .bridge-dir{color:var(--red)}
+  .bridge-card.world .bridge-dir{color:var(--blue)}
+  .bridge-card h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:14px}
+  .bridge-card p{color:var(--fg-dim);font-size:15px;line-height:1.7}
+  .bridge-mid{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;min-width:72px;color:var(--fg-dimmer);font-size:11px;
+    letter-spacing:.2em;text-transform:uppercase;
+  }
+  .bridge-arrows{
+    width:48px;height:48px;border-radius:50%;
+    border:1px solid var(--line-2);
+    display:grid;place-items:center;
+    background:rgba(255,255,255,.04);
+  }
+  .bridge-arrows svg{width:22px;height:22px;stroke:var(--yellow)}
+  @media(max-width:900px){
+    .bridge{grid-template-columns:1fr;gap:16px}
+    .bridge-mid{flex-direction:row;min-width:0;padding:8px 0}
+  }
+
+  /* ============ WHY ============ */
+  .why{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:64px;
+  }
+  .why-card{
+    border:1px solid var(--line);border-radius:22px;padding:36px 32px;
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+  }
+  .why-kicker{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    font-weight:600;margin-bottom:14px;
+  }
+  .why-card.gap .why-kicker{color:var(--red)}
+  .why-card.answer .why-kicker{color:var(--green)}
+  .why-card h3{font-size:24px;font-weight:600;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+  .why-card p{color:var(--fg-dim);font-size:15px;line-height:1.7}
+  @media(max-width:720px){.why{grid-template-columns:1fr}}
+
   /* ============ PILLARS ============ */
   .pillars{
     display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px;
@@ -253,7 +310,7 @@
   .pillar{
     position:relative;background:linear-gradient(180deg,#0b0b0b,#050505);
     border:1px solid var(--line);border-radius:22px;
-    padding:36px 30px 40px;min-height:340px;overflow:hidden;
+    padding:36px 30px 40px;min-height:300px;overflow:hidden;
     transition:transform .35s ease, border-color .35s ease;
   }
   .pillar:hover{transform:translateY(-4px);border-color:var(--line-2)}
@@ -272,6 +329,10 @@
   .pillar.p-green .pillar-icon svg{stroke:var(--green)}
   .pillar.p-yellow .pillar-icon{border-color:rgba(251,188,5,.35);background:rgba(251,188,5,.08)}
   .pillar.p-yellow .pillar-icon svg{stroke:var(--yellow)}
+  .pillar-num{
+    position:absolute;top:28px;right:28px;font-size:13px;letter-spacing:.12em;
+    color:var(--fg-dimmer);font-weight:600;
+  }
   .pillar h3{
     font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px;
     position:relative;z-index:1;
@@ -286,70 +347,71 @@
   }
   @media(max-width:900px){.pillars{grid-template-columns:1fr}}
 
-  /* ============ ECOSYSTEM (split) ============ */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:72px}
-  .split .visual{
-    position:relative;aspect-ratio:1/1;border-radius:28px;overflow:hidden;
-    background:radial-gradient(circle at 50% 50%, #0c0f1f 0%, #040406 70%);
-    border:1px solid var(--line);
+  /* ============ COMMUNITY ============ */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px}
+  .tier{
+    border:1px solid var(--line);border-radius:22px;padding:32px 28px 36px;
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+    min-height:100%;
   }
-  .orbit{position:absolute;inset:0;display:grid;place-items:center}
-  .orbit .core{
-    width:120px;height:120px;border-radius:50%;
-    background:
-      conic-gradient(from 0deg, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);
-    box-shadow:0 0 80px rgba(66,133,244,.45), 0 0 120px rgba(234,67,53,.25);
-    z-index:3;position:relative;
+  .tier-num{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:14px;
   }
-  .orbit .core::before{
-    content:"";position:absolute;inset:6px;border-radius:50%;background:#050505;
+  .tier.t-red .tier-num{color:var(--red)}
+  .tier.t-blue .tier-num{color:var(--blue)}
+  .tier.t-green .tier-num{color:var(--green)}
+  .tier h3{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px;line-height:1.25}
+  .tier p{color:var(--fg-dim);font-size:14px;line-height:1.65;margin-bottom:22px}
+  .names{display:flex;flex-wrap:wrap;gap:8px}
+  .names span{
+    font-size:12px;color:var(--fg);padding:6px 11px;border-radius:999px;
+    background:rgba(255,255,255,0.04);border:1px solid var(--line);
   }
-  .orbit .core::after{
-    content:"AGI";position:absolute;inset:0;display:grid;place-items:center;
-    font-weight:800;font-size:26px;color:#fff;letter-spacing:-.03em;z-index:2;
-  }
-  .ring{
-    position:absolute;border:1px dashed rgba(255,255,255,.14);border-radius:50%;
-    animation:spin 30s linear infinite;
-  }
-  .ring.r1{width:52%;height:52%;animation-duration:24s}
-  .ring.r2{width:72%;height:72%;animation-duration:38s;animation-direction:reverse}
-  .ring.r3{width:92%;height:92%;animation-duration:60s}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .chip{
-    position:absolute;font-size:11px;color:var(--fg);
-    padding:5px 11px;background:rgba(255,255,255,.05);
-    border:1px solid var(--line-2);border-radius:999px;backdrop-filter:blur(6px);
-    white-space:nowrap;display:inline-flex;align-items:center;gap:6px;font-weight:500;
-  }
-  .chip::before{content:"";width:5px;height:5px;border-radius:50%}
-  .chip.c-r::before{background:var(--red);box-shadow:0 0 8px var(--red)}
-  .chip.c-b::before{background:var(--blue);box-shadow:0 0 8px var(--blue)}
-  .chip.c-g::before{background:var(--green);box-shadow:0 0 8px var(--green)}
-  .chip.c-y::before{background:var(--yellow);box-shadow:0 0 8px var(--yellow)}
-  .chip.p1{top:14%;left:10%}
-  .chip.p2{top:22%;right:8%}
-  .chip.p3{bottom:22%;left:8%}
-  .chip.p4{bottom:14%;right:12%}
-  .chip.p5{top:50%;left:-2%}
-  .chip.p6{top:48%;right:-1%}
+  @media(max-width:900px){.tiers{grid-template-columns:1fr}}
 
-  .split .copy h2{font-size:clamp(28px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
-  .split .copy p{color:var(--fg-dim);font-size:16px;line-height:1.7}
-  .bullets{margin-top:28px;display:flex;flex-direction:column;gap:16px}
-  .bullets li{
-    list-style:none;display:flex;gap:14px;align-items:flex-start;
-    color:var(--fg-dim);font-size:15px;line-height:1.55;
+  /* ============ CITIES ============ */
+  .cities{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:64px;
   }
-  .bullets li .bullet-dot{
-    flex-shrink:0;width:18px;height:18px;border-radius:50%;margin-top:2px;
+  .city{
+    border:1px solid var(--line);border-radius:16px;padding:22px 20px;
+    background:#070707;transition:border-color .25s ease, transform .25s ease;
   }
-  .bullets li:nth-child(1) .bullet-dot{background:var(--red);box-shadow:0 0 12px rgba(234,67,53,.5)}
-  .bullets li:nth-child(2) .bullet-dot{background:var(--blue);box-shadow:0 0 12px rgba(66,133,244,.5)}
-  .bullets li:nth-child(3) .bullet-dot{background:var(--green);box-shadow:0 0 12px rgba(52,168,83,.5)}
-  .bullets li:nth-child(4) .bullet-dot{background:var(--yellow);box-shadow:0 0 12px rgba(251,188,5,.5)}
-  .bullets li strong{color:var(--fg);font-weight:500;margin-right:6px}
-  @media(max-width:900px){.split{grid-template-columns:1fr;gap:40px}}
+  .city:hover{border-color:var(--line-2);transform:translateY(-2px)}
+  .city-dot{
+    width:7px;height:7px;border-radius:50%;margin-bottom:14px;
+  }
+  .city:nth-child(4n+1) .city-dot{background:var(--red);box-shadow:0 0 10px var(--red)}
+  .city:nth-child(4n+2) .city-dot{background:var(--blue);box-shadow:0 0 10px var(--blue)}
+  .city:nth-child(4n+3) .city-dot{background:var(--green);box-shadow:0 0 10px var(--green)}
+  .city:nth-child(4n+4) .city-dot{background:var(--yellow);box-shadow:0 0 10px var(--yellow)}
+  .city h4{font-size:16px;font-weight:600;letter-spacing:-.02em}
+  .city span{display:block;color:var(--fg-dimmer);font-size:12px;margin-top:4px}
+  @media(max-width:900px){.cities{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:560px){.cities{grid-template-columns:repeat(2,1fr)}}
+
+  /* ============ TOUR ============ */
+  .tour{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:64px}
+  .stop{
+    border:1px solid var(--line);border-radius:22px;padding:28px 22px 30px;
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+    min-height:260px;display:flex;flex-direction:column;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .stop:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .stop-date{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--fg-dimmer);margin-bottom:18px;font-weight:500;
+  }
+  .stop h3{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
+  .stop p{color:var(--fg-dim);font-size:14px;line-height:1.55;margin-top:auto}
+  .stop:nth-child(1){border-top:3px solid var(--red)}
+  .stop:nth-child(2){border-top:3px solid var(--blue)}
+  .stop:nth-child(3){border-top:3px solid var(--green)}
+  .stop:nth-child(4){border-top:3px solid var(--yellow)}
+  .stop:nth-child(5){border-top:3px solid var(--red)}
+  @media(max-width:1100px){.tour{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:720px){.tour{grid-template-columns:1fr}}
 
   /* ============ FOUNDER ============ */
   .founder{
@@ -389,6 +451,19 @@
     transition:all .2s;display:inline-flex;align-items:center;gap:6px;
   }
   .founder-links a:hover{color:#fff;border-color:#fff}
+  .founder-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 8px;
+  }
+  .fstat{
+    border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+    background:rgba(255,255,255,.02);
+  }
+  .fstat strong{display:block;font-size:22px;letter-spacing:-.03em;margin-bottom:4px}
+  .fstat span{color:var(--fg-dimmer);font-size:12px;line-height:1.4}
+  .backed{
+    margin-top:18px;color:var(--fg-dimmer);font-size:13px;line-height:1.55;
+  }
+  .backed strong{color:var(--fg-dim);font-weight:500}
   @media(max-width:720px){
     .founder{grid-template-columns:1fr;text-align:center;padding:36px 26px}
     .avatar{max-width:200px;margin:0 auto}
@@ -396,27 +471,8 @@
     .founder-body .label::before{display:none}
     .founder-links{justify-content:center}
     .founder-body p{margin:0 auto}
+    .founder-stats{grid-template-columns:1fr}
   }
-
-  /* ============ PROGRAMS ============ */
-  .programs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:64px}
-  .program{
-    border:1px solid var(--line);border-radius:22px;padding:36px;
-    background:linear-gradient(135deg, #0a0a0a, #050505);
-    transition:all .3s ease;position:relative;overflow:hidden;
-  }
-  .program:hover{border-color:var(--line-2);transform:translateY(-3px)}
-  .program .num{
-    position:absolute;top:20px;right:28px;font-size:56px;font-weight:800;
-    letter-spacing:-.06em;line-height:1;opacity:.22;
-  }
-  .program.g-red .num{color:var(--red)}
-  .program.g-blue .num{color:var(--blue)}
-  .program.g-green .num{color:var(--green)}
-  .program.g-yellow .num{color:var(--yellow)}
-  .program h4{font-size:20px;font-weight:600;margin-bottom:14px;letter-spacing:-.01em}
-  .program p{color:var(--fg-dim);font-size:14.5px;line-height:1.65}
-  @media(max-width:720px){.programs{grid-template-columns:1fr}}
 
   /* ============ TESTIMONIAL / QUOTE ============ */
   .quote-section{
@@ -518,11 +574,12 @@
       <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
     </a>
     <div class="nav-links">
-      <a href="#mission">Mission</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#programs">Programs</a>
-      <a href="#founder">Founder</a>
-      <a href="https://gosummit.ai" target="_blank" rel="noopener">GO SUMMIT</a>
+      <a href="#who">Who We Are</a>
+      <a href="#community">Community</a>
+      <a href="#pillars">What We Do</a>
+      <a href="#cities">Cities</a>
+      <a href="#summit">GO SUMMIT</a>
+      <a href="#team">Team</a>
     </div>
     <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
   </div>
@@ -532,21 +589,21 @@
 <header class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="wrap" style="position:relative;z-index:2">
-    <div class="eyebrow reveal"><span class="eyebrow-dot"></span>3,000+ Tech & AI Founders · Since Day One</div>
+    <div class="eyebrow reveal"><span class="eyebrow-dot"></span>The Two-Way Bridge · Invitation Only</div>
     <h1 class="reveal d1">
-      Where <span class="c-blue">China</span> <span class="c-red">Tech</span><br/>
-      Meets the <span class="c-yellow">World</span>.
+      Where <span class="c-blue">Innovators</span><br/>
+      Meet the <span class="c-yellow">World</span>.
     </h1>
     <p class="sub reveal d2">
-      AGI Villa is the global bridge for China's next generation of AI and technology companies —
-      a living community where founders, capital, and markets converge across borders.
+      The two-way bridge between China’s tech ecosystem and the world —
+      exchanging capital, products, markets, talent, and playbooks in both directions.
     </p>
     <div class="cta-row reveal d3">
       <a href="mailto:monica@agivilla.com" class="btn btn-primary">
         Apply to Join
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
-      <a href="#mission" class="btn btn-ghost">Explore the Vision</a>
+      <a href="#summit" class="btn btn-ghost">GO SUMMIT 2026</a>
     </div>
   </div>
   <div class="scroll-ind">SCROLL</div>
@@ -555,191 +612,278 @@
 <!-- MARQUEE STRIP -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee">
-    <span>Artificial Intelligence</span><div class="dot d-r"></div>
-    <span>Embodied Robotics</span><div class="dot d-b"></div>
-    <span>Web3 & Blockchain</span><div class="dot d-g"></div>
-    <span>Enterprise SaaS</span><div class="dot d-y"></div>
-    <span>Consumer AI</span><div class="dot d-r"></div>
-    <span>Biotech</span><div class="dot d-b"></div>
-    <span>Smart Hardware</span><div class="dot d-g"></div>
-    <span>Fintech</span><div class="dot d-y"></div>
-    <!-- duplicate for loop -->
-    <span>Artificial Intelligence</span><div class="dot d-r"></div>
-    <span>Embodied Robotics</span><div class="dot d-b"></div>
-    <span>Web3 & Blockchain</span><div class="dot d-g"></div>
-    <span>Enterprise SaaS</span><div class="dot d-y"></div>
-    <span>Consumer AI</span><div class="dot d-r"></div>
-    <span>Biotech</span><div class="dot d-b"></div>
-    <span>Smart Hardware</span><div class="dot d-g"></div>
-    <span>Fintech</span><div class="dot d-y"></div>
+    <span>Shanghai</span><div class="dot d-r"></div>
+    <span>Shenzhen</span><div class="dot d-b"></div>
+    <span>Silicon Valley</span><div class="dot d-g"></div>
+    <span>Singapore</span><div class="dot d-y"></div>
+    <span>Dubai</span><div class="dot d-r"></div>
+    <span>Doha</span><div class="dot d-b"></div>
+    <span>Abu Dhabi</span><div class="dot d-g"></div>
+    <span>Almaty</span><div class="dot d-y"></div>
+    <span>Rio de Janeiro</span><div class="dot d-r"></div>
+    <span>Tashkent</span><div class="dot d-b"></div>
+    <span>Mexico City</span><div class="dot d-g"></div>
+    <span>Bogotá</span><div class="dot d-y"></div>
+    <span>Shanghai</span><div class="dot d-r"></div>
+    <span>Shenzhen</span><div class="dot d-b"></div>
+    <span>Silicon Valley</span><div class="dot d-g"></div>
+    <span>Singapore</span><div class="dot d-y"></div>
+    <span>Dubai</span><div class="dot d-r"></div>
+    <span>Doha</span><div class="dot d-b"></div>
+    <span>Abu Dhabi</span><div class="dot d-g"></div>
+    <span>Almaty</span><div class="dot d-y"></div>
+    <span>Rio de Janeiro</span><div class="dot d-r"></div>
+    <span>Tashkent</span><div class="dot d-b"></div>
+    <span>Mexico City</span><div class="dot d-g"></div>
+    <span>Bogotá</span><div class="dot d-y"></div>
   </div>
 </div>
 
-<!-- MISSION -->
-<section id="mission">
+<!-- WHO WE ARE -->
+<section id="who">
   <div class="wrap">
-    <div class="label reveal">Our Mission</div>
-    <h2 class="title reveal d1">Breaking the barriers between<br/>Chinese <span class="c-blue">innovation</span> and global <span class="c-yellow">markets</span>.</h2>
+    <div class="label reveal">Who We Are</div>
+    <h2 class="title reveal d1">The two-way bridge between<br/><span class="c-red">China</span> and the <span class="c-blue">world</span>.</h2>
     <p class="lede reveal d2">
-      For too long, the stories and products of Chinese founders have been filtered through secondhand narratives.
-      AGI Villa exists to change that — giving the most ambitious AI and tech companies a direct path to global
-      capital, customers, and community.
+      AGI Villa is the global bridge connecting China’s next generation of AI and technology companies with the rest of the world — in both directions.
+      We make the China side and the world side genuine ecosystem partners.
     </p>
+
+    <div class="bridge">
+      <div class="bridge-card china reveal">
+        <div class="bridge-dir">China → World</div>
+        <h3>Chinese innovation, globally understood.</h3>
+        <p>Helping the world understand, partner with, and invest in Chinese innovation — and helping Chinese founders land in global markets.</p>
+      </div>
+      <div class="bridge-mid reveal d1" aria-hidden="true">
+        <div class="bridge-arrows">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14M15 5l4 4-4 4M19 15H5M9 11l-4 4 4 4"/></svg>
+        </div>
+        Both ways
+      </div>
+      <div class="bridge-card world reveal d2">
+        <div class="bridge-dir">World → China</div>
+        <h3>Global players, plugged into China.</h3>
+        <p>Helping global founders, capital, and corporates plug into China’s markets, supply chains, and technology.</p>
+      </div>
+    </div>
 
     <div class="stats">
       <div class="stat s-red reveal">
         <div class="stat-num" data-count="3000">0<sup>+</sup></div>
-        <div class="stat-lbl">Tech & AI Startups</div>
-        <div class="stat-desc">Active founders inside the Villa community</div>
+        <div class="stat-lbl">Founders &amp; Operators</div>
+        <div class="stat-desc">Invitation-only community of China’s most ambitious tech builders</div>
       </div>
       <div class="stat s-blue reveal d1">
-        <div class="stat-num" data-count="60">0<sup>+</sup></div>
-        <div class="stat-lbl">Countries Covered</div>
-        <div class="stat-desc">Markets Monica has operated in firsthand</div>
+        <div class="stat-num" data-count="12">0</div>
+        <div class="stat-lbl">Cities</div>
+        <div class="stat-desc">One always-on bridge across time zones</div>
       </div>
       <div class="stat s-green reveal d2">
-        <div class="stat-num">¥1.5<sup>B+</sup></div>
-        <div class="stat-lbl">Portfolio Fundraised</div>
-        <div class="stat-desc">Capital raised across Villa-connected ventures</div>
+        <div class="stat-num">24<sup>/7</sup></div>
+        <div class="stat-lbl">Always On</div>
+        <div class="stat-desc">Wherever innovators meet, AGI Villa is already there</div>
       </div>
       <div class="stat s-yellow reveal d3">
-        <div class="stat-num">24<sup>/7</sup></div>
-        <div class="stat-lbl">Global Community</div>
-        <div class="stat-desc">Always-on network across time zones</div>
+        <div class="stat-num">↔</div>
+        <div class="stat-lbl">Two-Way Flow</div>
+        <div class="stat-desc">Real relationships and real deals — not one-way value</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" style="padding-top:20px">
+  <div class="wrap">
+    <div class="label reveal">Why AGI Villa</div>
+    <h2 class="title reveal d1">From secondhand narratives<br/>to <span class="c-green">face-to-face</span>.</h2>
+    <div class="why">
+      <div class="why-card gap reveal">
+        <div class="why-kicker">The Gap</div>
+        <h3>Filtered stories. Indirect access.</h3>
+        <p>For too long, this connection has run on secondhand narratives in both directions — the world has known Chinese tech founders only through filtered stories, and global players have struggled to plug into China directly.</p>
+      </div>
+      <div class="why-card answer reveal d1">
+        <div class="why-kicker">The AGI Villa Answer</div>
+        <h3>The same room. Real deals.</h3>
+        <p>We put global investors, corporates, distributors, ecosystem builders, and founders directly in the same room as the China side itself — so that real relationships and real deals can flow both ways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="wrap">
+    <div class="label reveal">Our Community</div>
+    <h2 class="title reveal d1">A 3,000-strong community —<br/><span class="c-yellow">open to the world</span>.</h2>
+    <p class="lede reveal d2">
+      A curated, invitation-only network of 3,000+ founders, operators, and innovators from China’s most ambitious tech and AI companies — to our knowledge the largest organized network of Chinese AI founders actively connecting with global markets.
+    </p>
+
+    <div class="tiers">
+      <div class="tier t-red reveal">
+        <div class="tier-num">01 — Global Tech Giants</div>
+        <h3>Operators from the companies that built China’s tech stack.</h3>
+        <p>Alumni and insiders from the platforms that already ship at global scale.</p>
+        <div class="names">
+          <span>Huawei</span><span>Tencent</span><span>Alibaba</span><span>ByteDance</span>
+          <span>BYD</span><span>Ant Group</span><span>Meituan</span><span>JD.com</span>
+          <span>iFlytek</span><span>Vivo</span><span>Honor</span><span>Hisense</span>
+          <span>Ping An</span><span>Foxconn</span><span>ZTE</span><span>ASUS</span>
+        </div>
+      </div>
+      <div class="tier t-blue reveal d1">
+        <div class="tier-num">02 — Industry Leaders</div>
+        <h3>Category champions in AI, robotics, and deep tech.</h3>
+        <p>Dozens of leading B2B and deep-tech firms already shipping across borders.</p>
+        <div class="names">
+          <span>StepFun</span><span>Unitree Robotics</span><span>Hai Robotics</span>
+          <span>BrainCo</span><span>Manycore Tech (Coohom)</span>
+          <span>Shanghai AI Laboratory</span><span>Sangfor</span><span>Thundersoft</span>
+        </div>
+      </div>
+      <div class="tier t-green reveal d2">
+        <div class="tier-num">03 — High-Velocity AI Startups</div>
+        <h3>The next wave, built to ship across borders.</h3>
+        <p>3,000+ early- and growth-stage founders building AI applications, agents, infrastructure, and vertical solutions — globally ambitious, product-led, ready to land.</p>
+        <div class="names">
+          <span>AI Applications</span><span>Agents</span><span>Infrastructure</span>
+          <span>Vertical AI</span><span>Embodied Robotics</span><span>B2B SaaS</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PILLARS -->
-<section id="pillars" style="padding-top:20px">
+<section id="pillars">
   <div class="wrap">
-    <div class="label reveal">What We Do</div>
-    <h2 class="title reveal d1">Six <span class="c-red">pillars</span> for companies<br/>built to cross borders.</h2>
+    <div class="label reveal">How We Create Value</div>
+    <h2 class="title reveal d1">Six pillars — working<br/>in <span class="c-red">both</span> directions.</h2>
 
     <div class="pillars">
       <div class="pillar p-red reveal">
+        <div class="pillar-num">01</div>
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
         </div>
-        <h3>Global Go-to-Market</h3>
-        <p>Hands-on playbooks for 0→1 overseas expansion — from localization and channel strategy to precision customer acquisition across the Middle East, Southeast Asia, LATAM and North America.</p>
-        <div class="tags"><span>GTM</span><span>Localization</span><span>Channels</span></div>
+        <h3>Cross-Border Go-to-Market</h3>
+        <p>Expansion playbooks for Chinese founders entering LATAM, the Middle East, Southeast Asia, Central Asia, and North America — and landing playbooks for global companies entering China.</p>
+        <div class="tags"><span>LATAM</span><span>MENA</span><span>SEA</span><span>China Landing</span></div>
       </div>
 
       <div class="pillar p-blue reveal d1">
+        <div class="pillar-num">02</div>
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
         <h3>Founder Community</h3>
-        <p>A private, curated network of 3,000+ founders and operators from China's most ambitious AI and tech companies — sharing deals, hires, playbooks and cross-border intros every day.</p>
+        <p>A peer network sharing deals, hires, playbooks, and cross-border introductions across both ecosystems.</p>
         <div class="tags"><span>Peer Network</span><span>Intros</span><span>Deal Flow</span></div>
       </div>
 
       <div class="pillar p-green reveal d2">
+        <div class="pillar-num">03</div>
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
         </div>
-        <h3>Global Capital & China Supply Chain</h3>
-        <p>Helping founders connect with international investors, sovereign funds and strategic partners — while unlocking China's manufacturing, technology and supply-chain ecosystem to accelerate global growth.</p>
-        <div class="tags"><span>Global Capital</span><span>China Supply Chain</span><span>Strategic Partners</span></div>
+        <h3>Capital &amp; Partnerships</h3>
+        <p>Two-way access to global and Chinese funds, distributors, and strategic partners.</p>
+        <div class="tags"><span>Global Capital</span><span>Distributors</span><span>Strategics</span></div>
       </div>
 
       <div class="pillar p-yellow reveal">
+        <div class="pillar-num">04</div>
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
         </div>
-        <h3>Insights & Research</h3>
-        <p>Original research on geopolitics, AI verticals, and market windows — distilled into actionable briefings you actually read before getting on the plane.</p>
+        <h3>Insights &amp; Research</h3>
+        <p>Geopolitics, AI verticals, and on-the-ground market intelligence on both China and global markets.</p>
         <div class="tags"><span>Geopolitics</span><span>AI Verticals</span><span>Markets</span></div>
       </div>
 
       <div class="pillar p-red reveal d1">
+        <div class="pillar-num">05</div>
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         </div>
-        <h3><a href="https://gosummit.ai" target="_blank" rel="noopener">GO SUMMIT & Events</a></h3>
-        <p>Flagship summits, closed-door dinners, and curated city tours connecting Chinese founders with the ecosystems, buyers and regulators that actually matter.</p>
-        <div class="tags"><span>Summits</span><span>Dinners</span><span>City Tours</span></div>
+        <h3><a href="https://gosummit.ai" target="_blank" rel="noopener">GO SUMMIT &amp; Events</a></h3>
+        <p>Flagship summits and closed-door dinners around the world where the two ecosystems meet face to face.</p>
+        <div class="tags"><span>Summits</span><span>Dinners</span><span>World Tour</span></div>
       </div>
 
       <div class="pillar p-blue reveal d2">
+        <div class="pillar-num">06</div>
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         </div>
-        <h3>Founder IP & Media</h3>
-        <p>Build durable personal IP across WeChat, LinkedIn, X and Instagram — with media, positioning and storytelling support tuned for cross-cultural audiences.</p>
-        <div class="tags"><span>Personal IP</span><span>Media</span><span>Storytelling</span></div>
+        <h3>Founder IP &amp; Media</h3>
+        <p>Personal branding across WeChat, LinkedIn, X, and Instagram — visibility in both Chinese and global channels.</p>
+        <div class="tags"><span>WeChat</span><span>LinkedIn</span><span>X</span><span>Instagram</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ECOSYSTEM -->
-<section id="ecosystem">
+<!-- CITIES -->
+<section id="cities">
   <div class="wrap">
-    <div class="label reveal">The Ecosystem</div>
-    <h2 class="title reveal d1">One <span class="c-green">Villa</span>.<br/>Infinite <span class="c-blue">connections</span>.</h2>
+    <div class="label reveal">Global Presence</div>
+    <h2 class="title reveal d1">Twelve cities.<br/>One <span class="c-blue">always-on</span> bridge.</h2>
+    <p class="lede reveal d2">Operating 24/7 across time zones — wherever innovators meet, AGI Villa is already there.</p>
 
-    <div class="split">
-      <div class="visual reveal d2" aria-hidden="true">
-        <div class="orbit">
-          <div class="ring r1"></div>
-          <div class="ring r2"></div>
-          <div class="ring r3"></div>
-          <div class="core"></div>
-        </div>
-        <div class="chip c-r p1">Silicon Valley</div>
-        <div class="chip c-b p2">Singapore</div>
-        <div class="chip c-g p3">Dubai</div>
-        <div class="chip c-y p4">São Paulo</div>
-        <div class="chip c-b p5">Tokyo</div>
-        <div class="chip c-r p6">London</div>
-      </div>
-      <div class="copy reveal d3">
-        <h2>A living network,<br/>not a directory.</h2>
-        <p>AGI Villa is built as a real community. Every founder is a node, every intro compounds,
-        every market is a doorway. From Shanghai to Abu Dhabi, from Shenzhen to São Paulo — the
-        distance between a prototype and product-market fit gets shorter every day.</p>
-        <ul class="bullets">
-          <li><span class="bullet-dot"></span><span><strong>Warm Intros.</strong> Hand-matched to the exact investor, buyer or operator you need.</span></li>
-          <li><span class="bullet-dot"></span><span><strong>Market Landing.</strong> On-the-ground partners across 6 key regions.</span></li>
-          <li><span class="bullet-dot"></span><span><strong>Peer Depth.</strong> Unicorn founders and first-time founders, in the same room.</span></li>
-          <li><span class="bullet-dot"></span><span><strong>Always Moving.</strong> Weekly livestreams, monthly summits, year-round momentum.</span></li>
-        </ul>
-      </div>
+    <div class="cities">
+      <div class="city reveal"><div class="city-dot"></div><h4>Shanghai</h4><span>China</span></div>
+      <div class="city reveal d1"><div class="city-dot"></div><h4>Shenzhen</h4><span>China</span></div>
+      <div class="city reveal d2"><div class="city-dot"></div><h4>Silicon Valley</h4><span>United States</span></div>
+      <div class="city reveal d3"><div class="city-dot"></div><h4>Singapore</h4><span>Southeast Asia</span></div>
+      <div class="city reveal"><div class="city-dot"></div><h4>Dubai</h4><span>UAE</span></div>
+      <div class="city reveal d1"><div class="city-dot"></div><h4>Doha</h4><span>Qatar</span></div>
+      <div class="city reveal d2"><div class="city-dot"></div><h4>Abu Dhabi</h4><span>UAE</span></div>
+      <div class="city reveal d3"><div class="city-dot"></div><h4>Almaty</h4><span>Kazakhstan</span></div>
+      <div class="city reveal"><div class="city-dot"></div><h4>Rio de Janeiro</h4><span>Brazil</span></div>
+      <div class="city reveal d1"><div class="city-dot"></div><h4>Tashkent</h4><span>Uzbekistan</span></div>
+      <div class="city reveal d2"><div class="city-dot"></div><h4>Mexico City</h4><span>Mexico</span></div>
+      <div class="city reveal d3"><div class="city-dot"></div><h4>Bogotá</h4><span>Colombia</span></div>
     </div>
   </div>
 </section>
 
-<!-- PROGRAMS -->
-<section id="programs">
+<!-- GO SUMMIT -->
+<section id="summit">
   <div class="wrap">
-    <div class="label reveal">Programs</div>
-    <h2 class="title reveal d1">From idea to <span class="c-yellow">global traction</span>.</h2>
-    <p class="lede reveal d2">Four curated tracks for every stage of going global — whether you're pre-launch, scaling channels, raising capital, or building founder brand.</p>
+    <div class="label reveal">Event Highlights</div>
+    <h2 class="title reveal d1">GO SUMMIT 2026 —<br/>the <span class="c-yellow">world tour</span>.</h2>
+    <p class="lede reveal d2">Flagship stops where the two ecosystems meet face to face. More cities. Same bridge.</p>
 
-    <div class="programs">
-      <div class="program g-red reveal">
-        <div class="num">01</div>
-        <h4>Villa Cohort</h4>
-        <p>A 12-week intensive: market selection, GTM, hiring, and fundraising — built with operators who have done it at unicorn scale.</p>
-      </div>
-      <div class="program g-blue reveal d1">
-        <div class="num">02</div>
-        <h4>Capital Bridge</h4>
-        <p>Curated intros to global funds, sovereigns, and strategic partners aligned with your stage, sector and target market.</p>
-      </div>
-      <div class="program g-green reveal d2">
-        <div class="num">03</div>
-        <h4>City Residencies</h4>
-        <p>Soft-landing residencies in Shanghai, Hangzhou, Silicon Valley, Singapore and Dubai — workspace, hires, regulators and customers.</p>
-      </div>
-      <div class="program g-yellow reveal d3">
-        <div class="num">04</div>
-        <h4>Founder Studio</h4>
-        <p>Media, storytelling and cross-cultural positioning to turn a founder into a global brand — at the speed the AI era demands.</p>
-      </div>
+    <div class="tour">
+      <article class="stop reveal">
+        <div class="stop-date">2026.4.18–19</div>
+        <h3>Shanghai</h3>
+        <p>Connecting Global Innovators, Building the Future</p>
+      </article>
+      <article class="stop reveal d1">
+        <div class="stop-date">2026.5.23</div>
+        <h3>Shenzhen</h3>
+        <p>From Shenzhen to the World</p>
+      </article>
+      <article class="stop reveal d2">
+        <div class="stop-date">2026.6.8</div>
+        <h3>Rio</h3>
+        <p>Transforme Ideias em Produtos</p>
+      </article>
+      <article class="stop reveal d3">
+        <div class="stop-date">2026.6.13</div>
+        <h3>Singapore</h3>
+        <p>Born Global, Just GO</p>
+      </article>
+      <article class="stop reveal">
+        <div class="stop-date">2026.7.17</div>
+        <h3>WAIC · Shanghai</h3>
+        <p>AI for All, Tech for All</p>
+      </article>
     </div>
   </div>
 </section>
@@ -747,28 +891,35 @@
 <!-- QUOTE -->
 <section class="quote-section">
   <blockquote class="reveal">
-    The next decade of AI will not be written in one language or one market.
-    We are building the shortest path between Chinese founders and the rest of the world.
+    We don’t move value one way — real relationships and real deals flow both ways.
   </blockquote>
-  <div class="quote-attr reveal d1">— Monica Wang · Initiator of AGI Villa</div>
+  <div class="quote-attr reveal d1">AGI Villa · The Two-Way Bridge</div>
 </section>
 
-<!-- FOUNDER -->
-<section id="founder" style="padding-top:40px">
+<!-- TEAM -->
+<section id="team" style="padding-top:40px">
   <div class="wrap">
+    <div class="label reveal">The Team</div>
+    <h2 class="title reveal d1">Builders of the <span class="c-blue">bridge</span>.</h2>
+
     <div class="founder reveal">
       <div class="avatar">
         <div class="avatar-inner">M</div>
       </div>
       <div class="founder-body">
-        <div class="label">Co-founder</div>
+        <div class="label">Founder</div>
         <h3>Monica Wang</h3>
-        <div class="role">Initiator of AGI Villa · Founder of GO SUMMIT · Serial Entrepreneur · Former Journalist</div>
+        <div class="role">Founder of AGI Villa and GO SUMMIT — one of the most internationally connected community builders bridging China’s AI ecosystem and the world.</div>
+        <div class="founder-stats">
+          <div class="fstat"><strong>18</strong><span>years across the innovation value chain</span></div>
+          <div class="fstat"><strong>60</strong><span>countries of firsthand operating experience</span></div>
+          <div class="fstat"><strong>CEO · CMO · Partner</strong><span>AI, education, B2B, Web3 &amp; consumer internet</span></div>
+        </div>
         <p>
-          15 years, 60+ countries. Monica has served as CEO, CMO or Partner across AI programming, youth education, B2B e-commerce, Web3,
-          and consumer internet — with ventures backed by Sequoia Capital, Legend Capital, Sinovation Ventures, GGV, Linear Venture
-          and more, raising over ¥1.5B combined. In 2025, she was invited to speak at Harvard on innovation and education in the AI era.
+          A recognized voice on cross-border AI. In 2025 she was invited to speak at Harvard University on innovation and education in the AI era.
+          She writes, podcasts, and speaks in English and Mandarin — and personally curates GO SUMMIT.
         </p>
+        <div class="backed"><strong>Backed by leading investors</strong> — Sequoia Capital · Legend Capital · Sinovation Ventures · GGV Capital · Linear Venture</div>
         <div class="founder-links">
           <a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com →</a>
           <a href="https://chinabymonica.com/connect" target="_blank" rel="noopener">Official Channel</a>
@@ -782,12 +933,17 @@
         <div class="avatar-inner">D</div>
       </div>
       <div class="founder-body">
-        <div class="label">Co-founder</div>
+        <div class="label">Co-Founder</div>
         <h3>Darren Su</h3>
+        <div class="role">An engineer-turned-community builder connecting AI infrastructure expertise with China’s largest AI learning communities.</div>
+        <div class="founder-stats">
+          <div class="fstat"><strong>0 → 1</strong><span>serial builder of products, tools, and communities</span></div>
+          <div class="fstat"><strong>1,000</strong><span>builders at AI Creators Day — one mini-hackathon, eight cities at once</span></div>
+          <div class="fstat"><strong>QCon</strong><span>speaker on AI-native infrastructure</span></div>
+        </div>
         <p>
-          - Founding member of Datawhale, building AI learning communities<br/>
-          - Deep expertise in AI Infrastructure, RAG (Retrieval-Augmented Generation), and vector database applications<br/>
-          - Frequent judge at hackathons and AI competitions
+          Deep AI infrastructure expertise across PingCAP (TiCDC), vector databases, RAG, and AI-native SaaS.
+          Founding member of Datawhale — China’s largest AI open-source learning community — leading its city ecosystem, and a frequent judge at hackathons and AI competitions.
         </p>
       </div>
     </div>
@@ -797,14 +953,14 @@
 <!-- CTA -->
 <section class="cta-section" id="join">
   <div class="cta-card reveal">
-    <h2>Build what's <span class="c-red">next</span>.<br/>With the <span class="c-blue">world</span> watching.</h2>
-    <p>Apply to join AGI Villa — a private community of 3,000+ Chinese AI and tech founders building for global markets.</p>
+    <h2>Where <span class="c-blue">innovators</span><br/>meet the <span class="c-yellow">world</span>.</h2>
+    <p>The global bridge where the world’s innovation ecosystems meet. Apply to join a private community of 3,000+ founders, operators, and innovators.</p>
     <div class="cta-row">
       <a href="mailto:monica@agivilla.com" class="btn btn-primary">
         Apply Now
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
-      <a href="https://chinabymonica.com" target="_blank" rel="noopener" class="btn btn-ghost">Read Insights</a>
+      <a href="https://gosummit.ai" target="_blank" rel="noopener" class="btn btn-ghost">GO SUMMIT</a>
     </div>
   </div>
 </section>
@@ -817,7 +973,7 @@
         <span class="brand-mark"></span>
         <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
       </a>
-      <p>The global bridge for China's next generation of AI and tech companies. Where founders, capital, and markets meet.</p>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
       <div class="foot-bar" style="margin-top:18px">
         <span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span>
       </div>
@@ -825,18 +981,19 @@
     <div class="foot-col">
       <h5>Villa</h5>
       <ul>
-        <li><a href="#mission">Mission</a></li>
+        <li><a href="#who">Who We Are</a></li>
+        <li><a href="#community">Community</a></li>
         <li><a href="#pillars">What We Do</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#founder">Founder</a></li>
+        <li><a href="#cities">Cities</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h5>Community</h5>
       <ul>
         <li><a href="mailto:monica@agivilla.com">Apply to Join</a></li>
-        <li><a href="https://chinabymonica.com/connect" target="_blank" rel="noopener">Official Channel</a></li>
-        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">GO SUMMIT</a></li>
+        <li><a href="#summit">GO SUMMIT 2026</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="#team">Team</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -851,12 +1008,11 @@
   </div>
   <div class="foot-bottom">
     <div>© 2026 AGI Villa. All rights reserved.</div>
-    <div>Built for founders building for the world.</div>
+    <div>agivilla.com</div>
   </div>
 </footer>
 
 <script>
-  // Reveal on scroll
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -867,7 +1023,6 @@
   },{threshold:.12, rootMargin:"0px 0px -40px 0px"});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Animated counters
   const counters = document.querySelectorAll('[data-count]');
   const ioCount = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
@@ -892,7 +1047,6 @@
   },{threshold:.4});
   counters.forEach(c=>ioCount.observe(c));
 
-  // Nav background intensify on scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll',()=>{
     if(window.scrollY>20) nav.style.background='rgba(0,0,0,0.82)';
