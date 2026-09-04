@@ -53,9 +53,8 @@
   .kpi{font-size:clamp(68px,9vw,150px);line-height:.9;font-weight:790;letter-spacing:-.06em}
   .quote{font-size:clamp(28px,3.35vw,58px);line-height:1.08;font-weight:700;letter-spacing:-.035em;max-width:1200px}
   .lesson{position:absolute;right:0;top:0;border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:999px;color:#c7c7cc;font-size:14px;font-weight:700;letter-spacing:.12em}
-  .footer{position:absolute;left:0;right:120px;bottom:0;display:flex;justify-content:space-between;align-items:center;color:#68686f;font-size:12px;letter-spacing:.04em}
+  .footer{position:absolute;left:0;right:96px;bottom:0;display:flex;justify-content:space-between;align-items:center;color:#68686f;font-size:12px;letter-spacing:.04em}
   .footer .brand{font-weight:700;color:#8e8e93}
-  .brand-logo{position:fixed;right:clamp(16px,2vw,28px);bottom:clamp(16px,2.2vh,26px);z-index:98;width:clamp(72px,6.8vw,102px);height:auto;pointer-events:none;opacity:.9;object-fit:contain}
   .progress{position:fixed;left:0;right:0;bottom:0;height:3px;background:#151517;z-index:99}
   .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .45s var(--ease)}
   .counter{position:fixed;right:22px;top:18px;z-index:99;color:#76767d;font-size:12px;font-weight:650;letter-spacing:.1em}
@@ -76,8 +75,28 @@
   .stack{display:flex;flex-direction:column;gap:12px}.lineitem{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #232328}.lineitem:last-child{border-bottom:0}.dot{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 24px rgba(41,151,255,.55)}
   .mega{font-size:clamp(58px,8vw,138px);line-height:.9;letter-spacing:-.06em;font-weight:800}
   .cta{font-size:clamp(28px,3vw,54px);line-height:1.1;font-weight:740;letter-spacing:-.03em}
+  .closing-slide{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+  .closing-kicker{font-size:clamp(14px,1.1vw,20px);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:18px}
+  .closing-quote{font-size:clamp(46px,5.2vw,92px);line-height:1.02;letter-spacing:-.05em;font-weight:780;max-width:900px}
+  .closing-note{font-size:clamp(18px,1.45vw,26px);line-height:1.5;color:#b8c7d8;margin-top:20px}
+  .qr-card{justify-self:end;width:min(16vw,210px);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:12px;box-shadow:0 18px 60px rgba(0,0,0,.26)}
+  .qr-card img{display:block;width:100%;height:auto;border-radius:20px}
+  .qr-caption{margin-top:14px;font-size:clamp(14px,1.02vw,18px);color:#9ebce0;line-height:1.45;text-align:center}
+  .about-title{font-size:clamp(82px,9.2vw,156px);line-height:.88;letter-spacing:-.075em;font-weight:790;margin:6px 0 10px;background:linear-gradient(90deg,#f5f5f7 0%,#d9ecff 42%,#8fd0ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .about-wrap{display:grid;grid-template-columns:.72fr 1.58fr;gap:54px;align-items:start;margin-top:8px}
+  .about-tag{font-size:clamp(16px,1.35vw,24px);font-weight:780;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+  .about-intro{display:none}
+  .about-rows{display:flex;flex-direction:column;border-top:1px solid rgba(41,151,255,.20)}
+  .about-row{display:grid;grid-template-columns:110px 1.18fr 1.45fr;gap:28px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(41,151,255,.18)}
+  .about-no{font-size:clamp(32px,2.95vw,54px);font-weight:800;letter-spacing:-.05em;color:var(--blue)}
+  .about-main{font-size:clamp(26px,2.15vw,42px);line-height:1.08;letter-spacing:-.04em;font-weight:770;color:#f5f5f7}
+  .about-sub{font-size:clamp(16px,1.18vw,22px);line-height:1.42;color:#b6c5d8;font-weight:560}
+  .page-logo{position:absolute;right:0;bottom:28px;width:78px;height:auto;opacity:.95;pointer-events:none;user-select:none;z-index:3}
   @media (max-width:900px){
-    .frame{height:auto;max-height:none;aspect-ratio:auto}.slide{padding:8vh 7vw 10vh;overflow:auto}.grid4,.steps{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.grid2,.vs{grid-template-columns:1fr}.vs .divider{display:none}.table{overflow:auto}.row{min-width:850px}.footer{position:relative;margin-top:24px;right:0}.lesson{position:relative;display:inline-block;margin-bottom:20px}.counter{top:10px}.navhint{display:none}.brand-logo{width:72px;bottom:14px;right:14px}
+    .page-logo{right:0;bottom:18px;width:58px}
+    .closing-slide{grid-template-columns:1fr;gap:26px}.qr-card{justify-self:start;width:min(36vw,170px)}.closing-quote{font-size:clamp(34px,8vw,56px)}.closing-note{text-align:left}
+    .about-wrap{grid-template-columns:1fr;gap:18px}.about-row{grid-template-columns:72px 1fr;gap:16px;align-items:start;padding:18px 0}.about-row .about-sub{grid-column:2 / -1}.about-main{font-size:clamp(22px,5.8vw,30px);line-height:1.1}.about-no{font-size:clamp(24px,6.8vw,34px)}.about-sub{font-size:clamp(14px,3.6vw,18px)}
+    .frame{height:auto;max-height:none;aspect-ratio:auto}.slide{padding:8vh 7vw 10vh;overflow:auto}.grid4,.steps{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.grid2,.vs{grid-template-columns:1fr}.vs .divider{display:none}.table{overflow:auto}.row{min-width:850px}.footer{position:relative;margin-top:24px}.lesson{position:relative;display:inline-block;margin-bottom:20px}.counter{top:10px}.navhint{display:none}
   }
 </style>
 </head>
@@ -90,13 +109,48 @@
       <div class="eyebrow reveal d1">OPC TOP100 · GOING GLOBAL · 2026</div>
       <h1 class="reveal d2">你不是在“出海”，<br><span class="accent">你是在重新创业。</span></h1>
       <div class="splitline reveal d3"></div>
-      <div class="sub reveal d4">从 DiDi Mexico 到 AI 创业者的 <b>Global PMF</b><br><span style="color:#808087">Every New Market Is a New Startup.</span></div>
+      <div class="sub reveal d4"><span style="color:#8f8f97">Every New Market Is a New Startup.</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
       <div class="footer"><span class="brand">Monica Wang · AGI Villa</span><span>01</span></div>
     </div>
   </section>
 
-  <!-- 02 -->
-  <section class="slide">
+<section class="slide">
+    <div class="frame">
+      <div class="about-tag reveal d1">ABOUT · 关于我</div>
+      <div class="about-wrap">
+        <div>
+          <div class="about-title reveal d2">Monica</div>
+        </div>
+        <div class="about-rows">
+          <div class="about-row reveal d2">
+            <div class="about-no">01</div>
+            <div class="about-main">记者出身 · 连续创业者</div>
+            <div class="about-sub">电商 · 本地生活 · Web3 · AI · 教育</div>
+          </div>
+          <div class="about-row reveal d3">
+            <div class="about-no">02</div>
+            <div class="about-main">出走 60 国</div>
+            <div class="about-sub">科技出海 · 深度观察者 · 连接者</div>
+          </div>
+          <div class="about-row reveal d4">
+            <div class="about-no">03</div>
+            <div class="about-main">马拉松跑者</div>
+            <div class="about-sub">年跑量 3,000 KM · 耐力 · 速度 · 长期主义</div>
+          </div>
+          <div class="about-row reveal d5">
+            <div class="about-no">04</div>
+            <div class="about-main">三宝妈</div>
+            <div class="about-sub">13 岁 · 9 岁 · 6 岁 · 家庭 · 消费 · 成长</div>
+          </div>
+        </div>
+      </div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>About the speaker</span><span>02</span></div>
+    </div>
+  </section>
+
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE DECISION</div>
       <div class="grid2" style="align-items:center">
@@ -109,14 +163,22 @@
           <div class="quote" style="margin-top:18px">Would you<br><span class="accent">enter?</span></div>
         </div>
       </div>
-      <div class="footer"><span>一个看起来“不应该进入”的市场</span><span>02</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>一个看起来“不应该进入”的市场</span><span>03</span></div>
     </div>
   </section>
 
-  <!-- 03 -->
-  <section class="slide">
+<section class="slide">
+    <div class="frame" style="justify-content:center;text-align:left">
+      <h1 class="reveal d1" style="font-size:clamp(56px,7.2vw,126px);letter-spacing:.18em;font-weight:760;color:#bdbdc7">DIDI DID.</h1>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span></span><span>04</span></div>
+    </div>
+  </section>
+
+<section class="slide">
     <div class="frame">
-      <div class="eyebrow reveal d1">DIDI DID.</div>
+      <div class="eyebrow reveal d1">THE REFRAME</div>
       <h2 class="reveal d2">竞争激烈，<br><span class="accent">不等于没有机会。</span></h2>
       <div class="grid2" style="margin-top:38px">
         <div class="card reveal d3">
@@ -128,12 +190,12 @@
           <h3 style="margin-top:10px">“现有解决方案是否留下了<br><span class="blue">结构性的痛？</span>”</h3>
         </div>
       </div>
-      <div class="footer"><span>Going Global Is a PMF Reset.</span><span>03</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>Going Global Is a PMF Reset.</span><span>05</span></div>
     </div>
   </section>
 
-  <!-- 04 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">FIND THE PAIN</div>
       <h2 class="reveal d2">DiDi 研究的不是 Uber 有多好。<br><span class="accent">而是：已经这么成功了，为什么还有人不满意？</span></h2>
@@ -143,12 +205,12 @@
         <div class="card soft reveal d4"><div class="small">SAFETY</div><h3 style="margin-top:12px">信任</h3><p>双方是否真正安心？</p></div>
         <div class="card soft reveal d5"><div class="small">MOBILITY</div><h3 style="margin-top:12px">系统</h3><p>城市交通还有什么没被解决？</p></div>
       </div>
-      <div class="footer"><span>不要只做 competitor analysis，要做 dissatisfaction analysis.</span><span>04</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>不要只做 competitor analysis，要做 dissatisfaction analysis.</span><span>06</span></div>
     </div>
   </section>
 
-  <!-- 05 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="lesson">LESSON 01</div>
       <div class="grid2" style="align-items:center">
@@ -161,18 +223,18 @@
           <div class="lineitem"><span class="dot"></span><span>Urban Sprawl · 城市向外扩张</span></div>
           <div class="lineitem"><span class="dot"></span><span>Housing moves outward · 居住更远</span></div>
           <div class="lineitem"><span class="dot"></span><span>Jobs stay concentrated · 工作仍集中</span></div>
-          <div class="lineitem"><span class="dot"></span><span>Public transit gap · 公交连接不足</span></div>
+          <div class="lineitem"><span class="dot"></span><span>Public transit gap · 公共交通连接不足</span></div>
           <div class="lineitem"><span class="dot"></span><span class="blue"><b>Mobility Poverty · 出行贫困</b></span></div>
         </div>
       </div>
       <div class="splitline"></div>
       <div class="big-rule reveal d5">Don’t look for a big market. <span class="blue">Look for a broken system.</span></div>
-      <div class="footer"><span>不要寻找“大市场”，寻找一个正在失效的系统。</span><span>05</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>不要寻找“大市场”，寻找一个正在失效的系统。</span><span>07</span></div>
     </div>
   </section>
 
-  <!-- 06 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE LAB</div>
       <div class="grid2" style="height:72%;align-items:stretch">
@@ -196,12 +258,12 @@
           <div class="caption">Schematic · first direct overseas ride-hailing market</div>
         </div>
       </div>
-      <div class="footer"><span>Your first market is not your destination. It is your experiment.</span><span>06</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>Your first market is not your destination. It is your experiment.</span><span>08</span></div>
     </div>
   </section>
 
-  <!-- 07 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="lesson">LESSON 02</div>
       <h2 class="reveal d1">你的第一个海外市场，<br><span class="accent">应该证明一件事，而不是征服一个国家。</span></h2>
@@ -214,12 +276,12 @@
       </div>
       <div class="splitline"></div>
       <div class="cta reveal d5">30-Day Global Test：<span class="blue">找一个足够小的市场，用 30 天证明一件事。</span></div>
-      <div class="footer"><span>不是先注册公司、做官网、买流量、去展会。</span><span>07</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>不是先注册公司、做官网、买流量、去展会。</span><span>09</span></div>
     </div>
   </section>
 
-  <!-- 08 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE UNLEARNING</div>
       <h2 class="reveal d2">The hardest part of globalization is <span class="accent">unlearning.</span></h2>
@@ -230,12 +292,12 @@
       </div>
       <div class="splitline reveal d4"></div>
       <div class="big-rule reveal d5">真正的本地化：<span class="purple">当现实和你的经验冲突时，你愿不愿意相信现实？</span></div>
-      <div class="footer"><span>安全，不只是 feature localization，而是 value proposition localization.</span><span>08</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>安全，不只是 feature localization，而是 value proposition localization.</span><span>10</span></div>
     </div>
   </section>
 
-  <!-- 09 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE FLYWHEEL</div>
       <div class="grid2" style="align-items:center">
@@ -250,22 +312,22 @@
           <div class="big-rule reveal d5"><span class="green">Evidence</span> gives you the right to scale.</div>
         </div>
       </div>
-      <div class="footer"><span>什么时候你有资格 Scale？不是融资之后，而是证据出现之后。</span><span>09</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>什么时候你有资格 Scale？不是融资之后，而是证据出现之后。</span><span>11</span></div>
     </div>
   </section>
 
-  <!-- 10 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame" style="justify-content:center;text-align:center">
       <div class="lesson">LESSON 03</div>
       <div class="mega reveal d1">Scale is not<br>a strategy.</div>
       <div class="cta reveal d3" style="margin-top:28px;color:#a9a9b1">Scale is the consequence of <span class="green">evidence.</span></div>
-      <div class="footer"><span>Evidence &gt; Ambition.</span><span>10</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>Evidence &gt; Ambition.</span><span>12</span></div>
     </div>
   </section>
 
-  <!-- 11 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE EXPANSION</div>
       <h2 class="reveal d2">Why could DiDi move from <span class="blue">Mobility</span> to <span class="orange">Food</span>?</h2>
@@ -284,12 +346,12 @@
       </div>
       <div class="splitline reveal d5"></div>
       <div class="big-rule reveal d5">从“把人送到目的地”，到“把日常生活送到用户面前”。</div>
-      <div class="footer"><span>扩张的起点，不是“我还能做什么”，而是“用户接下来还缺什么”。</span><span>11</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>扩张的起点，不是“我还能做什么”，而是“用户接下来还缺什么”。</span><span>13</span></div>
     </div>
   </section>
 
-  <!-- 12 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="lesson">LESSON 04</div>
       <h2 class="reveal d1">不要沿着功能扩张。<br><span class="accent">要沿着用户的下一个问题扩张。</span></h2>
@@ -307,12 +369,12 @@
       </div>
       <div class="splitline reveal d4"></div>
       <div class="quote reveal d5">Don’t expand by features. <span class="blue">Expand along the next problem.</span></div>
-      <div class="footer"><span>Adjacency → Expansion</span><span>12</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>Adjacency → Expansion</span><span>14</span></div>
     </div>
   </section>
 
-  <!-- 13 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">EXPANSION LOGIC</div>
       <h2 class="reveal d2">真正的 Expansion，<br><span class="accent">不是“做更多”，而是“理解更深”。</span></h2>
@@ -324,12 +386,12 @@
         <div class="card soft reveal d4"><div class="small">FOOD / DELIVERY</div><h3 style="margin-top:12px">获得</h3><p>不必移动自己，也能获得本地商品与服务。</p></div>
         <div class="card soft reveal d5"><div class="small">FINANCE</div><h3 style="margin-top:12px">参与</h3><p>围绕高频交易与工作场景，进一步解决支付与金融可得性。</p></div>
       </div>
-      <div class="footer"><span>不是 Super App 逻辑，而是持续跟随用户问题的逻辑。</span><span>13</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>不是 Super App 逻辑，而是持续跟随用户问题的逻辑。</span><span>15</span></div>
     </div>
   </section>
 
-  <!-- 14 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE BRAZIL TEST</div>
       <h2 class="reveal d2">如果这套 playbook 这么好，<br><span class="accent">为什么在 Brazil 没有复制 Mexico 的统治力？</span></h2>
@@ -340,12 +402,12 @@
       </div>
       <div class="splitline reveal d5"></div>
       <div class="big-rule reveal d5">Mexico success ≠ Latin America playbook.</div>
-      <div class="footer"><span>最成功的经验，往往是下一次失败的原因。</span><span>14</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>最成功的经验，往往是下一次失败的原因。</span><span>16</span></div>
     </div>
   </section>
 
-  <!-- 15 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="lesson">LESSON 05</div>
       <h2 class="reveal d1">Market Size <span class="red">≠</span> Market Opportunity</h2>
@@ -357,82 +419,51 @@
       </div>
       <div class="splitline"></div>
       <div class="cta reveal d5">Never copy a successful market. <span class="blue">Re-discover the next market.</span></div>
-      <div class="footer"><span>Every New Market Is a New Startup.</span><span>15</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>Every New Market Is a New Startup.</span><span>17</span></div>
     </div>
   </section>
 
-  <!-- 16 -->
-  <section class="slide">
+<section class="slide">
     <div class="frame">
       <div class="eyebrow reveal d1">THE 7 QUESTIONS OF GLOBAL PMF</div>
       <div class="table reveal d2">
         <div class="row head"><div>Question</div><div>DiDi Mexico</div><div>For an OPC Founder</div></div>
         <div class="row"><div class="label">1. PAIN</div><div class="dim">谁的出行问题最痛？</div><div>世界上谁最痛苦地需要你？</div></div>
         <div class="row"><div class="label">2. STATUS QUO</div><div class="dim">Uber 哪里仍没解决？</div><div>用户今天怎么凑合解决？</div></div>
-        <div class="row"><div class="label">3. WEDGE</div><div class="dim">价格 / 司机 / 安全</div><div>你的第一根楔子是什么？</div></div>
-        <div class="row"><div class="label">4. TEST MARKET</div><div class="dim">Toluca</div><div>哪里能最低成本验证？</div></div>
-        <div class="row"><div class="label">5. LOCAL TRUTH</div><div class="dim">墨西哥真正重视什么？</div><div>什么中国假设必须推翻？</div></div>
-        <div class="row"><div class="label">6. EVIDENCE</div><div class="dim">什么时候从 1 城到 32 城？</div><div>什么证据出现才 Scale？</div></div>
+        <div class="row"><div class="label">3. WEDGE</div><div class="dim">价格 / 司机 / 安全</div><div>你的第一个突破口是什么？</div></div>
+        <div class="row"><div class="label">4. TEST MARKET</div><div class="dim">Toluca</div><div>在哪儿能最低成本验证？</div></div>
+        <div class="row"><div class="label">5. LOCAL TRUTH</div><div class="dim">墨西哥真正重视什么？</div><div>哪些中国假设必须推翻？</div></div>
+        <div class="row"><div class="label">6. EVIDENCE</div><div class="dim">什么时候从 1 城到 32 城？</div><div>出现哪些证据才能 Scale？</div></div>
         <div class="row"><div class="label">7. STRUCTURE</div><div class="dim">Mexico ≠ Brazil</div><div>这个市场的结构允许你赢吗？</div></div>
       </div>
-      <div class="footer"><span>先把问题问对，再谈全球化。</span><span>16</span></div>
-    </div>
-  </section>
-
-  <!-- 17 -->
-  <section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">DISTRIBUTION IS PART OF PMF</div>
-      <h2 class="reveal d2">OPC Top100 不是奖牌。<br><span class="accent">它是一笔 Trust & Distribution Asset.</span></h2>
-      <div class="grid4" style="margin-top:42px">
-        <div class="card soft reveal d2"><h3>AWS</h3><p>借基础设施与生态信用。</p></div>
-        <div class="card soft reveal d3"><h3>Mentors</h3><p>借行业判断与连接。</p></div>
-        <div class="card soft reveal d4"><h3>Partners</h3><p>借渠道与本地触达。</p></div>
-        <div class="card soft reveal d5"><h3>Community</h3><p>借第一批真实反馈。</p></div>
-      </div>
-      <div class="splitline reveal d5"></div>
-      <div class="big-rule reveal d5">Founder content、community、outreach，本质不是“做流量”——<span class="blue">而是更快获得市场反馈。</span></div>
-      <div class="footer"><span>Borrowed Trust + Borrowed Distribution</span><span>17</span></div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span>先把问题问对，再谈全球化。</span><span>18</span></div>
     </div>
   </section>
 
   <!-- 18 -->
-  <section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">YOUR 30-DAY GLOBAL TEST</div>
-      <div class="grid2" style="align-items:center">
-        <div>
-          <div class="mega reveal d2">10</div>
-          <h2 class="reveal d3">real users.<br>Not followers.</h2>
-        </div>
-        <div class="stack reveal d3">
-          <div class="lineitem"><span class="dot"></span><span><b>1 market</b> · 选一个足够小、足够真实的市场</span></div>
-          <div class="lineitem"><span class="dot"></span><span><b>1 painful problem</b> · 找一个非解决不可的问题</span></div>
-          <div class="lineitem"><span class="dot"></span><span><b>1 wedge</b> · 只测试一个清晰价值主张</span></div>
-          <div class="lineitem"><span class="dot"></span><span><b>30 days</b> · 只追求证据，不追求规模</span></div>
-        </div>
-      </div>
-      <div class="splitline"></div>
-      <div class="cta reveal d5">你真正缺的，也许不是更多技术、更多人、更多融资。<br><span class="blue">你缺的是第一个真实证据。</span></div>
-      <div class="footer"><span>Action > Strategy Deck.</span><span>18</span></div>
-    </div>
-  </section>
+  
+
 
   <!-- 19 -->
   <section class="slide">
-    <div class="frame" style="text-align:center;justify-content:center">
-      <div class="eyebrow reveal d1">2026 · YOUR TURN</div>
-      <h1 class="reveal d2">Don’t go global.</h1>
-      <h1 class="accent reveal d3" style="margin-top:8px">Find global evidence.</h1>
-      <div class="splitline reveal d4" style="margin:40px auto;width:58%"></div>
-      <div class="cta reveal d5">不要先证明你能“出海”。<br>先证明世界上有人真的需要你。</div>
-      <div class="footer"><span class="brand">Evidence &gt; Ambition.</span><span>19</span></div>
+    <div class="frame">
+      <div class="closing-slide">
+        <div>
+          <div class="closing-quote reveal d2">Every New Market Is a New Startup.</div>
+        </div>
+        <div class="qr-card reveal d4">
+          <img src="qr.jpg" alt="Monica QR code" />
+        </div>
+      </div>
+      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
+      <div class="footer"><span></span><span>19</span></div>
     </div>
   </section>
 
 </div>
-<img class="brand-logo" src="agivilla-logo.png" alt="AGIVilla" />
-<div class="counter" id="counter">01 / 19</div>
+<div class="counter" id="counter">01 / 18</div>
 <div class="navhint">← → / Space · Home / End</div>
 <div class="progress"><div id="progressBar"></div></div>
 <script>
