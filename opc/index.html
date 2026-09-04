@@ -53,8 +53,9 @@
   .kpi{font-size:clamp(68px,9vw,150px);line-height:.9;font-weight:790;letter-spacing:-.06em}
   .quote{font-size:clamp(28px,3.35vw,58px);line-height:1.08;font-weight:700;letter-spacing:-.035em;max-width:1200px}
   .lesson{position:absolute;right:0;top:0;border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:999px;color:#c7c7cc;font-size:14px;font-weight:700;letter-spacing:.12em}
-  .footer{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;color:#68686f;font-size:12px;letter-spacing:.04em}
+  .footer{position:absolute;left:0;right:120px;bottom:0;display:flex;justify-content:space-between;align-items:center;color:#68686f;font-size:12px;letter-spacing:.04em}
   .footer .brand{font-weight:700;color:#8e8e93}
+  .brand-logo{position:fixed;right:clamp(16px,2vw,28px);bottom:clamp(16px,2.2vh,26px);z-index:98;width:clamp(72px,6.8vw,102px);height:auto;pointer-events:none;opacity:.9;object-fit:contain}
   .progress{position:fixed;left:0;right:0;bottom:0;height:3px;background:#151517;z-index:99}
   .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .45s var(--ease)}
   .counter{position:fixed;right:22px;top:18px;z-index:99;color:#76767d;font-size:12px;font-weight:650;letter-spacing:.1em}
@@ -76,7 +77,7 @@
   .mega{font-size:clamp(58px,8vw,138px);line-height:.9;letter-spacing:-.06em;font-weight:800}
   .cta{font-size:clamp(28px,3vw,54px);line-height:1.1;font-weight:740;letter-spacing:-.03em}
   @media (max-width:900px){
-    .frame{height:auto;max-height:none;aspect-ratio:auto}.slide{padding:8vh 7vw 10vh;overflow:auto}.grid4,.steps{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.grid2,.vs{grid-template-columns:1fr}.vs .divider{display:none}.table{overflow:auto}.row{min-width:850px}.footer{position:relative;margin-top:24px}.lesson{position:relative;display:inline-block;margin-bottom:20px}.counter{top:10px}.navhint{display:none}
+    .frame{height:auto;max-height:none;aspect-ratio:auto}.slide{padding:8vh 7vw 10vh;overflow:auto}.grid4,.steps{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.grid2,.vs{grid-template-columns:1fr}.vs .divider{display:none}.table{overflow:auto}.row{min-width:850px}.footer{position:relative;margin-top:24px;right:0}.lesson{position:relative;display:inline-block;margin-bottom:20px}.counter{top:10px}.navhint{display:none}.brand-logo{width:72px;bottom:14px;right:14px}
   }
 </style>
 </head>
@@ -430,6 +431,7 @@
   </section>
 
 </div>
+<img class="brand-logo" src="agivilla-logo.png" alt="AGIVilla" />
 <div class="counter" id="counter">01 / 19</div>
 <div class="navhint">← → / Space · Home / End</div>
 <div class="progress"><div id="progressBar"></div></div>
