@@ -1,494 +1,115 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>你不是在“出海”，你是在重新创业｜DiDi Mexico × Global PMF</title>
-<meta name="description" content="从 DiDi Mexico 到 AI 创业者的 Global PMF。Every New Market Is a New Startup." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#000000" />
+<title>OPC 出海地图｜Monica Wang</title>
+<meta name="description" content="OPC 出海地图｜Monica Wang · AWS 分享" />
 <link rel="canonical" href="https://opc.agivilla.com/" />
-<meta property="og:title" content="你不是在“出海”，你是在重新创业｜DiDi Mexico × Global PMF" />
-<meta property="og:description" content="从 DiDi Mexico 到 AI 创业者的 Global PMF。Every New Market Is a New Startup." />
+<meta property="og:title" content="OPC 出海地图｜Monica Wang" />
+<meta property="og:description" content="OPC 出海地图｜Monica Wang · AWS 分享" />
 <meta property="og:url" content="https://opc.agivilla.com/" />
 <meta property="og:type" content="website" />
-<meta name="theme-color" content="#050505" />
 <style>
-  :root{
-    --bg:#050505;
-    --panel:#0b0b0d;
-    --panel2:#111114;
-    --text:#f5f5f7;
-    --muted:#9a9aa1;
-    --line:#25252a;
-    --blue:#2997ff;
-    --purple:#bf5af2;
-    --green:#30d158;
-    --orange:#ff9f0a;
-    --red:#ff453a;
-    --radius:28px;
-    --ease:cubic-bezier(.2,.8,.2,1);
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;width:100%;height:100%;background:#000;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif;overflow:hidden}
-  body{position:relative}
-  .deck{position:relative;width:100%;height:100%;background:radial-gradient(1100px 650px at 75% 18%,rgba(41,151,255,.08),transparent 55%),radial-gradient(900px 650px at 20% 80%,rgba(191,90,242,.06),transparent 58%),var(--bg)}
-  .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:5.3vh 5vw 6vh;opacity:0;transform:translate3d(4%,0,0) scale(.99);pointer-events:none;transition:opacity .55s var(--ease),transform .55s var(--ease)}
-  .slide.prev{transform:translate3d(-4%,0,0) scale(.99)}
-  .slide.active{opacity:1;transform:none;pointer-events:auto;z-index:2}
-  .frame{width:min(92vw,1600px);height:min(82.8vw,900px);max-height:88vh;aspect-ratio:16/9;position:relative;display:flex;flex-direction:column;justify-content:center}
-  .eyebrow{font-size:clamp(14px,1.2vw,22px);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:22px}
-  h1,h2,h3,p{margin:0}
-  h1{font-size:clamp(44px,5.8vw,100px);line-height:.98;letter-spacing:-.045em;font-weight:760}
-  h2{font-size:clamp(34px,4vw,72px);line-height:1.02;letter-spacing:-.035em;font-weight:740}
-  h3{font-size:clamp(24px,2.25vw,42px);line-height:1.08;letter-spacing:-.025em;font-weight:700}
-  .sub{font-size:clamp(18px,1.8vw,32px);line-height:1.5;color:#c7c7cc;max-width:1150px}
-  .small{font-size:clamp(13px,1.02vw,18px);line-height:1.45;color:var(--muted)}
-  .accent{background:linear-gradient(90deg,#f5f5f7 0%,#8fd0ff 48%,#cda1ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .blue{color:var(--blue)} .purple{color:var(--purple)} .green{color:var(--green)} .orange{color:var(--orange)} .red{color:var(--red)}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:28px;box-shadow:0 18px 60px rgba(0,0,0,.24)}
-  .card.soft{background:rgba(255,255,255,.035)}
-  .card h3{margin-bottom:12px}.card p{color:#b9b9bf;font-size:clamp(15px,1.22vw,21px);line-height:1.5}
-  .kpi{font-size:clamp(68px,9vw,150px);line-height:.9;font-weight:790;letter-spacing:-.06em}
-  .quote{font-size:clamp(28px,3.35vw,58px);line-height:1.08;font-weight:700;letter-spacing:-.035em;max-width:1200px}
-  .lesson{position:absolute;right:0;top:0;border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:999px;color:#c7c7cc;font-size:14px;font-weight:700;letter-spacing:.12em}
-  .footer{position:absolute;left:0;right:96px;bottom:0;display:flex;justify-content:space-between;align-items:center;color:#68686f;font-size:12px;letter-spacing:.04em}
-  .footer .brand{font-weight:700;color:#8e8e93}
-  .progress{position:fixed;left:0;right:0;bottom:0;height:3px;background:#151517;z-index:99}
-  .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .45s var(--ease)}
-  .counter{position:fixed;right:22px;top:18px;z-index:99;color:#76767d;font-size:12px;font-weight:650;letter-spacing:.1em}
-  .navhint{position:fixed;left:22px;bottom:16px;z-index:99;color:#5f5f66;font-size:11px;opacity:.8}
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-  .active .reveal{opacity:1;transform:none}
-  .active .d1{transition-delay:.08s}.active .d2{transition-delay:.16s}.active .d3{transition-delay:.24s}.active .d4{transition-delay:.32s}.active .d5{transition-delay:.40s}
-  .splitline{height:1px;background:linear-gradient(90deg,transparent,#333,transparent);margin:26px 0}
-  .big-rule{font-size:clamp(26px,3vw,52px);font-weight:720;line-height:1.1;letter-spacing:-.03em}
-  .chips{display:flex;gap:10px;flex-wrap:wrap}.chip{padding:9px 13px;border-radius:999px;border:1px solid #2d2d32;background:#0d0d10;color:#c7c7cc;font-size:14px;font-weight:650}
-  .flow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.flow .node{padding:18px 22px;border-radius:20px;background:#111114;border:1px solid #2a2a30;font-size:clamp(16px,1.4vw,23px);font-weight:700}.flow .arrow{color:#5c5c64;font-size:26px}
-  .vs{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center}.vs .divider{font-size:16px;color:#6e6e76;font-weight:800}
-  .table{border:1px solid #28282e;border-radius:22px;overflow:hidden}.row{display:grid;grid-template-columns:1.05fr 1.05fr 1.4fr;min-height:64px;border-bottom:1px solid #242429;align-items:center}.row:last-child{border-bottom:0}.row>div{padding:14px 18px;font-size:clamp(13px,1.05vw,18px);line-height:1.35}.row.head{background:#0f0f12;color:#8f8f97;font-weight:700;text-transform:uppercase;letter-spacing:.06em}.row .label{font-weight:760;color:#f1f1f3}.row .dim{color:#a0a0a7}
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{position:relative;padding:22px 18px;border-radius:22px;border:1px solid #27272c;background:#0d0d10;min-height:160px}.step .num{font-size:12px;color:#6f6f77;font-weight:800;letter-spacing:.12em}.step h3{font-size:clamp(19px,1.55vw,27px);margin:18px 0 8px}.step p{font-size:clamp(13px,1vw,17px);color:#a6a6ad;line-height:1.45}
-  .ring{width:clamp(260px,25vw,420px);aspect-ratio:1;border-radius:50%;border:1px solid #2f2f35;display:grid;place-items:center;position:relative}.ring:before,.ring:after{content:"";position:absolute;border-radius:50%;border:1px solid #202026}.ring:before{inset:12%}.ring:after{inset:26%}.ring .core{width:42%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#57b5ff,#2769ff 52%,#4d29ff);box-shadow:0 0 90px rgba(41,151,255,.28);display:grid;place-items:center;text-align:center;font-weight:780;font-size:clamp(18px,1.6vw,28px);z-index:2}.orbit{position:absolute;inset:0}.orbit span{position:absolute;font-size:clamp(13px,1vw,17px);color:#c8c8ce;font-weight:700}.o1{top:7%;left:42%}.o2{right:-1%;top:42%}.o3{bottom:7%;left:42%}.o4{left:-2%;top:42%}.o5{left:12%;top:15%}
-  .bar{height:12px;border-radius:999px;background:#1c1c21;overflow:hidden}.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),var(--purple))}
-  .mapbox{height:100%;min-height:360px;border-radius:28px;border:1px solid #25252b;background:radial-gradient(600px 380px at 66% 42%,rgba(41,151,255,.12),transparent 60%),#0b0b0e;position:relative;overflow:hidden}.mapbox svg{position:absolute;inset:0;width:100%;height:100%}.mapbox .caption{position:absolute;left:24px;bottom:20px;color:#8b8b92;font-size:13px}
-  .stack{display:flex;flex-direction:column;gap:12px}.lineitem{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #232328}.lineitem:last-child{border-bottom:0}.dot{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 24px rgba(41,151,255,.55)}
-  .mega{font-size:clamp(58px,8vw,138px);line-height:.9;letter-spacing:-.06em;font-weight:800}
-  .cta{font-size:clamp(28px,3vw,54px);line-height:1.1;font-weight:740;letter-spacing:-.03em}
-  .closing-slide{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
-  .closing-kicker{font-size:clamp(14px,1.1vw,20px);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:18px}
-  .closing-quote{font-size:clamp(46px,5.2vw,92px);line-height:1.02;letter-spacing:-.05em;font-weight:780;max-width:900px}
-  .closing-note{font-size:clamp(18px,1.45vw,26px);line-height:1.5;color:#b8c7d8;margin-top:20px}
-  .qr-card{justify-self:end;width:min(16vw,210px);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:12px;box-shadow:0 18px 60px rgba(0,0,0,.26)}
-  .qr-card img{display:block;width:100%;height:auto;border-radius:20px}
-  .qr-caption{margin-top:14px;font-size:clamp(14px,1.02vw,18px);color:#9ebce0;line-height:1.45;text-align:center}
-  .about-title{font-size:clamp(82px,9.2vw,156px);line-height:.88;letter-spacing:-.075em;font-weight:790;margin:6px 0 10px;background:linear-gradient(90deg,#f5f5f7 0%,#d9ecff 42%,#8fd0ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .about-wrap{display:grid;grid-template-columns:.72fr 1.58fr;gap:54px;align-items:start;margin-top:8px}
-  .about-tag{font-size:clamp(16px,1.35vw,24px);font-weight:780;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
-  .about-intro{display:none}
-  .about-rows{display:flex;flex-direction:column;border-top:1px solid rgba(41,151,255,.20)}
-  .about-row{display:grid;grid-template-columns:110px 1.18fr 1.45fr;gap:28px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(41,151,255,.18)}
-  .about-no{font-size:clamp(32px,2.95vw,54px);font-weight:800;letter-spacing:-.05em;color:var(--blue)}
-  .about-main{font-size:clamp(26px,2.15vw,42px);line-height:1.08;letter-spacing:-.04em;font-weight:770;color:#f5f5f7}
-  .about-sub{font-size:clamp(16px,1.18vw,22px);line-height:1.42;color:#b6c5d8;font-weight:560}
-  .page-logo{position:absolute;right:0;bottom:28px;width:78px;height:auto;opacity:.95;pointer-events:none;user-select:none;z-index:3}
-  @media (max-width:900px){
-    .page-logo{right:0;bottom:18px;width:58px}
-    .closing-slide{grid-template-columns:1fr;gap:26px}.qr-card{justify-self:start;width:min(36vw,170px)}.closing-quote{font-size:clamp(34px,8vw,56px)}.closing-note{text-align:left}
-    .about-wrap{grid-template-columns:1fr;gap:18px}.about-row{grid-template-columns:72px 1fr;gap:16px;align-items:start;padding:18px 0}.about-row .about-sub{grid-column:2 / -1}.about-main{font-size:clamp(22px,5.8vw,30px);line-height:1.1}.about-no{font-size:clamp(24px,6.8vw,34px)}.about-sub{font-size:clamp(14px,3.6vw,18px)}
-    .frame{height:auto;max-height:none;aspect-ratio:auto}.slide{padding:8vh 7vw 10vh;overflow:auto}.grid4,.steps{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.grid2,.vs{grid-template-columns:1fr}.vs .divider{display:none}.table{overflow:auto}.row{min-width:850px}.footer{position:relative;margin-top:24px}.lesson{position:relative;display:inline-block;margin-bottom:20px}.counter{top:10px}.navhint{display:none}
+  html,body{margin:0;width:100%;height:100%;background:#000;overflow:hidden;}
+  body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;user-select:none;-webkit-user-select:none;touch-action:none;}
+  #stage{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;}
+  .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;opacity:0;pointer-events:none;transition:opacity 360ms cubic-bezier(.22,.61,.36,1);}
+  .slide.active{opacity:1;z-index:2;}
+  .slide.leaving{opacity:0;z-index:1;}
+  #left,#right{position:fixed;top:0;bottom:0;width:50%;z-index:5;background:transparent;}
+  #left{left:0;cursor:w-resize;}
+  #right{right:0;cursor:e-resize;}
+  .brand-logo{position:fixed;right:clamp(16px,2vw,28px);bottom:clamp(16px,2.2vh,26px);z-index:8;width:clamp(72px,6.8vw,102px);height:auto;pointer-events:none;opacity:.9;object-fit:contain;}
+  @media (prefers-reduced-motion: reduce){.slide{transition:none;}}
+  @media (max-width:900px){.brand-logo{width:72px;bottom:14px;right:14px;}}
+  @media print{
+    html,body{overflow:visible;background:white;height:auto;}
+    #stage{position:static;display:block;}
+    .slide{position:static;width:100%;height:auto;opacity:1!important;page-break-after:always;display:block;}
+    #left,#right,.brand-logo{display:none;}
   }
 </style>
 </head>
 <body>
-<div class="deck" id="deck">
-
-  <!-- 01 -->
-  <section class="slide active">
-    <div class="frame">
-      <div class="eyebrow reveal d1">OPC TOP100 · GOING GLOBAL · 2026</div>
-      <h1 class="reveal d2">你不是在“出海”，<br><span class="accent">你是在重新创业。</span></h1>
-      <div class="splitline reveal d3"></div>
-      <div class="sub reveal d4"><span style="color:#8f8f97">Every New Market Is a New Startup.</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span class="brand">Monica Wang · AGI Villa</span><span>01</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="about-tag reveal d1">ABOUT · 关于我</div>
-      <div class="about-wrap">
-        <div>
-          <div class="about-title reveal d2">Monica</div>
-        </div>
-        <div class="about-rows">
-          <div class="about-row reveal d2">
-            <div class="about-no">01</div>
-            <div class="about-main">记者出身 · 连续创业者</div>
-            <div class="about-sub">电商 · 本地生活 · Web3 · AI · 教育</div>
-          </div>
-          <div class="about-row reveal d3">
-            <div class="about-no">02</div>
-            <div class="about-main">出走 60 国</div>
-            <div class="about-sub">科技出海 · 深度观察者 · 连接者</div>
-          </div>
-          <div class="about-row reveal d4">
-            <div class="about-no">03</div>
-            <div class="about-main">马拉松跑者</div>
-            <div class="about-sub">年跑量 3,000 KM · 耐力 · 速度 · 长期主义</div>
-          </div>
-          <div class="about-row reveal d5">
-            <div class="about-no">04</div>
-            <div class="about-main">三宝妈</div>
-            <div class="about-sub">13 岁 · 9 岁 · 6 岁 · 家庭 · 消费 · 成长</div>
-          </div>
-        </div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>About the speaker</span><span>02</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE DECISION</div>
-      <div class="grid2" style="align-items:center">
-        <div>
-          <div class="kpi reveal d2">87<span style="font-size:.42em">%</span></div>
-          <h2 class="reveal d3" style="margin-top:16px">Uber market share.<br><span class="blue">Mexico, 2018.</span></h2>
-        </div>
-        <div class="card reveal d4" style="padding:40px">
-          <div class="small">You are the founder.</div>
-          <div class="quote" style="margin-top:18px">Would you<br><span class="accent">enter?</span></div>
-        </div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>一个看起来“不应该进入”的市场</span><span>03</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame" style="justify-content:center;text-align:left">
-      <h1 class="reveal d1" style="font-size:clamp(56px,7.2vw,126px);letter-spacing:.18em;font-weight:760;color:#bdbdc7">DIDI DID.</h1>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span></span><span>04</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE REFRAME</div>
-      <h2 class="reveal d2">竞争激烈，<br><span class="accent">不等于没有机会。</span></h2>
-      <div class="grid2" style="margin-top:38px">
-        <div class="card reveal d3">
-          <div class="small">错误问题</div>
-          <h3 style="margin-top:10px;color:#d4d4d8">“竞争对手是不是已经很强？”</h3>
-        </div>
-        <div class="card reveal d4" style="border-color:rgba(41,151,255,.35);box-shadow:0 0 70px rgba(41,151,255,.08)">
-          <div class="small blue">真正问题</div>
-          <h3 style="margin-top:10px">“现有解决方案是否留下了<br><span class="blue">结构性的痛？</span>”</h3>
-        </div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>Going Global Is a PMF Reset.</span><span>05</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">FIND THE PAIN</div>
-      <h2 class="reveal d2">DiDi 研究的不是 Uber 有多好。<br><span class="accent">而是：已经这么成功了，为什么还有人不满意？</span></h2>
-      <div class="grid4" style="margin-top:34px">
-        <div class="card soft reveal d2"><div class="small">PASSENGER</div><h3 style="margin-top:12px">价格</h3><p>用户是否仍觉得贵？</p></div>
-        <div class="card soft reveal d3"><div class="small">DRIVER</div><h3 style="margin-top:12px">收益</h3><p>司机是否愿意留下？</p></div>
-        <div class="card soft reveal d4"><div class="small">SAFETY</div><h3 style="margin-top:12px">信任</h3><p>双方是否真正安心？</p></div>
-        <div class="card soft reveal d5"><div class="small">MOBILITY</div><h3 style="margin-top:12px">系统</h3><p>城市交通还有什么没被解决？</p></div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>不要只做 competitor analysis，要做 dissatisfaction analysis.</span><span>06</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="lesson">LESSON 01</div>
-      <div class="grid2" style="align-items:center">
-        <div>
-          <div class="kpi reveal d1">40<span style="font-size:.42em">%</span></div>
-          <h3 class="reveal d2" style="margin-top:18px">交通支出，最高可占部分居民收入的 40%</h3>
-          <p class="sub reveal d3" style="margin-top:16px">真正的机会不是“打车便宜一点”，而是一个城市系统里，<b>居住、就业与公共交通之间长期错位</b>。</p>
-        </div>
-        <div class="stack reveal d4">
-          <div class="lineitem"><span class="dot"></span><span>Urban Sprawl · 城市向外扩张</span></div>
-          <div class="lineitem"><span class="dot"></span><span>Housing moves outward · 居住更远</span></div>
-          <div class="lineitem"><span class="dot"></span><span>Jobs stay concentrated · 工作仍集中</span></div>
-          <div class="lineitem"><span class="dot"></span><span>Public transit gap · 公共交通连接不足</span></div>
-          <div class="lineitem"><span class="dot"></span><span class="blue"><b>Mobility Poverty · 出行贫困</b></span></div>
-        </div>
-      </div>
-      <div class="splitline"></div>
-      <div class="big-rule reveal d5">Don’t look for a big market. <span class="blue">Look for a broken system.</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>不要寻找“大市场”，寻找一个正在失效的系统。</span><span>07</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE LAB</div>
-      <div class="grid2" style="height:72%;align-items:stretch">
-        <div>
-          <h2 class="reveal d2">Why <span class="blue">Toluca?</span></h2>
-          <p class="sub reveal d3" style="margin-top:18px">DiDi 没有第一天冲进 Mexico City。<br>它先找了一个<b>足够真实、又足够可控</b>的市场。</p>
-          <div class="flow reveal d4" style="margin-top:34px"><span class="node blue">Toluca</span><span class="arrow">→</span><span class="node">Monterrey</span><span class="arrow">→</span><span class="node">Guadalajara</span><span class="arrow">→</span><span class="node">Mexico City</span></div>
-          <div class="splitline reveal d5"></div>
-          <div class="big-rule reveal d5">Toluca was not a market.<br><span class="accent">Toluca was a laboratory.</span></div>
-        </div>
-        <div class="mapbox reveal d4">
-          <svg viewBox="0 0 760 520" aria-label="schematic map">
-            <path d="M150 100 C230 50, 340 70, 420 120 C520 180, 580 250, 615 340 C540 420, 450 455, 360 440 C270 425, 190 365, 150 285 C110 210,110 145,150 100Z" fill="none" stroke="#22242b" stroke-width="2"/>
-            <circle cx="468" cy="264" r="13" fill="#2997ff"/><circle cx="468" cy="264" r="42" fill="none" stroke="rgba(41,151,255,.28)" stroke-width="2"/>
-            <circle cx="430" cy="285" r="7" fill="#f5f5f7"/>
-            <line x1="430" y1="285" x2="468" y2="264" stroke="#4f4f58" stroke-dasharray="5 7"/>
-            <text x="485" y="255" fill="#f5f5f7" font-size="24" font-weight="700">Mexico City</text>
-            <text x="333" y="317" fill="#8fd0ff" font-size="24" font-weight="700">Toluca</text>
-            <text x="330" y="346" fill="#7c7c84" font-size="16">~60 km away</text>
-          </svg>
-          <div class="caption">Schematic · first direct overseas ride-hailing market</div>
-        </div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>Your first market is not your destination. It is your experiment.</span><span>08</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="lesson">LESSON 02</div>
-      <h2 class="reveal d1">你的第一个海外市场，<br><span class="accent">应该证明一件事，而不是征服一个国家。</span></h2>
-      <div class="steps" style="margin-top:38px">
-        <div class="step reveal d1"><div class="num">01</div><h3>Demand</h3><p>用户真的会用吗？</p></div>
-        <div class="step reveal d2"><div class="num">02</div><h3>Supply</h3><p>供给愿意加入吗？</p></div>
-        <div class="step reveal d3"><div class="num">03</div><h3>Economics</h3><p>价格模型成立吗？</p></div>
-        <div class="step reveal d4"><div class="num">04</div><h3>Trust</h3><p>用户为什么相信你？</p></div>
-        <div class="step reveal d5"><div class="num">05</div><h3>Local Truth</h3><p>哪些中国假设必须推翻？</p></div>
-      </div>
-      <div class="splitline"></div>
-      <div class="cta reveal d5">30-Day Global Test：<span class="blue">找一个足够小的市场，用 30 天证明一件事。</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>不是先注册公司、做官网、买流量、去展会。</span><span>09</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE UNLEARNING</div>
-      <h2 class="reveal d2">The hardest part of globalization is <span class="accent">unlearning.</span></h2>
-      <div class="grid3" style="margin-top:40px">
-        <div class="card reveal d2"><div class="small">L1 · TRANSLATION</div><h3 style="margin-top:14px">语言变了</h3><p>中文 → 英文<br>人民币 → 美元</p></div>
-        <div class="card reveal d3"><div class="small">L2 · PRODUCT LOCALIZATION</div><h3 style="margin-top:14px">产品变了</h3><p>流程、支付、客服、地图、功能被重做。</p></div>
-        <div class="card reveal d4" style="border-color:rgba(191,90,242,.35)"><div class="small purple">L3 · PROBLEM LOCALIZATION</div><h3 style="margin-top:14px">问题变了</h3><p>你对“什么最重要”的理解被现实推翻。</p></div>
-      </div>
-      <div class="splitline reveal d4"></div>
-      <div class="big-rule reveal d5">真正的本地化：<span class="purple">当现实和你的经验冲突时，你愿不愿意相信现实？</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>安全，不只是 feature localization，而是 value proposition localization.</span><span>10</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE FLYWHEEL</div>
-      <div class="grid2" style="align-items:center">
-        <div class="ring reveal d2">
-          <div class="core">EVIDENCE<br>→ SCALE</div>
-          <div class="orbit"><span class="o1">Retention</span><span class="o2">Referral</span><span class="o3">Economics</span><span class="o4">Distribution</span><span class="o5">Supply Retention</span></div>
-        </div>
-        <div>
-          <h2 class="reveal d2">PMF 不是<br>“有人买”。</h2>
-          <p class="sub reveal d3" style="margin-top:18px">PMF 是一个飞轮开始自己转：用户回来、愿意推荐、获客更容易、供给留下、单位经济改善。</p>
-          <div class="splitline reveal d4"></div>
-          <div class="big-rule reveal d5"><span class="green">Evidence</span> gives you the right to scale.</div>
-        </div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>什么时候你有资格 Scale？不是融资之后，而是证据出现之后。</span><span>11</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame" style="justify-content:center;text-align:center">
-      <div class="lesson">LESSON 03</div>
-      <div class="mega reveal d1">Scale is not<br>a strategy.</div>
-      <div class="cta reveal d3" style="margin-top:28px;color:#a9a9b1">Scale is the consequence of <span class="green">evidence.</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>Evidence &gt; Ambition.</span><span>12</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE EXPANSION</div>
-      <h2 class="reveal d2">Why could DiDi move from <span class="blue">Mobility</span> to <span class="orange">Food</span>?</h2>
-      <div class="vs" style="margin-top:38px">
-        <div class="card reveal d3">
-          <div class="small red">WRONG LOGIC</div>
-          <h3 style="margin-top:12px">“我们会调度司机，<br>所以也能送外卖。”</h3>
-          <div class="chips" style="margin-top:20px"><span class="chip">技术相近</span><span class="chip">团队能做</span><span class="chip">市场够大</span></div>
-        </div>
-        <div class="divider">VS</div>
-        <div class="card reveal d4" style="border-color:rgba(255,159,10,.35)">
-          <div class="small orange">BETTER LOGIC</div>
-          <h3 style="margin-top:12px">“同一批用户还有什么<br><span class="orange">高频、本地、未满足的问题？</span>”</h3>
-          <div class="chips" style="margin-top:20px"><span class="chip">same users</span><span class="chip">local supply</span><span class="chip">dispatch</span><span class="chip">payments</span></div>
-        </div>
-      </div>
-      <div class="splitline reveal d5"></div>
-      <div class="big-rule reveal d5">从“把人送到目的地”，到“把日常生活送到用户面前”。</div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>扩张的起点，不是“我还能做什么”，而是“用户接下来还缺什么”。</span><span>13</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="lesson">LESSON 04</div>
-      <h2 class="reveal d1">不要沿着功能扩张。<br><span class="accent">要沿着用户的下一个问题扩张。</span></h2>
-      <div class="grid2" style="margin-top:38px">
-        <div class="card reveal d2">
-          <div class="small red">FEATURE EXPANSION</div>
-          <div class="flow" style="margin-top:22px"><span class="node">AI Notes</span><span class="arrow">→</span><span class="node">AI PPT</span><span class="arrow">→</span><span class="node">AI Search</span></div>
-          <p style="margin-top:24px">“因为技术上都能做。”</p>
-        </div>
-        <div class="card reveal d3" style="border-color:rgba(41,151,255,.35)">
-          <div class="small blue">PROBLEM EXPANSION</div>
-          <div class="flow" style="margin-top:22px"><span class="node blue">Problem 1</span><span class="arrow">→</span><span class="node blue">Next Problem</span><span class="arrow">→</span><span class="node blue">Next Problem</span></div>
-          <p style="margin-top:24px">“同一个用户，解决完这个问题之后，最自然的下一个问题是什么？”</p>
-        </div>
-      </div>
-      <div class="splitline reveal d4"></div>
-      <div class="quote reveal d5">Don’t expand by features. <span class="blue">Expand along the next problem.</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>Adjacency → Expansion</span><span>14</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">EXPANSION LOGIC</div>
-      <h2 class="reveal d2">真正的 Expansion，<br><span class="accent">不是“做更多”，而是“理解更深”。</span></h2>
-      <div class="flow reveal d3" style="margin-top:42px;justify-content:center">
-        <span class="node blue">Move People</span><span class="arrow">→</span><span class="node orange">Move Goods</span><span class="arrow">→</span><span class="node green">Move Money</span>
-      </div>
-      <div class="grid3" style="margin-top:34px">
-        <div class="card soft reveal d3"><div class="small">MOBILITY</div><h3 style="margin-top:12px">到达</h3><p>更便宜、更可靠地抵达目的地。</p></div>
-        <div class="card soft reveal d4"><div class="small">FOOD / DELIVERY</div><h3 style="margin-top:12px">获得</h3><p>不必移动自己，也能获得本地商品与服务。</p></div>
-        <div class="card soft reveal d5"><div class="small">FINANCE</div><h3 style="margin-top:12px">参与</h3><p>围绕高频交易与工作场景，进一步解决支付与金融可得性。</p></div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>不是 Super App 逻辑，而是持续跟随用户问题的逻辑。</span><span>15</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE BRAZIL TEST</div>
-      <h2 class="reveal d2">如果这套 playbook 这么好，<br><span class="accent">为什么在 Brazil 没有复制 Mexico 的统治力？</span></h2>
-      <div class="grid3" style="margin-top:40px">
-        <div class="card reveal d3"><div class="small">RIDE-HAILING</div><h3 style="margin-top:12px">Uber</h3><p>强大的用户心智与规模优势。</p></div>
-        <div class="card reveal d4"><div class="small">LOCAL SUPPLY</div><h3 style="margin-top:12px">99</h3><p>DiDi 选择收购，而不是从零重建。</p></div>
-        <div class="card reveal d5"><div class="small">FOOD</div><h3 style="margin-top:12px">iFood</h3><p>强大的餐厅供给与本地网络效应。</p></div>
-      </div>
-      <div class="splitline reveal d5"></div>
-      <div class="big-rule reveal d5">Mexico success ≠ Latin America playbook.</div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>最成功的经验，往往是下一次失败的原因。</span><span>16</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="lesson">LESSON 05</div>
-      <h2 class="reveal d1">Market Size <span class="red">≠</span> Market Opportunity</h2>
-      <div class="grid4" style="margin-top:40px">
-        <div class="card reveal d2"><div class="small">01</div><h3 style="margin-top:12px">Who owns demand?</h3><p>谁已经占据用户心智？</p></div>
-        <div class="card reveal d3"><div class="small">02</div><h3 style="margin-top:12px">Who owns supply?</h3><p>谁控制关键供给？</p></div>
-        <div class="card reveal d4"><div class="small">03</div><h3 style="margin-top:12px">Who owns distribution?</h3><p>谁掌握渠道与流量？</p></div>
-        <div class="card reveal d5" style="border-color:rgba(41,151,255,.35)"><div class="small blue">04</div><h3 style="margin-top:12px">Where is the whitespace?</h3><p>到底还有什么结构性空白？</p></div>
-      </div>
-      <div class="splitline"></div>
-      <div class="cta reveal d5">Never copy a successful market. <span class="blue">Re-discover the next market.</span></div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>Every New Market Is a New Startup.</span><span>17</span></div>
-    </div>
-  </section>
-
-<section class="slide">
-    <div class="frame">
-      <div class="eyebrow reveal d1">THE 7 QUESTIONS OF GLOBAL PMF</div>
-      <div class="table reveal d2">
-        <div class="row head"><div>Question</div><div>DiDi Mexico</div><div>For an OPC Founder</div></div>
-        <div class="row"><div class="label">1. PAIN</div><div class="dim">谁的出行问题最痛？</div><div>世界上谁最痛苦地需要你？</div></div>
-        <div class="row"><div class="label">2. STATUS QUO</div><div class="dim">Uber 哪里仍没解决？</div><div>用户今天怎么凑合解决？</div></div>
-        <div class="row"><div class="label">3. WEDGE</div><div class="dim">价格 / 司机 / 安全</div><div>你的第一个突破口是什么？</div></div>
-        <div class="row"><div class="label">4. TEST MARKET</div><div class="dim">Toluca</div><div>在哪儿能最低成本验证？</div></div>
-        <div class="row"><div class="label">5. LOCAL TRUTH</div><div class="dim">墨西哥真正重视什么？</div><div>哪些中国假设必须推翻？</div></div>
-        <div class="row"><div class="label">6. EVIDENCE</div><div class="dim">什么时候从 1 城到 32 城？</div><div>出现哪些证据才能 Scale？</div></div>
-        <div class="row"><div class="label">7. STRUCTURE</div><div class="dim">Mexico ≠ Brazil</div><div>这个市场的结构允许你赢吗？</div></div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span>先把问题问对，再谈全球化。</span><span>18</span></div>
-    </div>
-  </section>
-
-  <!-- 18 -->
-  
-
-
-  <!-- 19 -->
-  <section class="slide">
-    <div class="frame">
-      <div class="closing-slide">
-        <div>
-          <div class="closing-quote reveal d2">Every New Market Is a New Startup.</div>
-        </div>
-        <div class="qr-card reveal d4">
-          <img src="qr.jpg" alt="Monica QR code" />
-        </div>
-      </div>
-      <img class="page-logo" alt="AGI Villa" src="agivilla-logo.png" />
-      <div class="footer"><span></span><span>19</span></div>
-    </div>
-  </section>
-
-</div>
-<div class="counter" id="counter">01 / 18</div>
-<div class="navhint">← → / Space · Home / End</div>
-<div class="progress"><div id="progressBar"></div></div>
+<div id="stage" aria-label="OPC 出海地图演示文稿"></div>
+<div id="left" aria-label="上一页"></div>
+<div id="right" aria-label="下一页"></div>
+<img class="brand-logo" src="agivilla-logo.png" alt="AGIVilla" />
 <script>
-  const slides=[...document.querySelectorAll('.slide')];
-  const counter=document.getElementById('counter');
-  const progressBar=document.getElementById('progressBar');
-  let idx=0;
-  function show(n){
-    n=Math.max(0,Math.min(slides.length-1,n));
-    slides.forEach((s,i)=>{s.classList.remove('active','prev'); if(i<n)s.classList.add('prev');});
-    slides[n].classList.add('active'); idx=n;
-    counter.textContent=String(n+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
-    progressBar.style.width=((n+1)/slides.length*100)+'%';
-    history.replaceState(null,'','#slide-'+(n+1));
+const sources=['slides/01.png',
+'slides/02.png',
+'slides/03.png',
+'slides/04.png',
+'slides/05.png',
+'slides/06.png',
+'slides/07.png',
+'slides/08.png',
+'slides/09.png',
+'slides/10.png',
+'slides/11.png',
+'slides/12.png',
+'slides/13.png',
+'slides/14.png',
+'slides/15.png',
+'slides/16.png',
+'slides/17.png',
+'slides/18.png'];
+const stage=document.getElementById('stage');
+const slides=sources.map((src,i)=>{
+  const img=new Image();
+  img.className='slide'+(i===0?' active':'');
+  img.src=src;
+  img.alt=`Slide ${i+1} of ${sources.length}`;
+  img.draggable=false;
+  stage.appendChild(img);
+  return img;
+});
+let current=0, locked=false;
+function show(next, push=true){
+  next=Math.max(0,Math.min(slides.length-1,next));
+  if(next===current||locked)return;
+  locked=true;
+  const old=slides[current], neu=slides[next];
+  neu.classList.add('active');
+  old.classList.add('leaving');
+  old.classList.remove('active');
+  const done=()=>{old.classList.remove('leaving');locked=false;};
+  setTimeout(done,390);
+  current=next;
+  if(push) history.replaceState(null,'','#slide-'+(current+1));
+}
+function next(){show(current+1)}
+function prev(){show(current-1)}
+
+document.getElementById('right').addEventListener('click',next);
+document.getElementById('left').addEventListener('click',prev);
+window.addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next();}
+  else if(['ArrowLeft','ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev();}
+  else if(e.key==='Home'){e.preventDefault();show(0);}
+  else if(e.key==='End'){e.preventDefault();show(slides.length-1);}
+  else if(e.key.toLowerCase()==='f'){
+    e.preventDefault();
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
   }
-  function next(){show(idx+1)} function prev(){show(idx-1)}
-  document.addEventListener('keydown',e=>{
-    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();next()}
-    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();prev()}
-    if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
-  });
-  document.addEventListener('click',e=>{ if(e.target.closest('a,button'))return; const x=e.clientX/window.innerWidth; x>.56?next():prev(); });
-  let sx=0;document.addEventListener('touchstart',e=>sx=e.changedTouches[0].screenX,{passive:true});
-  document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)>60)dx<0?next():prev()},{passive:true});
-  const h=location.hash.match(/slide-(\d+)/); if(h)show(+h[1]-1); else show(0);
+});
+let sx=0,sy=0;
+window.addEventListener('touchstart',e=>{const t=e.changedTouches[0];sx=t.clientX;sy=t.clientY;},{passive:true});
+window.addEventListener('touchend',e=>{
+  const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;
+  if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)*1.2){dx<0?next():prev();}
+},{passive:true});
+const h=location.hash.match(/slide-(\d+)/);
+if(h){
+  const n=Math.max(0,Math.min(slides.length-1,+h[1]-1));
+  if(n){slides[0].classList.remove('active');slides[n].classList.add('active');current=n;}
+} else {
+  history.replaceState(null,'','#slide-1');
+}
 </script>
 </body>
 </html>
