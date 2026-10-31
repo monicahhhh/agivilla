@@ -451,7 +451,10 @@
     background:linear-gradient(180deg,#1a1a1a,#000);
     letter-spacing:-.04em;
     color:#fff;
+    overflow:hidden;
   }
+  .avatar-photo{position:relative}
+  .avatar-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%}
   .founder-body .label{margin-bottom:16px}
   .founder-body h3{font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
   .founder-body .role{color:var(--fg-dim);font-size:14.5px;margin-bottom:20px;line-height:1.6}
@@ -589,7 +592,7 @@
       <a href="#top" class="active">Home</a>
       <a href="/community/">Community</a>
       <a href="/insights/">Insights</a>
-      <a href="/chinatechtour/">Explore China</a>
+      <a href="/chinatechtour/">BridgingChina</a>
     </div>
     <a href="mailto:monica@agivilla.com" class="nav-cta">Connect</a>
   </div>
@@ -953,7 +956,9 @@
 
     <div class="founder reveal">
       <div class="avatar">
-        <div class="avatar-inner">M</div>
+        <div class="avatar-inner avatar-photo">
+          <img src="/monica/monica.jpg" alt="Monica Wang" />
+        </div>
       </div>
       <div class="founder-body">
         <div class="label">Founder</div>
@@ -972,8 +977,7 @@
         <div class="founder-links">
           <a href="/monica/">Profile →</a>
           <a href="/insights/">Insights →</a>
-          <a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a>
-          <a href="https://chinabymonica.com/connect" target="_blank" rel="noopener">Official Channel</a>
+          <a href="/monica/connect/">Connect Monica</a>
         </div>
       </div>
     </div>
