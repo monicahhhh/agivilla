@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Dialogue with Zimu: Blue Ocean Strategies &amp; Pitfall Avoidance Guide for Software Globalization — Monica Wang | AGI Villa</title>
+<meta name="description" content="Three Strategies to Discover Blue Oceans, N Case Studies of the Minimum Growth Loop, Simple Yet Highly Effective Growth Tactics, Product Selection Path: Digging" />
+<link rel="canonical" href="https://agivilla.com/insights/dialogue-with-zimu-blue-ocean-strategies-pitfall-avoidance-guide-for-software-globalization/" />
+<meta property="og:title" content="Dialogue with Zimu: Blue Ocean Strategies &amp; Pitfall Avoidance Guide for Software Globalization — Monica Wang | AGI Villa" />
+<meta property="og:description" content="Three Strategies to Discover Blue Oceans, N Case Studies of the Minimum Growth Loop, Simple Yet Highly Effective Growth Tactics, Product Selection Path: Digging" />
+<meta property="og:url" content="https://agivilla.com/insights/dialogue-with-zimu-blue-ocean-strategies-pitfall-avoidance-guide-for-software-globalization/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{display:none}}
+  .page{padding:128px 24px 80px}
+  .wrap{max-width:var(--max);margin:0 auto;min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:650;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:680px;margin-top:18px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filters button,.lang button{
+    background:transparent;color:var(--fg-dim);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;
+  }
+  .filters button.on,.lang button.on{background:#fff;color:#000;border-color:#fff}
+  .search{margin-left:auto;background:#0a0a0a;border:1px solid var(--line);color:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;min-width:220px;outline:none}
+  .search:focus{border-color:var(--line-2)}
+  @media(max-width:720px){.search{margin-left:0;width:100%}}
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:48px;padding:18px;border:1px solid var(--line);border-radius:28px;background:#070707;align-items:center;min-width:0}
+  .feature img{width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:18px;min-width:0}
+  .feature .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  .feature h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.15;font-weight:600}
+  .feature .zh{color:var(--fg-dim);margin-top:10px;font-size:16px}
+  .feature .sub{color:var(--fg-dimmer);margin-top:12px;line-height:1.5}
+  .feature .go{display:inline-flex;margin-top:20px;color:#fff;font-size:14px}
+  @media(max-width:800px){.feature{grid-template-columns:1fr}.feature img{max-height:220px}}
+  .list{display:flex;flex-direction:column;margin-top:18px}
+  .row{display:grid;grid-template-columns:148px minmax(0,1fr) auto;gap:22px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line)}
+  .row:hover h3{color:#fff}
+  .row .meta{color:var(--fg-dimmer);font-size:12.5px;letter-spacing:.04em;padding-top:4px}
+  .row .meta b{display:block;color:var(--fg-dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+  .row h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+  .row .zh{color:var(--fg-dim);font-size:14px;margin-top:6px}
+  .row .sub{color:var(--fg-dimmer);font-size:14.5px;line-height:1.5;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .min{color:var(--fg-dimmer);font-size:12.5px;padding-top:4px;white-space:nowrap}
+  .empty{display:none;color:var(--fg-dim);padding:48px 0}
+  @media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}.row .min{display:none}}
+  .back{color:var(--fg-dim);font-size:14px;display:inline-flex;margin-bottom:28px}
+  .back:hover{color:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  article.sheet{max-width:760px;margin:0 auto}
+  h1,.feature h2,.row h3{overflow-wrap:break-word}
+  article.sheet h1{font-size:clamp(32px,4vw,52px)}
+  .subhead{color:var(--fg-dim);font-size:18px;line-height:1.5;margin-top:16px}
+  .byline{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:22px;color:var(--fg-dimmer);font-size:13.5px}
+  .byline a{color:var(--fg)}
+  .cover{margin:28px 0 8px;border-radius:18px;border:1px solid var(--line);max-height:460px;width:100%;object-fit:cover}
+  .prose{margin-top:36px;font-size:17.5px;line-height:1.75;color:#e4e4e7}
+  .prose p{margin:0 0 1.15em}
+  .prose h2{font-size:28px;line-height:1.25;letter-spacing:-.03em;margin:1.7em 0 .55em;color:#fff;font-weight:600}
+  .prose h3{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:1.45em 0 .45em;color:#fff;font-weight:600}
+  .prose h4{font-size:17px;margin:1.2em 0 .4em;color:#fff}
+  .prose ul,.prose ol{margin:0 0 1.15em 1.25em}
+  .prose li{margin:.35em 0}
+  .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .prose strong,.prose b{color:#fff;font-weight:600}
+  .prose blockquote{border-left:3px solid var(--yellow);margin:1.4em 0;padding:2px 0 2px 16px;color:var(--fg-dim)}
+  .prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+  .prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .prose pre{background:#111;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;margin:0 0 1.15em}
+  .more{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .more h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dimmer);font-weight:500;margin-bottom:8px}
+  .more a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;letter-spacing:-.02em}
+  .more a span{display:block;color:var(--fg-dimmer);font-size:13px;margin-top:4px}
+  .more a:hover{color:#fff}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){.foot-wrap{grid-template-columns:1fr 1fr}.foot-bottom{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/insights/" class="active">Insights</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+
+<main class="page">
+  <div class="wrap">
+    <article class="sheet">
+      <a class="back" href="/insights/">← All insights</a>
+      <div class="kicker" id="kicker">Global Growth · 26 Nov 2025 · 12 min</div>
+      <h1 id="title"></h1>
+      <p class="subhead" id="subhead" hidden></p>
+      <div class="byline">
+        <span>Monica Wang</span>
+        <a href="/monica/">Founder, AGI Villa</a>
+        <div class="lang" id="lang">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+      
+      <div class="prose" id="body-en"><p>Content derived from the dialogue  between Monica and Zimu on November 26, 2025.</p><p>Guest Introduction</p><h2>Zimu</h2><p>Overseas entrepreneur, currently expanding overseas in the Social Marketing Agent domain.</p><p>10 years of SaaS experience, from technical expert to growth hacker.</p><p>4 years of overseas experience, from SLG to PLG.</p><p>Former Head of Growth at a Top AI marketing video tool, previously responsible for the <a href="http://packify.ai" target="_blank" rel="noopener">packify.ai</a> project.</p><p>Proficient in SEO/GEO, automated operations, viral growth, user demand mining, and data-driven growth.</p><h2><strong>Guest Self-Introduction and Career Transition Logic</strong></h2><p><strong>Monica</strong></p><p>Zimu, please introduce yourself first.</p><p><strong>Zimu</strong></p><p>I&#x27;m Zimu, and I&#x27;m still coding. For a while, I coded less when I was starting my own business after leaving Youzan.</p><p>Then, with the advent of the AI coding era, I started coding a lot more again.</p><p><strong>Monica</strong></p><p>Why did you transition from technology to growth, and then to entrepreneurship?</p><p><strong>Zimu</strong></p><p>Those are two questions.</p><p>I&#x27;ll address the first one. It&#x27;s not really &quot;from technology to growth,&quot; but rather these two paths have always been intertwined.</p><p>Essentially, it&#x27;s because I like to &quot;toss things around&quot;—to put it nicely, it&#x27;s &quot;entrepreneurship&quot;; to put it bluntly, it&#x27;s &quot;tossing things around.&quot;</p><p>Starting from my second year after graduation, I began making various small tools and products. At that time, I was still a tech blogger, and with Brother Chao in Shanghai, we worked on open-source projects and some mini-program tools.</p><p>During that period, we made many small tools. One of them, OpenWrite, is still active today—after writing a marketing article, it can automatically mass-send it to various tech communities. You can think of it as a scenario-based RPA.</p><p>Later, we made many more tools. But back then, being from a technical background, we didn&#x27;t have much business acumen. We didn&#x27;t understand product or marketing.</p><p>The turning point was in my last year at Youzan. I was a search engineer and also wrote a blog. My blog had traffic, so everyone started researching &quot;why there&#x27;s search traffic.&quot; That year, I began to be responsible for search growth and advertising projects at Youzan, which sparked my interest in growth. However, our growth was still technically driven.</p><p>After leaving Youzan, I continued to work for SaaS companies related to marketing and growth, and also held positions like industry head.</p><p>For the past four years, my main focus has been on overseas expansion. When I first started, there was no AI, and we were making online whiteboards, which was very difficult.</p><p>Then AI emerged, and we kept iterating, adding AI nodes, AI components, AI mind maps, flowcharts, and other features to the whiteboard.</p><p>I have a career choice, which is that I&#x27;ve &quot;never worked for a big company.&quot; Primarily because I like to &quot;toss things around,&quot; or perhaps I just couldn&#x27;t get in.</p><p>In short, I prefer to be a &quot;jack of all trades.&quot; I think my stronger points are product sense and commercialization ability. As for technology, with AI coding now, my development capabilities have been further enhanced. I&#x27;m not deep in algorithms and models, but you don&#x27;t need to be particularly knowledgeable about algorithms to build applications.</p><p>I&#x27;ve also worked on many channels for growth. I started learning Google SEO in 2019, Baidu in 2021, and then focused on Google SEO after going overseas, so I know quite a bit. That&#x27;s roughly my experience.</p><p><strong>Monica</strong></p><p>You&#x27;ve switched between technology and growth several times. What changes have you experienced mentally during these transitions? Was there any particularly critical juncture?</p><p><strong>Zimu</strong></p><p>Of course there was.</p><p>For example, technical positions usually have a &quot;salary bonus.&quot; When I tried to find a dedicated growth position, I found that salaries in this field were significantly lower. Accepting market rules was a psychological hurdle.</p><p>In addition, the job market is very vertical and doesn&#x27;t like generalists. They always want an SEO specialist if they need SEO. But the salaries in cities like Hangzhou aren&#x27;t high; Beijing, Shanghai, and Shenzhen are a bit better.</p><p>The second hurdle is: when you switch tracks, you need to spend a lot of time and &quot;tuition&quot; constantly learning, whether it&#x27;s asking others, searching for information, experimenting yourself, or even applying for budget from your boss.</p><h2><strong>Awakening and Evolution of Business Acumen</strong></h2><p><strong>Monica</strong></p><p>How do you define what counts as a product, and what counts as a truly commercializable project? How did this understanding form?</p><p><strong>Zimu</strong></p><p>I developed this awareness in 2018.</p><p>At that time, I had been graduated for two years, my salary wasn&#x27;t high, and I needed to buy a house and have children. I was short on money, so I started monetizing my technical skills—the simplest way was to take on freelance projects.</p><p>I had been doing freelance work with my advisor in the lab during university. After graduation, the cash flow pressure was even greater, so I worked during the day and stayed up until two or three in the morning taking on projects. I handled quoting, negotiating requirements, writing code, and launching, all by myself. That was right during the &quot;mass entrepreneurship and innovation&quot; boom, so many bosses wanted to create mini-programs and e-commerce stores, and I made money doing this.</p><p>At the same time, I also worked on projects I was interested in, such as open source, writing books, writing tutorials, and selling courses. To get traffic, I had to promote my open-source projects, write blogs, tutorials, and post them to communities.</p><p>That was also when knowledge payment was on the rise. As a tech blogger, I took on some course promotions, which introduced me to the concept of &quot;traffic monetization.&quot; Although at the time, I had no idea what &quot;traffic owner&quot; or &quot;advertiser&quot; meant.</p><p>Later, I found that I still preferred &quot;software monetization&quot; because traffic monetization is more competitive, and almost everyone can do traffic, but people who understand both technology and traffic are relatively scarcer.</p><p>In 2018 and 2019, I also joined Shengcai Youshu, played with Taobao客 (Taobao affiliates), Ele.me rebates, and other projects. I made money, but didn&#x27;t stick with them because those tracks were too competitive and not in a direction that offered compounding returns.</p><p>So I started to simplify, focusing on the software industry. Now, with AI and globalization, I continue to focus on software and pay almost no attention to other ways of making money unrelated to software.</p><h2><strong>Core Methodology for Product Selection: Three Types of &quot;Low-Hanging Fruit Markets&quot;</strong></h2><p><strong>Monica</strong></p><p>How did these methodologies and insights form?</p><p><strong>Zimu</strong></p><p>I&#x27;ll use a common saying in the e-commerce industry: product selection determines success or failure. The same applies to software. Each stage has its &quot;hot products.&quot;</p><p>Your understanding needs to be built on two principles:</p><p>First, don&#x27;t think you&#x27;re the next Steve Jobs or Elon Musk. Most people don&#x27;t need to invent things from scratch; they need to level up first.</p><p>Second, profitable products are out there; you need to discover, research, and study them.</p><p>Over the past year or so, I&#x27;ve developed a habit: every month, I check the &quot;AI website revenue rankings&quot; (top 2000). It&#x27;s tiring at first, but after a while, you&#x27;ll know which niches are consistently profitable.</p><p>For example, in recent months: the top spot is usually ChatGPT, second is Cursor (coding), ElevenLabs TTS has also been in the top ten for a long time, and there are many excellent products made by Chinese people, such as Lovart, HeyGen, etc.</p><p>I highly recommend looking at ranks 100-2000, as competition is lower but they are still profitable.</p><p>For instance, in June-July this year, a large number of AI website generators appeared—generating a website with one sentence—and they sold very well. This includes poster generation, avatar generation, cover image generation, and so on; these niche areas all have demand.</p><p><strong>Monica</strong></p><p>What dimensions do you use for product selection? How do you determine if a niche is viable?</p><p><strong>Zimu</strong></p><p>As a technologist, I prioritize &quot;traffic first&quot; when selecting products.</p><p>My idea research library primarily evaluates from three dimensions:</p><p>What are the core keywords (is there significant traffic volume)?</p><p>What is the difficulty of related SEO keywords (KD value)?</p><p>Are there comparable competitors who are not performing well (competitors)?</p><p>If the keyword competition in an industry is extremely high, such as &quot;whiteboard online,&quot; it&#x27;s almost impossible to enter. The giants are already there, and SEO would take years to build.</p><p>But if it&#x27;s a new term, a fast-growing term, then it&#x27;s a good opportunity.</p><p><strong>Monica</strong></p><p>How do you view the &quot;low-hanging fruit market&quot; for 2025-2026?</p><p><strong>Zimu</strong></p><p>This term wasn&#x27;t coined by me; it was by Teacher Xiaopai, and it describes it very well.</p><p>I have two personal premises:</p><p>I like doing B2B, not B2C (because my &quot;internet sense&quot; is weak).</p><p>I like long-term demand, not short-cycle hot products.</p><p>Based on this, the &quot;low-hanging fruit market&quot; includes:</p><p>1. Old demands → New demands born in the AI era</p><p>For example: emoji generation, poster generation, packaging design generation. These used to be templates, but now AI&#x27;s expressive power is stronger.</p><p>Just like the recently released Nanobanana Pro model, it can clearly explain complex knowledge points, making it very suitable for educational applications. This capability immediately generates search demand.</p><p>2. Existing products with poor user experience but still profitable</p><p>Very typical &quot;low-hanging fruit,&quot; for example: WeChat business accounting, poop logging apps (very poor experience, but still profitable).</p><p>As long as user search demand is stable, you can capture a portion of the market with a better-experience product. There&#x27;s a typical website abroad, <a href="http://g2.com" target="_blank" rel="noopener">g2.com</a>, where you can see negative reviews.</p><p>3. Building &quot;complementary&quot; tools around leading platforms</p><p>For example: ChatGPT to Notion, ChatGPT to PDF, ChatGPT to Google Sheets</p><p>These giant platforms won&#x27;t oppose you; you&#x27;re helping them complete their ecosystem. Top platforms have a massive user base, and if you just address a small niche demand, you can also achieve long-term stability.</p><p><strong>Monica</strong></p><p>Do new terms have a window of opportunity?</p><p><strong>Zimu</strong></p><p>Yes. The earlier you start, the easier it is to secure a spot.</p><p>But there are also long-term terms, such as &quot;AI music generator,&quot; which has maintained high search volume from last year until now.</p><p>Here&#x27;s a recent example:</p><p>Currently, some people are testing Nanobanana Pro related terms, and the CPC in North America is only $0.03-$0.07, because the competition hasn&#x27;t ramped up yet.</p><p>The earlier you bid, the cheaper it is. But whether you can bid well depends on your account structure, landing page, data feedback, CPA settings, and other issues, not the term itself.</p><p>The window of opportunity usually lasts only one or two weeks or for a budget of one or two thousand dollars.</p><p><strong>Monica</strong></p><p>How do you find opportunities through negative reviews? Any case studies?</p><p><strong>Zimu</strong></p><p>I look at it less now, but I used <a href="http://g2.com" target="_blank" rel="noopener">g2.com</a> very often before.</p><p>Real user reviews expose the 20% of needs that a product doesn&#x27;t cover.</p><p>For example: calorie tracking apps, bowel movement logging apps. These needs genuinely exist, but the products are poorly made, which presents an opportunity.</p><h2><strong>Practical Tactics: SEO, MVP, and Growth Loop</strong></h2><p><strong>Audience</strong></p><p>Regarding user acquisition channels for American users, what are your thoughts? I have a technical background.</p><p><strong>Zimu</strong></p><p>For technologists, I strongly recommend learning SEO, for two reasons:</p><p>The first point is that SEO is highly related to technology, involving HTML, structured data, Schema, tags, website performance, and other technical aspects.</p><p>The second point is that SEO provides positive feedback. Seeing traffic growth after launching a website is very important positive feedback, and it&#x27;s compounding.</p><p><strong>Audience</strong></p><p>How do you compress the development cycle to within two weeks?</p><p><strong>Zimu</strong></p><p>Two weeks is too slow; you can actually create an MVP in two hours.</p><p>A website, login, core functionality, payment page—just modify existing code and templates.</p><p>I once used Teacher Xiaopai&#x27;s framework and built a website in 2 hours, and even wrote a tutorial for it.</p><p><strong>Monica</strong></p><p>How do you define the minimal viable growth loop?</p><p><strong>Zimu</strong></p><p>Let&#x27;s take the classic example: exporting ChatGPT chat history to PDF.</p><p>User demand is clear, strong, and continuous.</p><p>If you can get the search term &quot;ChatGPT to PDF&quot; to the top ranking, and then add a payment point in the process, like a template, that&#x27;s a solid business: stable search, continuous users, automated billing, and if the experience is good, users will renew.</p><p>For a technologist, this is the ideal product form—it makes money automatically.</p><p><strong>Monica</strong></p><p>Which SaaS products currently have high payment rates?</p><p><strong>Zimu</strong></p><p>Traditional &quot;cost reduction and efficiency improvement&quot; SaaS is difficult because the market is too mature.</p><p>What&#x27;s easier to do now are &quot;gain-oriented&quot; (helping others generate revenue) applications. For example: ad creatives, tattoo design, visual enhancement, content creation.</p><p>These directly improve results, so people are naturally willing to pay.</p><p><strong>Audience</strong></p><p>How can people with technical or non-technical backgrounds learn SEO? Is the barrier to entry high?</p><p><strong>Zimu</strong></p><p>I divide SEO into &quot;principles&quot; and &quot;techniques.&quot;</p><p>From the perspective of principles, SEO is essentially a content product. Like an e-book, if the book isn&#x27;t good, no one will read it. The content must solve the user&#x27;s search intent; that&#x27;s the essence.</p><p>From the perspective of techniques, SEO includes: backlinks, internal links, differences between various search engines, and many other details. But these all have clear standards, and if you&#x27;re willing to learn, with the help of AI, it&#x27;s easy to master.</p><p><strong>Audience</strong></p><p>Can AI generate high-quality content?</p><p><strong>Zimu</strong></p><p>Absolutely. The key is how you guide the AI.</p><p>I usually write in modules: first, I reference well-written modules by others, then I let AI generate sections, ask multiple rounds of questions, and then reassemble and refine it myself.</p><p>This is a repeatable methodology.</p></div>
+      <div class="prose" id="body-zh" hidden><p>内容来源于2025年11月26日，Monica和子木的对谈。</p><p>嘉宾介绍</p><h2>子木</h2><p>出海创业者，Social Marketing Agent 方向出海ing</p><p>10 年 SaaS 经验，从技术专家，到增长黑客</p><p>4 年出海经历，从 SLG 到 PLG</p><p>前 Top AI 营销视频工具负责增长，前前负责 <a href="http://packify.ai" target="_blank" rel="noopener">packify.ai</a> 项目</p><p>擅长SEO/GEO、自动化运营、病毒增长、用户需求挖掘、数据驱动增长</p><h2><strong>嘉宾自我介绍与职业转型逻辑</strong></h2><p><strong>Monica</strong></p><p>请子木先介绍一下自己。</p><p><strong>子木</strong></p><p>我是子木，现在还在写代码。有一阵子写得比较少，那段时间从有赞出来在创业。</p><p>后来赶上 AI coding 的时代，我又写得多起来了。</p><p><strong>Monica</strong></p><p>为什么会从技术转到增长，再到创业？</p><p><strong>子木</strong></p><p>这是两个问题。</p><p>我先说第一个。其实不是“从技术转到增长”，而是这两条路径一直交织在一起。</p><p>本质上因为我喜欢折腾——说好听点叫“创业”，说难听点就是“折腾”。</p><p>我从毕业第二年就开始自己做各种小工具、小产品。当时我还是个技术博主，和上海的超哥一起做开源项目和一些小程序工具。</p><p>那段时间我们做了很多小工具。其中一个现在还活着的叫 OpenWrite——写好一篇营销文章后，它可以自动群发到各个技术社区，其实你可以把它理解成一个场景化的 RPA。</p><p>后来我们还做了很多工具。但那时候因为是技术出身，没有太多商业意识。不懂产品也不懂市场。</p><p>转折点是在有赞的最后一年，我做搜索工程师，也写博客，博客有流量，大家就一起研究“为什么会有搜索流量”。那一年我在有赞开始负责搜索增长和投放项目，由此对增长产生了兴趣。不过我们的增长其实仍是技术驱动的。</p><p>离开有赞后，我依然在做营销、增长相关的 SaaS公司，也做过产业负责人之类的岗位。</p><p>过去四年，我主要在做出海。刚开始做出海的时候还没有 AI，我们做的是在线白板，很难做。</p><p>后来 AI 出来了，我们一直在迭代，在白板里做AI节点、AI组件、AI脑图、流程图等功能。</p><p>我职业上有个选择，就是“没进过大厂”。主要是我喜欢折腾，也可能是进不去。</p><p>总之我更倾向做“多面手”。我觉得自己比较强的还是产品 Sense 和商业化能力。至于技术，现在有 AI coding，我的开发能力被进一步增强。算法和模型层我不深，但做应用并不需要对算法特别了解。</p><p>增长的部分我也做过不少渠道。我从 2019 年开始学 Google SEO，2021 年做百度，后来出海后专注 Google SEO，会得比较多一些。大概就是这样的经历。</p><p><strong>Monica</strong></p><p>你几次在技术、增长之间切换，中间在心态上有什么变化吗？有没有某个特别关键的节点？</p><p><strong>子木</strong></p><p>当然有。</p><p>举个例子：技术岗位的薪资一般有“职位红利”。当我尝试去找专职增长岗位时，发现这个领域薪资明显低很多。要接受市场规则，是一个心理门槛。</p><p>另外，市场招聘非常垂直，不喜欢招多面手，都是我缺 SEO 就要 SEO 专家的那种。但是薪资在杭州这种城市不算高，北京、上海、深圳会好一点。</p><p>第二个门槛是：当你转赛道，你需要花很多时间和学费不断学习，无论是向别人请教、搜资料、自己试验、甚至向老板申请预算等等。</p><h2><strong>商业认知的觉醒与进化</strong></h2><p><strong>Monica</strong></p><p>你怎么看什么样的工具算产品，什么样的产品算真正能商业化的项目？这种认知是怎么形成的？</p><p><strong>子木</strong></p><p>我是在 2018 年形成这种意识的。</p><p>那时我毕业两年，工资不高，又要买房、生孩子，缺钱，所以开始靠技术变现——最简单就是接外包。</p><p>我大学时就在实验室跟导师做外包，毕业后现金流压力更大，就白天上班，晚上熬到两三点接项目。负责报价、谈需求、写代码、上线，全都自己来。那会正赶上“大众创业 万众创新”，很多老板想做小程序、商城，我就靠这个赚钱。</p><p>同时，我也做自己感兴趣的项目，比如开源、写书、写教程、卖课程。要流量，就得宣传自己的开源项目，写博客、写教程、发到社区。</p><p>那时也赶上知识付费兴起，我作为技术博主接一些课程推广，就开始接触“流量变现”的思维。虽然当时根本不知道什么叫“流量主”、“广告主”。</p><p>后来我发现自己还是喜欢“软件变现”，因为做流量变现竞争更激烈，而且几乎所有人都能做流量，但会技术又懂流量的人相对更稀缺。</p><p>2018、2019 年我也加入了生财有术，玩过淘宝客、饿了么返佣等项目，赚过钱，但没坚持，因为这些赛道太卷，也不是复利方向。</p><p>于是我开始做减法，聚焦在软件行业。现在赶上 AI 和全球化，我继续专注做软件，几乎不关注跟软件无关的赚钱方式。</p><h2><strong>选品核心方法论，“软柿子市场”三类机会</strong></h2><p><strong>Monica</strong></p><p>这些方法论和心得是怎么形成的？</p><p><strong>子木</strong></p><p>我举个电商行业常说的话：选品定生死。软件也是一样。每个阶段都有当下的“爆品”。</p><p>你的认知需要建立在两个原则上：</p><p>第一，不要觉得自己是下一位乔布斯或马斯克。大部分人不需要从 0 到 1 发明东西，而是先打怪升级。</p><p>第二，赚钱的产品就在那里，需要你去发现、调研、研究。</p><p>过去一年多，我养成一个习惯：每个月都看会去看“AI 网站营收排行榜”（前 2000 名）。前期看很累，但看久了你就知道市场有哪些稳定赚钱的赛道。</p><p>例如近几个月：第一名基本都是 ChatGPT，第二名是 Cursor（coding），ElevenLabs TTS 也长期前十，还有很多华人做的优秀产品，如 Lovart、HeyGen 等。</p><p>我最推荐看的是 100~2000 名，因为竞争较低但依然赚钱。</p><p>比如今年 6-7 月出现大量 AI 网站生成器——一句话生成网站，卖得很好。包括海报生成、头像生成、封面图生成等等，这些细分都有需求。</p><p><strong>Monica</strong></p><p>你会从哪些维度选品？怎么判断一个赛道是否可做？</p><p><strong>子木</strong></p><p>作为技术人，我选品会坚持“流量优先”。</p><p>我的 idea research 库主要从三个维度判断：</p><p>核心关键词是什么（是否有流量体量）</p><p>相关 SEO 关键词的难度（KD 值）</p><p>是否有可对标但做得一般的同行（友商）</p><p>如果一个行业的关键词竞争极高，比如在线白板（whiteboard online），那几乎无法做，前面都是巨头，SEO 要磨几年。</p><p>但如果是新词、增长快的词，那就是好时机。</p><p><strong>Monica</strong></p><p>怎么看 2025～2026 年的“软柿子市场”？</p><p><strong>子木</strong></p><p>这个词不是我提的，是小排老师说的，形容得很好。</p><p>我有两个个人前提：</p><p>我喜欢做 To B，不喜欢 To C（因为我“网感”很弱）。</p><p>我喜欢长期需求，而不是短周期爆品。</p><p>基于此，“软柿子市场”包括：</p><p>1.老需求 → 在 AI 时代诞生的新需求</p><p>比如：表情包生成、海报生成、包装设计生成，这些以前是模板，现在 AI 的表达效果更强。</p><p>就像最新发布的 Nanobanana Pro 模型，它可以清晰讲解复杂知识点，非常适合教育类应用。这种能力会立即衍生出搜索需求。</p><p>2.现存产品体验差，但仍然赚钱</p><p>非常典型的“软柿子”，例如：微商记账、便便记录 App（体验很差，但仍然赚钱）</p><p>只要用户搜索需求稳定，你用更好体验的产品，就能吃下一部分市场。国外有一个典型的网站，<a href="http://g2.com" target="_blank" rel="noopener">g2.com</a>,可以看差评。</p><p>3.围绕头部平台做“补充型”工具</p><p>比如：ChatGPT to Notion、ChatGPT to PDF、ChatGPT to Google Sheets</p><p>这些巨头平台不会反对，你是帮它们补足生态。顶级平台有海量用户，你只要切其中一个小需求，也能长期稳定。</p><p><strong>Monica</strong></p><p>新词有窗口期吗？</p><p><strong>子木</strong></p><p>有。越早做越容易占坑。</p><p>但也有长期词，比如 AI music generator，从去年到现在搜索一直很高。</p><p>举个最新例子：</p><p>现在有人测试 Nanobanana Pro 相关词，在北美 CPC 只有 0.03～0.07 美元，因为竞争还没起来。</p><p>你越早投，越便宜。但能不能投好，是你账户结构、落地页、数据回传、CPA 设置等问题，而不是词本身。</p><p>窗口期通常只有一两周或一两千美金预算的时间。</p><p><strong>Monica</strong></p><p>如何通过差评发现机会？有没有案例</p><p><strong>子木</strong></p><p>我现在看得少一些，但之前很常用 <a href="http://g2.com" target="_blank" rel="noopener">g2.com</a>。</p><p>真实用户评论会暴露出产品没覆盖的那 20% 需求。</p><p>比如：卡路里记录 App、排便记录 App，这些需求真实存在，但产品做得很差，就是机会。</p><h2><strong>实战战术：SEO、MVP与增长闭环</strong></h2><p><strong>观众</strong></p><p>关于美国用户的获客渠道，你怎么看？我做过技术。</p><p><strong>子木</strong></p><p>技术人我强烈建议学 SEO，有两个原因：</p><p>第一个点，SEO 与技术高度相关，涉及 HTML、结构化数据、Schema、标签、网页性能等技术。</p><p>第二个点，SEO 能给你正反馈，网站上线后看到流量增长，这种正反馈非常重要，而且是复利。</p><p><strong>观众</strong></p><p>如何把开发周期压到两周内？</p><p><strong>子木</strong></p><p>两周太慢了，其实两个小时就能做一个 MVP。</p><p>一个官网、登录、核心功能、支付页——把以前的代码、模板改一改即可。</p><p>我当初用小排老师的框架，2小时就做了一个网站，还写了教程。</p><p><strong>Monica</strong></p><p>如何界定最小增长闭环？</p><p><strong>子木</strong></p><p>举个最经典的例子：ChatGPT 聊天记录导出 PDF。</p><p>用户需求明确、强且持续。</p><p>你只要把 ChatGPT to PDF 这个搜索词做到第一名，再在流程里加入付费点，比如模板，那就是一个妥妥的生意：搜索稳定、用户持续、自动化收费、体验好就能续费。</p><p>对于技术人来说，这是最理想的产品形态——能自动赚钱。</p><p><strong>Monica</strong></p><p>现在哪些 SaaS 产品付费率比较高？</p><p><strong>子木</strong></p><p>传统“降本增效”类 SaaS 很难做，因为市场太成熟。</p><p>现在更容易做的是 “增益类”（帮别人产生收益） 的应用。例如：广告创意、纹身创意、视觉增强、内容创意。</p><p>这些直接提升结果，自然愿意付费。</p><p><strong>观众</strong></p><p>技术或非技术背景怎么学习 SEO？门槛高吗？</p><p><strong>子木</strong></p><p>我把 SEO 分为“道”和“术”。</p><p>从道的层面来说，SEO 本质上是内容产品。就像一本电子书，如果书不好，没有人会读。内容必须能解决用户搜索意图，这才是本质。</p><p>从术的层面来说，SEO包括：外链、内链、各搜索引擎的差异等等很多细节，但这些都有明确标准，只要愿意学，加上 AI 的辅助，很容易掌握。</p><p><strong>观众</strong></p><p>AI能生成高质量内容吗？</p><p><strong>子木</strong></p><p>完全可以。关键是你怎么引导 AI。</p><p>我一般会分模块写：先参考别人写的好的模块，再让 AI 分段生成，多轮提问，再自己重新组装、润色。</p><p>这是一个可重复的方法论。</p></div>
+      <div class="more">
+        <h2>Keep reading</h2>
+        <a href="/insights/a-conversation-with-daisy-wu-ying-the-next-wave-of-global-expansion-goes-beyond-advertising/">A Conversation with Daisy Wu Ying: The Next Wave of Global Expansion Goes Beyond Advertising<span>对话 Daisy 武莹：下一代出海，不只是投广告</span></a><a href="/insights/innovation-no-longer-has-a-single-center/">Innovation no longer has a single center.<span>创新，不再只有一个中心</span></a><a href="/insights/a-conversation-with-edward-guo-yuhua-how-ai-native-teams-can-break-through-with-hardware/">A Conversation with Edward Guo Yuhua: How AI-Native Teams Can Break Through with Hardware<span>对话Edward郭昱华：AI Native团队的硬件破局</span></a>
+      </div>
+    </article>
+  </div>
+</main>
+<script type="application/json" id="meta">{"titleEN": "Dialogue with Zimu: Blue Ocean Strategies & Pitfall Avoidance Guide for Software Globalization", "titleZH": "对话子木：软件出海蓝海战术与避坑指南", "subtitleEN": "Three Strategies to Discover Blue Oceans, N Case Studies of the Minimum Growth Loop, Simple Yet Highly Effective Growth Tactics, Product Selection Path: Digging for Gold in the Sand", "subtitleZH": "发现蓝海的三种策略，最小增长闭环N个案例，“笨”但超级有效的增长打法，选品路径：沙地里挖金子"}</script>
+<script>
+  const meta = JSON.parse(document.getElementById('meta').textContent);
+  const title = document.getElementById('title');
+  const sub = document.getElementById('subhead');
+  function setLang(lang) {
+    const zh = lang === 'zh';
+    title.textContent = zh ? meta.titleZH : meta.titleEN;
+    const s = zh ? meta.subtitleZH : meta.subtitleEN;
+    sub.textContent = s || '';
+    sub.hidden = !s;
+    document.getElementById('body-en').hidden = zh;
+    document.getElementById('body-zh').hidden = !zh;
+    document.documentElement.lang = zh ? 'zh-Hans' : 'en';
+    document.title = (zh ? meta.titleZH : meta.titleEN) + ' — Monica Wang | AGI Villa';
+    document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('villa-insight-lang', lang); } catch (e) {}
+  }
+  let lang = 'en';
+  try { lang = localStorage.getItem('villa-insight-lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'); } catch (e) {}
+  if (lang !== 'zh') lang = 'en';
+  setLang(lang);
+  document.getElementById('lang').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+</script>
+
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="/monica/">Profile</a></li>
+        <li><a href="/insights/">All insights</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/insights</div>
+  </div>
+</footer>
+
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+
+</body>
+</html>

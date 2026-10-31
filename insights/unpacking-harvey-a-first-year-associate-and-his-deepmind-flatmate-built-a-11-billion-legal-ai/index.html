@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Unpacking Harvey: A First-Year Associate and His DeepMind Flatmate Built a $11 Billion Legal AI — Monica Wang | AGI Villa</title>
+<meta name="description" content="With a total funding of $1 billion raised, backed by lead investors GIC and Sequoia, with participation from a16z and other firms." />
+<link rel="canonical" href="https://agivilla.com/insights/unpacking-harvey-a-first-year-associate-and-his-deepmind-flatmate-built-a-11-billion-legal-ai/" />
+<meta property="og:title" content="Unpacking Harvey: A First-Year Associate and His DeepMind Flatmate Built a $11 Billion Legal AI — Monica Wang | AGI Villa" />
+<meta property="og:description" content="With a total funding of $1 billion raised, backed by lead investors GIC and Sequoia, with participation from a16z and other firms." />
+<meta property="og:url" content="https://agivilla.com/insights/unpacking-harvey-a-first-year-associate-and-his-deepmind-flatmate-built-a-11-billion-legal-ai/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{display:none}}
+  .page{padding:128px 24px 80px}
+  .wrap{max-width:var(--max);margin:0 auto;min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:650;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:680px;margin-top:18px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filters button,.lang button{
+    background:transparent;color:var(--fg-dim);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;
+  }
+  .filters button.on,.lang button.on{background:#fff;color:#000;border-color:#fff}
+  .search{margin-left:auto;background:#0a0a0a;border:1px solid var(--line);color:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;min-width:220px;outline:none}
+  .search:focus{border-color:var(--line-2)}
+  @media(max-width:720px){.search{margin-left:0;width:100%}}
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:48px;padding:18px;border:1px solid var(--line);border-radius:28px;background:#070707;align-items:center;min-width:0}
+  .feature img{width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:18px;min-width:0}
+  .feature .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  .feature h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.15;font-weight:600}
+  .feature .zh{color:var(--fg-dim);margin-top:10px;font-size:16px}
+  .feature .sub{color:var(--fg-dimmer);margin-top:12px;line-height:1.5}
+  .feature .go{display:inline-flex;margin-top:20px;color:#fff;font-size:14px}
+  @media(max-width:800px){.feature{grid-template-columns:1fr}.feature img{max-height:220px}}
+  .list{display:flex;flex-direction:column;margin-top:18px}
+  .row{display:grid;grid-template-columns:148px minmax(0,1fr) auto;gap:22px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line)}
+  .row:hover h3{color:#fff}
+  .row .meta{color:var(--fg-dimmer);font-size:12.5px;letter-spacing:.04em;padding-top:4px}
+  .row .meta b{display:block;color:var(--fg-dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+  .row h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+  .row .zh{color:var(--fg-dim);font-size:14px;margin-top:6px}
+  .row .sub{color:var(--fg-dimmer);font-size:14.5px;line-height:1.5;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .min{color:var(--fg-dimmer);font-size:12.5px;padding-top:4px;white-space:nowrap}
+  .empty{display:none;color:var(--fg-dim);padding:48px 0}
+  @media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}.row .min{display:none}}
+  .back{color:var(--fg-dim);font-size:14px;display:inline-flex;margin-bottom:28px}
+  .back:hover{color:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  article.sheet{max-width:760px;margin:0 auto}
+  h1,.feature h2,.row h3{overflow-wrap:break-word}
+  article.sheet h1{font-size:clamp(32px,4vw,52px)}
+  .subhead{color:var(--fg-dim);font-size:18px;line-height:1.5;margin-top:16px}
+  .byline{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:22px;color:var(--fg-dimmer);font-size:13.5px}
+  .byline a{color:var(--fg)}
+  .cover{margin:28px 0 8px;border-radius:18px;border:1px solid var(--line);max-height:460px;width:100%;object-fit:cover}
+  .prose{margin-top:36px;font-size:17.5px;line-height:1.75;color:#e4e4e7}
+  .prose p{margin:0 0 1.15em}
+  .prose h2{font-size:28px;line-height:1.25;letter-spacing:-.03em;margin:1.7em 0 .55em;color:#fff;font-weight:600}
+  .prose h3{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:1.45em 0 .45em;color:#fff;font-weight:600}
+  .prose h4{font-size:17px;margin:1.2em 0 .4em;color:#fff}
+  .prose ul,.prose ol{margin:0 0 1.15em 1.25em}
+  .prose li{margin:.35em 0}
+  .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .prose strong,.prose b{color:#fff;font-weight:600}
+  .prose blockquote{border-left:3px solid var(--yellow);margin:1.4em 0;padding:2px 0 2px 16px;color:var(--fg-dim)}
+  .prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+  .prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .prose pre{background:#111;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;margin:0 0 1.15em}
+  .more{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .more h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dimmer);font-weight:500;margin-bottom:8px}
+  .more a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;letter-spacing:-.02em}
+  .more a span{display:block;color:var(--fg-dimmer);font-size:13px;margin-top:4px}
+  .more a:hover{color:#fff}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){.foot-wrap{grid-template-columns:1fr 1fr}.foot-bottom{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/insights/" class="active">Insights</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+
+<main class="page">
+  <div class="wrap">
+    <article class="sheet">
+      <a class="back" href="/insights/">← All insights</a>
+      <div class="kicker" id="kicker">Unicorns · 26 Mar 2026 · 7 min</div>
+      <h1 id="title"></h1>
+      <p class="subhead" id="subhead" hidden></p>
+      <div class="byline">
+        <span>Monica Wang</span>
+        <a href="/monica/">Founder, AGI Villa</a>
+        <div class="lang" id="lang">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+      
+      <div class="prose" id="body-en"><p>On March 25, 2026, legal AI company Harvey announced a $200 million new funding round, valuing the firm at $11 billion. The round was co-led by GIC (Government of Singapore Investment Corporation) and Sequoia, with participation from a16z, Coatue, Kleiner Perkins and others. It marked Sequoia’s third investment in Harvey. Total funding raised to date exceeds $1 billion.</p><p>The numbers speak for themselves: in August 2025, Harvey’s annual recurring revenue (ARR) surpassed $100 million, hitting the milestone 36 months after founding. By January 2026 — before its official full launch — that figure reached $190 million, nearly doubling in just five months. Today, more than 100,000 lawyers across 1,300 organizations use Harvey, including 42% of the AmLaw 100 (the 100 largest U.S. law firms). Its client roster features giants such as HSBC and NBCUniversal.</p><p>The company takes its name from Harvey Specter, the lead character in the hit legal drama <em>Suits</em>. But the real-life Harvey is building something far larger than its fictional namesake.</p><p>What makes this story fascinating is this: while everyone debates whether AI will replace lawyers, Harvey’s answer is clear — no, but AI will make the best lawyers far more powerful.</p><p>This is not a generic AI assistant wrapped in a legal skin. From day one, Harvey has focused exclusively on law and served only legal professionals. It has trained its own proprietary legal foundation model, and in tests across 10 top-tier law firms, 97% of lawyers preferred Harvey’s custom model over standard GPT-4.</p><p>Two key questions emerge:</p><p>First, how did an AI application-layer company reach an $11 billion valuation — higher than many foundation model providers?</p><p>Second, how did a one-year legal associate turned entrepreneur win over the world’s largest law firms?</p><h2>Eliminating Hallucinations in AI’s Highest-Stakes Industry</h2><p>First, it is critical to understand why legal AI is uniquely difficult to build.</p><p>The legal industry has one non-negotiable constraint: hallucinations are not just a usability flaw — they are a professional disaster. If ChatGPT invents a fake recipe, the meal simply tastes bad. If a legal AI fabricates a non-existent legal precedent, a lawyer risks being disbarred and facing malpractice lawsuits. In 2023, a New York attorney was fined $5,000 for citing fake cases generated by ChatGPT in court filings, a story covered by media worldwide.</p><p>This incident left the entire legal sector deeply wary of AI. But Harvey saw the flip side: precisely because the legal industry has the lowest margin for error, whoever solves reliability can capture the entire market.</p><p>Harvey’s solution rests on three layers.</p><p><strong>First: Custom-built legal models</strong></p><p>Harvey did not simply launch with off-the-shelf API calls. It trained a dedicated model on massive legal datasets and case law, requiring every output to include supporting citations. The model is engineered to avoid inventing precedents out of thin air. In head-to-head tests at 10 major law firms, Harvey’s custom case-law model produced longer, more detailed, and better-cited responses — and was chosen by lawyers in 97% of cases.</p><p><strong>Second: Agentic workflow</strong></p><p>By 2026, Harvey’s platform uses AI agents to detect and correct hallucinations in real time. The agents self-audit, conduct deeper legal research, and escalate complex issues to human experts. This is not superficial “fact-checking” — it is a systematic validation chain.</p><p><strong>Third: Vault</strong></p><p>Harvey’s secure document workspace supports uploading up to 10,000 files per project for large-scale document review, analysis and synthesis. Data for each law firm is logically isolated. In May 2025, it launched a knowledge base feature, allowing firms to standardize their accumulated expertise into reusable AI tools. In short, Harvey is not just an external AI — it is becoming part of each firm’s internal knowledge infrastructure.</p><p>In March 2026, Harvey introduced <strong>Agent Builder</strong>, enabling legal teams to build custom AI agents for complex, multi-step tasks without writing code. The platform now hosts over 25,000 custom agents, processing more than 400,000 agent queries daily.</p><p>A multi-model strategy is also central to its edge. Harvey avoids vendor lock-in, integrating OpenAI’s GPT-5 series, Anthropic’s Claude 4/4.5/4.6 series, and Google’s Gemini 2.5 Pro simultaneously. It uses its proprietary <em>BigLaw Bench</em> evaluation framework to score models on legal reasoning, accuracy, source reliability and other legal-specific metrics, then assigns the right model to the right task.</p><h2>From Roommates to the Operating System of the Legal Industry</h2><p>Harvey’s story began in the living room of two USC alumni.</p><p>Winston Weinberg earned his undergraduate degree at Kenyon College, then attended USC Gould School of Law, receiving his JD in 2021. He joined O’Melveny &amp; Myers — one of America’s most prestigious law firms — as a litigator focusing on securities and antitrust law. But after just one year, he realized something was deeply inefficient: legal work was dominated by repetitive tasks, with only a small fraction spent on genuine legal reasoning.</p><p>His roommate, Gabe Pereyra, was an AI researcher. He had served as a Resident at Google Brain, a Research Scientist at DeepMind, and a Machine Learning Engineer at Meta. In 2018, he dropped out of a neuroscience PhD program at Oxford.</p><p>A lawyer frustrated by legal industry inefficiency, paired with an AI researcher trained at the world’s top labs — the chemistry was immediate.</p><p>One night in 2021, Pereyra showed Weinberg GPT-3. They tested it that same evening: feeding 100 real legal questions from forums and having practicing lawyers evaluate the outputs. A full 86% of responses were deemed ready to send directly to clients.</p><p>More crucially, through Pereyra’s industry connections, Harvey secured early access to GPT-4 — six months before its public release. While the world was still experimenting with GPT-3.5, Harvey was already building its product on GPT-4. The OpenAI Startup Fund became one of its earliest backers.</p><p>Harvey’s commercial flywheel is elegantly simple: it focuses <em>only</em> on law — no healthcare, no finance, no general-purpose use cases. Extreme verticalization means every resource is concentrated on one goal: understanding what lawyers need, how legal reasoning works, and what outputs can actually be used in court.</p><p>This focus creates a data compounding effect: the more law firms use Harvey, the more legal scenario data it accumulates, the more accurate its models become, and the more firms adopt it.</p><p>Its pricing strategy is equally revealing. Harvey rejects self-serve SaaS sign-ups, instead offering white-glove enterprise implementation — each client is supported by a dedicated legal engineering team, with rollouts taking weeks to months. Reported pricing stands at roughly $1,000 per user per month. While not cheap, the ROI is obvious for big-law attorneys billing $1,000–$2,000 hourly.</p><p>Its funding trajectory underscores its momentum. In December 2025, a16z led a $160 million round valuing Harvey at $8 billion. Three months later, GIC and Sequoia co-led a $200 million round pushing its valuation to $11 billion.</p><p>Pat Grady, Partner at Sequoia, put it memorably: “They wrote the textbook for native AI applications.” He compared Harvey to Salesforce’s role in defining the cloud computing era.</p><p>In June 2025, LexisNexis — the century-old giant of legal information — entered a strategic partnership with Harvey. When an incumbent industry leader chooses collaboration over competition, it is clear Harvey’s position has become nearly unassailable.</p><h2>Key Takeaways Worth Reflecting On</h2><p>First, the power of <strong>vertical focus</strong>. Harvey is valued higher than many foundation model companies, yet it does not train general-purpose foundation models. Its moat is not technological exclusivity, but <em>industry-specific depth</em>. In the AI era, “doing only one thing” is not a limitation — it is the most effective moat strategy. Every product decision, model iteration, and client piece of feedback deepens the same competitive edge, one that generalist rivals cannot easily match.</p><p>Second, <strong>founder complementary density</strong>. Weinberg practiced law for only a year, but that experience gave him an intimate understanding of legal pain points. Pereyra worked at Google Brain, DeepMind and Meta, yet had never built his own product. Each brought half the equation; together, they formed a complete team.</p><p>Rarer still: they were not just co-founders, but roommates. Trust was built through daily life, not negotiation. Many founder teams fail over trust issues; Harvey solved this from the start.</p><p>Third, the power of <strong>timing</strong>. Harvey began experimenting in the GPT-3 era and gained early GPT-4 access six months ahead of the public. While other legal tech companies were still debating AI’s viability, Harvey was already validating its product with real clients. In times of technological disruption, being six months early can mean being three years ahead. First-mover advantage matters especially in AI applications, because once customers build workflows on your platform, switching costs become extremely high.</p><p>AI will not replace lawyers. But lawyers who use AI will replace lawyers who don’t.</p><p>That is the bet Harvey has made — and it is winning.</p></div>
+      <div class="prose" id="body-zh" hidden><p>2026年3月25日，法律AI公司Harvey宣布完成2亿美元新一轮融资，估值110亿美元。GIC（新加坡政府投资公司）和Sequoia联合领投，a16z、Coatue、Kleiner Perkins跟投。这是Sequoia第三次投Harvey。累计融资超过10亿美元。</p><p>一组数据更能说明问题：2025年8月，Harvey的ARR（年度经常性收入）突破1亿美元，从成立到这个节点用了36个月。还没有正式发布到2026年1月，这个数字到了1.9亿美元——5个月几乎翻倍。现在有超过10万名律师在1300多家机构中使用Harvey，覆盖AmLaw 100（美国最大100家律所）中的42%。客户名单里有HSBC、NBCUniversal这样的巨头。</p><p>公司名字来自美剧《金装律师》的主角Harvey Specter。但现实中的Harvey，做的事情比电视剧里更大。</p><p>有意思的地方在这里：所有人都在讨论AI会不会取代律师。Harvey的回答是——不会，但AI会让最好的律师变得更强大。</p><p>这不是一个通用AI助手套了个法律壳的产品。Harvey从第一天起就只做法律，只服务律师。它训练了自己的法律专用模型，在10家顶级律所的测试中，97%的律师更偏好Harvey的定制模型而非标准GPT-4。</p><p>两个问题值得想想：一是AI应用层公司为什么能做到110亿美元估值（这比很多基础模型公司都高）？二是一个当了一年律师就转行的人，凭什么让全球最大的律所买单？</p><p><br><strong>在AI最危险的行业里消灭幻觉</strong></p><p>先说法律AI为什么难做。</p><p>律师行业有个特殊之处：幻觉不是体验问题，是执业灾难。如果ChatGPT编造了一个不存在的菜谱，最多是饭难吃。如果法律AI编造了一个不存在的判例，律师可能因此被吊销执照、面临诉讼。2023年纽约一位律师因为在法庭文件中引用了ChatGPT捏造的案例，被罚款5000美元，全球媒体报道。</p><p>这件事让整个法律行业对AI极度警惕。但Harvey看到的是另一面——恰恰因为法律行业的容错率最低，谁能解决可靠性问题，谁就能拿下整个市场。</p><p>Harvey的解法有三层。</p><p>第一层是定制模型。Harvey没有直接调用通用API就上线。它用海量法律数据集和案例法训练了专用模型，每一句输出都要求有对应的案例引用，模型被训练成不会凭空创造判例。在10家大型律所的对比测试中，Harvey的定制案例法模型给出的回答更长、更细致、引用更准确，97%的情况被律师选中。</p><p>第二层是Agentic工作流。到2026年，Harvey的平台采用AI Agent实时捕捉和纠正幻觉——Agent会自我审查、进行更深层次的研究、在遇到复杂问题时上报给人类专家。这不是简单的“检查一下”，而是一个系统性的验证链条。</p><p>第三层是Vault。这是Harvey的安全文件工作空间，支持单个项目上传最多10000份文件，做大规模文件审查、分析和综合。每家律所的数据存储都是逻辑隔离的。2025年5月推出了知识库功能，让律所可以把自己积累的专业经验标准化，变成可复用的AI工具。这意味着Harvey不只是一个外部AI，它在变成律所内部知识体系的一部分。</p><p>2026年3月，Harvey推出了Agent Builder——让法律团队自己构建处理复杂多步骤任务的AI Agent，不需要写代码。目前平台上已经有超过25000个定制Agent，每天处理超过40万次Agent查询。</p><p>多模型策略也很关键。Harvey不绑定单一模型供应商，同时接入OpenAI的GPT-5系列、Anthropic的Claude 4/4.5/4.6系列、Google的Gemini 2.5 Pro。它用自研的“BigLaw Bench”评估方法论，在法律推理、准确性、来源可靠性等维度给模型打分，然后决定在哪个场景用哪个模型。</p><p><br><strong>从“室友组合”到法律行业的操作系统</strong></p><p>Harvey的故事从两个USC校友的客厅开始。</p><p>Winston Weinberg，Kenyon College本科毕业后进了USC Gould法学院，2021年拿到JD学位，加入O&#x27;Melveny &amp; Myers做证券和反垄断诉讼律师。这是全美顶尖律所之一。但他只干了一年就觉得不对——法律工作有太多重复性劳动，真正的法律思考只占很小一部分。他的室友Gabe Pereyra是个AI研究员，在Google Brain做过Resident，在DeepMind做过研究科学家，在Meta做过机器学习工程师。2018年还从牛津神经科学博士退学了。一个看够了法律行业低效的律师，加上一个在最顶尖AI实验室训练过的研究员——这个组合的化学反应是即时的。</p><p>2021年某天，Pereyra给Weinberg演示了GPT-3。两人当晚就开始测试：把100个法律论坛上的真实问题输进去，找律师评估输出质量。结果86%的回答被律师认为可以直接发给客户。</p><p>更关键的一步是：通过Pereyra在AI圈的人脉，Harvey拿到了GPT-4的早期访问权——比公开发布提前了6个月。在整个世界还在玩GPT-3.5的时候，Harvey已经在GPT-4上构建产品了。OpenAI Startup Fund成了最早的投资方之一。</p><p>Harvey的商业飞轮非常清晰。它只做法律——不做医疗、不做金融、不做通用场景。极度垂直意味着所有资源集中在一个方向：理解律师需要什么、法律推理怎么做、什么样的输出才能真正被法庭接受。这种专注带来了数据上的复利效应：用的律所越多，积累的法律场景数据越多，模型越准确，越多律所愿意用。</p><p>定价策略也很说明问题。Harvey不走SaaS自助注册的路线，而是“白手套”式的企业实施——每个客户都有专门的法律工程团队支持，实施周期可能需要几周到几个月。据报道，定价大约在每用户每月1000美元左右。这不是一个便宜的工具，但对每小时收费1000-2000美元的大律所律师来说，ROI是显而易见的。 </p><p>融资轨迹是最好的注脚。2025年12月，a16z领投1.6亿美元，估值80亿。三个月后，GIC和Sequoia联合领投2亿美元，估值110亿。Sequoia的合伙人Pat Grady说了一句很有分量的话：“他们为AI原生应用写了教科书。”他把Harvey比作当年Salesforce在云计算时代的角色。</p><p>LexisNexis在2025年6月也和Harvey达成了战略合作。要知道，LexisNexis是法律信息行业的百年巨头——当行业既有霸主选择合作而非竞争时，你就知道这家公司的位置已经很难撼动了。</p><p><br><strong>几个值得琢磨的点</strong></p><p>先说“垂直”这件事。Harvey的估值比很多基础模型公司都高，但它自己不训练基础模型。它的壁垒不是技术独占，而是对一个行业的理解深度。在AI时代，“只做一件事”不是局限，而是最有效的护城河策略。所有资源集中在法律一个方向，意味着每一个产品决策、每一次模型优化、每一条客户反馈，都在加深同一条护城河。通用型竞争对手很难达到这种深度。</p><p>再说创始人的“互补密度”。Weinberg只当了一年律师，但那一年让他深刻理解了法律工作的痛点。Pereyra在Google Brain、DeepMind、Meta三大AI实验室都待过，但从来没做成过自己的产品。两个人各自缺一半，但合在一起是完整的。更难得的是，他们不只是联合创始人，还是室友——这意味着信任不是通过谈判建立的，而是通过日常生活验证的。很多创始人团队败在信任上，Harvey从起点就解决了这个问题。</p><p>最后是“时机”的力量。Harvey在GPT-3时代就开始实验，在GPT-4公开之前6个月就拿到了早期访问权。当其他法律科技公司还在观望AI到底行不行的时候，Harvey已经在真实客户中跑通了产品。在技术变革中，“比别人早6个月”可能意味着“比别人领先3年”。先发优势在AI应用层尤其重要，因为客户一旦把工作流建在你的平台上，迁移成本就非常高。 </p><p>AI不会取代律师。但用AI的律师，会取代不用AI的律师。Harvey赌的就是这件事。</p></div>
+      <div class="more">
+        <h2>Keep reading</h2>
+        <a href="/insights/2-founders-18-billion-valuation-the-worlds-first-two-person-unicorn-emerges-in-the-ai-era/">2 Founders, $1.8 Billion Valuation: The World’s First Two-Person Unicorn Emerges in the AI Era<span>2个人，18亿美金：AI时代第一个&quot;两人独角兽&quot;诞生</span></a><a href="/insights/unpacking-eridu-62-year-old-veteran-raises-200m-to-break-down-ais-network-wall/">Unpacking Eridu: 62-Year-Old Veteran Raises $200M to Break Down AI’s “Network Wall”<span>拆解Eridu：62岁老兵，融资2亿美元，要拆掉AI的“网络墙”</span></a><a href="/insights/annual-ai-review-in-depth-scan-of-6-b2b-projects-in-the-healthcare-sector/">Annual AI Review | In-depth Scan of 6 B2B Projects in the Healthcare Sector<span>AI年度盘点 | 医疗健康赛道6个项目深度扫描(To B)</span></a>
+      </div>
+    </article>
+  </div>
+</main>
+<script type="application/json" id="meta">{"titleEN": "Unpacking Harvey: A First-Year Associate and His DeepMind Flatmate Built a $11 Billion Legal AI", "titleZH": "拆解Harvey：一年级律师和DeepMind室友，做出110亿美元的法律AI", "subtitleEN": "With a total funding of $1 billion raised, backed by lead investors GIC and Sequoia, with participation from a16z and other firms.", "subtitleZH": "累计融资10亿美金，GIC和Sequoia领投，a16z等跟投"}</script>
+<script>
+  const meta = JSON.parse(document.getElementById('meta').textContent);
+  const title = document.getElementById('title');
+  const sub = document.getElementById('subhead');
+  function setLang(lang) {
+    const zh = lang === 'zh';
+    title.textContent = zh ? meta.titleZH : meta.titleEN;
+    const s = zh ? meta.subtitleZH : meta.subtitleEN;
+    sub.textContent = s || '';
+    sub.hidden = !s;
+    document.getElementById('body-en').hidden = zh;
+    document.getElementById('body-zh').hidden = !zh;
+    document.documentElement.lang = zh ? 'zh-Hans' : 'en';
+    document.title = (zh ? meta.titleZH : meta.titleEN) + ' — Monica Wang | AGI Villa';
+    document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('villa-insight-lang', lang); } catch (e) {}
+  }
+  let lang = 'en';
+  try { lang = localStorage.getItem('villa-insight-lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'); } catch (e) {}
+  if (lang !== 'zh') lang = 'en';
+  setLang(lang);
+  document.getElementById('lang').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+</script>
+
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="/monica/">Profile</a></li>
+        <li><a href="/insights/">All insights</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/insights</div>
+  </div>
+</footer>
+
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+
+</body>
+</html>

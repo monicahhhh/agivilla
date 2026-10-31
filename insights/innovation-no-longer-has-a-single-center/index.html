@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Innovation no longer has a single center. — Monica Wang | AGI Villa</title>
+<meta name="description" content="Today at the BRICS and Emerging Markets Roundtable at S-Tron 2026, we talked with Denis Pizzato, founder of Robotopx in Brazil, Tarun Gangwar,…" />
+<link rel="canonical" href="https://agivilla.com/insights/innovation-no-longer-has-a-single-center/" />
+<meta property="og:title" content="Innovation no longer has a single center. — Monica Wang | AGI Villa" />
+<meta property="og:description" content="Today at the BRICS and Emerging Markets Roundtable at S-Tron 2026, we talked with Denis Pizzato, founder of Robotopx in Brazil, Tarun Gangwar,…" />
+<meta property="og:url" content="https://agivilla.com/insights/innovation-no-longer-has-a-single-center/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{display:none}}
+  .page{padding:128px 24px 80px}
+  .wrap{max-width:var(--max);margin:0 auto;min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:650;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:680px;margin-top:18px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filters button,.lang button{
+    background:transparent;color:var(--fg-dim);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;
+  }
+  .filters button.on,.lang button.on{background:#fff;color:#000;border-color:#fff}
+  .search{margin-left:auto;background:#0a0a0a;border:1px solid var(--line);color:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;min-width:220px;outline:none}
+  .search:focus{border-color:var(--line-2)}
+  @media(max-width:720px){.search{margin-left:0;width:100%}}
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:48px;padding:18px;border:1px solid var(--line);border-radius:28px;background:#070707;align-items:center;min-width:0}
+  .feature img{width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:18px;min-width:0}
+  .feature .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  .feature h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.15;font-weight:600}
+  .feature .zh{color:var(--fg-dim);margin-top:10px;font-size:16px}
+  .feature .sub{color:var(--fg-dimmer);margin-top:12px;line-height:1.5}
+  .feature .go{display:inline-flex;margin-top:20px;color:#fff;font-size:14px}
+  @media(max-width:800px){.feature{grid-template-columns:1fr}.feature img{max-height:220px}}
+  .list{display:flex;flex-direction:column;margin-top:18px}
+  .row{display:grid;grid-template-columns:148px minmax(0,1fr) auto;gap:22px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line)}
+  .row:hover h3{color:#fff}
+  .row .meta{color:var(--fg-dimmer);font-size:12.5px;letter-spacing:.04em;padding-top:4px}
+  .row .meta b{display:block;color:var(--fg-dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+  .row h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+  .row .zh{color:var(--fg-dim);font-size:14px;margin-top:6px}
+  .row .sub{color:var(--fg-dimmer);font-size:14.5px;line-height:1.5;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .min{color:var(--fg-dimmer);font-size:12.5px;padding-top:4px;white-space:nowrap}
+  .empty{display:none;color:var(--fg-dim);padding:48px 0}
+  @media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}.row .min{display:none}}
+  .back{color:var(--fg-dim);font-size:14px;display:inline-flex;margin-bottom:28px}
+  .back:hover{color:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  article.sheet{max-width:760px;margin:0 auto}
+  h1,.feature h2,.row h3{overflow-wrap:break-word}
+  article.sheet h1{font-size:clamp(32px,4vw,52px)}
+  .subhead{color:var(--fg-dim);font-size:18px;line-height:1.5;margin-top:16px}
+  .byline{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:22px;color:var(--fg-dimmer);font-size:13.5px}
+  .byline a{color:var(--fg)}
+  .cover{margin:28px 0 8px;border-radius:18px;border:1px solid var(--line);max-height:460px;width:100%;object-fit:cover}
+  .prose{margin-top:36px;font-size:17.5px;line-height:1.75;color:#e4e4e7}
+  .prose p{margin:0 0 1.15em}
+  .prose h2{font-size:28px;line-height:1.25;letter-spacing:-.03em;margin:1.7em 0 .55em;color:#fff;font-weight:600}
+  .prose h3{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:1.45em 0 .45em;color:#fff;font-weight:600}
+  .prose h4{font-size:17px;margin:1.2em 0 .4em;color:#fff}
+  .prose ul,.prose ol{margin:0 0 1.15em 1.25em}
+  .prose li{margin:.35em 0}
+  .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .prose strong,.prose b{color:#fff;font-weight:600}
+  .prose blockquote{border-left:3px solid var(--yellow);margin:1.4em 0;padding:2px 0 2px 16px;color:var(--fg-dim)}
+  .prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+  .prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .prose pre{background:#111;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;margin:0 0 1.15em}
+  .more{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .more h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dimmer);font-weight:500;margin-bottom:8px}
+  .more a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;letter-spacing:-.02em}
+  .more a span{display:block;color:var(--fg-dimmer);font-size:13px;margin-top:4px}
+  .more a:hover{color:#fff}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){.foot-wrap{grid-template-columns:1fr 1fr}.foot-bottom{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/insights/" class="active">Insights</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+
+<main class="page">
+  <div class="wrap">
+    <article class="sheet">
+      <a class="back" href="/insights/">← All insights</a>
+      <div class="kicker" id="kicker">Global Growth · 22 Sep 2026 · 3 min</div>
+      <h1 id="title"></h1>
+      <p class="subhead" id="subhead" hidden></p>
+      <div class="byline">
+        <span>Monica Wang</span>
+        <a href="/monica/">Founder, AGI Villa</a>
+        <div class="lang" id="lang">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+      <img class="cover" src="/insights/cover.webp" alt="" />
+      <div class="prose" id="body-en"><p>Today at the BRICS and Emerging Markets Roundtable at S-Tron 2026, we talked with Denis Pizzato, founder of Robotopx in Brazil, Tarun Gangwar, founder of Tetr Business School in India, and Ekaterina Petrova, managing director of GenerationS in Russia, about a hot topic - how is the global innovation landscape being reframed?<br><br>Before we talked about global innovation, our minds seemed to be full of the default map: Silicon Valley out of technology, Europe and the United States out of the model, China is responsible for manufacturing, and then sold to the world.<br><br>But this map is slowly losing its validity.<br><br>India used to be seen as the “big rear” for engineers and IT services talent, Tarun said, but now more and more young people have changed their mindset - they no longer want to “work for a global company” but to “start a global company from day one.”<br><br>Denis has been a large enterprise for more than 30 years, spanning retail, supply chain, manufacturing and investment, and we talked about one point: imperfect resources and infrastructure, is it an obstacle to innovation, or is it the real starting point for innovation?<br><br>This question reminds me of China.<br><br>In the past, when the world looked at China, the most commonly spoken word was &quot;cost&quot;. But today, if I were to give China a new label in the global innovation system, I would say “speed.”<br><br>Not just “doing it fast”, but an ability that is born from a combination of talent density, complete supply chains, manufacturing capabilities, market size, and ultra-high competitive intensity - rapid iteration. An idea can quickly become a prototype, the prototype can quickly access the supply chain, the product enters the market, and the next round of iteration can be completed quickly according to the real feedback of the user.<br><br>Speed, in itself, has become a capacity for innovation.<br><br>In this discussion, there is an even stronger feeling that the next generation of globalization may no longer be “built once, sold all over the world”.<br><br>A successful product in China, translated into English, does not mean that it can enter India; a business model that runs in the United States may not be copied to Brazil. True globalization, getting closer and closer to another state: global building, local rebuilding.<br><br>We need to understand local people, culture, payments, channels, supply chains and business habits, and even redesign products and business models for each market.<br><br>The innovation landscape of the future may no longer be a central output to the world, but a network connected to each other. China&#x27;s supply chain and iteration speed, Brazil&#x27;s consumer and industrial market, Russia&#x27;s engineering and scientific research accumulation, India&#x27;s engineer and entrepreneurial vitality, and the rapidly emerging Southeast Asia, the Middle East, Central Asia, Africa...<br><br>There is no longer just one hub for innovation.<br><br>The really important question for the future may not be “Where is the next Silicon Valley?” but - how do we really connect people, technology, industries and markets across borders, as more and more innovation hubs emerge at the same time?<br><br>This is also what I, AGI Villa, am more and more determined to do when I go out with AI and full-fledged entrepreneurs in China.</p></div>
+      <div class="prose" id="body-zh" hidden><p>今天在S-Tron 2026的金砖国家与新兴市场圆桌上，和巴西Robotopx创始人Denis Pizzato、印度Tetr商学院创始人Tarun Gangwar、俄罗斯GenerationS董事总经理 Ekaterina Petrova，一起聊了一个很受关注的话题——全球创新的版图，正在如何被重构？<br><br>以前我们讲全球创新，脑子里好像都是那张默认的地图：硅谷出技术、欧美出模式，中国负责制造，再卖向全世界。<br><br>但这张地图，正在慢慢失效。<br><br>Tarun说，印度过去一直被看作工程师和IT服务人才的“大后方”，但现在越来越多的年轻人，心态变了——他们不再想“为全球公司打工”，而是“从第一天起就创办一家全球公司”。<br><br>Denis做了三十多年的大企业，横跨零售、供应链、制造和投资，我们聊到一个点：资源和基础设施的不完美，到底是创新的障碍，还是创新真正的起点？<br><br>这个问题让我想到了中国。<br><br>过去世界看中国，说得最多的一个词是“成本”。但今天，如果要给中国在全球创新体系里找一个新的标签，我会讲“速度”。<br><br>不单单是“做得快”，而是一种由人才密度、完整供应链、制造能力、市场规模和超高竞争强度共同催生出来的能力——快速迭代。一个想法能很快变成原型，原型能迅速接入供应链，产品进了市场，又能根据用户的真实反馈迅速完成下一轮迭代。<br><br>速度本身，已经成为一种创新能力。<br><br>这场讨论下来，一个更加强烈的感受：下一代的全球化，可能不再是“一次建成，卖遍全球”。<br><br>一个在中国成功的产品，翻译成英文，不代表它能进入印度；一个在美国跑通的商业模式，也不一定能照搬到巴西。真正的全球化，越来越接近另一种状态：全球构建，本地重建。<br><br>我们要理解当地的人、文化、支付、渠道、供应链和商业习惯，甚至要为每个市场重新设计产品和商业模式。<br><br>未来的创新版图，也许不再是一个中心向世界输出，而是一张彼此连接的网。中国的供应链和迭代速度，巴西的消费和产业市场，俄罗斯的工程和科研积累，印度的工程师和创业活力，还有正在快速崛起的东南亚、中东、中亚、非洲……<br><br>创新不再只有一个中心。<br><br>未来真正重要的问题，也许不是“下一个硅谷在哪”，而是——当越来越多的创新中心同时涌现，我们怎么让人才、技术、产业和市场，真正跨越国界连接起来？<br><br>这也是我、是AGI Villa，在和中国的AI和具身创业者一起走出去的时候，越来越坚定要去做的事。</p></div>
+      <div class="more">
+        <h2>Keep reading</h2>
+        <a href="/insights/a-conversation-with-daisy-wu-ying-the-next-wave-of-global-expansion-goes-beyond-advertising/">A Conversation with Daisy Wu Ying: The Next Wave of Global Expansion Goes Beyond Advertising<span>对话 Daisy 武莹：下一代出海，不只是投广告</span></a><a href="/insights/a-conversation-with-edward-guo-yuhua-how-ai-native-teams-can-break-through-with-hardware/">A Conversation with Edward Guo Yuhua: How AI-Native Teams Can Break Through with Hardware<span>对话Edward郭昱华：AI Native团队的硬件破局</span></a><a href="/insights/a-conversation-with-lewis-zhou-jiahua-taking-software-global-from-01-to-1n-localization-and-internationalization/">A Conversation with Lewis Zhou Jiahua: Taking Software Global, from 0–1 to 1–N | Localization and Internationalization<span>对话周家华Lewis：软件出海0-1到1-N｜本地化与国际化</span></a>
+      </div>
+    </article>
+  </div>
+</main>
+<script type="application/json" id="meta">{"titleEN": "Innovation no longer has a single center.", "titleZH": "创新，不再只有一个中心", "subtitleEN": "", "subtitleZH": ""}</script>
+<script>
+  const meta = JSON.parse(document.getElementById('meta').textContent);
+  const title = document.getElementById('title');
+  const sub = document.getElementById('subhead');
+  function setLang(lang) {
+    const zh = lang === 'zh';
+    title.textContent = zh ? meta.titleZH : meta.titleEN;
+    const s = zh ? meta.subtitleZH : meta.subtitleEN;
+    sub.textContent = s || '';
+    sub.hidden = !s;
+    document.getElementById('body-en').hidden = zh;
+    document.getElementById('body-zh').hidden = !zh;
+    document.documentElement.lang = zh ? 'zh-Hans' : 'en';
+    document.title = (zh ? meta.titleZH : meta.titleEN) + ' — Monica Wang | AGI Villa';
+    document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('villa-insight-lang', lang); } catch (e) {}
+  }
+  let lang = 'en';
+  try { lang = localStorage.getItem('villa-insight-lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'); } catch (e) {}
+  if (lang !== 'zh') lang = 'en';
+  setLang(lang);
+  document.getElementById('lang').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+</script>
+
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="/monica/">Profile</a></li>
+        <li><a href="/insights/">All insights</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/insights</div>
+  </div>
+</footer>
+
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+
+</body>
+</html>

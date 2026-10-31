@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Dialogue with Uncle Zou: Building a Minimal GEO Strategy from Scratch — Monica Wang | AGI Villa</title>
+<meta name="description" content="GEO Strategy, RDIM Model, Insights into API Data, Brand &amp; Content Marketing" />
+<link rel="canonical" href="https://agivilla.com/insights/dialogue-with-uncle-zou-building-a-minimal-geo-strategy-from-scratch/" />
+<meta property="og:title" content="Dialogue with Uncle Zou: Building a Minimal GEO Strategy from Scratch — Monica Wang | AGI Villa" />
+<meta property="og:description" content="GEO Strategy, RDIM Model, Insights into API Data, Brand &amp; Content Marketing" />
+<meta property="og:url" content="https://agivilla.com/insights/dialogue-with-uncle-zou-building-a-minimal-geo-strategy-from-scratch/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{display:none}}
+  .page{padding:128px 24px 80px}
+  .wrap{max-width:var(--max);margin:0 auto;min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:650;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:680px;margin-top:18px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filters button,.lang button{
+    background:transparent;color:var(--fg-dim);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;
+  }
+  .filters button.on,.lang button.on{background:#fff;color:#000;border-color:#fff}
+  .search{margin-left:auto;background:#0a0a0a;border:1px solid var(--line);color:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;min-width:220px;outline:none}
+  .search:focus{border-color:var(--line-2)}
+  @media(max-width:720px){.search{margin-left:0;width:100%}}
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:48px;padding:18px;border:1px solid var(--line);border-radius:28px;background:#070707;align-items:center;min-width:0}
+  .feature img{width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:18px;min-width:0}
+  .feature .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  .feature h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.15;font-weight:600}
+  .feature .zh{color:var(--fg-dim);margin-top:10px;font-size:16px}
+  .feature .sub{color:var(--fg-dimmer);margin-top:12px;line-height:1.5}
+  .feature .go{display:inline-flex;margin-top:20px;color:#fff;font-size:14px}
+  @media(max-width:800px){.feature{grid-template-columns:1fr}.feature img{max-height:220px}}
+  .list{display:flex;flex-direction:column;margin-top:18px}
+  .row{display:grid;grid-template-columns:148px minmax(0,1fr) auto;gap:22px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line)}
+  .row:hover h3{color:#fff}
+  .row .meta{color:var(--fg-dimmer);font-size:12.5px;letter-spacing:.04em;padding-top:4px}
+  .row .meta b{display:block;color:var(--fg-dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+  .row h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+  .row .zh{color:var(--fg-dim);font-size:14px;margin-top:6px}
+  .row .sub{color:var(--fg-dimmer);font-size:14.5px;line-height:1.5;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .min{color:var(--fg-dimmer);font-size:12.5px;padding-top:4px;white-space:nowrap}
+  .empty{display:none;color:var(--fg-dim);padding:48px 0}
+  @media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}.row .min{display:none}}
+  .back{color:var(--fg-dim);font-size:14px;display:inline-flex;margin-bottom:28px}
+  .back:hover{color:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  article.sheet{max-width:760px;margin:0 auto}
+  h1,.feature h2,.row h3{overflow-wrap:break-word}
+  article.sheet h1{font-size:clamp(32px,4vw,52px)}
+  .subhead{color:var(--fg-dim);font-size:18px;line-height:1.5;margin-top:16px}
+  .byline{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:22px;color:var(--fg-dimmer);font-size:13.5px}
+  .byline a{color:var(--fg)}
+  .cover{margin:28px 0 8px;border-radius:18px;border:1px solid var(--line);max-height:460px;width:100%;object-fit:cover}
+  .prose{margin-top:36px;font-size:17.5px;line-height:1.75;color:#e4e4e7}
+  .prose p{margin:0 0 1.15em}
+  .prose h2{font-size:28px;line-height:1.25;letter-spacing:-.03em;margin:1.7em 0 .55em;color:#fff;font-weight:600}
+  .prose h3{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:1.45em 0 .45em;color:#fff;font-weight:600}
+  .prose h4{font-size:17px;margin:1.2em 0 .4em;color:#fff}
+  .prose ul,.prose ol{margin:0 0 1.15em 1.25em}
+  .prose li{margin:.35em 0}
+  .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .prose strong,.prose b{color:#fff;font-weight:600}
+  .prose blockquote{border-left:3px solid var(--yellow);margin:1.4em 0;padding:2px 0 2px 16px;color:var(--fg-dim)}
+  .prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+  .prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .prose pre{background:#111;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;margin:0 0 1.15em}
+  .more{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .more h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dimmer);font-weight:500;margin-bottom:8px}
+  .more a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;letter-spacing:-.02em}
+  .more a span{display:block;color:var(--fg-dimmer);font-size:13px;margin-top:4px}
+  .more a:hover{color:#fff}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){.foot-wrap{grid-template-columns:1fr 1fr}.foot-bottom{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/insights/" class="active">Insights</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+
+<main class="page">
+  <div class="wrap">
+    <article class="sheet">
+      <a class="back" href="/insights/">← All insights</a>
+      <div class="kicker" id="kicker">Global Growth · 15 Apr 2026 · 15 min</div>
+      <h1 id="title"></h1>
+      <p class="subhead" id="subhead" hidden></p>
+      <div class="byline">
+        <span>Monica Wang</span>
+        <a href="/monica/">Founder, AGI Villa</a>
+        <div class="lang" id="lang">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+      
+      <div class="prose" id="body-en"><p>This content is excerpted from a dialogue between Monica and Uncle Zou on April 15, 2026.</p><h2>Guest Introduction</h2><p><strong>Uncle Zou</strong></p><p>CEO of Bangbang Growth &amp; WhatGEO</p><p>Author of books including <em>ToB Growth Operations</em>, <em>Global Expansion Without Limits</em>, and <em>AIO &amp; GEO Practice: How to Become the Answer to AI Recommendations</em>.</p><p><strong>Monica</strong></p><p>Let me give a brief introduction to Uncle Zou. He has been deeply engaged in the marketing industry for years, serving many large ToB enterprises with extensive practical experience. I contacted him recently and learned he is releasing a new book on GEO. Therefore, we are honored to invite him to share insights with us today.</p><p><strong>Uncle Zou</strong></p><p>Hello everyone. I’d call myself a seasoned veteran committed to the marketing industry long-term. I previously oversaw brand and marketing operations at SaaS companies including Chuanglan Cloud, Zhiyuanyuan Cloud, and Full-Stack BI. Frankly speaking, the SaaS industry has faced tremendous headwinds in the past two years, with part of its business being replaced by AI.</p><p>I started my entrepreneurial journey a few years ago, staying consistent with my work in the international business division of Chuanglan a decade ago. I focus on overseas marketing, providing full-suite solutions mainly for manufacturing and tech enterprises. A clear observation is that standalone overseas marketing has become extremely difficult nowadays. Hence, we only partner with enterprises with long-term vision that demand one-stop integrated marketing solutions.</p><p>The concept of GEO first emerged among enterprises in late 2023 to early 2024. To be honest, I had never heard the term “GEO” before August 2025. It was not called GEO overseas back then; the mainstream terms were AI Optimization or AI Visibility.</p><p>In early 2025, my partners and I independently served over a dozen enterprises and began writing this new book. We even revised the book title before the manuscript submission in August and September. The original title did not include “GEO”, but we added this core keyword later as it had become the industry standard term in China. All marketers understand how critical core keywords are. Currently, the new book is available for pre-sale online, and physical copies will be available next week.</p><p>The book is titled <em>AIO &amp; GEO Practice</em>, with the subtitle <em>How to Become the Answer to AI Recommendations</em>. I think the subtitle is straightforward and serves as a clear action guide.</p><p>I’ve had an increasingly strong realization lately: although AI traffic overall is not yet enormous, the first user touchpoint for many brands—especially emerging brands in recent years—is very likely through AI recommendations. Paid advertising remains costly. As a user with precise demands, I will most likely turn to AI for answers first. If your brand appears right then, it becomes the most efficient first engagement between you and the user.</p><p>We also have colleagues from the Qianwen team in today’s live stream, and we are their external commercial partner. One of their cross-border e-commerce clients had never done SEO or GEO before, relying purely on platform e-commerce tactics. When they consulted us about launching GEO, my response was that such enterprises do not need standalone GEO deployment. Instead, they should integrate branding, content, SEO and social media—a proper path toward brand transformation.</p><h2>Cognitive Foundation: Understand AI’s Logic Before Crafting Strategies</h2><h2>1. The Real Stage &amp; Traffic Value of AI Marketing</h2><p>People often ask how mature AI marketing has become. Frankly, China leads the world in the popularization of AI applications. Not only professionals but also the elderly and children use Doubao in daily life, making it indispensable. This is driven by the massive user base accumulated by consumer-facing AI products such as Doubao, Yuanbao and DeepSeek.</p><p>Chinese users show extremely high acceptance of AI, while overseas adoption is far less widespread than we assume. Various industry reports indicate AI-driven traffic currently accounts for only about 1% of overall global traffic.</p><p>However, there is a remarkable advantage: traffic generated by Large Language Models (LLMs) boasts a conversion rate nearly three times higher than direct access and traditional search traffic. The logic is simple. Any question or demand description users input into AI functions as a Prompt. Thus, users asking questions on AI platforms are high-intent, precise traffic.</p><h2>2. The Essence of GEO: Not Magic, But Science</h2><p>You may have heard numerous interpretations of AI recommendation logic. Fundamentally, if you consistently produce high-quality content and develop overseas markets sincerely—this applies both domestically and globally—your brand will eventually appear in AI answers once your content and SEO efforts reach a certain scale.</p><p>Why do we still need to study GEO exclusively? Because with a GEO mindset, you will better understand AI’s underlying mechanisms when conducting SEO and content marketing, enabling more precise and efficient operations. Mastering 100 conventional SEO tasks does not automatically grant you GEO capabilities. We must focus on the differences between SEO and GEO.</p><p>A key insight: we learn Google’s algorithms and rules first when doing SEO, not marketing theories. Similarly, to leverage AI tools such as GPT and Claude, we must first master AI’s inherent rules. My new book dedicates extensive content to explaining the principles of LLMs and RAG, which is rare among similar publications on the market.</p><p>Before practicing GEO, ask yourself one question: Is our core goal to have our brands and products mentioned by AI when users raise relevant questions? That is essentially what GEO is. To achieve this, we must first understand a prerequisite: How do large language models generate content? Without this foundational knowledge, you are easily misled.</p><p>I often hear potential clients claim: “We know a company that can reverse-engineer AI algorithms and figure out how GPT generates content.” My reply is straightforward: “It’s impossible. If they had such capability, they would build their own LLM instead of offering GEO services.” Others claim they have technology to embed content into LLM training processes.</p><p>My perspective: As marketers or non-technical entrepreneurs, we do not need to delve too deeply into AI algorithms, but we must learn and grasp underlying technical principles. Only then can we formulate accurate and reliable GEO strategies.</p><h2>3. Decode AI’s Core Logic: Key Essentials You Must Know</h2><h3>RAG Technology: The Core Gateway to Influence AI</h3><p>LLMs have inherent flaws including hallucinations, poor numerical reasoning and lack of real-world comprehension. To solve inaccurate content output and failure to access up-to-date information, developers adopted a powerful technology: <strong>RAG (Retrieval Augmented Generation)</strong>.</p><p>Do not be intimidated by the technical term; simply understand it as <strong>web-connected search</strong>. When AI cannot rely solely on its pre-trained internal knowledge base, it accesses real-time internet data for reference.</p><p>This brings a vital truth for marketers: nearly all our GEO operations can only affect AI’s <strong>real-time web retrieval phase</strong>. We cannot alter fixed pre-trained model data.</p><p>Let me share a recent case. One of my pharmaceutical clients found that certain AI models directly gave answers without accessing the internet when users asked about medications for specific diseases. The client wondered if optimization was still possible. I replied it was not feasible. Some AI models skip web retrieval if their pre-trained database already contains complete, stable answers to certain questions.</p><p>Every web crawl by AI acts as a real-time evaluation of your content and brand. Overseas markets set extremely high standards for content authority and structural integrity, which we must prioritize.</p><h2>Part Two: Hands-On Practice – A Minimal GEO Strategy Anyone Can Deploy</h2><p>With foundational principles covered, let’s move to practical implementation. I will walk you through building a minimum viable GEO strategy step by step in 20 minutes. What I share today is not the full scope of GEO, but an MVP model perfectly suited for small and medium enterprises with limited resources and no budget for third-party service providers.</p><p>The strategy boils down to three core steps, defined as the <strong>RDIM Model</strong>:</p><p><strong>Reverse, Deep Learn, Imitate &amp; Surpass</strong></p><p>Nowadays, corporate operation and growth roles account for a much higher staffing ratio than before. In earlier years, few companies had dedicated operation staff; even those assigned related tasks worked part-time, spending only 1/4 or 1/5 of their time on operations. Over 90% of employees were in product and R&amp;D teams back then, while the ratio has now balanced to nearly 1:1.</p><h2>Step 1: Reverse – Map Out Industry Competitors</h2><h3>Action Guidelines</h3><p>Establish a tiered question framework: For most brands, you can ignore Tier-1 questions (e.g. &quot;what is the best...&quot;), as answers are always dominated by industry leaders with little relevance to mid-tier and small brands. We need to disassemble user questions strategically.</p><p>Interactive Exercise: Take your product or brand and design three tiers of questions:</p><ul><li><p>Tier 1: <em>the best + [your product/service/brand]</em></p></li><li><p>Tier 2: <em>the best value + [your product]</em></p></li><li><p>Tier 3: Add country/region restrictions based on Tier 2, e.g. <em>the best value [your product] in Germany</em></p></li></ul><p>Why tiered questioning? Broad generic questions will always exclude small and medium brands. Such enterprises should focus on Tier 3 to Tier 5 long-tail questions to capture niche traffic.</p><p>Question &amp; Record: Open three independent windows on ChatGPT or Gemini to avoid context interference, and input the three tiered questions. Focus on three key observations from the answers: Which brands are mentioned? Which are highly recommended? Does your brand appear?</p><p>If your brand is already referenced by AI without deliberate GEO efforts, this hints at a deeper concept I will elaborate on later: GEO as an independent service may not even exist. After this step with no extra tools required, you gain your first key insight: the landscape of AI-recommended brands in your industry.</p><h2>Step 2: Deep Learn – Analyze Top-Performing Benchmarks</h2><p>In most cases, your brand will not appear in AI answers after Step 1—and this is exactly why we need GEO.</p><h3>Action Guidelines</h3><ol><li><p>Disassemble core sources and content structure</p><p>Open the cited source links from AI’s answers. Take our AI video product client as an example: Runway is frequently recommended, with PC Magazine as one of its core authoritative sources.</p></li></ol><p>Sample source article title: <em>Best AI value — our generation tests...</em></p><p>The article features structured parameter comparison tables, editorial scoring, and in-depth pros &amp; cons analysis.</p><p>You only need to analyze 3 to 5 such articles to grasp the standard framework. You will gain your second key insight: what types of authoritative sources, title structures and content frameworks make industry leaders stand out in AI recommendations. You will learn both <strong>what to write</strong> and <strong>how to structure content</strong>to align with AI preferences.</p><ol><li><p>Map citation source channels</p><p>Identify where high-quality referenced content is published and which platforms serve as mainstream authoritative sources in your industry. For cloud vendors, official blogs of Cloudflare, AWS and Google Cloud dominate top-tier sources—platforms inaccessible for most SMEs. Gartner rankings also carry high authority but are unaffordable for small businesses, often costing over one million to secure a listing.</p></li></ol><p><strong>Audience Question</strong>: How to analyze the top 100 authoritative sources?</p><p><strong>Uncle Zou’s Response</strong>: Manual analysis works, but a smarter AI-era method is to feed all cited links from AI answers to another LLM, and let it sort and summarize the top source list. You will gain another critical insight afterward: <strong>official websites are irreplaceably important</strong>. In overseas markets, brands cannot operate effectively without an official site—it is your only free, fully controlled voice platform.</p><h2>Step 3: Imitate &amp; Surpass – Evolve from Follower to Leader</h2><p>After disassembling questions, sources and content structures, SMEs face a realistic challenge: most authoritative platforms are inaccessible for content publishing.</p><h3>Action Guidelines</h3><ol><li><p>Identify accessible publishing channels</p><p>Screen the ranked top 100 source list to find blogs and websites open to external contributors. Additionally, leverage high-authority open platforms:</p></li></ol><ul><li><p>Free publishing: Reddit, LinkedIn</p></li><li><p>Video content: YouTube</p></li><li><p>Guest posting &amp; Q&amp;A: Medium, Quora</p></li><li><p>Social platforms: Facebook, Yahoo</p></li></ul><p>For content creation guidance: Analyze the tone and format of content cited by high-authority platforms (marketing-oriented or educational-oriented), then replicate their framework. When lacking clear direction, benchmark industry top performers first.</p><p>An interesting finding: Long-form Articles on LinkedIn are far more likely to be cited by AI than short Posts, thanks to higher information density that aligns with Google ecosystem’s definition of valuable content.</p><ol><li><p>Achieve breakthrough via differentiation</p><p>Imitation is only the starting point. True industry breakthrough requires defining your product positioning and competitive differentiation.</p></li></ol><p>For example, smartphone brands cannot compete with Apple, Samsung or Huawei for Tier-1 and Tier-2 rankings for &quot;best smartphones&quot;. But if you specialize in elderly phones, AI may recommend your brand when users ask for &quot;the best elderly phone&quot;, instead of mainstream giants. Similarly, if you launch rugged phones with 20,000mAh batteries and underwater photography capabilities, you can outperform mainstream brands for queries about &quot;best rugged phones&quot;.</p><p>GEO forces brands to rethink product value propositions beyond mere algorithm optimization.</p><ol><li><p>Build enterprise knowledge graphs &amp; semantic relevance</p><p>Systematically sort out your core brand assets: brand name, product lines, technologies, materials, industry standards and competitive advantages. Integrate these keywords into your content consistently to build semantic connections.</p></li></ol><p>In simple terms: AI initially has no recognition of &quot;Monica&quot;, but establishes relevance through repeated exposure to &quot;Monica’s Global Expansion Talks&quot;. Similarly, repeatedly mention your brand and product keywords across multiple articles to narrow their vector space distance in LLM models.</p><h2>Final Step: Monitoring &amp; Iteration – Measure Your Outcomes</h2><p>Complete the above operations and establish a performance baseline. Record AI answer results for your question matrix as of April 15, 2026. Reassess changes after one month of optimization.</p><p>The moment you see your self-built content cited by AI, transforming your brand from invisible to visible in AI recommendations, you will experience the classic <strong>aha moment</strong> of GEO practice.</p><p>Important Reminder: Avoid tools like Profound. First, they are overpriced; second, their monitoring data is inaccurate. Most such tools rely on API interfaces, whose raw output differs drastically from the polished answers users see on ChatGPT/Gemini web and app versions. Using developer-side raw data to optimize user-end presentation is counterproductive.</p><h2>Part Three: Ultimate Strategic Thinking – The Essence of GEO Lies in Brand &amp; Content Marketing</h2><p>Beyond tactical skills, I’d like to share deeper strategic reflections that I’ve been verifying and questioning throughout this year.</p><h2>Does Independent GEO Truly Exist? An Interesting Paradox</h2><p>Our analysis of extensive industry reports reveals a pattern: Broad generic queries such as &quot;best AI video tools&quot; always feature top players like Runway and HeyGen; queries for &quot;best energy storage brands&quot; rank Huawei and Sungrow at the top.</p><p>Did these brands deploy dedicated GEO strategies? Almost certainly not.</p><p>Why do they dominate AI rankings effortlessly, while many brands investing heavily in standalone GEO see little return?</p><p>My conclusion: Independent, pure-play GEO may not exist at all. What we practice as &quot;GEO operations&quot; is essentially making up for past shortcomings in branding, content marketing, SEO and PR.</p><p>The superficial logic of AI recommendation lies in content marketing, while the underlying core is <strong>consensus building through multi-party cross-verification</strong>. Brand credibility is not self-proclaimed; it is validated by third-party reviewers, industry peers and authoritative media outlets.</p><h2>The New Paradigm of Branding &amp; Marketing in the AI Era</h2><p>Therefore, GEO should not be treated as an isolated task, but a new mindset integrated into all marketing workflows. It drives fundamental shifts in brand and marketing strategies:</p><ul><li><p><strong>Brand Strategy</strong>: Shift from brand image building to establishing AI-verifiable brand entities (e.g. Wikipedia entries, Trustpilot profiles, standardized Schema markup).</p></li><li><p><strong>Content Strategy</strong>: Shift from traffic acquisition to creating citeable source content and modular answer frameworks.</p></li><li><p><strong>Communication Strategy</strong>: Shift from media exposure chasing to industry consensus shaping.</p></li><li><p><strong>Data Analysis</strong>: Build new KPI systems including brand visibility rate, top recommendation rate, and brand description accuracy.</p></li></ul><p>Half of my clients suffer from inaccurate brand descriptions when users search their brand names directly on AI platforms, mostly caused by inconsistent brand messaging internally.</p><p>Lastly, do not feel anxious or succumb to FOMO over GEO. To master GEO fundamentally, learn the underlying logic of LLM and RAG thoroughly, and refine your Prompt Engineering skills.</p><p>I have always regarded the claim of &quot;de-AI flavor for AI-generated content&quot; as a false proposition. When AI writing reads rigidly robotic, the problem lies in poor human prompting rather than the AI tool itself. I used AI to write three full books and three million-word novels, and almost no readers can detect AI generation quality. The key lies in your input knowledge and detailed prompts.</p><p>The essence of the GEO era is not a new marketing trick, but systematically converting a company’s accumulated professional expertise into digital brand authority. Learning GEO means taking on the role of showcasing your company’s strengths systematically and confidently.</p><p>Build strong branding, superior products and high-quality content first. When these foundations are solid, GEO success will follow naturally as an inevitable outcome.</p><p><strong>Monica</strong></p><p>Fantastic sharing packed with actionable insights. Thank you so much, Uncle Zou. We will organize a book sharing session once the new book is fully released.</p><p><strong>Uncle Zou</strong></p><p>Thank you all. Looking forward to our next exchange.</p></div>
+      <div class="prose" id="body-zh" hidden><p>内容来源于2026年4月15日，Monica和邹叔的对谈。</p><p>嘉宾介绍：</p><h2>邹叔</h2><p>棒棒的增长&amp;WhatGEO CEO</p><p>《Tob营增长》《出海不出局》《AIO与GEO实战：如何成为AI推荐的答案》等书籍作者</p><h2>嘉宾介绍</h2><p><strong>Monica</strong></p><p>先简单介绍一下邹叔。邹叔在营销领域深耕多年，服务过不少ToB大型企业，经验非常丰富。前段时间我联系他，得知他即将出版一本关于GEO的新书，所以我们特别邀请他来做今天这期分享。</p><p><strong>邹叔</strong></p><p>大家好，我算是营销这条路要一直走下去的老兵了。之前在创蓝云、智圆圆云、全栈BI这类SaaS公司负责品牌和市场。坦白说，这两年SaaS行业确实挺难的，一部分业务正在被AI替代。前几年我开始创业，方向与十年前在创蓝国际事业部时一脉相承，专注于海外营销，主要服务制造业和科技企业的全案。一个非常明显的感觉是：当下这个时间点，单点的出海营销难度巨大，所以我们基本只接那些有长远想法、希望做一站式全案的企业。</p><p>GEO这一块，其实是2023年末到2024年初开始有企业提及。坦诚地说，在2025年8月之前，我都没听过“GEO”这个词。海外当时也不这么叫，普遍的说法是AI优化或AI可见性。2025年初，我和合作伙伴独立服务了十余家企业，并开始动笔写书。到了八九月份交稿时，我们还特意改了书名。原本书名里没有“GEO”，但后来发现这已成为国内行业的通用叫法，那我们就必须把这个关键词带上。做营销的都懂，卡住关键词至关重要。目前新书已经开启线上预售，下周就能拿到实体书了。<br>新书名叫《AIO与GEO实战》，副标题是《如何成为AI推荐的答案》，我觉得这个副标题非常好理解，它本身就是一个行动指引。最近我有一个感受越来越明显：虽然AI整体的流量盘子还没有那么巨大，但很多品牌，尤其是近几年的新兴品牌，它们与用户的第一次接触，很可能就发生在AI的推荐里。广告依然昂贵，如果我是一个有精准需求的人，我大概率会先去AI里问一下。如果你能在那一刻出现在我面前，那可能就是我们之间最高效的“第一次亲密接触”。<br>今天直播间里还有来自千问团队的同事，我们是他们的外部商业化合作伙伴。他们有个跨境电商客户，之前从未做过SEO或GEO，纯粹是平台电商打法。当他们来咨询如何做GEO时，我的答复是：这类企业反而不需要单独做GEO，更应该将品牌、内容、SEO、社媒整合起来，这才是向品牌化转型的正确路径。</p><h2>认知地基——在谈论策略前，先搞懂AI的“脾气”</h2><p><strong>1.AI营销的真实阶段与流量价值</strong></p><p>经常有人问，AI营销到底发展到什么阶段了？坦白说，中国在AI应用普及上是相当领先的。不只是职场人，老人、小孩都在用豆包，已经离不开了。这得益于豆包、元宝、DeepSeek这类产品在C端积累的庞大用户量。中国用户对AI的接受度非常高，但海外市场并没有我们想象中那么普及。各类报告显示，海外AI流量目前大约只占整体流量的1%左右。</p><p>不过，这里有一个巨大的好处：大语言模型（LLM）带来的流量，其转化率远高于直接访问（Direct）和搜索（Search），差距接近3倍。这个逻辑不难理解。用户在AI里输入的，无论是一个问题还是一段需求描述，在AI看来都是一个Prompt。因此，来到AI里提问的用户，基本都是带着明确意图的精准流量。</p><p><strong>2.GEO的本质：不是魔法，是科学</strong></p><p>关于AI推荐的逻辑，大家可能听过很多分享。归根结底，在这个阶段，你只要认真做内容、认真做海外市场——我说的是海内外都一样——只要你的内容和SEO积累到一定程度，在AI的答案里出现是迟早的事。<br>那为什么我们还要单独讲GEO？因为当你具备了GEO思维后，回头再去做SEO和内容营销，你会更清楚AI的原理，更明白如何把事情做得更精准、更高效。这并不是说你做了100件SEO的事情，就自动学会了GEO。我们需要聚焦于SEO与GEO之间的差异。一个重要的认知是：我们做SEO，不是先了解营销，而是先了解谷歌的算法和规则。同理，我们要用好AI，无论是GPT还是Claude，也必须先了解AI的规则。在我的新书里，我花了大量篇幅去讲大语言模型的原理和RAG的原理，这在市面上同类书籍中是比较少见的。在动手做GEO之前，请大家先问自己一个问题：我们所谓的GEO，是不是就是希望我们的品牌、产品，在用户提出某些问题时，被AI提及？本质上就是这么简单。那么，要实现这个目标，就必须先搞懂一个前置问题：大语言模型是如何生成内容的？如果不了解这一点，我们就很容易被误导。我经常遇到潜在客户问我：“我听说有家公司能逆向AI算法，知道GPT是怎么生成内容的。”我的回答是：“这不可能。他若有这个能力，为什么不自己做一个GPT，还要来做GEO服务呢？”还有人说：“我们有一种技术，可以注入到GPT的训练过程中。”我的看法是，作为营销人或非技术背景的创业者，我们对AI算法不必钻研得过深，但一定要学习和理解这些底层的技术原理，这样再去思考GEO策略，才会更准确、更靠谱。</p><p><strong>3.揭秘AI的“大脑”：几个你必须知道的要点</strong></p><p>RAG技术：我们影响AI的关键入口基于LLM的特性，它会产生“幻觉”、不擅长数数、缺乏真实理解力等问题。为了解决内容不准确、新资料抓不到的问题，程序员们引入了一项聪明的技术——RAG（Retrieval Augmented Generation，检索增强生成）。</p><p>大家不用被这个复杂的术语吓到，简单理解为“联网搜索”就好。当AI觉得仅靠自己脑袋里的知识（预训练数据）不够用时，它就会向“场外观众”（互联网）求助。这对我们营销人意味着一个至关重要的事实：我们当前几乎所有的GEO动作，都只能影响AI在“联网搜索”这一环节的表现。预训练的内容，我们已经无法影响。我再补充一个案例。昨天我有个药品行业的客户，当用户问AI“治疗某种病用什么药”时，我们发现有几款AI居然完全不联网，直接就回答了。客户问我这还能优化吗？我说不好意思，不能。因为它不联网，即使你主动选择了联网搜索，它依然可能不联网。这可能是因为在AI的预训练数据里，关于这个问题的答案已经足够完整和稳定，它认为没必要再联网了。</p><p>所以，AI的每一次联网抓取，其实都是对你内容和品牌的一次实时检验。海外对内容的权威性、结构化要求非常高，这也是我们需要重点关注的地方。</p><h2>第二部分：手搓实践----一套人人可上手的最小GEO策略</h2><p>讲完了原理，我们来点实际的。下面我将用20分钟，手把手教大家“手搓”一套最小可行的GEO策略。我今天讲的不是GEO的全部，而是一个MVP模型，特别适合资源有限、请不起服务商的中小企业。</p><p>核心其实只有三个步骤，我称之为RDIM模型：逆向（Reverse）、深度学习（Deep Learn）、模仿与超越（Imitate &amp; Surpass）。</p><p>我们现在比过去更加健康一点，运营增长岗位的人员比例比过去提高了很多。在更早的阶段，公司几乎没有任何一个人专门做运营，即使有，也是兼职性质，可能只用1/4或1/5的时间来做，其余时间都在做别的事情。过去可能90%以上都偏产研团队，现在基本上做到了接近1:1的比例。</p><p><strong>第一步：逆向答案 (Reverse) —— 摸清牌桌上的玩家</strong></p><p><strong>行动指南：</strong></p><p><strong>建立“问题分级”概念：</strong>对绝大部分品牌来说，一级问题（如 &quot;what is the best...&quot;）你基本不用管，因为答案一定是行业头部，跟你关系不大。我们要学会拆解问题。<strong>现场互动练习：</strong>各位，请拿出你的产品或品牌，给自己设计三个问题：<strong>一级问题：</strong>&quot;the best + [你的产品/服务/品牌]&quot; (最好的XX)<strong>二级问题：</strong>&quot;the best value + [你的产品]&quot; (最具性价比的XX)<strong>三级问题：</strong>在二级问题的基础上，加上一个国家/地区限定，例如 &quot;the best value [你的产品] in Germany&quot; (在德国最具性价比的XX)为什么要这样拆？因为如果你拆解的都是大问题，会发现和自己几乎没关系。中小客户更应关心三到五级问题，从长尾流量入手。<strong>提问与记录：</strong>现在，请大家分别在ChatGPT或Gemini里（建议开三个新窗口，避免上下文干扰）问这三个问题。问完后，你只需要关注三件事：<strong>被提及的品牌有哪些？哪些品牌被重点推荐了？你的品牌出现了吗？</strong>如果你的品牌出现了，你会发现，可能你还没开始做GEO，AI就已经提及你了。这就是我后面要讲的——GEO可能根本不存在。做完这一步，你不需要任何工具，就已经拿到了第一个Know-how：你所在行业的AI推荐品牌格局是什么样的。</p><p><strong>第二步：深度学习 (Deep Learn) —— 拆解“学霸”的作业</strong><br>绝大部分情况下，第一步的结果是你的品牌没有出现。没关系，这正是我们要做GEO的原因。<strong>行动指南：拆解核心信源与内容结构：</strong>现在，回到刚才提问得到的答案，点开那些被AI引用的信源链接。我们要拆解什么？<br>以我们一个AI视频产品客户的海外洞察为例。我们发现Runway这个品牌被高频推荐，它的核心信源之一是PC Magazine。我们进一步拆解：</p><ul><li><p>信源文章标题：&quot;Best AI value — our generation tests...&quot; (最佳AI价值—我们的生成测试...)</p></li><li><p>内容结构：文章里有严谨的参数对比表、编</p></li><li><p>辑打分、详尽的优缺点分析。</p></li></ul><p>大家不用拆得那么细，拆个三五篇，心里就有底了。拆完后，你就拿到了第二个Know-how：行业头部品牌被推荐，是因为什么样的信源、什么样的标题结构和什么样的内容结构。你不仅知道了“写什么”，还知道了“写成什么样”，才符合AI的喜好。拆解信源渠道：接下来，你要搞清楚，这些优质内容都发布在哪里？这个行业主要的引用信源到底是什么？ 以云厂商为例，你会发现TOP信源里，Cloudflare、AWS、Google Cloud的官网博客占据了重要位置。但这些你都发不了。Gartner排名也很高，但中小企业花100万可能都上不去。</p><p><strong>观众：</strong></p><p>TOP100信源怎么拆？</p><p><strong>邹叔：</strong></p><p>你可以手动拆，但在AI时代，更聪明的方法是把AI给你的三个答案里的所有信源链接丢给另一个AI，让它帮你整理和归纳出TOP信源列表。拆解完你会发现第四个Know-how：<strong>官网非常重要！</strong>在海外，没有官网就完全没法玩。官网是你唯一免费、自主的发声地。第二步：深度学习 (Deep Learn) —— 拆解“学霸”的作业</p><p><strong>第三步：模仿与超越 (Imitate &amp; Surpass) —— 从学徒到大师</strong></p><p>拆解完问题、信源和内容后，你可能会面临一个现实问题：那些权威信源，我一个中小企业根本发不了内容，怎么办？</p><p><strong>行动指南：</strong></p><p><strong>寻找可行的发布渠道：</strong>从你整理的TOP100信源列表里往后找，一定能找到你可以发布内容的博客或网站。此外，还有一些高权重的“亲儿子”平台：</p><p><strong>Reddit、LinkedIn：</strong>都可以免费发布。</p><p><strong>YouTube：</strong>可以发布视频内容。</p><p><strong>Medium、Quora：</strong>可以投稿或回答问题。</p><p><strong>Facebook、Yahoo：</strong>等。</p><p>有同学问“建议发什么内容”。你去拆解那些已经被高权重平台引用的内容长什么样，是营销型还是非营销型——模仿它们就好了。思路不清晰时，先模仿做得最好的。</p><p>一个有趣的发现是，在LinkedIn上，长文（Article）比短动态（Post）更容易被AI引用，因为它承载了足够高的信息密度，更符合谷歌生态下对“有用”的定义。</p><p><strong>用“差异化”实现超越：</strong>模仿只是第一步。要真正超越，必须思考你的产品、品牌定位和差异化。 举个例子</p><p>，如果你做手机，在一二级问题（“最好的手机”）下，你不可能和苹果、三星、华为排在一起。但如果你专门做老人机，当用户问“最好的老人机是哪款”时，AI推荐的可能就是你，而不是苹果。同理，如果你做的是2万毫安电池、能潜水拍照的三防手机，当用户问“最好的三防手机”时，你就有机会超越所有主流品牌。GEO不只是GEO，它迫使你重新思考你的品牌和产品价值点。</p><p><strong>搭建企业知识图谱，做好语义关联：</strong>系统性地梳理出你的品牌、产品、技术、材料、标准、优势等核心要素。在未来写文章时，要把这些要素融入内容，让它们产生语义关联。通俗点讲，AI本来不知道“Monica”，但它通过大量内容知道了“Monica出海说”。我们要做的，就是把你的产品名、品牌关键词等，放在同一篇文章里反复提及，用多篇文章反复提及，让它们的向量空间距离真正拉近。</p><p><strong>最后一步：监测与迭代 —— 看见你的努力</strong></p><p>做完以上动作，你还需要做监测，建立一个“基准值”。记录下2025年4月15日这个时间点，你的问题矩阵下的答案现状。优化一个月后，再去看结果发生了什么变化。</p><p>当你第一次看到自己做的内容真的被AI引用，并且让答案发生了变化，让客户从“不可见”变成了“可见”——那一刻你会非常开心。这就是做GEO的“aha moment”。</p><p><strong>一个重要的提醒：</strong>不建议大家用类似Profound这类的工具。第一，它很贵；第二，它的监测数据不够准。为什么？因为这些工具大多用的是API接口，而API返回的答案和你在ChatGPT或Gemini的Web/APP端看到的答案完全不同。API是给开发者的“原材料”，而用户端产品是经过无数次迭代优化的“成品”。用原材料数据指导成品优化，无异于刻舟求剑。</p><h2>第三部分：终局思考----GEO的本质，藏在品牌与内容营销里</h2><p>讲完了所有“术”层面的东西，我想和大家分享一个更深的思考，这也是我今年以来一直在自我质疑和求证的。</p><p><strong>GEO真的存在吗？一个有趣的悖论</strong></p><p>我们跑了大量行业报告后发现一个现象：当我们问一些宽泛的大问题时，比如“最好的AI视频产品”，答案里基本都是Runway、HeyGen这些头部。问“最好的储能品牌”，答案里是华为、阳光电源。</p><p>他们做GEO了吗？我可以明确告诉大家，基本上没有。</p><p>那为什么他们能排在最前面？而有些公司天天做GEO，却没什么效果？</p><p>我后来的一个思考是：有没有可能，独立的、纯粹的GEO其实不存在？我们今天所做的一切，与其说是在“做GEO”，不如说是在补全过去在品牌、内容、SEO、PR上欠下的功课。</p><p>AI推荐的浅层本质是内容营销，但其深层逻辑是多方交叉验证下的“共识塑造”。不是你说你行，而是第三方说你行、行业说你行、权威媒体说你行，这才是真正的“你行”。</p><p><strong>AI时代的品牌与营销新范式</strong></p><p>因此，GEO不应该是一项独立的工作，而是一种需要融入所有营销环节的新思维。它将驱动品牌与营销策略发生新的变化：</p><ul><li><p><strong>品牌策略：</strong>从讲品牌形象，到建立可被AI验证的品牌实体（如Wikipedia、Trustpilot条目，规范的Schema关联）。</p></li><li><p><strong>内容策略：</strong>从吸引流量，到让内容本身成为信源，创建可被引用的答案模块。</p></li><li><p><strong>传播策略：</strong>从追求媒体曝光，到塑造行业共识。</p></li><li><p><strong>数据分析：</strong>建立新的KPI体系，如品牌可见率、首位推荐率、品牌描述准确性等。</p></li></ul><p>我服务的客户里，至少有一半，在AI里直接问品牌名时，描述都存在不准确。这往往是品牌方自身表述混乱导致的。</p><p>最后，我想强调，大家不要对GEO感到焦虑或FOMO。真正想学好GEO，建议大家扎实地去学习LLM、RAG的底层逻辑，同时把提示词工程（Prompt Engineering）练好。</p><p>我一直认为“AI内容去AI味”是个伪命题。当你生成的AI内容读起来很“AI”时，问题不在AI，而在于你没有用好它。我的三本书稿、三本百万字小说，都是用AI写的，但绝大部分人读不出AI味。关键在于你输入的知识和指令。</p><p>GEO时代的本质，不是一种新的营销技巧，而是把<strong>公司多年积累的各种专业势能，系统性地转化为数字世界里的品牌权威</strong>。各位来学习GEO，实际上就是在公司里承担这样一个角色——把公司最好的部分，勇敢地、系统地展现出来。</p><p>做好品牌、做好产品、做好内容。当这些都做到位时，GEO的成功，便是静待花开的必然结果。</p><p><strong>Monica</strong></p><p>太棒了，今天真的超级干货，谢谢邹叔。等邹叔的新书全面上市后，我们再约一场“读书交流会”。</p><p><strong>邹叔</strong></p><p>好，期待和大家再次交流。</p></div>
+      <div class="more">
+        <h2>Keep reading</h2>
+        <a href="/insights/a-conversation-with-daisy-wu-ying-the-next-wave-of-global-expansion-goes-beyond-advertising/">A Conversation with Daisy Wu Ying: The Next Wave of Global Expansion Goes Beyond Advertising<span>对话 Daisy 武莹：下一代出海，不只是投广告</span></a><a href="/insights/innovation-no-longer-has-a-single-center/">Innovation no longer has a single center.<span>创新，不再只有一个中心</span></a><a href="/insights/a-conversation-with-edward-guo-yuhua-how-ai-native-teams-can-break-through-with-hardware/">A Conversation with Edward Guo Yuhua: How AI-Native Teams Can Break Through with Hardware<span>对话Edward郭昱华：AI Native团队的硬件破局</span></a>
+      </div>
+    </article>
+  </div>
+</main>
+<script type="application/json" id="meta">{"titleEN": "Dialogue with Uncle Zou: Building a Minimal GEO Strategy from Scratch", "titleZH": "对话邹叔：手搓一套最小GEO策略", "subtitleEN": "GEO Strategy, RDIM Model, Insights into API Data, Brand & Content Marketing", "subtitleZH": "GEO策略、RDIM模型、API数据思考、品牌与内容营销"}</script>
+<script>
+  const meta = JSON.parse(document.getElementById('meta').textContent);
+  const title = document.getElementById('title');
+  const sub = document.getElementById('subhead');
+  function setLang(lang) {
+    const zh = lang === 'zh';
+    title.textContent = zh ? meta.titleZH : meta.titleEN;
+    const s = zh ? meta.subtitleZH : meta.subtitleEN;
+    sub.textContent = s || '';
+    sub.hidden = !s;
+    document.getElementById('body-en').hidden = zh;
+    document.getElementById('body-zh').hidden = !zh;
+    document.documentElement.lang = zh ? 'zh-Hans' : 'en';
+    document.title = (zh ? meta.titleZH : meta.titleEN) + ' — Monica Wang | AGI Villa';
+    document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('villa-insight-lang', lang); } catch (e) {}
+  }
+  let lang = 'en';
+  try { lang = localStorage.getItem('villa-insight-lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'); } catch (e) {}
+  if (lang !== 'zh') lang = 'en';
+  setLang(lang);
+  document.getElementById('lang').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+</script>
+
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="/monica/">Profile</a></li>
+        <li><a href="/insights/">All insights</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/insights</div>
+  </div>
+</footer>
+
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+
+</body>
+</html>

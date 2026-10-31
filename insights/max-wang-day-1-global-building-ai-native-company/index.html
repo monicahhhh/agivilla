@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Max Wang | Day 1 Global: Building AI-Native Company — Monica Wang | AGI Villa</title>
+<meta name="description" content="On 17 July 2026, AGI Villa hosted the GO SUMMIT during the World Artificial Intelligence Conference (WAIC) in Shanghai. The event was co-promoted by…" />
+<link rel="canonical" href="https://agivilla.com/insights/max-wang-day-1-global-building-ai-native-company/" />
+<meta property="og:title" content="Max Wang | Day 1 Global: Building AI-Native Company — Monica Wang | AGI Villa" />
+<meta property="og:description" content="On 17 July 2026, AGI Villa hosted the GO SUMMIT during the World Artificial Intelligence Conference (WAIC) in Shanghai. The event was co-promoted by…" />
+<meta property="og:url" content="https://agivilla.com/insights/max-wang-day-1-global-building-ai-native-company/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{display:none}}
+  .page{padding:128px 24px 80px}
+  .wrap{max-width:var(--max);margin:0 auto;min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:650;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:680px;margin-top:18px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filters button,.lang button{
+    background:transparent;color:var(--fg-dim);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;
+  }
+  .filters button.on,.lang button.on{background:#fff;color:#000;border-color:#fff}
+  .search{margin-left:auto;background:#0a0a0a;border:1px solid var(--line);color:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;min-width:220px;outline:none}
+  .search:focus{border-color:var(--line-2)}
+  @media(max-width:720px){.search{margin-left:0;width:100%}}
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:48px;padding:18px;border:1px solid var(--line);border-radius:28px;background:#070707;align-items:center;min-width:0}
+  .feature img{width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:18px;min-width:0}
+  .feature .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  .feature h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.15;font-weight:600}
+  .feature .zh{color:var(--fg-dim);margin-top:10px;font-size:16px}
+  .feature .sub{color:var(--fg-dimmer);margin-top:12px;line-height:1.5}
+  .feature .go{display:inline-flex;margin-top:20px;color:#fff;font-size:14px}
+  @media(max-width:800px){.feature{grid-template-columns:1fr}.feature img{max-height:220px}}
+  .list{display:flex;flex-direction:column;margin-top:18px}
+  .row{display:grid;grid-template-columns:148px minmax(0,1fr) auto;gap:22px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line)}
+  .row:hover h3{color:#fff}
+  .row .meta{color:var(--fg-dimmer);font-size:12.5px;letter-spacing:.04em;padding-top:4px}
+  .row .meta b{display:block;color:var(--fg-dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+  .row h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+  .row .zh{color:var(--fg-dim);font-size:14px;margin-top:6px}
+  .row .sub{color:var(--fg-dimmer);font-size:14.5px;line-height:1.5;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .min{color:var(--fg-dimmer);font-size:12.5px;padding-top:4px;white-space:nowrap}
+  .empty{display:none;color:var(--fg-dim);padding:48px 0}
+  @media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}.row .min{display:none}}
+  .back{color:var(--fg-dim);font-size:14px;display:inline-flex;margin-bottom:28px}
+  .back:hover{color:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  article.sheet{max-width:760px;margin:0 auto}
+  h1,.feature h2,.row h3{overflow-wrap:break-word}
+  article.sheet h1{font-size:clamp(32px,4vw,52px)}
+  .subhead{color:var(--fg-dim);font-size:18px;line-height:1.5;margin-top:16px}
+  .byline{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:22px;color:var(--fg-dimmer);font-size:13.5px}
+  .byline a{color:var(--fg)}
+  .cover{margin:28px 0 8px;border-radius:18px;border:1px solid var(--line);max-height:460px;width:100%;object-fit:cover}
+  .prose{margin-top:36px;font-size:17.5px;line-height:1.75;color:#e4e4e7}
+  .prose p{margin:0 0 1.15em}
+  .prose h2{font-size:28px;line-height:1.25;letter-spacing:-.03em;margin:1.7em 0 .55em;color:#fff;font-weight:600}
+  .prose h3{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:1.45em 0 .45em;color:#fff;font-weight:600}
+  .prose h4{font-size:17px;margin:1.2em 0 .4em;color:#fff}
+  .prose ul,.prose ol{margin:0 0 1.15em 1.25em}
+  .prose li{margin:.35em 0}
+  .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .prose strong,.prose b{color:#fff;font-weight:600}
+  .prose blockquote{border-left:3px solid var(--yellow);margin:1.4em 0;padding:2px 0 2px 16px;color:var(--fg-dim)}
+  .prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+  .prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .prose pre{background:#111;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;margin:0 0 1.15em}
+  .more{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .more h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dimmer);font-weight:500;margin-bottom:8px}
+  .more a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;letter-spacing:-.02em}
+  .more a span{display:block;color:var(--fg-dimmer);font-size:13px;margin-top:4px}
+  .more a:hover{color:#fff}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){.foot-wrap{grid-template-columns:1fr 1fr}.foot-bottom{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/insights/" class="active">Insights</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+
+<main class="page">
+  <div class="wrap">
+    <article class="sheet">
+      <a class="back" href="/insights/">← All insights</a>
+      <div class="kicker" id="kicker">Global Growth · 17 Jul 2026 · 12 min</div>
+      <h1 id="title"></h1>
+      <p class="subhead" id="subhead" hidden></p>
+      <div class="byline">
+        <span>Monica Wang</span>
+        <a href="/monica/">Founder, AGI Villa</a>
+        <div class="lang" id="lang">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+      
+      <div class="prose" id="body-en"><p>On 17 July 2026, AGI Villa hosted the GO SUMMIT during the World Artificial Intelligence Conference (WAIC) in Shanghai. The event was co-promoted by Sohu and livestreamed throughout the day.</p><p>Centered on the theme of “How Chinese AI Goes Global,” the summit brought together nearly 100 AI founders and entrepreneurs from China, the United States, Singapore, Sweden, Israel, Mexico and beyond. From morning until evening, participants exchanged insights on AI products, AI-native organisations, global expansion, AI agents, fundraising, and other key topics shaping the future of the industry.</p><p>The following insights were shared by <strong>Max Wang</strong>.</p><h2><strong>From SaaS to AI Native: How Is Workstream Rethinking Product and Organization?</strong></h2><p>Co-founder of Workstream. Max graduated from Cornell University and Huazhong University of Science and Technology and was named one of Forbes’ Top 100 Chinese Elites Worldwide.</p><p>Workstream is an end-to-end human resources management platform designed for frontline businesses and workers. It currently serves more than 30,000 locations operated by leading brands including Burger King, Subway, Dairy Queen and Haidilao.</p><p>The platform digitalizes recruitment, onboarding, team management and payroll, reducing administrative work that once required several hours a day to just a few dozen minutes. Workstream has also helped more than 50 million frontline workers access quality job opportunities, get hired more efficiently, complete onboarding and begin earning an income.</p><p>Workstream’s vision is to use technology to improve the working lives of 80 million frontline workers in North America and 2.7 billion frontline workers worldwide.</p><h2><strong>Key Takeaways</strong></h2><p>How does a SaaS company serving more than 30,000 physical locations rethink product, growth, and organizational design in the AI era?</p><p>Max began with some of the most concrete challenges in the U.S. hourly-worker market: multilingual hiring, candidate no-shows, different hourly wages for different roles within the same location, and complex timekeeping and payroll calculations.</p><p>His view is that an <strong>AI-native company</strong>no longer needs to optimize long and complex workflows step by step. Instead, it should focus on <strong>clean inputs, verifiable outputs, and the shortest possible feedback loop between the product and real users</strong>.</p><p>The real moat is no longer simply capital or development speed. It lies in understanding real-world SOPs and operating scenarios, and in how quickly a company can turn user feedback into product capabilities.</p><h2></h2><h2><strong>Day One Globalization and the AI-Native Organization</strong></h2><p>Today is Day One, and my topic is how to build a global, AI-native organization from day one.</p><p>At Workstream, we focus on a very specific group: hourly and frontline workers — the people often described as blue-collar workers. In many ways, they are also among the workers least likely to be fully replaced by AI. We believe they deserve better tools, better jobs, and a better working life. Our customers include major multi-location brands, and our investors include Founders Fund, BOND Capital, Coatue, and Hillhouse.</p><p>Before entering the US market, we explored opportunities in Shanghai, Hong Kong, and Singapore. We realized that the underlying pain point exists around the world, but the US has a set of very specific operating problems that are different from those in many other markets.</p><p><strong>Why Hourly Work in the US Is a Distinct Problem</strong></p><p>In China, you may see a hiring poster outside a local store: “RMB 4,000 per month — hiring a barista or waiter.” The role is usually framed as one full-time job with one monthly salary. In the US, the system is fundamentally different because work is organized around hourly labor.</p><p>Many people hold two or even three jobs. Someone may work three hours at KFC in the morning, three hours at Starbucks later in the day, and another shift somewhere else in the evening. Every role can have a different hourly rate. Even within the same store, a person may work as a barista during one shift and as a cashier during another, and the employer must calculate the correct rate for each role. Clock-in and clock-out records also have to be accurate.</p><p>That is a very specific US pain point. When we saw it, we thought: this is a huge problem, and it is worth solving.</p><p>Based on my experience building Workstream, I want to share how we think about building an AI-native company, going global, and building a business in the US. I will focus on three ideas: one system — the AI-native system; one loop — the new go-to-market loop; and one organization — the global super-IC team.</p><p><strong>Start with the Real SOP</strong></p><p>No matter how magical AI appears, you still have to understand the customer’s real SOP — the standard operating procedure behind the work. What exactly happens today? Where is the real friction? What is the real pain point for the user?</p><p>There are many examples in the US hourly-work market. The first is language. If you hire hourly workers in China, it is usually enough to post the information in Chinese. In the US, a significant share of frontline workers do not speak English as their first language. Many primarily speak Spanish, Chinese, Vietnamese, or another language. So multilingual communication is not an optional feature; it is part of the core workflow.</p><p>The second difference is geography. Business in China is often more centralized. In a dense commercial area, a hiring poster outside one store can attract a meaningful number of candidates. In the US, a restaurant may be a 30-minute drive from the nearest small town. A poster at the storefront is no longer enough to generate applicant flow.</p><p>The third difference is candidate behavior. In some frontline hiring scenarios, more than half of the candidates who schedule an interview do not show up. Even after an offer is signed, a meaningful share may still fail to appear for their first shift. This makes recruiting and onboarding extraordinarily labor-intensive.</p><p>Payroll is another challenge. In China, a worker may simply have one full-time job and receive RMB 4,000 per month. In the US, it can be difficult even to calculate gross pay correctly because hours, roles, rates, overtime rules, and tips may all vary.</p><p><strong>Why SaaS Had Value — and Why the Model Is Changing</strong></p><p>People often say SaaS is dead or SaaS is declining. But SaaS had real value, and that value came from long, complicated SOPs.</p><p>In the past, every step in a process required a person to operate it. Take recruiting and payroll at Workstream as an example: each step needed someone sitting in front of a laptop, moving information forward. SaaS created value by making each person in that chain more efficient.</p><p>This also helps explain why SaaS valuations were historically higher in the US than in many other markets. In the US, if an employee says, “This tool makes me more productive; the company should pay for it,” that voice can carry real weight. In other markets, the boss may hold a much larger share of the purchasing decision.</p><p>So the traditional SaaS playbook was to optimize every sub-step of the SOP for every person involved. If each user felt an efficiency improvement, they could collectively persuade the decision-maker to buy the software.</p><p>That model worked in the past. Today, however, the underlying structure is changing. More than half of the people in this room probably use Claude Code or Codex. Once you use these tools, you realize that work which previously required a team of engineers can now be compressed dramatically.</p><p>A complicated SOP that once consisted of many separately managed steps can increasingly be encapsulated into one intelligent system. Instead of assembling a computer by choosing the GPU, CPU, storage, and every other component yourself, you receive something closer to an integrated Mac Studio: the complexity is hidden, and the system works as one unit.</p><p><strong>The AI-Native System: Clean Input, Verifiable Output</strong></p><p>This is what an AI-native system changes: it encapsulates many processes into a single step.</p><p>As a founder or business owner, you should therefore focus on two things. First, the input to the system must be clean. Second, the output must be verifiable and trustworthy. You need to understand what the output is, where it came from, and whether you can rely on it.</p><p>This is also why becoming a solo founder can feel more disorienting than working inside a larger organization. In a company, you usually own one step. The input and output of that step are clear. But when you have to connect the dots across the entire company, the task becomes much harder.</p><p>In an AI-native company, your ability to express an idea clearly becomes a core operating skill. The more clearly you can explain to ChatGPT, Codex, or Claude Code what you want, the better the results will be.</p><p>Compare two prompts. One person asks, “What should I eat for lunch?” Another is an experienced cook asking exactly how much sugar to add to a specific Jiangsu-style dish. The quality and usefulness of the answers will be completely different. Better input creates better output.</p><p>This changes how you think about the customer. Previously, you optimized each step of the customer’s SOP. Today, the customer is increasingly one person who owns the entire process. We call this person a prosumer: a professional user who also becomes the buyer and internal champion.</p><p><strong>The Prosumer Becomes the Buyer — and the Salesperson</strong></p><p>In the past, a software purchase was often a collective decision made by a team. Today, one business owner can increasingly operate the entire process and pay the invoice themselves. That is a major change in go-to-market.</p><p>For that owner, customer outreach, interviews, document review, and judgment can increasingly be handled by agents. This changes both product design and go-to-market strategy.</p><p>The prosumer is often the wedge for product adoption — the person inside the customer organization who is most able and willing to adopt a new product. That person can also become the best salesperson for your product.</p><p>Think about tools such as Codex or Claude Code. When you discover a powerful new use case or workflow, you naturally share it with others. You do this because you are a prosumer of the product. Adoption spreads through use, not only through a formal sales process.</p><p><strong>The New GTM Is the Shortest Loop Between Product and User</strong></p><p>Once the market shifts from building for a large team to building for one person who owns the whole process, the go-to-market model changes as well.</p><p>The new GTM is no longer simply a sequence of business development, marketing, and sales. It is a loop — the shortest possible loop between the product and the user experience.</p><p>Why is the traditional go-to-market process less effective today? Because information is lost every time it moves from one person to another. Even if 80 percent of the information survives each handoff, after six rounds of communication only about 26 percent remains.</p><p>In the old process, a frontline HR user explains the pain point to a department manager. The manager explains it to a vice president. The vice president explains it to the CEO. Your salesperson speaks with the CEO, then reports back to the product manager, who finally communicates with the engineer. After six handoffs, the real problem has often been reduced to a collection of buzzwords.</p><p>The real problem may be this: after the dinner rush, a restaurant manager has to message 20 candidates one by one. Some speak English, some speak Spanish, and two speak only Chinese. Half of them may not show up for the interviews scheduled for the next day.</p><p>But what the engineer eventually hears is: “We need an AI-powered, end-to-end, full-scenario intelligent talent collaboration platform.” That is the language engineers often receive inside large companies — and it is almost impossible to build the right product from it.</p><p><strong>You Do Not Need More Leads. You Need More Signal.</strong></p><p>Today, what you need most is not more leads. You need real signal. What is the user’s actual scenario? What exactly are they trying to do? Where does the work break down?</p><p>The logic of entrepreneurship has not changed very much. There is no new, fancy shortcut. Go back to your users. That remains the first principle.</p><p>What has changed is the leverage AI gives the people who build. Bringing engineers into direct contact with users now creates even more value than it did before. Engineers should join user interviews, observe real work, read the underlying data, and co-build with power users. In many cases, you also need forward-deployed engineers who can deploy and adapt the solution together with the customer.</p><p>This matters because what counted as a complete product five years ago may be only a feature today. Customers are increasingly unlikely to pay for a thin product that can be replicated with a general-purpose model. If your product is not deeply customized to the user’s workflow, the user may simply choose a low-cost, general-purpose AI tool instead of paying for yours.</p><p>That is why bringing the people who build closer to the people who have the problem is more important than ever. The principle is not new — founders such as Paul Graham and Sam Altman have emphasized it for years — but AI has made it even more consequential.</p><p><strong>The New Moat Is Understanding and Feedback Speed</strong></p><p>So how do you build a real moat today? Ten years ago, a startup’s moat could be created through capital leverage. The game worked like this: you were a smart founder, perhaps from Stanford or a well-known company. You had a promising idea and showed that you could build quickly. Then you raised $5 million. That capital, combined with your background, became leverage. You hired faster, built faster, and made it difficult for others to catch up.</p><p>Today, that is no longer enough. Once you release a simple product, someone else may replicate it within days.</p><p>The real moat now comes from three things: how deeply you understand the customer’s real SOP; how well you understand the real operating scenario; and how quickly you can convert user feedback into product capability.</p><p>This is one reason AI coding became such an early and successful AI-native category: the people building the product are also the people using it. The feedback loop is closed from Day One.</p><p>Most of us no longer have the luxury of starting another AI coding company. So we have to do the harder work: go to the user’s workplace and watch how the work is actually done.</p><p>For example, once you observe that a restaurant general manager must distribute tips based on a complex mix of hours worked, employee roles, and company rules, you begin to see the real product opportunity. The opportunity does not come from the phrase “AI-powered payroll.” It comes from understanding the exact workflow well enough to rebuild it.</p><p>Build the system around clean inputs and verifiable outputs. Build the company around the shortest possible loop between the people who use the product and the people who build it. That is how an AI-native company can go global from day one.</p></div>
+      <div class="prose" id="body-zh" hidden><p>2026 年 7 月 17 日，AGI Villa 在上海 WAIC 期间举办了 GO SUMMIT，活动由搜狐联合推广并全程直播。</p><p>这是一场关于 <strong>「中国 AI 如何走向世界」</strong>的深度讨论。来自中国、美国、新加坡、瑞典、以色列、墨西哥等多个国家的近百位 AI 创业者，从上午一直交流到傍晚，围绕 AI 产品、全球化组织、海外市场、Agent、融资等话题展开分享。</p><p>以下分享，来自王若愚（Max Wang）。</p><h2><strong>从 SaaS 到 AI Native，Workstream 如何重新思考产品和组织？</strong></h2><p>Max 是 Workstream 联合创始人，毕业于康奈尔大学和华中科技大学，福布斯全球华人精英 Top 100。<br></p><p>他创立的 <strong>Workstream</strong>是一个为蓝领商业和一线员工打造的端到端人力资源管理平台。目前，Workstream 已服务汉堡王、赛百味、DQ、海底捞等知名品牌的30,000 多家线下门店，帮助企业数字化员工招聘、入职、团队管理和工资发放等流程，将过去每天需要数小时完成的工作压缩至数十分钟。</p><p>截至目前，Workstream 已帮助超过5,000 万名蓝领劳动者接触潜在的优质工作机会，更快完成求职、入职、上岗并获得收入。Workstream 的愿景，是通过科技赋能，帮助北美8,000 万、全球27 亿蓝领劳动者获得更好的工作与生活。过去五年，Workstream 累计融资1.2 亿美元，投资者包括Founders Fund、Coatue、BOND Capital、高瓴，以及Zoom 创始人兼CEO Eric Yuan、Logitech 前CEO Bracken Darrell、LVMH 董事长兼CEO Bernard Arnault 等全球知名机构与个人。</p><p><strong>分享速览：</strong></p><p>一家服务30,000 多家线下门店的SaaS 公司，如何在AI 时代重新理解产品、增长与组织？这场分享从美国小时工市场最具体的场景出发：多语言招聘、候选人爽约、同一门店不同岗位的小时工资、复杂的打卡与薪资核算。</p><p>Max提出，AI-native 公司不再需要围绕冗长流程逐步优化，而应聚焦清洁的输入、可验证的输出，以及产品与真实用户之间最短的反馈闭环。</p><p>真正的壁垒，不再是资本和开发速度，而是对真实SOP、真实场景的理解，以及将用户反馈转化为产品能力的速度。</p><h2><br><br></h2><h2><strong>演讲逐字稿（节选）：</strong></h2><h2><br></h2><h2></h2><h2><br></h2><h2><strong>Day One Globalization and the AI-Native Organization</strong></h2><p>Today is Day One, and my topic is how to build a global, AI-native organization from day one.</p><p>At Workstream, we focus on a very specific group: hourly and frontline workers — the people often described as blue-collar workers. In many ways, they are also among the workers least likely to be fully replaced by AI. We believe they deserve better tools, better jobs, and a better working life. Our customers include major multi-location brands, and our investors include Founders Fund, BOND Capital, Coatue, and Hillhouse.</p><p>Before entering the US market, we explored opportunities in Shanghai, Hong Kong, and Singapore. We realized that the underlying pain point exists around the world, but the US has a set of very specific operating problems that are different from those in many other markets.<br></p><p><strong>Why Hourly Work in the US Is a Distinct Problem</strong></p><p>In China, you may see a hiring poster outside a local store: “RMB 4,000 per month — hiring a barista or waiter.” The role is usually framed as one full-time job with one monthly salary. In the US, the system is fundamentally different because work is organized around hourly labor.</p><p>Many people hold two or even three jobs. Someone may work three hours at KFC in the morning, three hours at Starbucks later in the day, and another shift somewhere else in the evening. Every role can have a different hourly rate. Even within the same store, a person may work as a barista during one shift and as a cashier during another, and the employer must calculate the correct rate for each role. Clock-in and clock-out records also have to be accurate.</p><p>That is a very specific US pain point. When we saw it, we thought: this is a huge problem, and it is worth solving.</p><p>Based on my experience building Workstream, I want to share how we think about building an AI-native company, going global, and building a business in the US. I will focus on three ideas: one system — the AI-native system; one loop — the new go-to-market loop; and one organization — the global super-IC team.</p><p><strong>Start with the Real SOP</strong></p><p>No matter how magical AI appears, you still have to understand the customer’s real SOP — the standard operating procedure behind the work. What exactly happens today? Where is the real friction? What is the real pain point for the user?</p><p>There are many examples in the US hourly-work market. The first is language. If you hire hourly workers in China, it is usually enough to post the information in Chinese. In the US, a significant share of frontline workers do not speak English as their first language. Many primarily speak Spanish, Chinese, Vietnamese, or another language. So multilingual communication is not an optional feature; it is part of the core workflow.</p><p>The second difference is geography. Business in China is often more centralized. In a dense commercial area, a hiring poster outside one store can attract a meaningful number of candidates. In the US, a restaurant may be a 30-minute drive from the nearest small town. A poster at the storefront is no longer enough to generate applicant flow.</p><p>The third difference is candidate behavior. In some frontline hiring scenarios, more than half of the candidates who schedule an interview do not show up. Even after an offer is signed, a meaningful share may still fail to appear for their first shift. This makes recruiting and onboarding extraordinarily labor-intensive.</p><p>Payroll is another challenge. In China, a worker may simply have one full-time job and receive RMB 4,000 per month. In the US, it can be difficult even to calculate gross pay correctly because hours, roles, rates, overtime rules, and tips may all vary.<br></p><p><strong>Why SaaS Had Value — and Why the Model Is Changing</strong></p><p>People often say SaaS is dead or SaaS is declining. But SaaS had real value, and that value came from long, complicated SOPs.</p><p>In the past, every step in a process required a person to operate it. Take recruiting and payroll at Workstream as an example: each step needed someone sitting in front of a laptop, moving information forward. SaaS created value by making each person in that chain more efficient.</p><p>This also helps explain why SaaS valuations were historically higher in the US than in many other markets. In the US, if an employee says, “This tool makes me more productive; the company should pay for it,” that voice can carry real weight. In other markets, the boss may hold a much larger share of the purchasing decision.</p><p>So the traditional SaaS playbook was to optimize every sub-step of the SOP for every person involved. If each user felt an efficiency improvement, they could collectively persuade the decision-maker to buy the software.</p><p>That model worked in the past. Today, however, the underlying structure is changing. More than half of the people in this room probably use Claude Code or Codex. Once you use these tools, you realize that work which previously required a team of engineers can now be compressed dramatically.</p><p>A complicated SOP that once consisted of many separately managed steps can increasingly be encapsulated into one intelligent system. Instead of assembling a computer by choosing the GPU, CPU, storage, and every other component yourself, you receive something closer to an integrated Mac Studio: the complexity is hidden, and the system works as one unit.</p><p><strong>The AI-Native System: Clean Input, Verifiable Output</strong></p><p>This is what an AI-native system changes: it encapsulates many processes into a single step.</p><p>As a founder or business owner, you should therefore focus on two things. First, the input to the system must be clean. Second, the output must be verifiable and trustworthy. You need to understand what the output is, where it came from, and whether you can rely on it.</p><p>This is also why becoming a solo founder can feel more disorienting than working inside a larger organization. In a company, you usually own one step. The input and output of that step are clear. But when you have to connect the dots across the entire company, the task becomes much harder.</p><p>In an AI-native company, your ability to express an idea clearly becomes a core operating skill. The more clearly you can explain to ChatGPT, Codex, or Claude Code what you want, the better the results will be.</p><p>Compare two prompts. One person asks, “What should I eat for lunch?” Another is an experienced cook asking exactly how much sugar to add to a specific Jiangsu-style dish. The quality and usefulness of the answers will be completely different. Better input creates better output.</p><p>This changes how you think about the customer. Previously, you optimized each step of the customer’s SOP. Today, the customer is increasingly one person who owns the entire process. We call this person a prosumer: a professional user who also becomes the buyer and internal champion.</p><p><strong>The Prosumer Becomes the Buyer — and the Salesperson</strong></p><p>In the past, a software purchase was often a collective decision made by a team. Today, one business owner can increasingly operate the entire process and pay the invoice themselves. That is a major change in go-to-market.</p><p>For that owner, customer outreach, interviews, document review, and judgment can increasingly be handled by agents. This changes both product design and go-to-market strategy.</p><p>The prosumer is often the wedge for product adoption — the person inside the customer organization who is most able and willing to adopt a new product. That person can also become the best salesperson for your product.</p><p>Think about tools such as Codex or Claude Code. When you discover a powerful new use case or workflow, you naturally share it with others. You do this because you are a prosumer of the product. Adoption spreads through use, not only through a formal sales process.<br></p><p><strong>The New GTM Is the Shortest Loop Between Product and User</strong></p><p>Once the market shifts from building for a large team to building for one person who owns the whole process, the go-to-market model changes as well.</p><p>The new GTM is no longer simply a sequence of business development, marketing, and sales. It is a loop — the shortest possible loop between the product and the user experience.</p><p>Why is the traditional go-to-market process less effective today? Because information is lost every time it moves from one person to another. Even if 80 percent of the information survives each handoff, after six rounds of communication only about 26 percent remains.</p><p>In the old process, a frontline HR user explains the pain point to a department manager. The manager explains it to a vice president. The vice president explains it to the CEO. Your salesperson speaks with the CEO, then reports back to the product manager, who finally communicates with the engineer. After six handoffs, the real problem has often been reduced to a collection of buzzwords.</p><p>The real problem may be this: after the dinner rush, a restaurant manager has to message 20 candidates one by one. Some speak English, some speak Spanish, and two speak only Chinese. Half of them may not show up for the interviews scheduled for the next day.</p><p>But what the engineer eventually hears is: “We need an AI-powered, end-to-end, full-scenario intelligent talent collaboration platform.” That is the language engineers often receive inside large companies — and it is almost impossible to build the right product from it.</p><p><strong>You Do Not Need More Leads. You Need More Signal.</strong></p><p>Today, what you need most is not more leads. You need real signal. What is the user’s actual scenario? What exactly are they trying to do? Where does the work break down?</p><p>The logic of entrepreneurship has not changed very much. There is no new, fancy shortcut. Go back to your users. That remains the first principle.</p><p>What has changed is the leverage AI gives the people who build. Bringing engineers into direct contact with users now creates even more value than it did before. Engineers should join user interviews, observe real work, read the underlying data, and co-build with power users. In many cases, you also need forward-deployed engineers who can deploy and adapt the solution together with the customer.</p><p>This matters because what counted as a complete product five years ago may be only a feature today. Customers are increasingly unlikely to pay for a thin product that can be replicated with a general-purpose model. If your product is not deeply customized to the user’s workflow, the user may simply choose a low-cost, general-purpose AI tool instead of paying for yours.</p><p>That is why bringing the people who build closer to the people who have the problem is more important than ever. The principle is not new — founders such as Paul Graham and Sam Altman have emphasized it for years — but AI has made it even more consequential.<br></p><p><strong>The New Moat Is Understanding and Feedback Speed</strong></p><p>So how do you build a real moat today? Ten years ago, a startup’s moat could be created through capital leverage. The game worked like this: you were a smart founder, perhaps from Stanford or a well-known company. You had a promising idea and showed that you could build quickly. Then you raised $5 million. That capital, combined with your background, became leverage. You hired faster, built faster, and made it difficult for others to catch up.</p><p>Today, that is no longer enough. Once you release a simple product, someone else may replicate it within days.</p><p>The real moat now comes from three things: how deeply you understand the customer’s real SOP; how well you understand the real operating scenario; and how quickly you can convert user feedback into product capability.</p><p>This is one reason AI coding became such an early and successful AI-native category: the people building the product are also the people using it. The feedback loop is closed from Day One.</p><p>Most of us no longer have the luxury of starting another AI coding company. So we have to do the harder work: go to the user’s workplace and watch how the work is actually done.</p><p>For example, once you observe that a restaurant general manager must distribute tips based on a complex mix of hours worked, employee roles, and company rules, you begin to see the real product opportunity. The opportunity does not come from the phrase “AI-powered payroll.” It comes from understanding the exact workflow well enough to rebuild it.</p><p>Build the system around clean inputs and verifiable outputs. Build the company around the shortest possible loop between the people who use the product and the people who build it. That is how an AI-native company can go global from day one.</p><h2><br></h2><h2></h2></div>
+      <div class="more">
+        <h2>Keep reading</h2>
+        <a href="/insights/a-conversation-with-daisy-wu-ying-the-next-wave-of-global-expansion-goes-beyond-advertising/">A Conversation with Daisy Wu Ying: The Next Wave of Global Expansion Goes Beyond Advertising<span>对话 Daisy 武莹：下一代出海，不只是投广告</span></a><a href="/insights/innovation-no-longer-has-a-single-center/">Innovation no longer has a single center.<span>创新，不再只有一个中心</span></a><a href="/insights/a-conversation-with-edward-guo-yuhua-how-ai-native-teams-can-break-through-with-hardware/">A Conversation with Edward Guo Yuhua: How AI-Native Teams Can Break Through with Hardware<span>对话Edward郭昱华：AI Native团队的硬件破局</span></a>
+      </div>
+    </article>
+  </div>
+</main>
+<script type="application/json" id="meta">{"titleEN": "Max Wang | Day 1 Global: Building AI-Native Company", "titleZH": "Max Wang | Day 1 全球化：AI-Native 公司长什么样？", "subtitleEN": "", "subtitleZH": ""}</script>
+<script>
+  const meta = JSON.parse(document.getElementById('meta').textContent);
+  const title = document.getElementById('title');
+  const sub = document.getElementById('subhead');
+  function setLang(lang) {
+    const zh = lang === 'zh';
+    title.textContent = zh ? meta.titleZH : meta.titleEN;
+    const s = zh ? meta.subtitleZH : meta.subtitleEN;
+    sub.textContent = s || '';
+    sub.hidden = !s;
+    document.getElementById('body-en').hidden = zh;
+    document.getElementById('body-zh').hidden = !zh;
+    document.documentElement.lang = zh ? 'zh-Hans' : 'en';
+    document.title = (zh ? meta.titleZH : meta.titleEN) + ' — Monica Wang | AGI Villa';
+    document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('villa-insight-lang', lang); } catch (e) {}
+  }
+  let lang = 'en';
+  try { lang = localStorage.getItem('villa-insight-lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'); } catch (e) {}
+  if (lang !== 'zh') lang = 'en';
+  setLang(lang);
+  document.getElementById('lang').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+</script>
+
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="/monica/">Profile</a></li>
+        <li><a href="/insights/">All insights</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/insights</div>
+  </div>
+</footer>
+
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+
+</body>
+</html>

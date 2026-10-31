@@ -77,7 +77,7 @@
   .brand-mark::after{
     content:"";position:absolute;inset:4px;border-radius:4px;background:#000;
   }
-  .nav-links{display:flex;gap:28px;color:var(--fg-dim)}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
   .nav-links a{transition:color .2s}
   .nav-links a:hover{color:var(--fg)}
   .nav-cta{
@@ -214,6 +214,18 @@
     color:var(--fg-dim);font-size:clamp(16px,1.3vw,19px);
     line-height:1.65;max-width:720px;margin-top:24px;
   }
+  .insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .insight-card{
+    display:flex;flex-direction:column;gap:10px;padding:28px 24px;min-height:240px;
+    border:1px solid var(--line);border-radius:22px;background:#070707;
+    transition:border-color .2s, transform .2s;
+  }
+  .insight-card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+  .insight-card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}
+  .insight-card h3{font-size:20px;letter-spacing:-.02em;line-height:1.3;font-weight:600}
+  .insight-card .zh{color:var(--fg-dim);font-size:13.5px;line-height:1.45}
+  .insight-card .more{margin-top:auto;color:#fff;font-size:14px}
+  @media(max-width:900px){.insight-grid{grid-template-columns:1fr}}
 
   /* ============ STATS ============ */
   .stats{
@@ -579,6 +591,7 @@
       <a href="#pillars">What We Do</a>
       <a href="#cities">Cities</a>
       <a href="#summit">GO SUMMIT</a>
+      <a href="/insights/">Insights</a>
       <a href="#team">Team</a>
     </div>
     <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
@@ -901,6 +914,40 @@
   <div class="quote-attr reveal d1">AGI Villa · The Two-Way Bridge</div>
 </section>
 
+<!-- INSIGHTS -->
+<section id="insights">
+  <div class="wrap">
+    <div class="label reveal">Insights</div>
+    <h2 class="title reveal d1">Monica’s field notes on <span class="c-yellow">going global</span>.</h2>
+    <p class="lede reveal d2">Operator dialogues, country briefs, and company teardowns — the same rooms the Villa is built from. English and 中文.</p>
+    <div class="insight-grid">
+      <a class="insight-card reveal" href="/insights/a-conversation-with-daisy-wu-ying-the-next-wave-of-global-expansion-goes-beyond-advertising/">
+        <div class="k">27 Sep 2026 · Dialogue</div>
+        <h3>The next wave of global expansion goes beyond advertising.</h3>
+        <div class="zh">对话 Daisy 武莹：下一代出海，不只是投广告</div>
+        <div class="more">Read →</div>
+      </a>
+      <a class="insight-card reveal d1" href="/insights/innovation-no-longer-has-a-single-center/">
+        <div class="k">22 Sep 2026 · Global Growth</div>
+        <h3>Innovation no longer has a single center.</h3>
+        <div class="zh">创新，不再只有一个中心</div>
+        <div class="more">Read →</div>
+      </a>
+      <a class="insight-card reveal d2" href="/insights/a-conversation-with-edward-guo-yuhua-how-ai-native-teams-can-break-through-with-hardware/">
+        <div class="k">1 Sep 2026 · Dialogue</div>
+        <h3>How AI-native teams break through with hardware.</h3>
+        <div class="zh">对话 Edward 郭昱华：AI Native 团队的硬件破局</div>
+        <div class="more">Read →</div>
+      </a>
+    </div>
+    <div class="cta-row reveal" style="justify-content:flex-start;margin-top:28px">
+      <a href="/insights/" class="btn btn-ghost">All 65 insights
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- TEAM -->
 <section id="team" style="padding-top:40px">
   <div class="wrap">
@@ -927,9 +974,9 @@
         <div class="backed"><strong>Backed by leading investors</strong> — Sequoia Capital · Legend Capital · Sinovation Ventures · GGV Capital · Linear Venture</div>
         <div class="founder-links">
           <a href="/monica/">Profile →</a>
+          <a href="/insights/">Insights →</a>
           <a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a>
           <a href="https://chinabymonica.com/connect" target="_blank" rel="noopener">Official Channel</a>
-          <a href="https://chinabymonica.com/insights" target="_blank" rel="noopener">Monica on Going Global</a>
         </div>
       </div>
     </div>
@@ -989,6 +1036,7 @@
       <ul>
         <li><a href="#who">Who We Are</a></li>
         <li><a href="/community/">Member List</a></li>
+        <li><a href="/insights/">Insights</a></li>
         <li><a href="#pillars">What We Do</a></li>
         <li><a href="#cities">Cities</a></li>
       </ul>

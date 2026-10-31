@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Unpacking Clay: Valued at $3.1 Billion, OpenAI’s &quot;Sales Data Middle Office&quot; — Monica Wang | AGI Villa</title>
+<meta name="description" content="How did a spreadsheet tool for sales teams win over top-tier Silicon Valley VCs in a fierce funding race?" />
+<link rel="canonical" href="https://agivilla.com/insights/unpacking-clay-valued-at-31-billion-openais-sales-data-middle-office/" />
+<meta property="og:title" content="Unpacking Clay: Valued at $3.1 Billion, OpenAI’s &quot;Sales Data Middle Office&quot; — Monica Wang | AGI Villa" />
+<meta property="og:description" content="How did a spreadsheet tool for sales teams win over top-tier Silicon Valley VCs in a fierce funding race?" />
+<meta property="og:url" content="https://agivilla.com/insights/unpacking-clay-valued-at-31-billion-openais-sales-data-middle-office/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{display:none}}
+  .page{padding:128px 24px 80px}
+  .wrap{max-width:var(--max);margin:0 auto;min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:650;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:680px;margin-top:18px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px}
+  .filters button,.lang button{
+    background:transparent;color:var(--fg-dim);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;
+  }
+  .filters button.on,.lang button.on{background:#fff;color:#000;border-color:#fff}
+  .search{margin-left:auto;background:#0a0a0a;border:1px solid var(--line);color:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;min-width:220px;outline:none}
+  .search:focus{border-color:var(--line-2)}
+  @media(max-width:720px){.search{margin-left:0;width:100%}}
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:48px;padding:18px;border:1px solid var(--line);border-radius:28px;background:#070707;align-items:center;min-width:0}
+  .feature img{width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:18px;min-width:0}
+  .feature .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  .feature h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.15;font-weight:600}
+  .feature .zh{color:var(--fg-dim);margin-top:10px;font-size:16px}
+  .feature .sub{color:var(--fg-dimmer);margin-top:12px;line-height:1.5}
+  .feature .go{display:inline-flex;margin-top:20px;color:#fff;font-size:14px}
+  @media(max-width:800px){.feature{grid-template-columns:1fr}.feature img{max-height:220px}}
+  .list{display:flex;flex-direction:column;margin-top:18px}
+  .row{display:grid;grid-template-columns:148px minmax(0,1fr) auto;gap:22px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line)}
+  .row:hover h3{color:#fff}
+  .row .meta{color:var(--fg-dimmer);font-size:12.5px;letter-spacing:.04em;padding-top:4px}
+  .row .meta b{display:block;color:var(--fg-dim);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+  .row h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+  .row .zh{color:var(--fg-dim);font-size:14px;margin-top:6px}
+  .row .sub{color:var(--fg-dimmer);font-size:14.5px;line-height:1.5;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row .min{color:var(--fg-dimmer);font-size:12.5px;padding-top:4px;white-space:nowrap}
+  .empty{display:none;color:var(--fg-dim);padding:48px 0}
+  @media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}.row .min{display:none}}
+  .back{color:var(--fg-dim);font-size:14px;display:inline-flex;margin-bottom:28px}
+  .back:hover{color:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  article.sheet{max-width:760px;margin:0 auto}
+  h1,.feature h2,.row h3{overflow-wrap:break-word}
+  article.sheet h1{font-size:clamp(32px,4vw,52px)}
+  .subhead{color:var(--fg-dim);font-size:18px;line-height:1.5;margin-top:16px}
+  .byline{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:22px;color:var(--fg-dimmer);font-size:13.5px}
+  .byline a{color:var(--fg)}
+  .cover{margin:28px 0 8px;border-radius:18px;border:1px solid var(--line);max-height:460px;width:100%;object-fit:cover}
+  .prose{margin-top:36px;font-size:17.5px;line-height:1.75;color:#e4e4e7}
+  .prose p{margin:0 0 1.15em}
+  .prose h2{font-size:28px;line-height:1.25;letter-spacing:-.03em;margin:1.7em 0 .55em;color:#fff;font-weight:600}
+  .prose h3{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:1.45em 0 .45em;color:#fff;font-weight:600}
+  .prose h4{font-size:17px;margin:1.2em 0 .4em;color:#fff}
+  .prose ul,.prose ol{margin:0 0 1.15em 1.25em}
+  .prose li{margin:.35em 0}
+  .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .prose strong,.prose b{color:#fff;font-weight:600}
+  .prose blockquote{border-left:3px solid var(--yellow);margin:1.4em 0;padding:2px 0 2px 16px;color:var(--fg-dim)}
+  .prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+  .prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .prose pre{background:#111;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;margin:0 0 1.15em}
+  .more{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .more h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dimmer);font-weight:500;margin-bottom:8px}
+  .more a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;letter-spacing:-.02em}
+  .more a span{display:block;color:var(--fg-dimmer);font-size:13px;margin-top:4px}
+  .more a:hover{color:#fff}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){.foot-wrap{grid-template-columns:1fr 1fr}.foot-bottom{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/insights/" class="active">Insights</a>
+      <a href="/#team">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+
+<main class="page">
+  <div class="wrap">
+    <article class="sheet">
+      <a class="back" href="/insights/">← All insights</a>
+      <div class="kicker" id="kicker">Unicorns · 1 Dec 2025 · 7 min</div>
+      <h1 id="title"></h1>
+      <p class="subhead" id="subhead" hidden></p>
+      <div class="byline">
+        <span>Monica Wang</span>
+        <a href="/monica/">Founder, AGI Villa</a>
+        <div class="lang" id="lang">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+      
+      <div class="prose" id="body-en"><p><strong>OpenAI’s sales team once faced a major headache</strong>: its data coverage for potential customers stood at only 40%. Missing email addresses, incomplete company profiles, outdated contact roles — a classic B2B sales nightmare.</p><p>After adopting Clay, data coverage jumped to over 80%.</p><p>It isn’t just OpenAI. Star companies including Anthropic, Canva, and Ramp all rely on this same tool for sales automation. Called Clay, it looks like Excel but functions as an <strong>operating system for sales workflows</strong>.</p><p>Consider its funding trajectory: valued at $1.5 billion in May 2025, it doubled to $3.1 billion just three months later. The round was led by CapitalG, the growth equity arm of Google’s parent company Alphabet.</p><p>How did a “spreadsheet tool for sales teams” become a bidding war target for top Silicon Valley venture capitalists?</p><h2>Product Breakdown: This Isn’t a CRM — It’s an Operating System for Sales Data</h2><p>Clay is <strong>not</strong> what you might think: it is not a CRM like Salesforce, nor a sales execution tool like Apollo.</p><p>What is Clay? A <strong>data middle office</strong> that integrates 150+ data sources, AI research capabilities, and workflow automation into an Excel-like interface.</p><h3>Architecture Breakdown</h3><p><strong>Layer 1: Data Aggregation Layer</strong></p><p>Clay integrates with 150+ data providers:</p><ul><li><p>Traditional databases: ZoomInfo, Apollo, Clearbit, Lusha</p></li><li><p>Intent signals: 6sense, Koala (monitors website visits, role changes, funding announcements)</p></li><li><p>Proprietary user data: supports integration via custom API keys</p></li></ul><p><strong>Core Innovation: Waterfall Enrichment</strong></p><p>The traditional approach is to subscribe to ZoomInfo and give up if data is missing. Clay’s logic is different:</p><p>If Apollo fails to find an email → automatically try Hunter → then RocketReach → until the data is found.</p><p><strong>Layer 2: AI Processing Layer (Core Competitive Advantage)</strong></p><p><strong>Claygent</strong> — Clay’s AI research agent — is essentially a programmable GPT-4 web crawler.</p><p>Give it a prompt such as <em>“Is this company SOC II certified?”</em> and it will:</p><ol><li><p>Automatically search relevant web pages</p></li><li><p>Access the company’s official website / security page</p></li><li><p>Extract key information</p></li><li><p>Return structured answers</p></li></ol><p>Real-world usage metrics:</p><ul><li><p>30% of Clay users use Claygent daily</p></li><li><p>500,000 AI research tasks executed every day</p></li><li><p>Equivalent to a 24/7 research assistant for every sales team</p></li></ul><p>Typical use cases: determining if a prospect is a B2B company, scraping recent funding news, analyzing competitor tech stacks, and extracting company pain points from job descriptions.</p><p><strong>Layer 3: Workflow Automation Layer</strong></p><p>Clay’s interface resembles Excel, but its backend is a no-code programming environment.</p><p>Example logic:</p><p>IF company size &gt; 500 employees</p><p>→ pull data from ZoomInfo (premium but accurate)</p><p>ELSE</p><p>→ pull data from Apollo (cost-effective)</p><p>It can also call any HTTP API, connect to internal data sources, and support Webhook triggers: when new leads enter the CRM → Clay enrichment is automatically activated.</p><h2>Credit-Based Pricing + PLG Growth = Why Capital Is Racing to Invest</h2><p>Clay does not charge per seat; it bills based on consumed data credits.</p><p>Why not seat-based pricing?</p><ul><li><p>✅ Unlimited users → reduces friction for team-wide adoption</p></li><li><p>✅ Pay-as-you-go → revenue directly tied to user value</p></li><li><p>✅ Rollover credits → reduces user anxiety about “wasting” subscriptions</p></li></ul><p>This is a classic PLG (Product-Led Growth) strategy: letting users grow organically instead of relying on sales push.</p><h3>Why Did Google and Sequoia Invest at a $3.1B Valuation?</h3><p>Investment Highlights</p><ol><li><p><strong>Backing from star customers</strong></p><p>OpenAI, Anthropic, Canva, and Ramp all use Clay. These companies have extremely high tool standards, and their choice serves as a strong vote of confidence.</p></li><li><p><strong>Integration barrier of 150+ data sources</strong></p><p>Connecting 150+ APIs is not technically difficult, but maintaining them is. Each API has different formats, authentication rules, and rate limits, requiring ongoing engineering investment.</p></li><li><p><strong>Technical moat of Claygent</strong></p><p>Beyond calling OpenAI’s API, Clay has built unique expertise in prompt engineering and web crawling — something competitors cannot easily replicate in the short term.</p></li><li><p><strong>Booming GTM automation sector</strong></p><p>GTM (Go-To-Market) automation is the hottest SaaS category of 2025. Why? AI has turned “data-driven sales” from a slogan into reality.</p></li><li><p><strong>Platform-level upside</strong></p><p>Clay has already launched a native Sequencer (email automation). It may eventually build its own CRM and become a full-stack GTM platform.</p></li></ol><h3>Market Signal: Valuation Doubles in 3 Months</h3><ul><li><p>May 2025: Clay valued at $1.5B (led by Sequoia)</p></li><li><p>August 2025: Clay valued at $3.1B (led by CapitalG)</p></li></ul><p>Behind this surge:</p><ul><li><p>The “iPhone moment” has arrived for AI applications</p></li><li><p>A paradigm shift from “AI capabilities” (large model APIs) to “AI workflows” (integrated toolchains)</p></li><li><p>Capital’s verdict: data middle offices &gt; single-point tools</p></li></ul><h2>Localization Opportunities: Why Directly Copying Clay Won’t Work in China</h2><h3>Key Barriers</h3><ol><li><p><strong>Lack of comparable data sources</strong></p></li></ol><ul><li><p>LinkedIn is unavailable in mainland China</p></li><li><p>ZoomInfo / Apollo offer weak coverage of Chinese enterprise data</p></li><li><p>Requires integration of local providers: Qichacha, Tianyancha, Maimai, etc.</p></li></ul><ol><li><p><strong>Lower B2B maturity</strong></p></li></ol><ul><li><p>China’s B2B sales rely more on relationship-building than data-driven tactics</p></li><li><p>Sales Ops roles remain underdeveloped in Chinese enterprises</p></li><li><p>Low willingness to pay an annual fee of $1,800 (≈ ¥13,000)</p></li></ul><ol><li><p><strong>Compliance risks</strong></p></li></ol><ul><li><p>Automated web scraping may violate China’s <em>Personal Information Protection Law (PIPL)</em></p></li><li><p>Restrictions on the use of phone and email data</p></li></ul><h3>Viable Entry Points</h3><p>Direction 1: Vertical Industry Clay</p><ul><li><p>Target sectors like pharmaceutical / financial SaaS (with more standardized B2B processes)</p></li><li><p>Integrate local data: Qichacha corporate info + Maimai professional updates + 36Kr funding data</p></li><li><p>Annual pricing: ¥5,000–8,000 (roughly one-third of the international version)</p></li></ul><p>Direction 2: Services for Chinese Global Businesses</p><ul><li><p>Ride the wave of Chinese SaaS going global (fueled by TikTok, Shein, etc.)</p></li><li><p>Help Chinese companies enrich overseas customer data</p></li><li><p>A reverse Clay model: connecting global data sources while serving Chinese teams</p></li></ul><p>Direction 3: China-Style Private Domain Tool</p><ul><li><p>WeCom (WeChat Work) version of Clay: automated tagging, tiered operations, content push</p></li><li><p>AI-powered personalized messaging (similar to Claygent)</p></li><li><p>Adapted to China’s private domain traffic ecosystem</p></li></ul><h2>Takeaways for Entrepreneurs</h2><ul><li><p><strong>Opportunity in “middle office thinking”</strong>: integrating fragmented tools &gt; reinventing the wheel</p><p>Clay does not own its own database but unifies 150+ external sources — a textbook middle office strategy. For startups, instead of always building products from zero to one, integrating existing tools and lowering adoption barriers is often a faster path to PMF (Product-Market Fit).</p></li><li><p><strong>PLG + credit-based pricing = standard SaaS model in 2025</strong></p><p>Per-seat licensing is outdated. Unlimited users + pay-as-you-go align with the AI era. If you’re building SaaS, consider “get users on board first, monetize through usage later.”</p></li><li><p><strong>AI Agents are not hype — they cut labor costs</strong></p><p>Claygent runs 500,000 research tasks daily. This is not just “AI assistance” but “AI replacement” for repetitive work in junior research roles. Avoid superficial “AI-wrapped” products. Truly valuable AI applications let companies hire fewer people and eliminate entire workflows.</p></li></ul><h2>Conclusion</h2><p>Clay is neither a “data company” (it uses third-party data) nor a pure “AI company” (it relies on OpenAI’s API). At its core, it is an <strong>operating system for sales workflows</strong>.</p><p>It proves one thing: in the AI era, opportunities lie not only in large foundation models but also in the application layer — embedding AI capabilities into real-world workflows.</p><p>For entrepreneurs, Clay points to a clear path: identify a highly fragmented field (such as B2B sales), use AI + middle office thinking to integrate existing tools, and lower barriers to use.</p><p>This often leads to Product-Market Fit faster than building an entirely new product from scratch.</p></div>
+      <div class="prose" id="body-zh" hidden><p><strong>OpenAI的销售团队曾经有个头疼的问题</strong>：潜在客户的数据覆盖率只有40%。邮箱找不到、公司信息不全、联系人职位过时——典型的B2B销售噩梦。</p><p>用了Clay之后，数据覆盖率升至<strong>80%+</strong>。</p><p>不只是OpenAI，Anthropic、Canva、Ramp这些明星公司都在用同一个工具做销售自动化。这个工具叫<strong>Clay</strong>，一个看起来像Excel、实际上是&quot;销售工作流操作系统&quot;的产品。</p><p><strong>看看融资数据：</strong>2025年5月估值15亿美元，8月就翻到<strong>31亿美元</strong>。3个月翻倍，领投方是Google母公司Alphabet的CapitalG。</p><p>一个&quot;给销售团队用的表格工具&quot;，凭什么让硅谷顶级VC抢着投？</p><h2><strong>产品拆解：这不是CRM，是&quot;销售数据的操作系统&quot;</strong></h2><p><strong>Clay不是什么</strong>：它不是Salesforce那样的CRM，也不是Apollo那样的销售执行工具。</p><p><strong>Clay是什么？</strong>一个把150+个数据源、AI研究能力、工作流自动化整合到一个类似Excel界面的&quot;数据中台&quot;。</p><h2><strong>架构拆解</strong></h2><p><strong>Layer 1：数据聚合层 </strong>Clay接入了150+数据提供商：</p><ul><li><p>传统数据库：ZoomInfo、Apollo、Clearbit、Lusha</p></li></ul><ul><li><p>意向信号：6sense、Koala（监测网站访问、职位变动、融资事件）</p></li><li><p>用户自有数据：可以接入自己的API Key</p></li></ul><p><strong>核心创新：Waterfall Enrichment（瀑布流丰富）</strong></p><p>传统做法是订阅ZoomInfo，找不到数据就算了。Clay的逻辑是：</p><pre><code>如果Apollo没找到邮箱 → 自动尝试Hunter → 再试RocketReach → 直到找到为止</code></pre><p><strong>Layer 2：AI处理层（核心竞争力）</strong></p><p><strong>Claygent - Clay的AI研究Agent</strong>，本质是一个<strong>可编程的GPT-4网络爬虫</strong>。</p><p>给它一个prompt：&quot;这家公司是否SOC-II认证？&quot;它会：</p><ol><li><p>1. 自动搜索相关网页</p></li><li><p>2. 访问公司官网/安全页面</p></li><li><p>3. 提取关键信息</p></li><li><p>4. 返回结构化答案</p></li></ol><p><strong>真实使用数据</strong>：</p><ul><li><p>30%的Clay用户每天使用Claygent</p></li><li><p><strong>每天执行50万次AI研究任务</strong></p></li><li><p>相当于给每个销售团队配了个24小时不睡觉的研究助理</p></li></ul><p>典型场景：判断潜在客户是否B2B公司、抓取最近融资新闻、分析竞品技术栈、从招聘JD里提取公司痛点。</p><p><strong>Layer 3：工作流自动化层</strong></p><p>Clay的界面看起来像Excel，但底层是一个<strong>无代码编程环境</strong>。</p><p>举个例子：</p><pre><code>IF 公司规模 &gt; 500人 
+  → 用ZoomInfo查数据（贵但准确）
+ELSE 
+  → 用Apollo查（便宜）</code></pre><p>还能调用任何HTTP API，接入自己的数据源，同时还有<strong>Webhook触发</strong>：新leads进CRM → 自动触发Clay enrichment流程。</p><h2><strong>Credit制度 + PLG增长 = 资本疯抢的原因</strong></h2><p>Clay不按座位收费，而是按<strong>消耗的数据credits</strong>收费。</p><p><strong>为什么不按座位收费？</strong></p><p>✅ <strong>Unlimited users</strong>（无限用户）→ 降低扩张摩擦，整个销售团队都能用</p><p>✅ <strong>用多少付多少</strong> → 收入与价值直接挂钩</p><p>✅ <strong>Credits可滚动</strong> → 降低用户&quot;浪费&quot;焦虑</p><p>这是典型的PLG（Product-Led Growth）策略：让用户自然增长，而不是靠销售push。</p><h2><strong>为什么Google、Sequoia抢着投31亿？</strong></h2><h2><strong>投资价值点</strong></h2><p>1. <strong>明星客户背书：</strong>OpenAI、Anthropic、Canva、Ramp都在用。这些公司对工具的要求极高，选择Clay本身就是信任票。</p><p>2. <strong>150+数据源的整合壁垒：</strong>接入150+个API不是技术难题，难在<strong>维护成本</strong>。每个API的格式、鉴权、限流规则都不同，这需要持续的工程投入。</p><p>3. <strong>Claygent的技术护城河：</strong>不只是调用OpenAI API，Clay在prompt engineering和网络爬虫上有独特积累。这是别人短期模仿不了的。</p><p>4. <strong>GTM赛道的爆发期：</strong>GTM（Go-To-Market）自动化是2025年最热的SaaS赛道。为什么？因为<strong>AI让&quot;数据驱动销售&quot;从口号变成现实</strong>。</p><p>5. <strong>从工具到平台的想象空间：</strong>Clay已经推出了原生Sequencer（邮件自动化）。未来可能推出CRM，成为&quot;GTM全栈平台&quot;。</p><h2><strong>3个月估值翻倍的市场信号</strong></h2><p>2025年5月，Clay估值15亿（Sequoia领投）。</p><p>2025年8月，Clay估值31亿（CapitalG领投）。</p><p><strong>这背后是什么？</strong></p><ul><li><p>AI应用层的&quot;iPhone时刻&quot;到了</p></li><li><p>从&quot;AI能力&quot;（大模型API）到&quot;AI工作流&quot;（整合多个工具）的范式转移</p></li><li><p>资本判断：<strong>数据中台 &gt; 单点工具</strong></p></li></ul><h2><strong>本土化机会：直接复制Clay在中国为什么不行？</strong></h2><h2><strong>最直接的障碍</strong></h2><p>1. <strong>数据源缺失</strong></p><ul><li><p>LinkedIn在中国不可用</p></li><li><p>ZoomInfo/Apollo覆盖中国企业数据很弱</p></li><li><p>需要整合企查查、天眼查、脉脉等本土数据源</p></li></ul><p>2. <strong>B2B成熟度低</strong></p><ul><li><p>中国ToB销售更依赖&quot;关系驱动&quot;而非&quot;数据驱动&quot;</p></li><li><p>Sales Ops岗位在中国企业不成熟</p></li><li><p>年付$1,800（人民币1.3万）的接受度低</p></li></ul><p>3. <strong>合规风险</strong></p><ul><li><p>自动化抓取数据可能触及《个人信息保护法》</p></li><li><p>电话/邮箱数据使用受限</p></li></ul><h2><strong>可能的切入点</strong></h2><p><strong>方向1：垂直行业版Clay</strong></p><ul><li><p>针对医药/金融SaaS（这些行业B2B流程更规范）</p></li><li><p>整合本土数据源：企查查企业信息 + 脉脉职场动态 + 36氪融资数据</p></li><li><p>年费定价：人民币5,000-8,000元（对标国际版1/3价格）</p></li></ul><p><strong>方向2：出海企业服务</strong></p><ul><li><p>中国SaaS出海热潮（TikTok、Shein带动）</p></li><li><p>帮中国企业enrichment海外客户数据</p></li><li><p><strong>反向Clay：连接海外数据源但服务中国团队</strong></p></li></ul><p><strong>方向3：私域运营工具（中国特色）</strong></p><ul><li><p>企微版Clay：自动化打标签、分层运营、内容推送</p></li><li><p>结合AI生成个性化话术（类似Claygent）</p></li><li><p>适配中国&quot;私域流量&quot;的玩法</p></li></ul><h2><strong>给创业者的启发</strong></h2><ul><li><p><strong>&quot;中台思维&quot;的机会：整合碎片化工具 &gt; 重新发明轮子：</strong>Clay没有自己的数据库，但把150+个数据源整合到一起。这是典型的&quot;中台&quot;打法。对于初创公司来说，不要总想着从0到1做新产品，<strong>整合已有工具、降低使用门槛，可能是更快的PMF路径</strong>。</p></li><li><p><strong>PLG + Credit制 = 2025年SaaS的标准配置：</strong>按座位收费已经过时了。Unlimited users + 按使用量付费，才是符合AI时代的定价模式。如果你在做SaaS，考虑&quot;先让用户用起来，再通过消耗收费&quot;的模式。</p></li><li><p><strong>AI Agent不是噱头，是真正降低人力成本的生产力工具：</strong>Claygent每天执行50万次研究任务。这不是&quot;AI辅助&quot;，而是<strong>“AI替代”</strong>——替代初级研究岗位的重复劳动。别做&quot;AI套壳&quot;产品。真正有价值的AI应用，是让用户少雇1个人、省掉1个工作流。</p></li></ul><p>Clay的本质不是一个&quot;数据库公司&quot;（数据来自第三方），也不是纯&quot;AI公司&quot;（调用OpenAI API），而是一个<strong>“销售工作流的操作系统”</strong>。</p><p>它证明了一件事：<strong>AI时代的机会不只在大模型，更在&quot;把AI能力整合到具体工作流&quot;的应用层</strong>。</p><p>对于创业者，Clay给了一个清晰的方向：找到一个碎片化严重的领域（比如ToB销售），用AI + 中台思维整合现有工具，降低使用门槛。</p><p>这比从0做一个&quot;新产品&quot;，可能更快找到Product-Market Fit。</p></div>
+      <div class="more">
+        <h2>Keep reading</h2>
+        <a href="/insights/2-founders-18-billion-valuation-the-worlds-first-two-person-unicorn-emerges-in-the-ai-era/">2 Founders, $1.8 Billion Valuation: The World’s First Two-Person Unicorn Emerges in the AI Era<span>2个人，18亿美金：AI时代第一个&quot;两人独角兽&quot;诞生</span></a><a href="/insights/unpacking-harvey-a-first-year-associate-and-his-deepmind-flatmate-built-a-11-billion-legal-ai/">Unpacking Harvey: A First-Year Associate and His DeepMind Flatmate Built a $11 Billion Legal AI<span>拆解Harvey：一年级律师和DeepMind室友，做出110亿美元的法律AI</span></a><a href="/insights/unpacking-eridu-62-year-old-veteran-raises-200m-to-break-down-ais-network-wall/">Unpacking Eridu: 62-Year-Old Veteran Raises $200M to Break Down AI’s “Network Wall”<span>拆解Eridu：62岁老兵，融资2亿美元，要拆掉AI的“网络墙”</span></a>
+      </div>
+    </article>
+  </div>
+</main>
+<script type="application/json" id="meta">{"titleEN": "Unpacking Clay: Valued at $3.1 Billion, OpenAI’s \"Sales Data Middle Office\"", "titleZH": "拆解Clay：31亿美金估值，OpenAI的\"销售数据中台\"", "subtitleEN": "How did a spreadsheet tool for sales teams win over top-tier Silicon Valley VCs in a fierce funding race?", "subtitleZH": "一个“给销售团队用的表格工具”，凭什么让硅谷顶级VC抢着投？"}</script>
+<script>
+  const meta = JSON.parse(document.getElementById('meta').textContent);
+  const title = document.getElementById('title');
+  const sub = document.getElementById('subhead');
+  function setLang(lang) {
+    const zh = lang === 'zh';
+    title.textContent = zh ? meta.titleZH : meta.titleEN;
+    const s = zh ? meta.subtitleZH : meta.subtitleEN;
+    sub.textContent = s || '';
+    sub.hidden = !s;
+    document.getElementById('body-en').hidden = zh;
+    document.getElementById('body-zh').hidden = !zh;
+    document.documentElement.lang = zh ? 'zh-Hans' : 'en';
+    document.title = (zh ? meta.titleZH : meta.titleEN) + ' — Monica Wang | AGI Villa';
+    document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('villa-insight-lang', lang); } catch (e) {}
+  }
+  let lang = 'en';
+  try { lang = localStorage.getItem('villa-insight-lang') || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'); } catch (e) {}
+  if (lang !== 'zh') lang = 'en';
+  setLang(lang);
+  document.getElementById('lang').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+</script>
+
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="/monica/">Profile</a></li>
+        <li><a href="/insights/">All insights</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/insights</div>
+  </div>
+</footer>
+
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+
+</body>
+</html>
