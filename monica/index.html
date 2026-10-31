@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Monica Wang — Access to China’s AI Economy | AGI Villa</title>
+<meta name="description" content="Monica Wang founded AGI Villa and GO SUMMIT — the two-way room where global capital, media, and industry meet 3,000+ Chinese AI founders. Operator-backed. 60+ countries. Harvard 2025." />
+<meta property="og:title" content="Monica Wang — Access to China’s AI Economy" />
+<meta property="og:description" content="The operator who puts global investors, media, and industry in the same room as China’s AI builders — both ways." />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://agivilla.com/monica/" />
+<meta property="og:image" content="https://agivilla.com/monica/monica.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)}
+  .wordmark .l-g{color:var(--blue)}
+  .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)}
+  .wordmark .l-space{display:inline-block;width:.22em}
+
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    backdrop-filter:blur(18px) saturate(180%);
+    -webkit-backdrop-filter:blur(18px) saturate(180%);
+    background:rgba(0,0,0,0.6);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;font-size:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand-mark{
+    width:26px;height:26px;border-radius:7px;position:relative;
+    background:conic-gradient(from 0deg at 50% 50%, var(--red) 0deg 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);
+    box-shadow:0 0 22px rgba(66,133,244,0.35);
+  }
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:28px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--fg)}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  .hero{
+    position:relative;padding:140px 24px 80px;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:-20% -10% 20%;
+    background:
+      radial-gradient(45% 50% at 72% 30%, rgba(66,133,244,0.18), transparent 60%),
+      radial-gradient(40% 40% at 28% 40%, rgba(234,67,53,0.10), transparent 60%),
+      radial-gradient(40% 40% at 60% 80%, rgba(251,188,5,0.08), transparent 60%);
+    filter:blur(40px);pointer-events:none;
+  }
+  .hero-grid{
+    max-width:var(--max);margin:0 auto;position:relative;
+    display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:center;
+  }
+  .portrait{
+    position:relative;border-radius:28px;overflow:hidden;
+    border:1px solid var(--line-2);
+    background:#111;
+  }
+  .portrait img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 18%}
+  .portrait::after{
+    content:"";position:absolute;inset:auto 0 0;height:40%;
+    background:linear-gradient(transparent, rgba(0,0,0,.35));
+    pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--fg-dim);background:rgba(255,255,255,0.03);margin-bottom:22px;
+  }
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue)}
+  .hero h1{
+    font-size:clamp(32px,4.4vw,56px);line-height:1.05;font-weight:700;letter-spacing:-0.045em;
+    background:linear-gradient(180deg,#fff 0%,#fff 45%,#a8a8ad 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;
+  }
+  .hero .role{color:var(--fg-dim);font-size:clamp(16px,1.4vw,19px);line-height:1.55;max-width:560px;margin-bottom:28px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .tag{
+    font-size:12.5px;padding:7px 12px;border-radius:999px;
+    border:1px solid var(--line);color:var(--fg-dim);background:rgba(255,255,255,.03);
+  }
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:999px;font-size:14.5px;font-weight:500;
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  .btn-primary{background:#fff;color:#000}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,255,255,.2)}
+  .btn-ghost{background:rgba(255,255,255,0.06);color:#fff;border:1px solid var(--line-2)}
+  .btn-ghost:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px)}
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;text-align:center}
+    .portrait{max-width:320px;margin:0 auto}
+    .hero .role{margin-left:auto;margin-right:auto}
+    .tags,.cta-row{justify-content:center}
+  }
+
+  .stats{
+    max-width:var(--max);margin:-20px auto 0;padding:0 24px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  }
+  .stat{background:#050505;padding:32px 26px}
+  .stat-num{font-size:clamp(26px,3.2vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1}
+  .stat-lbl{color:var(--fg);font-size:14px;margin-top:12px;font-weight:500}
+  .stat-desc{color:var(--fg-dimmer);font-size:12.5px;margin-top:4px;line-height:1.4}
+  @media(max-width:800px){.stats{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.stats{grid-template-columns:1fr}}
+
+  section{padding:110px 24px 20px}
+  .wrap{max-width:var(--max);margin:0 auto}
+  .label{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--fg-dimmer);margin-bottom:16px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .label::before{content:"";width:24px;height:1px;background:var(--fg-dimmer)}
+  .title{
+    font-size:clamp(28px,4vw,50px);line-height:1.08;letter-spacing:-0.035em;
+    font-weight:600;max-width:820px;
+    background:linear-gradient(180deg,#fff,#b5b5ba);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .title .c-blue{color:var(--blue);-webkit-text-fill-color:var(--blue)}
+  .title .c-yellow{color:var(--yellow);-webkit-text-fill-color:var(--yellow)}
+  .title .c-green{color:var(--green);-webkit-text-fill-color:var(--green)}
+  .lede{color:var(--fg-dim);font-size:clamp(16px,1.25vw,18.5px);line-height:1.7;max-width:720px;margin-top:20px}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:48px}
+  @media(max-width:960px){.grid-5{grid-template-columns:1fr 1fr}}
+  @media(max-width:720px){
+    .grid-2,.grid-3,.grid-5{grid-template-columns:1fr}
+    section{padding:80px 22px 12px}
+  }
+
+  .card{
+    border:1px solid var(--line);border-radius:22px;padding:28px 24px;
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+  }
+  .card-kicker{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    margin-bottom:12px;color:var(--blue);
+  }
+  .card.k-red .card-kicker{color:var(--red)}
+  .card.k-green .card-kicker{color:var(--green)}
+  .card.k-yellow .card-kicker{color:var(--yellow)}
+  .card h3{font-size:20px;letter-spacing:-.02em;margin-bottom:10px}
+  .card p{color:var(--fg-dim);font-size:14.5px;line-height:1.65}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+  .chip{
+    padding:10px 14px;border-radius:999px;font-size:13.5px;
+    border:1px solid var(--line-2);background:rgba(255,255,255,.04);
+  }
+
+  .note{
+    margin-top:22px;color:var(--fg-dimmer);font-size:13.5px;line-height:1.6;
+  }
+  .pull{
+    margin-top:48px;padding:36px 32px;border-left:3px solid var(--yellow);
+    background:rgba(255,255,255,.03);border-radius:0 18px 18px 0;
+  }
+  .pull p{color:#fff;font-size:clamp(18px,2vw,24px);line-height:1.45;letter-spacing:-.02em;font-weight:500}
+  .pull span{display:block;margin-top:14px;color:var(--fg-dimmer);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+  .cta-section{padding:48px 24px 120px}
+  .cta-card{
+    max-width:var(--max);margin:0 auto;text-align:center;
+    border:1px solid var(--line);border-radius:28px;padding:68px 28px;
+    background:
+      radial-gradient(60% 80% at 50% 0%, rgba(66,133,244,0.14), transparent 60%),
+      linear-gradient(180deg,#0c0c0c,#050505);
+  }
+  .cta-card h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.035em;margin-bottom:14px}
+  .cta-card p{color:var(--fg-dim);max-width:540px;margin:0 auto 28px;line-height:1.65}
+  .cta-card .cta-row{justify-content:center}
+
+  footer{border-top:1px solid var(--line);padding:60px 24px 40px}
+  .foot-wrap{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:13.5px;line-height:1.6;margin-top:16px;max-width:320px}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{
+    max-width:var(--max);margin:50px auto 0;padding-top:30px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--fg-dimmer);font-size:13px;
+  }
+  .foot-bar{display:flex;gap:4px;align-items:center;margin-top:18px}
+  .foot-bar span{width:22px;height:3px;border-radius:2px;display:inline-block}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  @media(max-width:720px){.foot-wrap{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.foot-wrap{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}
+  .reveal.d2{transition-delay:.16s}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#who">Who We Are</a>
+      <a href="/community/">Community</a>
+      <a href="/#pillars">What We Do</a>
+      <a href="/#cities">Cities</a>
+      <a href="/#summit">GO SUMMIT</a>
+      <a href="/#team" class="active">Team</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Join Villa →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div class="portrait reveal">
+      <img src="monica.jpg" alt="Monica Wang" width="1024" height="1024" />
+    </div>
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Monica Wang · Founder, AGI Villa &amp; GO SUMMIT</div>
+      <h1>The two-way door into China’s AI economy.</h1>
+      <p class="role">Monica Wang puts global investors, media, and industry in the same room as China’s AI builders — and takes Chinese founders into the world. Not a briefing. Not a tour. Relationships that become deals.</p>
+      <div class="tags">
+        <span class="tag">3,000+ founders</span>
+        <span class="tag">~$200M raised as operator</span>
+        <span class="tag">60+ countries</span>
+        <span class="tag">Harvard 2025</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:monica@agivilla.com?subject=Investor%20/%20partnership%20intro">Request an introduction</a>
+        <a class="btn btn-ghost" href="mailto:monica@agivilla.com?subject=Press%20inquiry">Press</a>
+        <a class="btn btn-ghost" href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats reveal">
+  <div class="stat">
+    <div class="stat-num">3,000+</div>
+    <div class="stat-lbl">AI &amp; tech founders</div>
+    <div class="stat-desc">Invitation-only network · AGI Villa &amp; BridgingChina</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">$200M+</div>
+    <div class="stat-lbl">Capital as operator</div>
+    <div class="stat-desc">Ventures she built or led · Sequoia, GGV, Legend, Sinovation</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">60+</div>
+    <div class="stat-lbl">Countries on the ground</div>
+    <div class="stat-desc">LATAM · MENA · SEA · Central Asia · North America · China</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">12</div>
+    <div class="stat-lbl">Villa cities</div>
+    <div class="stat-desc">Shanghai to São Paulo — plus GO SUMMIT 2026 world tour</div>
+  </div>
+</div>
+
+<section id="for">
+  <div class="wrap">
+    <div class="label reveal">Who this is for</div>
+    <h2 class="title reveal d1">If you need China that is <span class="c-blue">real</span> — not a slide.</h2>
+    <p class="lede reveal d2">Most “China access” is a filtered narrative. Monica built the room instead: operators from Huawei, Tencent, Alibaba, ByteDance, BYD, Unitree, and 3,000+ AI founders who actually ship — plus the global side that wants in.</p>
+    <div class="grid-3">
+      <article class="card reveal">
+        <div class="card-kicker">Investors</div>
+        <h3>Deal flow with a door, not a deck.</h3>
+        <p>Meet category leaders and high-velocity AI companies before they are packaged for a roadshow. Source in both directions: China capital looking out, global capital looking in. She has sat on the operator side of rounds backed by Sequoia, GGV, Legend, and Sinovation — she knows what a serious intro looks like.</p>
+      </article>
+      <article class="card k-yellow reveal d1">
+        <div class="card-kicker">Media</div>
+        <h3>The quote, the room, the story.</h3>
+        <p>A Xinhua-trained journalist who now convenes the people the story is about. On the record in English and Mandarin. Harvard 2025 on China innovation and education in the AI era. Weekly live on globalization, AI, and founders — primary access, not a press-release loop.</p>
+      </article>
+      <article class="card k-green reveal d2">
+        <div class="card-kicker">Industry</div>
+        <h3>Supply chain, GTM, and talent — both ways.</h3>
+        <p>Land in China, or take a Chinese product global. She has already built the B2B rails (hundreds of thousands of suppliers, thousands of overseas buyers) and now runs GTM, capital, and partnership pillars across LATAM, MENA, SEA, and North America. Same table. Real counterparties.</p>
+      </article>
+    </div>
+    <div class="pull reveal">
+      <p>We don’t move value one way — real relationships and real deals flow both ways.</p>
+      <span>AGI Villa · The two-way bridge</span>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="label reveal">The room</div>
+    <h2 class="title reveal d1">To our knowledge, the largest organized network of Chinese AI founders <span class="c-yellow">talking to the world</span>.</h2>
+    <p class="lede reveal d2">AGI Villa is invitation-only. GO SUMMIT 2026 takes the same room on the road — Shanghai, Shenzhen, Rio, Singapore, WAIC. Twelve cities already live. This is how overseas partners stop relying on secondhand China.</p>
+    <div class="grid-2">
+      <article class="card reveal">
+        <div class="card-kicker">Who is inside</div>
+        <h3>Giants, category leaders, the next wave.</h3>
+        <p>Operators from Huawei, Tencent, Alibaba, ByteDance, BYD, Ant, Foxconn. Industry names in robotics and models — Unitree, Hai Robotics, BrainCo, StepFun, Shanghai AI Lab. Plus thousands of application, agent, infrastructure, and embodied-AI founders built to ship across borders.</p>
+      </article>
+      <article class="card k-red reveal d1">
+        <div class="card-kicker">What moves</div>
+        <h3>Capital. Products. Markets. Talent. Playbooks.</h3>
+        <p>Six working pillars, both directions: cross-border GTM, global capital, China supply chain, talent, founder IP, and the summit circuit. Monica personally curates who is in the room — which is why introductions convert.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="track">
+  <div class="wrap">
+    <div class="label reveal">Track record</div>
+    <h2 class="title reveal d1">She has already built companies the <span class="c-green">best capital</span> underwrote.</h2>
+    <p class="lede reveal d2">Before Villa, Monica was Partner, CEO, and CMO across AI programming, youth education, B2B and social commerce, and Web3. Those companies raised over RMB 1.5 billion (~$200M+). She is not theorizing about founders. She has been one.</p>
+    <div class="grid-5">
+      <article class="card reveal">
+        <div class="card-kicker">AI</div>
+        <h3>AI programming</h3>
+        <p>Tools that let non-technical founders ship. Backed by Sequoia Capital and Linear Venture.</p>
+      </article>
+      <article class="card k-green reveal d1">
+        <div class="card-kicker">Scale</div>
+        <h3>Youth education</h3>
+        <p>10,000+ children, 12 countries, 46 cities — a real consumer-and-education network, not a pilot.</p>
+      </article>
+      <article class="card k-yellow reveal d2">
+        <div class="card-kicker">Trade</div>
+        <h3>B2B rails</h3>
+        <p>200,000 Chinese suppliers and 5,000 overseas buyers — the muscle memory behind Villa’s supply-chain work.</p>
+      </article>
+      <article class="card k-red reveal">
+        <div class="card-kicker">China depth</div>
+        <h3>Social commerce</h3>
+        <p>One million operators in lower-tier China, 5,000 brands — how products actually move outside Shanghai.</p>
+      </article>
+      <article class="card reveal d1">
+        <div class="card-kicker">Frontier</div>
+        <h3>Web3</h3>
+        <p>Blockchain applied to operating businesses — useful when the next wave of China–world rails is being designed.</p>
+      </article>
+    </div>
+    <div class="chips reveal">
+      <span class="chip">Sequoia Capital</span>
+      <span class="chip">Linear Venture</span>
+      <span class="chip">Legend Capital</span>
+      <span class="chip">Sinovation Ventures</span>
+      <span class="chip">GGV Capital</span>
+      <span class="chip">Zhongding Capital</span>
+      <span class="chip">Black Ant Capital</span>
+    </div>
+    <p class="note reveal">Named firms backed companies Monica built or helped lead. They are not sponsors of this page.</p>
+  </div>
+</section>
+
+<section id="institutions">
+  <div class="wrap">
+    <div class="label reveal">Institutions</div>
+    <h2 class="title reveal d1">University, city, and youth — the <span class="c-blue">long game</span>.</h2>
+    <p class="lede reveal d2">Serious partners ask who stands behind the convening. Monica works the SJTU × Xuhui industrial-research stack on embodied intelligence and AI for Science, and Super Brain, a non-profit youth AI incubator. Harvard invited her in 2025 to speak on China innovation and education in the AI era.</p>
+    <div class="grid-2">
+      <article class="card reveal">
+        <div class="card-kicker">Shanghai Jiao Tong University</div>
+        <h3>Industrial research &amp; acceleration</h3>
+        <p>Joint AI incubator with Xuhui District: going-global accelerator, community, platform, and talent pool — university, government, and industry in one design.</p>
+      </article>
+      <article class="card k-yellow reveal d1">
+        <div class="card-kicker">Super Brain</div>
+        <h3>The next generation of builders</h3>
+        <p>Non-profit youth AI education that treats entrepreneurship as the curriculum. The talent story overseas media actually want — not a slogan about “AI kids.”</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="label reveal">Why her</div>
+    <h2 class="title reveal d1">Journalist. Operator. <span class="c-yellow">Convener</span>.</h2>
+    <p class="lede reveal d2">She started at Xinhua News Agency, then spent twenty years hosting rooms that move industries: Asia-Pacific new energy, trans-Pacific shipping, Singapore biopharma, Davos finance. That is why Villa is not a WeChat group with a logo — it is a curated, bilingual, multi-city operating system.</p>
+    <p class="lede reveal d2">Alumna of SAIF EMBA (Shanghai Jiao Tong University), Fudan Economics, and SISU Journalism. Mother of three. Marathon runner. 60,000 km across 12 countries in 60 days with her children. Gobi 121 km with SAIF. The stamina is not decoration — it is how the world tour gets built.</p>
+  </div>
+</section>
+
+<section id="speak">
+  <div class="wrap">
+    <div class="label reveal">Book the room</div>
+    <h2 class="title reveal d1">On stage, on the record, or in a closed intro.</h2>
+    <div class="grid-2">
+      <article class="card reveal">
+        <div class="card-kicker">On the record</div>
+        <h3>What she speaks about</h3>
+        <p>China going-global and geopolitics · Where to land in MENA, SEA, LATAM, and North America · Which AI verticals are actually shipping · How founders build a global IP · Women operators in the AI era · Education after ChatGPT.</p>
+      </article>
+      <article class="card k-green reveal d1">
+        <div class="card-kicker">Off the record</div>
+        <h3>What she opens</h3>
+        <p>Investor–founder intros · Corporate and supply-chain matching · Market-entry design · Community incubation · Private dinners around GO SUMMIT · English/Mandarin livestreams that reach both ecosystems at once.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="connect">
+  <div class="cta-card reveal">
+    <h2>Tell her which door you need.</h2>
+    <p>Capital, coverage, or a counterpart in China or overseas. One email. She curates the room herself.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:monica@agivilla.com?subject=Introduction%20request">Request an introduction</a>
+      <a class="btn btn-ghost" href="mailto:monica@agivilla.com?subject=Press%20inquiry">Press desk</a>
+      <a class="btn btn-ghost" href="https://gosummit.ai" target="_blank" rel="noopener">GO SUMMIT</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China’s tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/#who">Who We Are</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/#pillars">What We Do</a></li>
+        <li><a href="/#cities">Cities</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Monica</h5>
+      <ul>
+        <li><a href="#for">For whom</a></li>
+        <li><a href="#access">The room</a></li>
+        <li><a href="#track">Track record</a></li>
+        <li><a href="https://chinabymonica.com" target="_blank" rel="noopener">chinabymonica.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/agivilla" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/chinabymonica/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">gosummit.ai</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/monica</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    io.observe(el);
+  });
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 20 ? 'rgba(0,0,0,0.82)' : 'rgba(0,0,0,0.6)';
+  }, {passive:true});
+</script>
+</body>
+</html>
