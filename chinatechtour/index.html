@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>China Tech Tour — Explore China | AGI Villa</title>
+<meta name="description" content="A private introduction to China's AI, robotics and hardware ecosystem. Company visits, founder conversations and cultural time in Shenzhen and Shanghai, curated by Monica Wang." />
+<link rel="canonical" href="https://agivilla.com/chinatechtour/" />
+<meta property="og:title" content="China Tech Tour — AGI Villa" />
+<meta property="og:description" content="Meet the people building China's next generation of technology. A private tour of Shenzhen and Shanghai, led by Monica Wang." />
+<meta property="og:url" content="https://agivilla.com/chinatechtour/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#EA4335; --blue:#4285F4; --green:#34A853; --yellow:#FBBC05;
+    --bg:#000; --fg:#f5f5f7; --fg-dim:#a1a1a6; --fg-dimmer:#6e6e73;
+    --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14); --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:#fff;color:#000}
+  .wordmark{font-weight:800;letter-spacing:-0.04em;font-size:20px;display:inline-flex;align-items:baseline;line-height:1}
+  .wordmark .l-a{color:var(--red)} .wordmark .l-g{color:var(--blue)} .wordmark .l-i{color:var(--green)}
+  .wordmark .l-v,.wordmark .l-illa{color:var(--yellow)} .wordmark .l-space{display:inline-block;width:.22em}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-size:13.5px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;flex:none}
+  .brand-mark{width:26px;height:26px;border-radius:7px;position:relative;background:conic-gradient(from 0deg at 50% 50%, var(--red) 0 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg);box-shadow:0 0 22px rgba(66,133,244,.35)}
+  .brand-mark::after{content:"";position:absolute;inset:4px;border-radius:4px;background:#000}
+  .nav-links{display:flex;gap:18px;color:var(--fg-dim)}
+  .nav-links a{transition:color .2s;white-space:nowrap}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-cta{padding:8px 16px;border-radius:999px;background:#fff;color:#000;font-weight:500;flex:none;white-space:nowrap}
+  .nav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.nav-links{gap:12px;font-size:13px}}
+  @media(max-width:720px){.nav-inner{padding:12px 12px;gap:8px}.wordmark{display:none}.nav-links{gap:10px;font-size:12.5px}.nav-cta{padding:7px 10px;font-size:12.5px}}
+  @media(max-width:420px){.nav-links{gap:8px;font-size:11.5px}.nav-cta{padding:6px 8px;font-size:11.5px}.brand-mark{width:22px;height:22px}}
+  .page{padding:128px 24px 40px}
+  .wrap{max-width:var(--max);margin:0 auto}
+  section{padding:88px 24px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:22px}
+  .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+  h1{font-size:clamp(44px,6vw,80px);line-height:.98;font-weight:650;letter-spacing:-.045em;background:linear-gradient(180deg,#fff 30%,#b5b5ba);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--fg-dim);font-size:clamp(17px,1.5vw,20px);line-height:1.6;max-width:680px;margin-top:20px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-size:14.5px;font-weight:500}
+  .btn-primary{background:#fff;color:#000}
+  .btn-ghost{border:1px solid var(--line-2);color:#fff}
+  .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:14px}
+  h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em;line-height:1.08;font-weight:600;max-width:760px}
+  h2 span{color:var(--yellow)}
+  .sub{color:var(--fg-dim);font-size:17px;line-height:1.6;max-width:680px;margin-top:16px}
+  .cities{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+  .city{border:1px solid var(--line);border-radius:22px;padding:28px 26px;background:#070707}
+  .city b{display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);font-weight:500;margin-bottom:10px}
+  .city h3{font-size:28px;letter-spacing:-.03em;margin-bottom:8px}
+  .city p{color:var(--fg-dim);line-height:1.5}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+  .grid.g2{grid-template-columns:1fr 1fr}
+  .card{border:1px solid var(--line);border-radius:20px;padding:24px 22px;background:#070707}
+  .card .n{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .card.y .n{color:var(--yellow)}
+  .card.g .n{color:var(--green)}
+  .card.r .n{color:var(--red)}
+  .card h3{font-size:18px;letter-spacing:-.02em;line-height:1.3;margin-bottom:8px}
+  .card p{color:var(--fg-dim);font-size:14.5px;line-height:1.55}
+  .banner{margin-top:28px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+  .banner img{width:100%;height:280px;object-fit:cover}
+  .note{margin-top:18px;color:var(--fg-dimmer);font-size:13.5px;line-height:1.55;max-width:760px}
+  .days{margin-top:28px;border-top:1px solid var(--line)}
+  .day{display:grid;grid-template-columns:72px 160px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+  .day .num{font-size:28px;font-weight:600;letter-spacing:-.04em;color:#fff}
+  .day .where{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);padding-top:8px}
+  .day h3{font-size:18px;margin-bottom:6px}
+  .day p{color:var(--fg-dim);font-size:15px;line-height:1.5}
+  .leader{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center;margin-top:36px}
+  .leader img{width:100%;border-radius:24px;border:1px solid var(--line-2)}
+  .stats{display:flex;gap:28px;margin-top:22px}
+  .stats strong{display:block;font-size:28px;letter-spacing:-.03em}
+  .stats span{color:var(--fg-dimmer);font-size:12.5px}
+  .points{margin-top:22px;display:grid;gap:12px}
+  .points p{color:var(--fg-dim);line-height:1.5}
+  .points strong{color:#fff;font-weight:600}
+  .quote{border-left:3px solid var(--yellow);padding:4px 0 4px 18px}
+  .quote p{font-size:18px;line-height:1.45;letter-spacing:-.02em}
+  .quote span{display:block;margin-top:10px;color:var(--fg-dimmer);font-size:13.5px}
+  .qr-card{margin-top:36px;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center;border:1px solid var(--line);border-radius:28px;padding:28px;background:#070707;max-width:760px}
+  .qr-card img{width:180px;height:180px;background:#fff;border-radius:16px;padding:10px}
+  .qr-card h3{font-size:28px;letter-spacing:-.03em;margin-bottom:10px}
+  .qr-card p{color:var(--fg-dim);line-height:1.55}
+  footer{border-top:1px solid var(--line);padding:64px 24px 28px;margin-top:40px}
+  .foot-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .foot-brand p{color:var(--fg-dim);font-size:14px;line-height:1.6;margin-top:14px;max-width:280px}
+  .foot-bar{display:flex;gap:6px;margin-top:18px}
+  .foot-bar span{width:28px;height:3px;border-radius:2px}
+  .b-r{background:var(--red)}.b-b{background:var(--blue)}.b-g{background:var(--green)}.b-y{background:var(--yellow)}
+  .foot-col h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dimmer);margin-bottom:16px;font-weight:500}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:var(--fg-dim);font-size:14px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{max-width:1200px;margin:36px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg-dimmer);font-size:12.5px}
+  @media(max-width:800px){
+    .cities,.grid,.grid.g2,.leader,.qr-card,.foot-wrap{grid-template-columns:1fr}
+    .day{grid-template-columns:48px 1fr}
+    .day .where{grid-column:2}
+    .banner img{height:200px}
+    .foot-bottom{flex-direction:column;gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"></span>
+      <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/community/">Community</a>
+      <a href="/insights/">Insights</a>
+      <a href="/chinatechtour/" class="active">Explore China</a>
+    </div>
+    <a href="mailto:monica@agivilla.com" class="nav-cta">Connect</a>
+  </div>
+</nav>
+
+<header class="page">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-dot"></span>Private technology immersion</div>
+    <h1>China<br/>Tech Tour.</h1>
+    <p class="lede">A private introduction to China's AI, robotics and hardware ecosystem. Meet the people building the next generation of technology. AGI Villa curates company visits, founder conversations and cultural time around what you want to learn, explore or build.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#whatsapp">Plan your tour</a>
+      <a class="btn btn-ghost" href="/monica/">Meet Monica</a>
+    </div>
+    <div class="cities">
+      <article class="city">
+        <b>Shenzhen</b>
+        <h3>Hardware and robotics</h3>
+        <p>Prototyping, engineering, supply chains and entrepreneurship in one city.</p>
+      </article>
+      <article class="city">
+        <b>Shanghai</b>
+        <h3>AI and commercialization</h3>
+        <p>Research, talent, startups and the industry that takes technology to customers.</p>
+      </article>
+    </div>
+    <p class="note">Personally led by Monica Wang, founder of AGI Villa. For investors, founders, executive teams and ecosystem delegations.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="label">Why AGI Villa</div>
+    <h2>The community, turned into a <span>visit</span>.</h2>
+    <p class="sub">AGI Villa is a global community and venture studio connecting China's AI and technology builders with international markets. With 3,000+ founders, operators and innovators in the network, the tour brings global investors and business leaders into relevant conversations across research, products, capital and industry.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="n">01</div>
+        <h3>Understand what sits behind the demo</h3>
+        <p>Connect technology to the engineering, talent, supply chains and business models behind it. Discuss what is already deployed, what can scale, and what could matter in your own market.</p>
+      </article>
+      <article class="card y">
+        <div class="n">02</div>
+        <h3>Spend time with relevant people</h3>
+        <p>Meet selected founders, operators and ecosystem builders through small meetings, company visits and hosted meals. The mix is shaped around your priorities.</p>
+      </article>
+      <article class="card g">
+        <div class="n">03</div>
+        <h3>Clarify your next move</h3>
+        <p>Use firsthand observations to sharpen an investment thesis, explore a partnership, or refine a product and market strategy before you leave.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Shenzhen</div>
+    <h2>From ideas to <span>products</span>.</h2>
+    <p class="sub">The institutions, products and everyday services that make Shenzhen a place to understand hardware innovation.</p>
+    <div class="banner"><img src="shenzhen.jpg" alt="A hardware retail floor in Shenzhen" /></div>
+    <div class="grid">
+      <article class="card">
+        <div class="n">INNO100</div>
+        <h3>Kickstarter's first authorized offline space in China</h3>
+        <p>See consumer hardware in person, and how product design, user experience and crowdfunding connect to global customers.</p>
+      </article>
+      <article class="card">
+        <div class="n">InnoX Academy</div>
+        <h3>Hardware venture-building</h3>
+        <p>Founded by Professor Li Zexiang, the mentor who helped incubate DJI. Engineering talent, product development, supply chains and manufacturing in one platform.</p>
+      </article>
+      <article class="card">
+        <div class="n">Huaqiangbei</div>
+        <h3>The supply chain, on foot</h3>
+        <p>Components, supplier networks and rapid prototyping. How teams source parts, iterate designs and move from concept to production.</p>
+      </article>
+      <article class="card y">
+        <div class="n">Robotics</div>
+        <h3>From demo to deployment</h3>
+        <p>A selected robotics company — embodied intelligence, service robotics or industrial automation — with the use cases, customers and commercialization behind it.</p>
+      </article>
+      <article class="card y">
+        <div class="n">In the city</div>
+        <h3>Drone delivery and robotaxi</h3>
+        <p>Where booking and coverage allow, experience autonomous logistics or ride as a passenger, then discuss the operating setup and what deployment actually requires.</p>
+      </article>
+      <article class="card y">
+        <div class="n">Dinner</div>
+        <h3>Founders, off the record</h3>
+        <p>A hosted dinner with selected AI and robotics founders. Building products, finding customers, and entering international markets.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Shanghai</div>
+    <h2>Where AI meets <span>business</span>.</h2>
+    <p class="sub">Universities, incubators and business communities that help ideas become companies — with time to walk the city and think.</p>
+    <div class="grid g2">
+      <article class="card">
+        <div class="n">01 · Models</div>
+        <h3>LLM and AI company</h3>
+        <p>Meet teams turning foundation models into products. Applications, enterprise adoption and international expansion. Request the company that matches your brief.</p>
+      </article>
+      <article class="card">
+        <div class="n">02 · Campus</div>
+        <h3>Shanghai Jiao Tong University</h3>
+        <p>Alma mater of founders behind SenseTime, Yitu and 4Paradigm. Campus time can be paired with separately arranged researcher or laboratory exchanges.</p>
+      </article>
+      <article class="card">
+        <div class="n">03 · Incubation</div>
+        <h3>How research becomes a company</h3>
+        <p>Startup incubation, product validation and local industry links. A founder exchange or showcase can be tailored to your interests.</p>
+      </article>
+      <article class="card">
+        <div class="n">04 · Builders</div>
+        <h3>AI startup founder meetup</h3>
+        <p>Applications, agents or embodied intelligence. Exchange market perspectives and identify partners, customers or investment themes.</p>
+      </article>
+      <article class="card g">
+        <div class="n">The Bund</div>
+        <h3>The skyline after the meetings</h3>
+        <p>Shanghai's business waterfront, overlooking Pudong. An evening walk and dinner conversation.</p>
+      </article>
+      <article class="card g">
+        <div class="n">Yuyuan</div>
+        <h3>Gardens and the old city</h3>
+        <p>Classical gardens, neighborhood streets, local food and traditional architecture — a feel for everyday Shanghai.</p>
+      </article>
+    </div>
+    <p class="note">Illustrative company requests may include MiniMax, ByteDance or AgiBot. These are examples, not confirmed hosts. Company, university and laboratory access requires each organization's agreement.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">A route to make your own</div>
+    <h2>An illustrative <span>seven days</span>.</h2>
+    <p class="sub">A balanced reference across Shenzhen and Shanghai. Duration, city order, activities and the meeting mix follow your brief and confirmed host availability.</p>
+    <div class="days">
+      <article class="day"><div class="num">1</div><div class="where">Shenzhen</div><div><h3>Arrive and align</h3><p>Arrival, an ecosystem orientation and a welcome dinner on the questions guiding your visit.</p></div></article>
+      <article class="day"><div class="num">2</div><div class="where">Shenzhen</div><div><h3>Product innovation</h3><p>INNO100 and InnoX Academy. Add drone delivery or a driverless ride where services and timing allow.</p></div></article>
+      <article class="day"><div class="num">3</div><div class="where">Shenzhen</div><div><h3>Hardware and the builders</h3><p>Huaqiangbei and a selected robotics company, then dinner with relevant AI or robotics founders.</p></div></article>
+      <article class="day"><div class="num">4</div><div class="where">Shanghai</div><div><h3>Travel and the city</h3><p>Shenzhen to Shanghai. Yuyuan and a local dinner as the program moves into its second city.</p></div></article>
+      <article class="day"><div class="num">5</div><div class="where">Shanghai</div><div><h3>Research and entrepreneurship</h3><p>Shanghai Jiao Tong University, an incubator visit, and a selected startup or founder exchange.</p></div></article>
+      <article class="day"><div class="num">6</div><div class="where">Shanghai</div><div><h3>AI and commercial opportunities</h3><p>A requested LLM or AI platform visit, tailored partner meetings, and an evening walk on the Bund.</p></div></article>
+      <article class="day"><div class="num">7</div><div class="where">Shanghai</div><div><h3>Turn insight into next steps</h3><p>Priority follow-ups, a closing roundtable, and a practical discussion of what to pursue after the journey.</p></div></article>
+    </div>
+    <p class="note">Conferences, GO SUMMIT or other industry events may be added when dates align, with access confirmed separately.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Your tour leader</div>
+    <h2>Monica Wang.</h2>
+    <div class="leader">
+      <img src="monica.png" alt="Monica Wang" />
+      <div>
+        <p class="sub" style="margin-top:0">Founder of AGI Villa. Serial entrepreneur and former Xinhua journalist. Two decades across technology, entrepreneurship and international business, with CEO, CMO and Partner roles in AI, education, e-commerce and Web3. Experience in more than 60 countries shapes how she connects China's innovation ecosystem with international markets.</p>
+        <p class="sub">She convenes founders and global partners through AGI Villa and GO SUMMIT, in English and Mandarin. In 2025 she was invited to speak at Harvard on innovation and education in the AI era. She personally curates and leads the China Tech Tour, with local specialists for the agreed program.</p>
+        <div class="stats">
+          <div><strong>20+</strong><span>Years</span></div>
+          <div><strong>60+</strong><span>Countries</span></div>
+          <div><strong>3,000+</strong><span>Community</span></div>
+        </div>
+        <div class="points">
+          <p><strong>An operator's perspective.</strong> She connects a technology demonstration with questions about customers, execution and growth.</p>
+          <p><strong>Context across cultures.</strong> Business practice and local context, in English and Mandarin, so both sides can ask clearer questions.</p>
+          <p><strong>Introductions with a purpose.</strong> The founder community is used to find conversations that match your sector, objectives and what you can contribute.</p>
+        </div>
+        <div class="cta-row"><a class="btn btn-ghost" href="/monica/">Full profile</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Built around your priorities</div>
+    <h2>The route follows the <span>decision</span>.</h2>
+    <p class="sub">Meeting profiles, technical depth and pace follow your team. A focused one-day immersion, a multi-day city deep dive, or a longer journey. Themes can include industrial automation, health technology, retail or education, subject to relevant hosts.</p>
+    <div class="grid g2">
+      <article class="card">
+        <div class="n">Investors and family offices</div>
+        <h3>Themes and stage, then the people</h3>
+        <p>Founder and operator conversations. Compare approaches to products, customers and international expansion.</p>
+      </article>
+      <article class="card">
+        <div class="n">Corporate and industry teams</div>
+        <h3>Use cases and commercial fit</h3>
+        <p>Robotics, enterprise AI, or potential suppliers, distributors and technology partners.</p>
+      </article>
+      <article class="card">
+        <div class="n">Founders and product teams</div>
+        <h3>Prototyping, manufacturing, market entry</h3>
+        <p>Meetings shaped around product development, supply-chain needs and possible local partners.</p>
+      </article>
+      <article class="card">
+        <div class="n">Universities and ecosystem groups</div>
+        <h3>Education, incubation, talent</h3>
+        <p>Campus exchanges, entrepreneur sessions or a focused ecosystem roundtable.</p>
+      </article>
+    </div>
+    <div class="grid" style="margin-top:14px">
+      <article class="card r"><div class="n">Before</div><h3>The brief</h3><p>Share objectives, dates, participants and target profiles. We propose a route and confirm the agreed scope.</p></article>
+      <article class="card r"><div class="n">On the ground</div><h3>The visits</h3><p>English-language hosting, local coordination, and time to reflect between conversations.</p></article>
+      <article class="card r"><div class="n">After</div><h3>The follow-up</h3><p>Where included, priority introductions. Ongoing partnership support can be scoped separately.</p></article>
+    </div>
+    <p class="note">Fees are quoted for the agreed scope. A proposal specifies leadership, visits, interpretation, transport, meals, accommodation and intercity travel, as applicable. Meetings and technology experiences depend on host acceptance, access conditions and operating availability.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Guest perspectives</div>
+    <h2>What guests say.</h2>
+    <div class="grid" style="margin-top:32px">
+      <article class="quote">
+        <p>“The company visits, founder introductions, and overall coordination were thoughtful and highly relevant to what we were looking for as investors.”</p>
+        <span>Faisal Alnamlah · Saudi Arabia<br/>Founder &amp; CEO, FalconMind Holding Company</span>
+      </article>
+      <article class="quote">
+        <p>“Not only was she the best host I could have asked for, she reinspired me to double down on my mission: making AI and other technologies a force for good in the world.”</p>
+        <span>Christian Thierry · Mexico<br/>CTO, Argus Telematics</span>
+      </article>
+      <article class="quote">
+        <p>“Thank you for taking the time to introduce us to so many exciting opportunities and for opening doors that made this trip so meaningful and insightful for us.”</p>
+        <span>Omar Bhamji · United Kingdom<br/>Commercial Director, CK Foods Holdings Ltd.</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="whatsapp">
+  <div class="wrap">
+    <div class="label">Plan your China Tech Tour</div>
+    <h2>Tell us what <span>matters</span>.</h2>
+    <p class="sub">Sector, priorities, preferred dates and group size. Scan to connect on WhatsApp and we will shape the tour around it.</p>
+    <div class="qr-card">
+      <img src="whatsapp.png" alt="WhatsApp QR code" width="180" height="180" />
+      <div>
+        <h3>Scan to connect.</h3>
+        <p>WhatsApp is the direct line for planning a China Tech Tour. The code opens a chat with Monica's team. No form, no switchboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="wordmark"><span class="l-a">A</span><span class="l-g">G</span><span class="l-i">I</span><span class="l-space"></span><span class="l-v">V</span><span class="l-illa">illa</span></span>
+      </a>
+      <p>The two-way bridge between China's tech ecosystem and the world. Real relationships. Real deals. Both ways.</p>
+      <div class="foot-bar"><span class="b-r"></span><span class="b-b"></span><span class="b-g"></span><span class="b-y"></span></div>
+    </div>
+    <div class="foot-col">
+      <h5>Villa</h5>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/chinatechtour/">Explore China</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Tour</h5>
+      <ul>
+        <li><a href="#whatsapp">Plan a tour</a></li>
+        <li><a href="/monica/">Monica Wang</a></li>
+        <li><a href="https://gosummit.ai" target="_blank" rel="noopener">GO SUMMIT</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="#whatsapp">WhatsApp</a></li>
+        <li><a href="mailto:monica@agivilla.com">monica@agivilla.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 AGI Villa.</div>
+    <div>agivilla.com/chinatechtour</div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.style.background = scrollY > 20 ? 'rgba(0,0,0,.86)' : 'rgba(0,0,0,.6)');
+</script>
+</body>
+</html>
